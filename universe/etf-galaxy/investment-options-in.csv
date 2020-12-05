@@ -1,0 +1,93 @@
+# Description: ETF investment options. 09/19/2020
+
+# Format
+"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
+# Note: "Description" field is optional
+
+# Investment Options - Market Index ETFs
+"SPY","S&P 500 ETF","US Stocks:Large Cap"
+"DIA","DJIA ETF","US Stocks:Large Cap"
+"QQQ","Nasdaq 100 ETF","US Stocks:Growth"
+"VTI","Vanguard Total Stock Market Index ETF","US Stocks:Total Stock Market"
+"IWM","Russell 2000 ETF","US Stocks:Small Cap"
+"MDY","S&P 400 Midcap ETF","US Stocks:Mid Cap"
+"IWD","Russell 1000 Value ETF","US Stocks:Value"
+"IWF","Russell 1000 Growth ETF","US Stocks"
+"RSP","S&P 500 Equal Weight ETF","US Stocks"
+"SLY","S&P 600 Small Cap ETF","US Stocks:Small Cap"
+"NOBL","S&P 500 Aristocrats","US Stocks:Large Cap"
+"SDY","S&P Dividend ETF","US Stocks:Large Cap"
+
+# Investment Options - S&P500 Sector ETFs
+"XLB","S&P500 Materials Sector ETF","US Stocks:Materials"
+"XLC","S&P500 Communication Services Sector ETF","US Stocks:Communication Services"
+"XLE","S&P500 Energy Sector ETF","US Stocks:Energy"
+"XLF","S&P500 Financials Sector ETF","US Stocks:Financials"
+"XLI","S&P500 Industrials Sector ETF","US Stocks:Industrials"
+"XLK","S&P500 Technology Sector ETF","US Stocks:Technology"
+"XLP","S&P500 Consumer Staples Sector ETF","US Stocks:Consumer Staples"
+"XLRE","S&P500 Real Estate Sector ETF","US Stocks:Real Estate"
+"XLU","S&P500 Utilities Sector ETF","US Stocks:Utilities"
+"XLV","S&P500 Healthcare Sector ETF","US Stocks:Healthcare"
+"XLY","S&P500 Consumer Discretionary Sector ETF","US Stocks:Consumer Discretionary"
+
+# Investment Options - Global Stocks ETFs
+"VXUS","Vanguard Total International Stock ETF","Global Stocks:EX-US"
+"VPL","Vanguard FTSE Pacific ETF","Global Stocks:Asia"
+"EFA","MSCI EAFE ETF","Global Stocks:Developed Markets"
+"EEM","Emerging Markets ETF","Global Stocks:Emerging Markets"
+"IEUR","Core MSCI Europe ETF","Global Stocks:Europe"
+
+# Investment Options - Bonds ETFs
+"LQD","Investment Grade Corp Bond ETF","Bonds:Investment Grade"
+"JNK","High Yield Bond ETF","Bonds:High Yield"
+"IBND",Barclays Int Corp Bond ETF,"Bonds:Global"
+"PFF","Preferred and Income Securities ETF","Bonds:Preferred Stock"
+"VCIT","Intermediate Term Corporate Bond ETF","Bonds"
+"VCSH","Short Term Corporate Bond ETF","Bonds"
+"AGG","US Aggregate Bond ETF","Bonds"
+"BND","Total Bond Market ETF","Bonds"
+"PGX","Preferred Portfolio ETF","Bonds:Preferred Stock"
+"SHY","1-3 Year Treasury Bond ETF","Bonds"
+"TLT","20+ Year Treasury Bond ETF","Bonds:Long Term Treasury"
+
+# Investment Options - Cash Equivalents ETFs
+"JPST","JPMorgan Ultra-Short Income ETF","Cash Equivalents:Money Markets"
+"BIL","Barclays 1-3 Month T-Bill ETF","Cash Equivalents:Treasury Bills"
+"SHV","Short Treasury Bond ETF","Cash Equivalents:Short Term Gov Bonds"
+
+# Investment Options - Real Estate ETFs
+"IYR","U.S. Real Estate ETF","Real Estate:REIT"
+"VNQ","Vanguard Real Estate Index Fund ETF","Real Estate:Real Estate Funds"
+
+# Investment Options - Commodities ETFs
+"GLD","Gold ETF","Commodities:Gold"
+"SLV","Silver ETF","Commodities:Silver"
+"CPER","Cooper ETF","Commodities:Cooper"
+"PPLT","Platinum ETF","Commodities:Platinum"
+"PALL","Palladium ETF","Commodities:Palladium"
+"USO","Oil ETF","Commodities:Oil"
+"UNG","Natural Gas ETF","Commodities:Natural Gas"
+"UGA","Gasoline ETF","Commodities:Gasoline"
+"CORN","Corn ETF","Commodities:Corn"
+"CANE","Sugar ETF","Commodities:Sugar"
+"DBA","Agriculture ETF","Commodities:Agriculture"
+"DBB","Base Metals ETF","Commodities:Base Metals"
+"DBE","Energy ETF","Commodities:Energy"
+"DBP","Precious Metals ETF","Commodities:Precious Metals"
+
+# Investment Options - Currencies ETFs
+"UUP","US Dollar ETF","Currencies:US Dollar"
+"FXE","Euro ETF","Currencies:Euro"
+"FXY","Japanese Yen ETF","Currencies:Japanese Yen"
+"FXF","Swiss Franc ETF","Currencies:Swiss Franc"
+"FXA","Australian Dollar ETF","Currencies:Australian Dollar"
+"FXC","Canadian Dollar ETF","Currencies:Canadian Dollar"
+"FXB","Britich Pound ETF","Currencies:Britich Pound"
+"CYB","Chinese Yuan ETF","Currencies:Chinese Yuan"
+
+# Investment Options - Special
+"GDX","Gold Miners ETF","US Stocks"
+"XOP","S&P Oil & Gas Exploration & Production ETF","US Stocks"
+"OIH","Vectors Oil Services ETF","US Stocks"
+"VDE","Vanguard Energy ETF","US Stocks"

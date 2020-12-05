@@ -1,0 +1,93 @@
+# Description: ETF investment options. 09/19/2020
+
+# Format
+"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
+# Note: "Description" field is optional
+
+# Investment Options - Market Index ETFs
+"SPY","S&P 500 ETF","US Stocks:Large Cap","142.43","38.05","20.83","14.02","14.69","12.63","5.63","18.36"
+"DIA","DJIA ETF","US Stocks:Large Cap","177.77","35.69","11.59","9.93","14.13","16.58","6.23","18.58"
+"QQQ","Nasdaq 100 ETF","US Stocks:Growth","112.58","34.73","51.54","26.96","23.19","15.91","9.32","20.27"
+"VTI","Vanguard Total Stock Market Index ETF","US Stocks:Total Stock Market","180.83","51.07","22.85","14.25","14.85","12.60","5.42","19.19"
+"IWM","Russell 2000 ETF","US Stocks:Small Cap","579.73","133.67","18.67","8.72","11.59","22.58","9.12","24.92"
+"MDY","S&P 400 Midcap ETF","US Stocks:Mid Cap","353.85","98.98","13.77","7.38","10.95","20.53","9.17","23.10"
+"IWD","Russell 1000 Value ETF","US Stocks:Value","313.58","62.29","5.15","5.97","9.26","20.97","6.66","19.51"
+"IWF","Russell 1000 Growth ETF","US Stocks","74.03","32.59","39.54","22.28","20.00","13.55","8.00","19.44"
+"RSP","S&P 500 Equal Weight ETF","US Stocks","341.40","71.30","15.24","10.23","12.26","22.28","7.37","21.22"
+"SLY","S&P 600 Small Cap ETF","US Stocks:Small Cap","757.76","122.21","11.77","6.57","10.93","29.18","11.14","25.41"
+"NOBL","S&P 500 Aristocrats","US Stocks:Large Cap","200.60","46.50","10.99","10.71","12.66","20.48","7.31","17.47"
+"SDY","S&P Dividend ETF","US Stocks:Large Cap","312.20","54.04","4.07","7.09","11.23","29.69","10.11","17.58"
+
+# Investment Options - S&P500 Sector ETFs
+"XLB","S&P500 Materials Sector ETF","US Stocks:Materials","218.76","56.87","23.38","8.58","12.06","21.29","9.88","20.88"
+"XLC","S&P500 Communication Services Sector ETF","US Stocks:Communication Services","123.42","39.33","28.87","nan","nan","13.38","4.71","20.75"
+"XLE","S&P500 Energy Sector ETF","US Stocks:Energy","4428.41","96.76","-24.11","-12.07","-5.04","70.74","23.65","39.34"
+"XLF","S&P500 Financials Sector ETF","US Stocks:Financials","628.52","76.25","-0.79","3.33","16.29","34.67","9.32","23.25"
+"XLI","S&P500 Industrials Sector ETF","US Stocks:Industrials","305.30","75.22","13.68","8.51","12.96","20.39","6.10","23.20"
+"XLK","S&P500 Technology Sector ETF","US Stocks:Technology","132.08","30.79","47.17","28.10","25.61","15.84","8.17","20.89"
+"XLP","S&P500 Consumer Staples Sector ETF","US Stocks:Consumer Staples","82.61","16.10","11.36","9.03","9.42","12.40","5.88","13.98"
+"XLRE","S&P500 Real Estate Sector ETF","US Stocks:Real Estate","74.36","15.19","0.08","7.64","8.16","17.05","7.59","16.31"
+"XLU","S&P500 Utilities Sector ETF","US Stocks:Utilities","-21.77","26.36","1.91","7.17","12.01","18.05","11.31","13.69"
+"XLV","S&P500 Healthcare Sector ETF","US Stocks:Healthcare","36.49","30.56","15.52","13.07","11.84","11.24","6.59","16.45"
+"XLY","S&P500 Consumer Discretionary Sector ETF","US Stocks:Consumer Discretionary","82.69","34.12","32.51","18.89","16.29","12.69","5.56","21.99"
+
+# Investment Options - Global Stocks ETFs
+"VXUS","Vanguard Total International Stock ETF","Global Stocks:EX-US","261.69","61.28","13.09","5.06","8.21","16.30","8.67","18.18"
+"VPL","Vanguard FTSE Pacific ETF","Global Stocks:Asia","284.87","79.27","15.82","5.56","9.09","18.90","10.05","16.47"
+"EFA","MSCI EAFE ETF","Global Stocks:Developed Markets","307.94","59.78","9.30","4.40","6.76","18.01","8.81","17.52"
+"EEM","Emerging Markets ETF","Global Stocks:Emerging Markets","163.21","72.97","21.99","5.93","11.03","16.29","9.81","19.71"
+"IEUR","Core MSCI Europe ETF","Global Stocks:Europe","374.88","56.49","9.03","4.11","6.47","16.68","6.65","19.74"
+
+# Investment Options - Bonds ETFs
+"LQD","Investment Grade Corp Bond ETF","Bonds:Investment Grade","10.76","8.93","10.32","7.71","7.06","5.65","3.43","7.41"
+"JNK","High Yield Bond ETF","Bonds:High Yield","34.90","18.71","5.73","4.83","6.39","4.85","2.27","9.43"
+"IBND",Barclays Int Corp Bond ETF,"Bonds:Global","66.04","15.46","11.99","2.84","4.23","5.54","2.37","8.60"
+"PFF","Preferred and Income Securities ETF","Bonds:Preferred Stock","49.85","24.93","8.03","4.98","5.10","7.49","2.18","11.12"
+"VCIT","Intermediate Term Corporate Bond ETF","Bonds","7.72","5.40","8.88","6.87","6.14","2.95","1.87","6.66"
+"VCSH","Short Term Corporate Bond ETF","Bonds","3.97","2.59","5.01","4.18","3.44","0.85","0.37","3.09"
+"AGG","US Aggregate Bond ETF","Bonds","-1.57","0.31","6.70","5.21","4.34","3.26","2.09","3.51"
+"BND","Total Bond Market ETF","Bonds","-1.59","0.38","6.93","5.33","4.51","3.22","2.08","3.80"
+"PGX","Preferred Portfolio ETF","Bonds:Preferred Stock","30.32","14.41","8.37","5.85","6.11","6.04","1.78","9.45"
+"SHY","1-3 Year Treasury Bond ETF","Bonds","0.04","0.06","3.11","2.61","1.75","0.33","0.23","1.20"
+"TLT","20+ Year Treasury Bond ETF","Bonds:Long Term Treasury","-35.21","-16.24","13.28","9.40","7.80","15.08","9.83","13.09"
+
+# Investment Options - Cash Equivalents ETFs
+"JPST","JPMorgan Ultra-Short Income ETF","Cash Equivalents:Money Markets","1.86","0.66","2.27","2.58","nan","0.43","0.18","1.41"
+"BIL","Barclays 1-3 Month T-Bill ETF","Cash Equivalents:Treasury Bills","0.17","-0.03","0.49","1.41","0.99","0.12","0.07","0.26"
+"SHV","Short Treasury Bond ETF","Cash Equivalents:Short Term Gov Bonds","0.13","0.01","0.93","1.65","1.19","0.09","0.07","0.35"
+
+# Investment Options - Real Estate ETFs
+"IYR","U.S. Real Estate ETF","Real Estate:REIT","107.20","22.80","-4.06","5.29","7.03","18.38","7.91","18.39"
+"VNQ","Vanguard Real Estate Index Fund ETF","Real Estate:Real Estate Funds","149.88","27.86","-3.33","5.03","6.54","20.66","8.61","18.74"
+
+# Investment Options - Commodities ETFs
+"GLD","Gold ETF","Commodities:Gold","-35.87","-19.00","23.97","12.45","11.11","20.41","16.44","12.65"
+"SLV","Silver ETF","Commodities:Silver","13.75","-35.25","41.83","13.34","10.80","33.27","21.85","31.57"
+"CPER","Cooper ETF","Commodities:Cooper","347.73","70.77","30.70","3.52","9.80","15.87","3.38","19.18"
+"PPLT","Platinum ETF","Commodities:Platinum","1020.16","92.69","18.15","4.17","4.10","29.79","13.99","22.86"
+"PALL","Palladium ETF","Commodities:Palladium","32.86","8.98","24.56","32.37","33.45","36.87","23.99","25.82"
+"USO","Oil ETF","Commodities:Oil","435.84","50.16","-67.64","-29.98","-20.94","31.77","11.47","55.55"
+"UNG","Natural Gas ETF","Commodities:Natural Gas","-92.98","-80.02","-49.89","-26.82","-22.96","56.84","43.45","46.21"
+"UGA","Gasoline ETF","Commodities:Gasoline","399.63","52.48","-30.11","-10.81","-6.25","34.97","13.49","52.23"
+"CORN","Corn ETF","Commodities:Corn","40.36","49.55","-2.57","-6.05","-8.83","18.36","8.94","14.43"
+"CANE","Sugar ETF","Commodities:Sugar","40.82","46.23","-6.16","-13.36","-8.68","19.04","7.01","20.94"
+"DBA","Agriculture ETF","Commodities:Agriculture","64.28","15.77","-4.01","-6.12","-5.50","10.77","4.81","11.52"
+"DBB","Base Metals ETF","Commodities:Base Metals","185.88","54.69","20.07","-0.51","9.41","12.46","5.90","15.60"
+"DBE","Energy ETF","Commodities:Energy","259.57","34.43","-26.10","-8.36","-3.01","28.25","10.12","31.17"
+"DBP","Precious Metals ETF","Commodities:Precious Metals","-28.66","-25.86","25.16","11.29","9.79","23.20","18.54","14.97"
+
+# Investment Options - Currencies ETFs
+"UUP","US Dollar ETF","Currencies:US Dollar","-30.39","-9.52","-6.45","1.36","-0.12","5.01","3.63","5.41"
+"FXE","Euro ETF","Currencies:Euro","51.85","9.08","8.26","-0.08","1.22","5.77","2.27","5.89"
+"FXY","Japanese Yen ETF","Currencies:Japanese Yen","3.37","7.53","3.81","2.06","2.75","8.43","7.02","5.06"
+"FXF","Swiss Franc ETF","Currencies:Swiss Franc","30.26","8.65","9.53","2.22","0.98","7.83","5.48","6.12"
+"FXA","Australian Dollar ETF","Currencies:Australian Dollar","50.77","7.28","8.35","-0.33","0.82","6.64","3.35","9.90"
+"FXC","Canadian Dollar ETF","Currencies:Canadian Dollar","39.34","8.70","3.04","0.16","0.96","4.44","1.86","6.56"
+"FXB","Britich Pound ETF","Currencies:Britich Pound","50.36","4.20","1.81","-0.27","-2.63","6.46","3.56","8.53"
+"CYB","Chinese Yuan ETF","Currencies:Chinese Yuan","27.56","24.11","10.48","3.41","2.63","5.14","3.01","5.48"
+
+# Investment Options - Special
+"GDX","Gold Miners ETF","US Stocks","-64.25","-44.23","28.75","17.53","20.95","36.44","27.25","34.42"
+"XOP","S&P Oil & Gas Exploration & Production ETF","US Stocks","9640.42","139.07","-23.35","-23.65","-14.30","81.65","27.00","60.49"
+"OIH","Vectors Oil Services ETF","US Stocks","26904.06","180.53","-30.16","-30.10","-21.49","88.99","24.84","60.32"
+"VDE","Vanguard Energy ETF","US Stocks","4699.53","101.89","-24.39","-13.69","-6.33","69.89","23.64","40.73"

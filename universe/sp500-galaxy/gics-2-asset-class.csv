@@ -1,0 +1,17 @@
+# Description: Provides a mapping between Global Industry Classification Standard (GICS)
+#              and asset classes
+
+# Format
+"GICS","Asset Class"
+
+"Energy","US Stocks:Energy"
+"Materials","US Stocks:Materials"
+"Industrials","US Stocks:Industrials"
+"Consumer Discretionary","US Stocks:Consumer Discretionary"
+"Consumer Staples","US Stocks:Consumer Staples"
+"Health Care","US Stocks:Healthcare"
+"Financials","US Stocks:Financials"
+"Information Technology","US Stocks:Technology"
+"Communication Services","US Stocks:Communication Services"
+"Utilities","US Stocks:Utilities"
+"Real Estate","US Stocks:Real Estate"

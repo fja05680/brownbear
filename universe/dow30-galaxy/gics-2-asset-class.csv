@@ -1,0 +1,21 @@
+# Description: Provides a mapping between Global Industry Classification Standard (GICS)
+#              and asset classes
+
+# Format
+"GICS","Asset Class"
+
+"Conglomerate","US Stocks:Industrials"
+"Financial services","US Stocks:Financials"
+"Pharmaceutical industry","US Stocks:Healthcare"
+"Information technology","US Stocks:Technology"
+"Aerospace and defense","US Stocks:Industrials"
+"Construction and Mining","US Stocks:Industrials"
+"Petroleum industry","US Stocks:Energy"
+"Food industry","US Stocks:Consumer Staples"
+"Chemical industry","US Stocks:Materials"
+"Retailing","US Stocks:Consumer Discretionary"
+"Apparel","US Stocks:Consumer Discretionary"
+"Fast-moving consumer goods","US Stocks:Consumer Staples"
+"Managed health care","US Stocks:Healthcare"
+"Telecommunication","US Stocks:Communication Services"
+"Broadcasting and entertainment","US Stocks:Communication Services"

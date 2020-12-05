@@ -1,0 +1,12 @@
+# Description: custom investment options. 10/04/2020
+
+# Format
+"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
+# Note: "Description" field is optional
+
+# Investment Options
+"EHC","Encompass Health","US Stocks:Healthcare","1263.39","116.70","14.02","19.24","21.05","42.62","11.28","33.20"
+"RF","Regions Financial","US Stocks:Financials","1266.28","266.47","1.53","2.32","13.82","69.94","21.12","35.82"
+"VMC","Vulcan Materials Company","US Stocks:Materials","142.40","90.23","2.87","6.42","9.22","29.68","11.33","24.31"
+"HIBB","Hibbett Sports","US Stocks:Consumer Discretionary","1511.45","306.89","71.71","32.97","8.37","60.26","34.55","61.77"
+"ADTN","ADTRAN","US Stocks:Technology","1080.22","298.54","70.11","-11.11","0.39","54.23","21.40","49.37"

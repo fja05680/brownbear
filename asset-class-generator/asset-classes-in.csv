@@ -1,0 +1,597 @@
+# Description: Correlations for asset classes and asset subclasses
+# NOTE: Do NOT add custom asset classes here.  Create a custom asset csv file.
+
+# Format
+"Asset Class A","Asset Class B","Correlation"
+
+#---------------------------- Asset Class Structure ----------------------------
+
+# US Stocks - Market Indexes
+#   Large Cap
+#   Mid Cap
+#   Small Cap
+#   Growth
+#   Value
+#   Total Stock Market
+# US Stocks - Market Sectors
+#   Materials
+#   Communication Services
+#   Energy
+#   Financials
+#   Industrials
+#   Technology
+#   Consumer Staples
+#   Real Estate
+#   Utilities
+#   Healthcare
+#   Healthcare
+#   Consumer Discretionary
+# Global Stocks
+#   Asia
+#   Developed Markets
+#   Emerging Markets
+#   Europe
+#   EX-US
+# Bonds
+#   Investment Grade Corp
+#   Long Term Treasury
+#   High Yield
+#   Global
+#   Preferred Stock
+# Cash Equivalents
+#   Money Markets
+#   Treasury Bills (Maturity ranges from a few days to 52 weeks)
+#   Short Term Gov Bonds
+# Real Estate
+#   REIT
+#   Real Estate Funds
+# Commodities
+#   Gold
+#   Silver
+#   Cooper
+#   Platinum
+#   Palladium
+#   Oil
+#   Natural Gas
+#   Gasoline
+#   Corn
+#   Sugar
+#   Agriculture
+#   Base Metals
+#   Energy
+#   Precious Metals
+# Currencies
+#   US Dollar
+#   Euro
+#   Japanese Yen
+#   Swiss Franc
+#   Australian Dollar
+#   Canadian Dollar
+#   British Pound
+#   Chinese Yuan
+
+#---------------------------- Top Level Classes --------------------------------
+
+# US Stocks
+# Global Stocks
+# Bonds
+# Cash Equivalents
+# Real Estate
+# Commodities
+# Currencies
+# Managed Futures
+ 
+# Correlation between investment options in same Asset Class
+"US Stocks","US Stocks","0.85"
+"Global Stocks","Global Stocks","0.70"
+"Bonds","Bonds","0.55"
+"Cash Equivalents","Cash Equivalents","1"
+"Real Estate","Real Estate","1"
+"Commodities","Commodities","1"
+"Currencies","Currencies","1"
+"Managed Futures","Managed Futures","1"
+
+# Correlation between investment options in different Asset Classes
+"US Stocks","Global Stocks","0.85"
+"US Stocks","Bonds","-0.22"
+"US Stocks","Cash Equivalents","0.00"
+"US Stocks","Real Estate","0.65"
+"US Stocks","Commodities","0.57"
+"US Stocks","Currencies","-0.46"
+"US Stocks","Managed Futures",
+"Global Stocks","Bonds","-0.11"
+"Global Stocks","Cash Equivalents","0.00"
+"Global Stocks","Real Estate","0.58"
+"Global Stocks","Commodities","0.58"
+"Global Stocks","Currencies","-0.66"
+"Global Stocks","Managed Futures",
+"Bonds","Cash Equivalents","0.11"
+"Bonds","Real Estate","0.30"
+"Bonds","Commodities","-0.25"
+"Bonds","Currencies","0.00"
+"Bonds","Managed Futures",
+"Cash Equivalents","Real Estate","0.02"
+"Cash Equivalents","Commodities","0.07"
+"Cash Equivalents","Currencies","-0.08"
+"Cash Equivalents","Managed Futures",
+"Real Estate","Commodities","0.25"
+"Real Estate","Currencies","-0.31"
+"Real Estate","Managed Futures",
+"Commodities","Currencies","-0.54"
+"Commodities","Managed Futures",
+"Currencies","Managed Futures",
+
+#------------------------------ Subclasses -------------------------------------
+
+# US Stocks - Market Indexes
+#   Large Cap
+#   Mid Cap
+#   Small Cap
+#   Growth
+#   Value
+#   Total Stock Market
+
+# Correlation between investment options in Asset Class vs Subclass
+# Asset Class:Asset Subclass
+"US Stocks","US Stocks:Large Cap",
+"US Stocks","US Stocks:Mid Cap",
+"US Stocks","US Stocks:Small Cap",
+"US Stocks","US Stocks:Growth",
+"US Stocks","US Stocks:Value",
+"US Stocks","US Stocks:Total Stock Market",
+
+# Correlation between investment options in same Asset Subclass
+# Asset Subclass:Asset Subclass
+"US Stocks:Large Cap","US Stocks:Large Cap","1"
+"US Stocks:Mid Cap","US Stocks:Mid Cap","1"
+"US Stocks:Small Cap","US Stocks:Small Cap","1"
+"US Stocks:Growth","US Stocks:Growth","1"
+"US Stocks:Value","US Stocks:Value","1"
+"US Stocks:Total Stock Market","US Stocks","US Stocks:Total Stock Market","1"
+
+# Correlation between investment options in same Asset Class but different Subclass
+# Asset Subclass:Asset Subclass
+"US Stocks:Large Cap","US Stocks:Mid Cap",
+"US Stocks:Large Cap","US Stocks:Small Cap",
+"US Stocks:Large Cap","US Stocks:Growth",
+"US Stocks:Large Cap","US Stocks:Value",
+"US Stocks:Large Cap","US Stocks","US Stocks:Total Stock Market",
+"US Stocks:Mid Cap","US Stocks:Small Cap",
+"US Stocks:Mid Cap","US Stocks:Growth",
+"US Stocks:Mid Cap","US Stocks:Value",
+"US Stocks:Mid Cap","US Stocks:Total Stock Market",
+"US Stocks:Small Cap","US Stocks:Growth",
+"US Stocks:Small Cap","US Stocks:Value",
+"US Stocks:Small Cap","US Stocks:Total Stock Market",
+"US Stocks:Growth","US Stocks:Value",
+"US Stocks:Growth","US Stocks:Total Stock Market",
+"US Stocks:Value","US Stocks:Total Stock Market",
+
+# US Stocks - Market Sectors
+#   Materials
+#   Communication Services
+#   Energy
+#   Financials
+#   Industrials
+#   Technology
+#   Consumer Staples
+#   Real Estate
+#   Utilities
+#   Healthcare
+#   Healthcare
+#   Consumer Discretionary
+
+# Correlation between investment options in Asset Class vs Subclass
+# Asset Class:Asset Subclass
+"US Stocks","US Stocks:Materials",
+"US Stocks","US Stocks:Communication Services",
+"US Stocks","US Stocks:Energy",
+"US Stocks","US Stocks:Financials",
+"US Stocks","US Stocks:Industrials",
+"US Stocks","US Stocks:Technology",
+"US Stocks","US Stocks:Consumer Staples",
+"US Stocks","US Stocks:Real Estate",
+"US Stocks","US Stocks:Utilities",
+"US Stocks","US Stocks:Healthcare",
+"US Stocks","US Stocks:Consumer Discretionary",
+
+# Correlation between investment options in same Asset Subclass
+# Asset Subclass:Asset Subclass
+"US Stocks:Materials","US Stocks:Materials","1"
+"US Stocks:Communication Services","US Stocks:Communication Services","1"
+"US Stocks:Energy","US Stocks:Energy","1"
+"US Stocks:Financials","US Stocks:Financials","1"
+"US Stocks:Industrials","US Stocks:Industrials","1"
+"US Stocks:Technology","US Stocks:Technology","1"
+"US Stocks:Consumer Staples","US Stocks:Consumer Staples","1"
+"US Stocks:Real Estate","US Stocks:Real Estate","1"
+"US Stocks:Utilities","US Stocks:Utilities","1"
+"US Stocks:Healthcare","US Stocks:Healthcare","1"
+"US Stocks:Consumer Discretionary","US Stocks:Consumer Discretionary","1"
+
+# Correlation between investment options in same Asset Class but different Subclass
+# Asset Subclass:Asset Subclass
+"US Stocks:Communication Services","US Stocks:Energy",
+"US Stocks:Communication Services","US Stocks:Financials",
+"US Stocks:Communication Services","US Stocks:Industrials",
+"US Stocks:Communication Services","US Stocks:Technology",
+"US Stocks:Communication Services","US Stocks:Consumer Staples",
+"US Stocks:Communication Services","US Stocks:Real Estate",
+"US Stocks:Communication Services","US Stocks:Utilities",
+"US Stocks:Communication Services","US Stocks:Healthcare",
+"US Stocks:Communication Services","US Stocks:Consumer Discretionary",
+"US Stocks:Energy","US Stocks:Financials",
+"US Stocks:Energy","US Stocks:Industrials",
+"US Stocks:Energy","US Stocks:Technology",
+"US Stocks:Energy","US Stocks:Consumer Staples",
+"US Stocks:Energy","US Stocks:Real Estate",
+"US Stocks:Energy","US Stocks:Utilities",
+"US Stocks:Energy","US Stocks:Healthcare",
+"US Stocks:Energy","US Stocks:Consumer Discretionary",
+"US Stocks:Financials","US Stocks:Industrials",
+"US Stocks:Financials","US Stocks:Technology",
+"US Stocks:Financials","US Stocks:Consumer Staples",
+"US Stocks:Financials","US Stocks:Real Estate",
+"US Stocks:Financials","US Stocks:Utilities",
+"US Stocks:Financials","US Stocks:Healthcare",
+"US Stocks:Financials","US Stocks:Consumer Discretionary",
+"US Stocks:Industrials","US Stocks:Technology",
+"US Stocks:Industrials","US Stocks:Consumer Staples",
+"US Stocks:Industrials","US Stocks:Real Estate",
+"US Stocks:Industrials","US Stocks:Utilities",
+"US Stocks:Industrials","US Stocks:Healthcare",
+"US Stocks:Industrials","US Stocks:Consumer Discretionary",
+"US Stocks:Technology","US Stocks:Consumer Staples",
+"US Stocks:Technology","US Stocks:Real Estate",
+"US Stocks:Technology","US Stocks:Utilities",
+"US Stocks:Technology","US Stocks:Healthcare",
+"US Stocks:Technology","US Stocks:Consumer Discretionary"
+"US Stocks:Consumer Staples","US Stocks:Real Estate",
+"US Stocks:Consumer Staples","US Stocks:Utilities",
+"US Stocks:Consumer Staples","US Stocks:Healthcare",
+"US Stocks:Consumer Staples","US Stocks:Consumer Discretionary"
+"US Stocks:Real Estate","US Stocks:Utilities",
+"US Stocks:Real Estate","US Stocks:Healthcare",
+"US Stocks:Real Estate","US Stocks:Consumer Discretionary",
+"US Stocks:Utilities","US Stocks:Healthcare",
+"US Stocks:Utilities","US Stocks:Consumer Discretionary",
+"US Stocks:Healthcare","US Stocks:Consumer Discretionary",
+
+# Global Stocks
+#   Asia
+#   Developed Markets
+#   Emerging Markets
+#   Europe
+
+# Correlation between investment options in Asset Class vs Subclass
+# Asset Class:Asset Subclass
+"Global Stocks","Global Stocks:Asia",
+"Global Stocks","Global Stocks:Developed Markets",
+"Global Stocks","Global Stocks:Emerging Markets",
+"Global Stocks","Global Stocks:Europe",
+"Global Stocks","Global Stocks:EX-US",
+
+# Correlation between investment options in same Asset Subclass
+# Asset Subclass:Asset Subclass
+"Global Stocks:Asia","Global Stocks:Asia","1"
+"Global Stocks:Developed Markets","Global Stocks:Developed Markets","1"
+"Global Stocks:Emerging Markets","Global Stocks:Emerging Markets","1"
+"Global Stocks:Europe","Global Stocks:Europe","1"
+"Global Stocks:EX-US","Global Stocks:EX-US","1"
+
+# Correlation between investment options in same Asset Class but different Subclass
+# Asset Subclass:Asset Subclass
+"Global Stocks:Asia","Global Stocks:Developed Markets",
+"Global Stocks:Asia","Global Stocks:Emerging Markets",
+"Global Stocks:Asia","Global Stocks:Europe",
+"Global Stocks:Asia","Global Stocks:EX-US",
+"Global Stocks:Developed Markets","Global Stocks:Emerging Markets",
+"Global Stocks:Developed Markets","Global Stocks:Europe",
+"Global Stocks:Developed Markets","Global Stocks:EX-US",
+"Global Stocks:Emerging Markets","Global Stocks:Europe",
+"Global Stocks:Emerging Markets","Global Stocks:EX-US",
+"Global Stocks:Europe","Global Stocks:EX-US",
+
+# Bonds
+#   Investment Grade Corp
+#   Long Term Treasury
+#   High Yield
+#   Global
+#   Preferred Stock
+
+# Correlation between investment options in Asset Class vs Subclass
+# Asset Class:Asset Subclass
+"Bonds","Bonds:Investment Grade",
+"Bonds","Bonds:Long Term Treasury",
+"Bonds","Bonds:High Yield",
+"Bonds","Bonds:Global",
+"Bonds","Bonds:Preferred Stock",
+
+# Correlation between investment options in same Asset Subclass
+# Asset Subclass:Asset Subclass
+"Bonds:Investment Grade","Bonds:Investment Grade","1"
+"Bonds:Long Term Treasury","Bonds:Long Term Treasury","1"
+"Bonds:High Yield","Bonds:High Yield","1"
+"Bonds:Global","Bonds:Global","1"
+"Bonds:Preferred Stock","Bonds:Preferred Stock,"1"
+
+# Correlation between investment options in same Asset Class but different Subclass
+# Asset Subclass:Asset Subclass
+"Bonds:Investment Grade","Bonds:Long Term Treasury",
+"Bonds:Investment Grade","Bonds:High Yield",
+"Bonds:Investment Grade","Bonds:Global",
+"Bonds:Investment Grade","Bonds:Preferred Stock"
+"Bonds:Long Term Treasury","Bonds:High Yield",
+"Bonds:Long Term Treasury","Bonds:Global",
+"Bonds:Long Term Treasury","Bonds:Preferred Stock"
+"Bonds:High Yield","Bonds:Global",
+"Bonds:High Yield","Bonds:Preferred Stock",
+"Bonds:Global","Bonds:Preferred Stock",
+
+# Cash Equivalents
+#   Money Markets
+#   Treasury Bills (Maturity ranges from a few days to 52 weeks)
+#   Short Term Gov Bonds
+
+# Correlation between investment options in Asset Class vs Subclass
+# Asset Class:Asset Subclass
+"Cash Equivalents","Cash Equivalents:Money Markets",
+"Cash Equivalents","Cash Equivalents:Treasury Bills",
+"Cash Equivalents","Cash Equivalents:Short Term Gov Bonds",
+
+# Correlation between investment options in same Asset Subclass
+# Asset Subclass:Asset Subclass
+"Cash Equivalents:Money Markets","Cash Equivalents:Money Markets","1"
+"Cash Equivalents:Treasury Bills","Cash Equivalents:Treasury Bills","1"
+"Cash Equivalents:Short Term Gov Bonds","Cash Equivalents:Short Term Gov Bonds","1"
+
+# Correlation between investment options in same Asset Class but different Subclass
+# Asset Subclass:Asset Subclass
+"Cash Equivalents:Money Markets","Cash Equivalents:Treasury Bills",
+"Cash Equivalents:Money Markets","Cash Equivalents:Short Term Gov Bonds",
+"Cash Equivalents:Treasury Bills","Cash Equivalents:Short Term Gov Bonds",
+
+# Real Estate
+#   REIT
+#   Real Estate Funds
+
+# Correlation between investment options in Asset Class vs Subclass
+# Asset Class:Asset Subclass
+"Real Estate","Real Estate:REIT",
+"Real Estate","Real Estate:Real Estate Funds",
+
+# Correlation between investment options in same Asset Subclass
+# Asset Subclass:Asset Subclass
+"Real Estate:REIT","Real Estate:REIT","1"
+"Real Estate:Real Estate Funds","Real Estate:Real Estate Funds","1"
+
+# Correlation between investment options in same Asset Class but different Subclass
+# Asset Subclass:Asset Subclass
+"Real Estate:REIT","Real Estate:Real Estate Funds",
+
+# Commodities
+#   Gold
+#   Silver
+#   Cooper
+#   Platinum
+#   Palladium
+#   Oil
+#   Natural Gas
+#   Gasoline
+#   Corn
+#   Sugar
+#   Agriculture
+#   Base Metals
+#   Energy
+#   Precious Metals
+
+# Correlation between investment options in Asset Class vs Subclass
+# Asset Class:Asset Subclass
+"Commodities","Commodities:Gold",
+"Commodities","Commodities:Silver",
+"Commodities","Commodities:Cooper",
+"Commodities","Commodities:Platinum",
+"Commodities","Commodities:Palladium",
+"Commodities","Commodities:Oil",
+"Commodities","Commodities:Natural Gas",
+"Commodities","Commodities:Gasoline",
+"Commodities","Commodities:Corn",
+"Commodities","Commodities:Sugar",
+"Commodities","Commodities:Agriculture",
+"Commodities","Commodities:Base Metals",
+"Commodities","Commodities:Energy",
+"Commodities","Commodities:Precious Metals",
+
+# Correlation between investment options in same Asset Subclass
+# Asset Subclass:Asset Subclass
+"Commodities:Gold","Commodities:Gold","1"
+"Commodities:Silver","Commodities:Silver","1"
+"Commodities:Cooper","Commodities:Cooper","1"
+"Commodities:Platinum","Commodities:Platinum","1"
+"Commodities:Palladium","Commodities:Palladium","1"
+"Commodities:Oil","Commodities:Oil","1"
+"Commodities:Natural Gas","Commodities:Natural Gas","1"
+"Commodities:Gasoline","Commodities:Gasoline","1"
+"Commodities:Corn","Commodities:Corn","1"
+"Commodities:Sugar","Commodities:Sugar","1"
+"Commodities:Agriculture","Commodities:Agriculture","1"
+"Commodities:Base Metals","Commodities:Base Metals","1"
+"Commodities:Energy","Commodities:Energy","1"
+"Commodities:Precious Metals","Commodities:Precious Metals","1"
+
+# Correlation between investment options in same Asset Class but different Subclass
+# Asset Subclass:Asset Subclass
+"Commodities:Gold","Commodities:Silver",
+"Commodities:Gold","Commodities:Cooper",
+"Commodities:Gold","Commodities:Platinum",
+"Commodities:Gold","Commodities:Palladium",
+"Commodities:Gold","Commodities:Oil",
+"Commodities:Gold","Commodities:Natural Gas",
+"Commodities:Gold","Commodities:Gasoline",
+"Commodities:Gold","Commodities:Corn",
+"Commodities:Gold","Commodities:Sugar",
+"Commodities:Gold","Commodities:Agriculture",
+"Commodities:Gold","Commodities:Base Metals",
+"Commodities:Gold","Commodities:Energy",
+"Commodities:Gold","Commodities:Precious Metals",
+"Commodities:Silver","Commodities:Cooper",
+"Commodities:Silver","Commodities:Platinum",
+"Commodities:Silver","Commodities:Palladium",
+"Commodities:Silver","Commodities:Oil",
+"Commodities:Silver","Commodities:Natural Gas",
+"Commodities:Silver","Commodities:Gasoline",
+"Commodities:Silver","Commodities:Corn",
+"Commodities:Silver","Commodities:Sugar",
+"Commodities:Silver","Commodities:Agriculture",
+"Commodities:Silver","Commodities:Base Metals",
+"Commodities:Silver","Commodities:Energy",
+"Commodities:Silver","Commodities:Precious Metals",
+"Commodities:Cooper","Commodities:Platinum",
+"Commodities:Cooper","Commodities:Palladium",
+"Commodities:Cooper","Commodities:Oil",
+"Commodities:Cooper","Commodities:Natural Gas",
+"Commodities:Cooper","Commodities:Gasoline",
+"Commodities:Cooper","Commodities:Corn",
+"Commodities:Cooper","Commodities:Sugar",
+"Commodities:Cooper","Commodities:Agriculture",
+"Commodities:Cooper","Commodities:Base Metals",
+"Commodities:Cooper","Commodities:Energy",
+"Commodities:Cooper","Commodities:Precious Metals",
+"Commodities:Platinum","Commodities:Palladium",
+"Commodities:Platinum","Commodities:Oil",
+"Commodities:Platinum","Commodities:Natural Gas",
+"Commodities:Platinum","Commodities:Gasoline",
+"Commodities:Platinum","Commodities:Corn",
+"Commodities:Platinum","Commodities:Sugar",
+"Commodities:Platinum","Commodities:Agriculture",
+"Commodities:Platinum","Commodities:Base Metals",
+"Commodities:Platinum","Commodities:Energy",
+"Commodities:Platinum","Commodities:Precious Metals",
+"Commodities:Palladium","Commodities:Oil",
+"Commodities:Palladium","Commodities:Natural Gas",
+"Commodities:Palladium","Commodities:Gasoline",
+"Commodities:Palladium","Commodities:Corn",
+"Commodities:Palladium","Commodities:Sugar",
+"Commodities:Palladium","Commodities:Agriculture",
+"Commodities:Palladium","Commodities:Base Metals",
+"Commodities:Palladium","Commodities:Energy",
+"Commodities:Palladium","Commodities:Precious Metals",
+"Commodities:Oil","Commodities:Natural Gas",
+"Commodities:Oil","Commodities:Gasoline",
+"Commodities:Oil","Commodities:Corn",
+"Commodities:Oil","Commodities:Sugar",
+"Commodities:Oil","Commodities:Agriculture",
+"Commodities:Oil","Commodities:Base Metals",
+"Commodities:Oil","Commodities:Energy",
+"Commodities:Oil","Commodities:Precious Metals",
+"Commodities:Natural Gas","Commodities:Gasoline",
+"Commodities:Natural Gas","Commodities:Corn",
+"Commodities:Natural Gas","Commodities:Sugar",
+"Commodities:Natural Gas","Commodities:Agriculture",
+"Commodities:Natural Gas","Commodities:Base Metals",
+"Commodities:Natural Gas","Commodities:Energy",
+"Commodities:Natural Gas","Commodities:Precious Metals",
+"Commodities:Gasoline","Commodities:Corn",
+"Commodities:Gasoline","Commodities:Sugar",
+"Commodities:Gasoline","Commodities:Agriculture",
+"Commodities:Gasoline","Commodities:Base Metals",
+"Commodities:Gasoline","Commodities:Energy",
+"Commodities:Gasoline","Commodities:Precious Metals",
+"Commodities:Corn","Commodities:Sugar",
+"Commodities:Corn","Commodities:Agriculture",
+"Commodities:Corn","Commodities:Base Metals",
+"Commodities:Corn","Commodities:Energy",
+"Commodities:Corn","Commodities:Precious Metals",
+"Commodities:Sugar","Commodities:Agriculture",
+"Commodities:Sugar","Commodities:Base Metals",
+"Commodities:Sugar","Commodities:Energy",
+"Commodities:Sugar","Commodities:Precious Metals",
+"Commodities:Agriculture","Commodities:Base Metals",
+"Commodities:Agriculture","Commodities:Energy",
+"Commodities:Agriculture","Commodities:Precious Metals",
+"Commodities:Base Metals","Commodities:Energy",
+"Commodities:Base Metals","Commodities:Precious Metals",
+"Commodities:Energy","Commodities:Precious Metals",
+
+# Currencies
+#   US Dollar
+#   Euro
+#   Japanese Yen
+#   Swiss Franc
+#   Australian Dollar
+#   Canadian Dollar
+#   British Pound
+#   Chinese Yuan
+
+# Correlation between investment options in Asset Class vs Subclass
+# Asset Class:Asset Subclass
+"Currencies","Currencies:US Dollar",
+"Currencies","Currencies:Euro",
+"Currencies","Currencies:Japanese Yen",
+"Currencies","Currencies:Swiss Franc",
+"Currencies","Currencies:Australian Dollar",
+"Currencies","Currencies:Canadian Dollar",
+"Currencies","Currencies:British Pound",
+"Currencies","Currencies:Chinese Yuan",
+
+# Correlation between investment options in same Asset Subclass
+# Asset Subclass:Asset Subclass
+"Currencies:US Dollar","Currencies:US Dollar","1"
+"Currencies:Euro","Currencies:Euro","1"
+"Currencies:Japanese Yen","Currencies:Japanese Yen","1"
+"Currencies:Swiss Franc","Currencies:Swiss Franc","1"
+"Currencies:Australian Dollar","Currencies:Australian Dollar","1"
+"Currencies:Canadian Dollar","Currencies:Canadian Dollar","1"
+"Currencies:British Pound","Currencies:British Pound","1"
+"Currencies:Chinese Yuan","Currencies:Chinese Yuan","1"
+
+# Correlation between investment options in same Asset Class but different Subclass
+# Asset Subclass:Asset Subclass
+"Currencies:US Dollar","Currencies:Euro",
+"Currencies:US Dollar","Currencies:Japanese Yen",
+"Currencies:US Dollar","Currencies:Swiss Franc",
+"Currencies:US Dollar","Currencies:Australian Dollar",
+"Currencies:US Dollar","Currencies:Canadian Dollar",
+"Currencies:US Dollar","Currencies:British Pound",
+"Currencies:US Dollar","Currencies:Chinese Yuan",
+"Currencies:Euro","Currencies:Japanese Yen",
+"Currencies:Euro","Currencies:Swiss Franc",
+"Currencies:Euro","Currencies:Australian Dollar",
+"Currencies:Euro","Currencies:Canadian Dollar",
+"Currencies:Euro","Currencies:British Pound",
+"Currencies:Euro","Currencies:Chinese Yuan",
+"Currencies:Japanese Yen","Currencies:Swiss Franc",
+"Currencies:Japanese Yen","Currencies:Australian Dollar",
+"Currencies:Japanese Yen","Currencies:Canadian Dollar",
+"Currencies:Japanese Yen","Currencies:British Pound",
+"Currencies:Japanese Yen","Currencies:Chinese Yuan",
+"Currencies:Swiss Franc","Currencies:Australian Dollar",
+"Currencies:Swiss Franc","Currencies:Canadian Dollar",
+"Currencies:Swiss Franc","Currencies:British Pound",
+"Currencies:Swiss Franc","Currencies:Chinese Yuan",
+"Currencies:Australian Dollar","Currencies:Canadian Dollar",
+"Currencies:Australian Dollar","Currencies:British Pound",
+"Currencies:Australian Dollar","Currencies:Chinese Yuan",
+"Currencies:Canadian Dollar","Currencies:British Pound",
+"Currencies:Canadian Dollar","Currencies:Chinese Yuan",
+"Currencies:British Pound","Currencies:Chinese Yuan",
+
+#---------------------------- Mixed Subclasses ---------------------------------
+
+# Correlation between investment options in different Asset Class and different Subclass
+# Asset Subclass:Asset Subclass
+"US Stocks:Large Cap","Commodities:Gold",
+"US Stocks:Large Cap","Commodities:Oil",
+"US Stocks:Large Cap","Commodities:Natural Gas",
+"US Stocks:Large Cap","Real Estate:REIT",
+"US Stocks:Large Cap","Currencies:US Dollar",
+"Commodities:Gold","Commodities:Oil",
+"Commodities:Gold","Commodities:Natural Gas",
+"Commodities:Gold","Real Estate:REIT",
+"Commodities:Gold","Currencies:US Dollar",
+"Commodities:Oil","Commodities:Natural Gas",
+"Commodities:Oil","Real Estate:REIT",
+"Commodities:Oil","Currencies:US Dollar",
+"Commodities:Natural Gas","Real Estate:REIT",
+"Commodities:Natural Gas","Currencies:US Dollar",
+"Real Estate:REIT","Currencies:US Dollar",
