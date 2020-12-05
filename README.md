@@ -86,7 +86,10 @@ As a result, results may vary slightly between optimizations even when using the
 
 References
 
-https://www.blueskycapitalmanagement.com/portfolio-diversification-how-to-potentially-gain-better-returns-per-unit-of-risk/
-https://en.wikipedia.org/wiki/Modern_portfolio_theory https://link.springer.com/article/10.1057/jt.2009.5
-https://www.investopedia.com/terms/s/standarddeviation.asp https://en.wikipedia.org/wiki/Asset_classes https://en.wikipedia.org/wiki/Cash_and_cash_equivalents
+https://www.blueskycapitalmanagement.com/portfolio-diversification-how-to-potentially-gain-better-returns-per-unit-of-risk/  
+https://en.wikipedia.org/wiki/Modern_portfolio_theory  
+https://link.springer.com/article/10.1057/jt.2009.5  
+https://www.investopedia.com/terms/s/standarddeviation.asp  
+https://en.wikipedia.org/wiki/Asset_classes  
+https://en.wikipedia.org/wiki/Cash_and_cash_equivalents
 
