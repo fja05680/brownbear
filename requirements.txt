@@ -33,6 +33,7 @@ notebook==6.1.5
 numpy==1.19.4
 packaging==20.4
 pandas==1.1.4
+pandas_datareader==0.9.0
 pandocfilters==1.4.3
 parso==0.7.1
 pathlib==1.0.1

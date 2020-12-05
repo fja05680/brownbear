@@ -19,9 +19,7 @@ import math
 import brownbear as bb
 
 # brownbear project root dir
-ROOT = str(Path(pkg_resources.resource_filename('brownbear', '')).parent)
-print(ROOT)
-print(os.getcwd())
+ROOT = str(Path(os.getcwd().split('brownbear')[0] + '/brownbear'))
 
 # symbol cache location
 SYMBOL_CACHE = str(Path(ROOT + '/symbol-cache'))
