@@ -11,16 +11,17 @@ Features
     - Optimizes a portfolio for risk adjusted returns with an option to specify the minimum annual
       return rate
 
+Install
+
+    - git clone https://github.com/fja05680/brownbear.git
+    - cd brownbear
+    - sudo python setup.py install
+
 How to guide
 
-    - Install anaconda (see https://www.anaconda.com to get Jupter notebook. Or just install jupyter
-      notebook (see https://jupyter.org/)
-    - Create a subfolder under 'universe' for your investment options, aka your investment galaxy.
-      Within that folder, create the files investment-options.csv and asset-classes.csv.
-      investment-options.csv contains the investment options available for your investment
-      galaxy, or a subset of the options you wish to consider. asset-options.csv contains additional
-      asset classes for your galaxy, to extend the standard asset classes defined in
-      standard-asset-classes.csv. As an example, see securian-401k.
+    - Within jupyter notebook, naviate to brownbear/portfolios
+    - Click the folder for the portfolio type you are interested in analyzing.
+    - Open portfolio.ipynb.
     - Assign the variables investment_universe and risk_free_rate.
     - Specify custom portfolios using your investment options.
     - Assign the variable portfolio_option to point to the portfolio you wish to analyze
@@ -61,9 +62,9 @@ account that has a guaranteed return with zero (very small) risk. If no such opt
 set risk_free_rate to zero, i.e. risk_free_rate=0. For the sample securian-401k.csv, the risk free
 option is 'Minnesota Life General Account'.
 
-Standard Asset Classes
+Asset Classes
 
-Standard asset class mapping are specified in standard-asset-classes.csv.
+Standard asset classes and subclasses are specified within universe/asset-classes.csv.
 
     - US Stocks- aka equities are stocks and mutual funds, represent shares of ownership in publicly
       held companies
