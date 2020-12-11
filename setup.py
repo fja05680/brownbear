@@ -9,7 +9,7 @@ setup(
     description='A financial tool that can analyze and maximize investment portfolios on a risk adjusted basis.',
     author='Farrell Aultman',
     author_email='fja0568@gmail.com',
-    url='http://github.com/fja0568/brownbear',
+    url='https://github.com/fja05680/brownbear',
     packages=['brownbear'],
     include_package_data=True,
     license='MIT',
