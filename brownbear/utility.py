@@ -29,13 +29,29 @@ TRADING_DAYS_PER_YEAR = 252
 TRADING_DAYS_PER_MONTH = 20
 TRADING_DAYS_PER_WEEK = 5
 
+class dotdict(dict):
+    """ dot.notation access to dictionary attributes 
+        mydict = {'val':'it works'}
+        nested_dict = {'val':'nested works too'}
+        mydict = dotdict(mydict)
+        mydict.val
+        # 'it works'
+
+        mydict.nested = dotdict(nested_dict)
+        mydict.nested.val
+        #'nested works too'
+    """
+    __getattr__ = dict.get
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
+
 def print_full(x):
     pd.set_option('display.max_rows', len(x))
     print(x)
     pd.reset_option('display.max_rows')
 
 def correlation_map(df, method='log', days=None):
-    """ return correlation dataframe; show correlation map between symbols"""
+    """ return correlation dataframe; show correlation map between symbols """
 
     # default is all days
     if days is None:
