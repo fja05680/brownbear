@@ -722,17 +722,13 @@ def summary(df, portfolio_option, annual_ret, std_dev, sharpe_ratio):
 #####################################################################
 # SHOW PIE CHARTS
 
-def _add_weight_column(row, portfolio_option):
-    inv_opt = annual_ret = row['Investment Option']
-    return portfolio_option[inv_opt]
-
 def _show_pie_chart(df, portfolio_option, chart):
 
     title = '{} - by {}'.format(__m.portfolio_title, chart)
 
     if chart == 'Investment Option':
-        weights = df['Weight']
-        labels = df['Investment Option']
+        weights = list(df['Weight'])
+        labels = list(df['Investment Option'])
         plt.title(title)
     else:
         asset_classes = df['Asset Class']
@@ -766,6 +762,10 @@ def _show_pie_chart(df, portfolio_option, chart):
 
 def show_pie_charts(df, portfolio_option,
                     charts=['Investment Option', 'Asset Class', 'Asset Subclass']):
+
+    def _add_weight_column(row, portfolio_option):
+        inv_opt = row['Investment Option']
+        return portfolio_option[inv_opt]
 
     # if user specified a single chart, put it in a list
     if not isinstance(charts, list):  charts = [charts]
@@ -912,7 +912,7 @@ def optimizer(df, portfolio_option, constraints=None):
               adding a risk free asset does reduce the worst typical down year
               and black swawn percentages.
         """
-    
+
     for i, std_dev in enumerate(ml.std_devs):
         if math.isclose(std_dev, 0):
             print(risk_free_msg.format(ml.inv_opts[i]))
