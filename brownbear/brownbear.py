@@ -124,35 +124,31 @@ def fetch(investment_universe, risk_free_rate=0, annual_returns='Annual Returns'
     # Add Sharpe Ratio column
     inv_opts = _add_sharpe_ratio_column(inv_opts, risk_free_rate)
 
-    # create the asset classes csv file list, then read into a dataframe
-    # there are 2 places to look for asset-classes.csv files, under
-    # /universe/ and /portfolios and also the master asset-class.csv file
-    # which is under /universe/asset-class-galaxy
-    filepaths = [Path(bb.ROOT + '/universe/asset-class-galaxy/asset-classes.csv')]
-    for galaxy in investment_universe:
-        for subdir in ['/universe/', '/portfolios/']:
-            filepath = Path(bb.ROOT + subdir + galaxy + '/asset-classes.csv')
-            if (filepath not in filepaths) and os.path.isfile(filepath):
-                filepaths.append(filepath)
-    __m.correlation_table = _cvs_to_df(filepaths)
-
-    # save to module variables
-    __m.investment_universe = investment_universe.copy()
-    __m.risk_free_rate = risk_free_rate
-    __m.vola_column = vola
-    __m.ds_vola_column = ds_vola
-    # convert correlation table to dict for easier faster processing
-    __m.correlation_table = _correlation_table_to_dict()
+    # asset class table
     __m.asset_class_table = _cvs_to_df(
         [Path(bb.ROOT + '/universe/asset-class-galaxy/investment-options.csv')])
-    # add Annual Returns column to class-assets
+
+    # add Annual Returns column to asset class table
     if annual_returns in __m.asset_class_table.columns:
         __m.asset_class_table['Annual Returns'] = __m.asset_class_table[annual_returns]
     else:
         __m.asset_class_table['Annual Returns'] = __m.asset_class_table['5 Yr']
-    # add Sharpe Ratio column to class-assets
+
+    # add Sharpe Ratio column to asset class table
     __m.asset_class_table = _add_sharpe_ratio_column(__m.asset_class_table, risk_free_rate)
-    
+
+    # correlation table
+    __m.correlation_table = _cvs_to_df(
+        [Path(bb.ROOT + '/universe/asset-class-galaxy/asset-classes.csv')])
+    # convert correlation table to dict for easier faster processing
+    __m.correlation_table = _correlation_table_to_dict()
+
+    # set other module variables
+    __m.investment_universe = investment_universe.copy()
+    __m.risk_free_rate = risk_free_rate
+    __m.vola_column = vola
+    __m.ds_vola_column = ds_vola
+
     if clean:
         # remove any rows that have nan for column values
         inv_opts = inv_opts.dropna()

@@ -1,5 +1,4 @@
 # Description: Correlations for asset classes and asset subclasses
-# NOTE: Do NOT add custom asset classes here.  Create a custom asset csv file.
 
 # Format
 "Asset Class A","Asset Class B","Correlation"
@@ -69,6 +68,12 @@
 #   Canadian Dollar
 #   British Pound
 #   Chinese Yuan
+# Balanced
+#   Conservative Allocation (30/70)
+#   Moderate Allocation (40/60)
+#   Growth Allocation (60/40)
+#   Aggressive Allocation (80/20)
+
 
 #---------------------------- Top Level Classes --------------------------------
 
@@ -80,6 +85,7 @@
 # Commodities
 # Currencies
 # Managed Futures
+# Balanced
  
 # Correlation between investment options in same Asset Class
 "US Stocks","US Stocks","0.85"
@@ -90,6 +96,7 @@
 "Commodities","Commodities","1"
 "Currencies","Currencies","1"
 "Managed Futures","Managed Futures","1"
+"Balanced","Balanced","0.65"
 
 # Correlation between investment options in different Asset Classes
 "US Stocks","Global Stocks","0.85"
@@ -99,27 +106,35 @@
 "US Stocks","Commodities","0.57"
 "US Stocks","Currencies","-0.46"
 "US Stocks","Managed Futures",
+"US Stocks","Balanced",
 "Global Stocks","Bonds","-0.11"
 "Global Stocks","Cash Equivalents","0.00"
 "Global Stocks","Real Estate","0.58"
 "Global Stocks","Commodities","0.58"
 "Global Stocks","Currencies","-0.66"
 "Global Stocks","Managed Futures",
+"Global Stocks","Balanced",
 "Bonds","Cash Equivalents","0.11"
 "Bonds","Real Estate","0.30"
 "Bonds","Commodities","-0.25"
 "Bonds","Currencies","0.00"
 "Bonds","Managed Futures",
+"Bonds","Balanced",
 "Cash Equivalents","Real Estate","0.02"
 "Cash Equivalents","Commodities","0.07"
 "Cash Equivalents","Currencies","-0.08"
 "Cash Equivalents","Managed Futures",
+"Cash Equivalents","Balanced",
 "Real Estate","Commodities","0.25"
 "Real Estate","Currencies","-0.31"
 "Real Estate","Managed Futures",
+"Real Estate","Balanced",
 "Commodities","Currencies","-0.54"
 "Commodities","Managed Futures",
+"Commodities","Balanced",
 "Currencies","Managed Futures",
+"Currencies","Balanced",
+"Managed Futures","Balanced",
 
 #------------------------------ Subclasses -------------------------------------
 
@@ -575,6 +590,35 @@
 "Currencies:Canadian Dollar","Currencies:British Pound",
 "Currencies:Canadian Dollar","Currencies:Chinese Yuan",
 "Currencies:British Pound","Currencies:Chinese Yuan",
+
+# Balanced
+#   Conservative Allocation (30/70)
+#   Moderate Allocation (40/60)
+#   Growth Allocation (60/40)
+#   Aggressive Allocation (80/20)
+
+# Correlation between investment options in Asset Class vs Subclass
+# Asset Class:Asset Subclass
+"Balanced","Balanced:Conservative Allocation (30/70)",
+"Balanced","Balanced:Moderate Allocation (40/60)",
+"Balanced","Balanced:Growth Allocation (60/40)",
+"Balanced","Balanced:Aggressive Allocation (80/20)",
+
+# Correlation between investment options in same Asset Subclass
+# Asset Subclass:Asset Subclass
+"Balanced:Conservative Allocation (30/70)","Balanced:Conservative Allocation (30/70)","1"
+"Balanced:Moderate Allocation (40/60)","Balanced:Moderate Allocation (40/60)","1"
+"Balanced:Growth Allocation (60/40)","Balanced:Growth Allocation (60/40)","1"
+"Balanced:Aggressive Allocation (80/20)","Balanced:Aggressive Allocation (80/20)","1"
+
+# Correlation between investment options in same Asset Class but different Subclass
+# Asset Subclass:Asset Subclass
+"Balanced:Conservative Allocation (30/70)","Balanced:Moderate Allocation (40/60)",
+"Balanced:Conservative Allocation (30/70)","Balanced:Growth Allocation (60/40)",
+"Balanced:Conservative Allocation (30/70)","Balanced:Aggressive Allocation (80/20)",
+"Balanced:Moderate Allocation (40/60)","Balanced:Growth Allocation (60/40)",
+"Balanced:Moderate Allocation (40/60)","Balanced:Aggressive Allocation (80/20)",
+"Balanced:Growth Allocation (60/40)","Balanced:Aggressive Allocation (80/20)",
 
 #---------------------------- Mixed Subclasses ---------------------------------
 

@@ -1,0 +1,11 @@
+# Description: investment options
+
+# Format
+"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
+
+# Investment Options
+"EHC","Encompass Health","US Stocks:Healthcare","","","","","","","",""
+"RF","Regions Financial","US Stocks:Financials","","","","","","","",""
+"VMC","Vulcan Materials Company","US Stocks:Materials","","","","","","","",""
+"HIBB","Hibbett Sports","US Stocks:Consumer Discretionary","","","","","","","",""
+"ADTN","ADTRAN","US Stocks:Technology","","","","","","","",""

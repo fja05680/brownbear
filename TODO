@@ -1,3 +1,3 @@
-(1) Update Timeseries Data and csv files
-(2) Add Balanced and any other asset classes needed.  Use single source for asset classes.
-(3) For risk free rate, keep risk free rate specified by user and and scale remaining investments by what's left.
+(1) For risk free rate, keep risk free rate specified by user and and scale remaining investments by what's left.
+(2) Update FRS retirement performance and Syntech Securian.  Also classify FRS Balanced funds into Balanced asset subclasses.
+(3) Figure out install steps to get qgrid_widget working.

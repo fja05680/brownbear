@@ -1,104 +1,103 @@
-Company,Ticker
-Activision Blizzard,ATVI
-Adobe Inc.,ADBE
-Advanced Micro Devices,AMD
-Alexion Pharmaceuticals,ALXN
-Align Technology,ALGN
-Alphabet Inc. (Class A),GOOGL
-Alphabet Inc. (Class C),GOOG
-Amazon.com,AMZN
-Amgen,AMGN
-Analog Devices,ADI
-ANSYS,ANSS
-Apple Inc.,AAPL
-"Applied Materials, Inc.",AMAT
-ASML Holding,ASML
-Autodesk,ADSK
-"Automatic Data Processing, Inc.",ADP
-Baidu,BIDU
-Biogen,BIIB
-BioMarin Pharmaceutical Inc.,BMRN
-Booking Holdings,BKNG
-Broadcom Inc.,AVGO
-Cadence Design Systems,CDNS
-CDW,CDW
-Cerner Corporation,CERN
-"Charter Communications, Inc.",CHTR
-Check Point Software Technologies Ltd.,CHKP
-Cintas Corporation,CTAS
-Cisco Systems,CSCO
-Citrix Systems,CTXS
-Cognizant Technology Solutions Corporation,CTSH
-Comcast Corporation,CMCSA
-Copart,CPRT
-Costco Wholesale Corporation,COST
-CSX Corporation,CSX
-DexCom,DXCM
-DocuSign,DOCU
-"Dollar Tree, Inc.",DLTR
-eBay Inc.,EBAY
-Electronic Arts,EA
-Exelon Corporation,EXC
-Expedia Group,EXPE
-"Facebook, Inc.",FB
-Fastenal Company,FAST
-"Fiserv, Inc.",FISV
-Fox Corporation (Class A),FOXA
-Fox Corporation (Class B),FOX
-"Gilead Sciences, Inc.",GILD
-IDEXX Laboratories,IDXX
-"Illumina, Inc.",ILMN
-Incyte Corporation,INCY
-Intel Corporation,INTC
-Intuit,INTU
-Intuitive Surgical,ISRG
-JD.com,JD
-Keurig Dr Pepper Inc.,KDP
-KLA Corporation,KLAC
-Kraft Heinz Co,KHC
-Lam Research,LRCX
-Liberty Global (Class A),LBTYA
-Liberty Global (Class C),LBTYK
-Lululemon Athletica,LULU
-Marriott International,MAR
-Maxim Integrated Products,MXIM
-MercadoLibre,MELI
-Microchip Technology,MCHP
-"Micron Technology, Inc.",MU
-Microsoft Corporation,MSFT
-Moderna,MRNA
-Mondelēz International,MDLZ
-Monster Beverage Corporation,MNST
-"NetEase, Inc.",NTES
-Netflix,NFLX
-Nvidia Corporation,NVDA
-NXP Semiconductors N.V.,NXPI
-"O'Reilly Automotive, Inc.",ORLY
-PACCAR Inc.,PCAR
-"Paychex, Inc.",PAYX
-PayPal,PYPL
-"PepsiCo, Inc.",PEP
-Pinduoduo Inc.,PDD
-QUALCOMM,QCOM
-Regeneron Pharmaceuticals,REGN
-Ross Stores Inc.,ROST
-Seagen Inc.,SGEN
-"Sirius XM Radio, Inc.",SIRI
-"Skyworks Solutions, Inc.",SWKS
-Splunk,SPLK
-Starbucks Corporation,SBUX
-"Synopsys, Inc.",SNPS
-T-Mobile US,TMUS
-"Take-Two Interactive, Inc.",TTWO
-"Tesla, Inc.",TSLA
-Texas Instruments,TXN
-Trip.com Group,TCOM
-Ulta Beauty,ULTA
-Verisign,VRSN
-Verisk Analytics,VRSK
-Vertex Pharmaceuticals,VRTX
-"Walgreen Boots Alliance, Inc.",WBA
-"Workday, Inc.",WDAY
-"Xcel Energy, Inc.",XEL
-"Xilinx, Inc.",XLNX
-Zoom Video Communications,ZM
+Company,Ticker,GICS Sector,GICS Sub-Industry
+Activision Blizzard,ATVI,Communication Services,Interactive Home Entertainment
+Adobe Inc.,ADBE,Information Technology,Application Software
+Advanced Micro Devices,AMD,Information Technology,Semiconductors
+Alexion Pharmaceuticals,ALXN,Health Care,Pharmaceuticals
+Align Technology,ALGN,Health Care,Health Care Supplies
+Alphabet Inc. (Class A),GOOGL,Communication Services,Interactive Media & Services
+Alphabet Inc. (Class C),GOOG,Communication Services,Interactive Media & Services
+Amazon.com,AMZN,Consumer Discretionary,Internet & Direct Marketing Retail
+American Electric Power,AEP,Utilities,Electric Utilities
+Amgen,AMGN,Health Care,Biotechnology
+Analog Devices,ADI,Information Technology,Semiconductors
+Ansys,ANSS,Information Technology,Application Software
+Apple Inc.,AAPL,Information Technology,"Technology Hardware, Storage & Peripherals"
+"Applied Materials, Inc.",AMAT,Information Technology,Semiconductor Equipment
+ASML Holding,ASML,Information Technology,Semiconductor Equipment
+Atlassian,TEAM,Information Technology,Application Software
+Autodesk,ADSK,Information Technology,Application Software
+"Automatic Data Processing, Inc.",ADP,Information Technology,Data Processing & Outsourced Services
+Baidu,BIDU,Communication Services,Interactive Media & Services
+Biogen,BIIB,Health Care,Biotechnology
+Booking Holdings,BKNG,Consumer Discretionary,Internet & Direct Marketing Retail
+Broadcom Inc.,AVGO,Information Technology,Semiconductors
+Cadence Design Systems,CDNS,Information Technology,Application Software
+CDW,CDW,Information Technology,Technology Distributors
+Cerner Corporation,CERN,Health Care,Health Care Technology
+"Charter Communications, Inc.",CHTR,Communication Services,Cable & Satellite
+Check Point Software Technologies Ltd.,CHKP,Information Technology,Application Software
+Cintas Corporation,CTAS,Industrials,Diversified Support Services
+Cisco Systems,CSCO,Information Technology,Communications Equipment
+Cognizant Technology Solutions Corporation,CTSH,Information Technology,IT Consulting & Other Services
+Comcast Corporation,CMCSA,Communication Services,Cable & Satellite
+Copart,CPRT,Industrials,Diversified Support Services
+Costco Wholesale Corporation,COST,Consumer Staples,Hypermarkets & Super Centers
+CSX Corporation,CSX,Industrials,Railroads
+DexCom,DXCM,Health Care,Health Care Equipment
+DocuSign,DOCU,Information Technology,Application Software
+"Dollar Tree, Inc.",DLTR,Consumer Discretionary,General Merchandise Stores
+eBay Inc.,EBAY,Consumer Discretionary,Internet & Direct Marketing Retail
+Electronic Arts,EA,Communication Services,Interactive Home Entertainment
+Exelon Corporation,EXC,Utilities,Multi-Utilities
+"Facebook, Inc.",FB,Communication Services,Interactive Media & Services
+Fastenal Company,FAST,Industrials,Building Products
+"Fiserv, Inc.",FISV,Information Technology,Data Processing & Outsourced Services
+Fox Corporation (Class A),FOXA,Communication Services,Movies & Entertainment
+Fox Corporation (Class B),FOX,Communication Services,Movies & Entertainment
+"Gilead Sciences, Inc.",GILD,Health Care,Biotechnology
+Idexx Laboratories,IDXX,Health Care,Health Care Equipment
+"Illumina, Inc.",ILMN,Health Care,Life Sciences Tools & Services
+Incyte Corporation,INCY,Health Care,Biotechnology
+Intel Corporation,INTC,Information Technology,Semiconductors
+Intuit,INTU,Information Technology,Application Software
+Intuitive Surgical,ISRG,Health Care,Health Care Equipment
+JD.com,JD,Consumer Discretionary,Internet & Direct Marketing Retail
+Keurig Dr Pepper Inc.,KDP,Consumer Staples,Soft Drinks
+KLA Corporation,KLAC,Information Technology,Semiconductor Equipment
+Kraft Heinz Co,KHC,Consumer Staples,Packaged Foods & Meats
+Lam Research,LRCX,Information Technology,Semiconductor Equipment
+Lululemon Athletica,LULU,Consumer Discretionary,"Apparel, Accessories & Luxury Goods"
+Marriott International,MAR,Consumer Discretionary,"Hotels, Resorts & Cruise Lines"
+Marvell Technology Group,MRVL,Information Technology,Application Software
+Match Group,MTCH,Communication Services,Interactive Media & Services
+Maxim Integrated Products,MXIM,Information Technology,Semiconductors
+MercadoLibre,MELI,Consumer Discretionary,Internet & Direct Marketing Retail
+Microchip Technology,MCHP,Information Technology,Semiconductors
+"Micron Technology, Inc.",MU,Information Technology,Semiconductors
+Microsoft Corporation,MSFT,Information Technology,Systems Software
+Moderna,MRNA,Health Care,Biotechnology
+Mondelēz International,MDLZ,Consumer Staples,Packaged Foods & Meats
+Monster Beverage Corporation,MNST,Consumer Staples,Soft Drinks
+"NetEase, Inc.",NTES,Communication Services,Interactive Home Entertainment
+Netflix,NFLX,Communication Services,Movies & Entertainment
+Nvidia Corporation,NVDA,Information Technology,Semiconductors
+NXP Semiconductors,NXPI,Information Technology,Semiconductors
+"O'Reilly Automotive, Inc.",ORLY,Consumer Discretionary,Specialty Stores
+"Okta, Inc.",OKTA,Information Technology,Application Software
+Paccar,PCAR,Industrials,Construction Machinery & Heavy Trucks
+"Paychex, Inc.",PAYX,Information Technology,Data Processing & Outsourced Services
+PayPal,PYPL,Information Technology,Data Processing & Outsourced Services
+Peloton Interactive,PTON,Consumer Discretionary,Leisure Products
+"PepsiCo, Inc.",PEP,Consumer Staples,Soft Drinks
+Pinduoduo Inc.,PDD,Consumer Discretionary,Internet & Direct Marketing Retail
+Qualcomm,QCOM,Information Technology,Semiconductors
+Regeneron Pharmaceuticals,REGN,Health Care,Biotechnology
+"Ross Stores, Inc.",ROST,Consumer Discretionary,Apparel Retail
+Seagen Inc.,SGEN,Health Care,Biotechnology
+Sirius XM Holdings Inc.,SIRI,Communication Services,Broadcasting
+"Skyworks Solutions, Inc.",SWKS,Information Technology,Semiconductors
+Splunk,SPLK,Information Technology,Application Software
+Starbucks Corporation,SBUX,Consumer Discretionary,Restaurants
+"Synopsys, Inc.",SNPS,Information Technology,Application Software
+T-Mobile US,TMUS,Communication Services,Wireless Telecommunication Services
+"Tesla, Inc.",TSLA,Consumer Discretionary,Automobile Manufacturers
+Texas Instruments,TXN,Information Technology,Semiconductors
+Trip.com Group,TCOM,Consumer Discretionary,Internet & Direct Marketing Retail
+Verisign,VRSN,Information Technology,Internet Services & Infrastructure
+Verisk Analytics,VRSK,Industrials,Research & Consulting Services
+Vertex Pharmaceuticals,VRTX,Health Care,Biotechnology
+"Walgreen Boots Alliance, Inc.",WBA,Consumer Staples,Drug Retail
+"Workday, Inc.",WDAY,Information Technology,Application Software
+Xcel Energy Inc.,XEL,Utilities,Multi-Utilities
+"Xilinx, Inc.",XLNX,Information Technology,Semiconductors
+Zoom Video Communications,ZM,Information Technology,Application Software

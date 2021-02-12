@@ -11,6 +11,7 @@
 "Commodities","DBC"
 "Currencies","DBV"
 "Managed Futures","FUT"
+"Balanced","AOM"
 
 "US Stocks:Large Cap","SPY"
 "US Stocks:Mid Cap","MDY"
@@ -73,3 +74,8 @@
 "Currencies:Canadian Dollar","FXC"
 "Currencies:British Pound","FXB"
 "Currencies:Chinese Yuan","CYB"
+
+"Balanced:Conservative Allocation (30/70)","AOK"
+"Balanced:Moderate Allocation (40/60)","AOM"
+"Balanced:Growth Allocation (60/40)","AOR"
+"Balanced:Aggressive Allocation (80/20)","AOA"

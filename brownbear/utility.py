@@ -82,7 +82,7 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False):
     if start is None:
         start = datetime.datetime(2015, 1, 1)
     if end is None:
-        end = datetime.datetime.now()
+        end = datetime.datetime.now() - datetime.timedelta(1)
 
     if not os.path.exists(SYMBOL_CACHE):
         os.makedirs(SYMBOL_CACHE)  

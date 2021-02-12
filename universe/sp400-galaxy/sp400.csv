@@ -1,54 +1,51 @@
 Security,Ticker symbol,GICS Sector,GICS Sub-Industry,SEC filings
-Aaron's Inc.,AAN,Consumer Discretionary,Homefurnishing Retail,reports
 Acadia Healthcare,ACHC,Health Care,Health Care Facilities,reports
 ACI Worldwide,ACIW,Information Technology,Application Software,reports
 Adient plc,ADNT,Consumer Discretionary,Auto Parts & Equipment,reports
 Adtalem Global Education,ATGE,Consumer Discretionary,Education Services,reports
 AECOM,ACM,Industrials,Construction & Engineering,reports
 Affiliated Managers Group,AMG,Financials,Asset Management & Custody Banks,reports
+Alliance Data Systems Corp,ADS,Information Technology,Data Processing & Outsourced Services,reports
 American Campus Communities,ACC,Real Estate,Residential REITs,reports
 American Eagle Outfitters,AEO,Consumer Discretionary,Apparel Retail,reports
 American Financial Group,AFG,Financials,Multi-line Insurance,reports
 AGCO,AGCO,Industrials,Agricultural & Farm Machinery,reports
-Akorn,AKRX,Health Care,Pharmaceuticals,reports
+Apartment Income REIT Corp.,AIRC,Real Estate,Residential REITs,reports
 ALLETE Inc.,ALE,Utilities,Electric Utilities,reports
 Amedisys,AMED,Health Care,Health Care Services,reports
 Antero Midstream,AM,Energy,Oil & Gas Storage & Transportation,reports
-Apergy Corp.,APY,Energy,Oil & Gas Equipment & Services,reports
-Allegheny Technologies,ATI,Materials,Steel,reports
-AMC Networks,AMCX,Communication Services,Broadcasting,reports
+ChampionX Corporation,CHX,Energy,Oil & Gas Equipment & Services,reports
 AutoNation,AN,Consumer Discretionary,Automotive Retail,reports
 Arrow Electronics,ARW,Information Technology,Technology Distributors,reports
 ArrowHead Pharmaceuticals,ARWR,Health Care,Biotechnology,reports
 Associated Banc-Corp,ASB,Financials,Regional Banks,reports
 ASGN,ASGN,Industrials,Human Resource & Employment Services,reports
 Ashland Inc.,ASH,Materials,Diversified Chemicals,reports
-Atmos Energy,ATO,Utilities,Gas Utilities,reports
 AptarGroup Inc,ATR,Materials,Metal & Glass Containers,reports
 "Avanos Medical, Inc.",AVNS,Health Care,Health Care Supplies,reports
 Avnet,AVT,Information Technology,Technology Distributors,reports
 Acuity Brands,AYI,Industrials,Electrical Components & Equipment,reports
 Axon Enterprise,AAXN,Industrials,Aerospace & Defense,reports
-Bed Bath & Beyond,BBBY,Consumer Discretionary,Homefurnishing Retail,reports
 Brunswick Corporation,BC,Consumer Discretionary,Leisure Products,reports
 Brink's Company (The),BCO,Industrials,Security & Alarm Services,reports
 Belden Inc,BDC,Information Technology,Electronic Components,reports
-Bio-Rad Laboratories,BIO,Health Care,Life Sciences Tools & Services,reports
 BJ's Wholesale Club Holdings,BJ,Consumer Staples,Hypermarkets & Super Centers,reports
 Black Hills Corporation,BKH,Utilities,Multi-Utilities,reports
 Blackbaud,BLKB,Information Technology,Application Software,reports
 Bank of Hawaii,BOH,Financials,Regional Banks,reports
+"Brooks Automation, Inc.",BRKS,Information Technology,Semiconductor Equipment,reports
 Brown & Brown,BRO,Financials,Insurance Brokers,reports
 BancorpSouth,BXS,Financials,Regional Banks,reports
 Boyd Gaming,BYD,Consumer Discretionary,Casinos & Gaming,reports
 Brighthouse Financial,BHF,Financials,Life & Health Insurance,reports
 Brixmor Property Group,BRX,Real Estate,Retail REITs,reports
+"Builders FirstSource, Inc.",BLDR,Industrials,Building Products,reports
 Cable One Inc,CABO,Communication Services,Cable & Satellite,reports
 Cabot Microelectronics,CCMP,Information Technology,Semiconductor Equipment,reports
 Caesars Entertainment,CZR,Consumer Discretionary,Casinos & Gaming,reports
-Cheesecake Factory Inc,CAKE,Consumer Discretionary,Restaurants,reports
 Avis Budget Group,CAR,Industrials,Trucking,reports
 CACI International,CACI,Information Technology,IT Consulting & Other Services,reports
+Capri Holdings Ltd,CPRI,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",reports
 Casey's General Stores,CASY,Consumer Staples,Food Retail,reports
 Cathay General Bancorp,CATY,Financials,Regional Banks,reports
 Cimarex Energy,XEC,Energy,Oil & Gas Exploration & Production,reports
@@ -65,16 +62,16 @@ Choice Hotels International,CHH,Consumer Discretionary,"Hotels, Resorts & Cruise
 Churchill Downs Inc,CHDN,Consumer Discretionary,Casinos & Gaming,reports
 Ciena Corp,CIEN,Information Technology,Communications Equipment,reports
 CIT Group,CIT,Financials,Regional Banks,reports
-Core Laboratories,CLB,Energy,Oil & Gas Equipment & Services,reports
-CoreLogic,CLGX,Information Technology,Data Processing & Outsourced Services,reports
+CoreLogic,CLGX,Industrials,Diversified Support Services,reports
 Clean Harbors Inc,CLH,Industrials,Environmental & Facilities Services,reports
-Mack-Cali Realty Corporation,CLI,Real Estate,Office REITs,reports
 Commercial Metals Company,CMC,Materials,Steel,reports
 Cantel Medical Corporation,CMD,Health Care,Health Care Equipment,reports
 Compass Minerals International Inc.,CMP,Materials,Diversified Metals & Mining,reports
 Cinemark Holdings Inc,CNK,Communication Services,Movies & Entertainment,reports
 CNO Financial Group,CNO,Financials,Life & Health Insurance,reports
 "Coherent, Inc.",COHR,Information Technology,Electronic Equipment & Instruments,reports
+Concentrix Corp,CNXC,Information Technology,Data Processing & Outsourced Services,reports
+Coty Inc.,COTY,Consumer Staples,Personal Products,reports
 CyrusOne,CONE,Real Estate,Specialized REITs,reports
 Columbia Sportswear,COLM,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",reports
 CoreSite Realty,COR,Real Estate,Specialized REITs,reports
@@ -83,41 +80,31 @@ Crane Co.,CR,Industrials,Industrial Machinery,reports
 Cree Inc,CREE,Information Technology,Semiconductors,reports
 "Carter's, Inc.",CRI,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",reports
 Charles River Laboratories,CRL,Health Care,Life Sciences Tools & Services,reports
-Carpenter Technology,CRS,Materials,Steel,reports
 Cirrus Logic Inc,CRUS,Information Technology,Semiconductors,reports
 CNX Resources Corp,CNX,Energy,Oil & Gas Exploration & Production,reports
 Carlisle Companies Inc.,CSL,Industrials,Industrial Conglomerates,reports
-Catalent Inc,CTLT,Health Care,Pharmaceuticals,reports
 Cousins Properties Inc,CUZ,Real Estate,Office REITs,reports
 CommVault Systems,CVLT,Information Technology,Systems Software,reports
-CoreCivic,CXW,Real Estate,Diversified REITs,reports
 Curtiss-Wright Corp,CW,Industrials,Aerospace & Defense,reports
 Cracker Barrel,CBRL,Consumer Discretionary,Restaurants,reports
 Dana Incorporated,DAN,Consumer Discretionary,Auto Parts & Equipment,reports
 Darling Ingredients,DAR,Consumer Staples,Agricultural Products,reports
 Donaldson Co,DCI,Industrials,Industrial Machinery,reports
-Dillard's Inc,DDS,Consumer Discretionary,Department Stores,reports
 Deckers Outdoor Corporation,DECK,Consumer Discretionary,Footwear,reports
 "Douglas Emmett, Inc.",DEI,Real Estate,Office REITs,reports
 Dick's Sporting Goods Inc,DKS,Consumer Discretionary,Specialty Stores,reports
-Delphi Technologies PLC,DLPH,Consumer Discretionary,Auto Parts & Equipment,reports
-Deluxe Corporation,DLX,Industrials,Commercial Printing,reports
-Dunkin' Brands Group Inc,DNKN,Consumer Discretionary,Restaurants,reports
-NOW Inc,DNOW,Industrials,Trading Companies & Distributors,reports
-Domino's Pizza Inc,DPZ,Consumer Discretionary,Restaurants,reports
 Dycom Industries Inc,DY,Industrials,Construction & Engineering,reports
-Brinker International Inc,EAT,Consumer Discretionary,Restaurants,reports
 EastGroup Properties Inc,EGP,Real Estate,Industrial REITs,reports
 Encompass Health Corp.,EHC,Health Care,Health Care Facilities,reports
 Emcor,EME,Industrials,Construction & Engineering,reports
+Emergent BioSolutions Inc.,EBS,Health Care,Biotechnology,reports
 Energizer Holdings Inc,ENR,Consumer Staples,Household Products,reports
 EnerSys,ENS,Industrials,Electrical Components & Equipment,reports
 Edgewell Personal Care Company,EPC,Consumer Staples,Household Products,reports
 EPR Properties,EPR,Real Estate,Specialized REITs,reports
 EQT,EQT,Energy,Oil & Gas Exploration & Production,reports
-Eldorado Resorts,ERI,Consumer Discretionary,Casinos & Gaming,reports
 Equitrans Midstream Corp,ETRN,Energy,Oil & Gas Storage & Transportation,reports
-Etsy,ETSY,Consumer Discretionary,Internet & Direct Marketing Retail,reports
+Essent Group Ltd.,ESNT,Financials,Thrifts & Mortgage Finance,reports
 Eaton Vance Corp,EV,Financials,Asset Management & Custody Banks,reports
 Evercore,EVR,Financials,Investment Banking & Brokerage,reports
 East West Bancorp Inc,EWBC,Financials,Regional Banks,reports
@@ -129,7 +116,7 @@ FirstCash,FCFS,Financials,Consumer Finance,reports
 First Financial Bankshares Inc,FFIN,Financials,Regional Banks,reports
 First Horizon National Corp,FHN,Financials,Regional Banks,reports
 Fair Isaac Corporation,FICO,Information Technology,Application Software,reports
-Federated Investors,FII,Financials,Asset Management & Custody Banks,reports
+"Federated Hermes, Inc",FHI,Financials,Asset Management & Custody Banks,reports
 Five Below,FIVE,Consumer Discretionary,Specialty Stores,reports
 Flowers Foods Inc.,FLO,Consumer Staples,Packaged Foods & Meats,reports
 Fluor Corp.,FLR,Industrials,Construction & Engineering,reports
@@ -137,35 +124,42 @@ First Industrial Realty Trust,FR,Real Estate,Industrial REITs,reports
 FNB Corporation,FNB,Financials,Regional Banks,reports
 First Solar,FSLR,Information Technology,Semiconductors,reports
 Foot Locker,FL,Consumer Discretionary,Apparel Retail,reports
+Fox Factory Holding Corp,FOXF,Consumer Discretionary,Auto Parts & Equipment,reports
 FTI Consulting Inc,FCN,Industrials,Research & Consulting Services,reports
 Fulton Financial Corporation,FULT,Financials,Regional Banks,reports
 GATX Corp.,GATX,Industrials,Construction Machinery & Heavy Trucks,reports
+"Glacier Bancorp, Inc.",GBCI,Financials,Regional Banks,reports
 "Greif, Inc.",GEF,Materials,Metal & Glass Containers,reports
-GEO Group Inc.,GEO,Real Estate,Specialized REITs,reports
 Graco Inc.,GGG,Industrials,Industrial Machinery,reports
 Grand Canyon Education,LOPE,Consumer Discretionary,Education Services,reports
 Graham Holdings Company,GHC,Consumer Discretionary,Education Services,reports
-GameStop Corp.,GME,Consumer Discretionary,Computer & Electronics Retail,reports
 Globus Medical Inc.,GMED,Health Care,Health Care Equipment,reports
 Generac Holdings Inc.,GNRC,Industrials,Electrical Components & Equipment,reports
 Gentex Corp.,GNTX,Consumer Discretionary,Auto Parts & Equipment,reports
 Genworth Financial,GNW,Financials,Multi-line Insurance,reports
 Goodyear Tire & Rubber,GT,Consumer Discretionary,Tires & Rubber,reports
+Grocery Outlet Holding Corp.,GO,Consumer Staples,Food Retail,reports
 Grubhub,GRUB,Consumer Discretionary,Internet & Direct Marketing Retail,reports
 Haemonetics,HAE,Health Care,Health Care Supplies,reports
 Hain Celestial Group,HAIN,Consumer Staples,Packaged Foods & Meats,reports
+"Halozyme Therapeutics, Inc.",HALO,Health Care,Life Sciences Tools & Services,reports
 Hancock Whitney Corp,HWC,Financials,Regional Banks,reports
+"Harley-Davidson, Inc.",HOG,Consumer Discretionary,Motorcycle Manufacturers,reports
 Healthcare Services Group,HCSG,Industrials,Diversified Support Services,reports
 Hawaiian Electric Industries,HE,Utilities,Electric Utilities,reports
 Helen of Troy Limited,HELE,Consumer Discretionary,Household Appliances,reports
+Hexcel Corp,HXL,Industrials,Aerospace & Defense,reports
 Highwoods Properties,HIW,Real Estate,Office REITs,reports
 HNI Corporation,HNI,Industrials,Office Services & Supplies,reports
 Home BancShares Inc,HOMB,Financials,Regional Banks,reports
-Hospitality Properties Trust,HPT,Real Estate,Specialized REITs,reports
+Service Properties Trust,SVC,Real Estate,Specialized REITs,reports
 HealthEquity,HQY,Health Care,Managed Health Care,reports
 Healthcare Realty Trust,HR,Real Estate,Health Care REITs,reports
+H&R Block Inc,HRB,Consumer Discretionary,Specialized Consumer Services,reports
 Hill-Rom Holdings Inc.,HRC,Health Care,Life Sciences Tools & Services,reports
 Hubbell Incorporated,HUBB,Industrials,Industrial Machinery,reports
+"Hudson Pacific Properties, Inc.",HPP,Financials,Office REITs,reports
+"IAA, Inc.",IAA,Industrials,Diversified Support Services,reports
 ICU Medical,ICUI,Health Care,Health Care Supplies,reports
 Idacorp Inc.,IDA,Utilities,Electric Utilities,reports
 II-VI,IIVI,Information Technology,Electronic Components,reports
@@ -177,12 +171,12 @@ Intl Bancshares Corp,IBOC,Financials,Regional Banks,reports
 InterDigital Inc.,IDCC,Information Technology,Communications Equipment,reports
 Ingredion Inc,INGR,Consumer Staples,Agricultural Products,reports
 World Fuel Services Corp,INT,Energy,Oil & Gas Refining & Marketing,reports
-International Speedway Corporation,ISCA,Consumer Discretionary,Leisure Facilities,reports
 ITT Inc,ITT,Industrials,Industrial Machinery,reports
 Jack in the Box Inc.,JACK,Consumer Discretionary,Restaurants,reports
 JBG Smith Properties,JBGS,Real Estate,Office REITs,reports
 Jabil Circuit Inc,JBL,Information Technology,Electronic Manufacturing Services,reports
 Janus Henderson,JHG,Financials,Asset Management & Custody Banks,reports
+Jazz Pharmaceuticals plc,JAZZ,Health Care,Pharmaceuticals,reports
 Jefferies Financial Group,JEF,Financials,Multi-Sector Holdings,reports
 JetBlue Airways Corp,JBLU,Industrials,Airlines,reports
 j2 Global Inc.,JCOM,Information Technology,Application Software,reports
@@ -190,24 +184,26 @@ Jones Lang Lasalle Inc,JLL,Real Estate,Real Estate Services,reports
 John Wiley & Sons,JW.A,Communication Services,Publishing,reports
 KAR Auction Services,KAR,Industrials,Diversified Support Services,reports
 KB Home,KBH,Consumer Discretionary,Homebuilding,reports
-KBR Inc,KBR,Industrials,Construction & Engineering,reports
+KBR Inc,KBR,Information Technology,IT Consulting & Other Services,reports
 Kirby Corporation,KEX,Industrials,Marine,reports
 Kemper Corporation,KMPR,Financials,Multi-line Insurance,reports
 Kennametal Inc,KMT,Industrials,Industrial Machinery,reports
+"Kinsale Capital Group, Inc.",KNSL,Financials,Property & Casualty Insurance,reports
 Knight-Swift,KNX,Industrials,Trucking,reports
 Kilroy Realty Corp,KRC,Real Estate,Office REITs,reports
+Kohls Corp,KSS,Consumer Discretionary,General Merchandise Stores,reports
 LHC Group,LHCG,Health Care,Health Care Services,reports
 Lamar Advertising Company,LAMR,Real Estate,Diversified REITs,reports
 Lancaster Colony Corp,LANC,Consumer Staples,Packaged Foods & Meats,reports
 Lear,LEA,Consumer Discretionary,Auto Parts & Equipment,reports
 Ligand Pharmaceuticals,LGND,Health Care,Biotechnology,reports
 Lincoln Electric Holdings Inc,LECO,Industrials,Industrial Machinery,reports
+Lithia Motors Inc,LAD,Consumer Discretionary,Automotive Retail,reports
 Littelfuse Inc,LFUS,Information Technology,Electronic Components,reports
 Lennox International Inc,LII,Industrials,Building Products,reports
 Lumentum Holdings,LITE,Information Technology,Communications Equipment,reports
 LivaNova,LIVN,Health Care,Health Care Equipment,reports
 LiveRamp,RAMP,Information Technology,Application Software,reports
-Legg Mason Inc,LM,Financials,Asset Management & Custody Banks,reports
 Louisiana-Pacific Corp,LPX,Materials,Forest Products,reports
 Life Storage Inc,LSI,Real Estate,Specialized REITs,reports
 Landstar System Inc,LSTR,Industrials,Trucking,reports
@@ -215,11 +211,12 @@ Macerich,MAC,Real Estate,Retail REITs,reports
 ManpowerGroup,MAN,Industrials,Human Resource & Employment Services,reports
 Manhattan Associates Inc.,MANH,Information Technology,Application Software,reports
 Masimo,MASI,Health Care,Health Care Equipment,reports
+"Medpace Holdings, Inc.",MEDP,Health Care,Biotechnology,reports
 Mercury General Corp,MCY,Financials,Property & Casualty Insurance,reports
-MEDNAX Inc,MD,Health Care,Health Care Services,reports
-Meredith Corp,MDP,Communication Services,Publishing,reports
-Allscripts Healthcare Solutions Inc,MDRX,Health Care,Health Care Technology,reports
+Mercury Systems Inc,MRCY,Industrials,Electrical Components & Equipment,reports
 MDU Resources Group Inc,MDU,Utilities,Multi-Utilities,reports
+Mgic Investment Corp,MTG,Financials,Reinsurance,reports
+Middleby Corp,MIDD,Industrials,Industrial Machinery,reports
 MKS Instruments,MKSI,Information Technology,Semiconductor Equipment,reports
 "Miller, Herman Inc",MLHR,Industrials,Office Services & Supplies,reports
 Maximus Inc,MMS,Information Technology,Data Processing & Outsourced Services,reports
@@ -228,7 +225,6 @@ Medical Properties Trust Inc,MPW,Real Estate,Health Care REITs,reports
 Monolithic Power Systems Inc,MPWR,Information Technology,Semiconductors,reports
 MSA Safety Inc,MSA,Industrials,Office Services & Supplies,reports
 MSC Industrial Direct A,MSM,Industrials,Trading Companies & Distributors,reports
-Matador Resources,MTDR,Energy,Oil & Gas Exploration & Production,reports
 Mattel,MAT,Consumer Discretionary,Leisure Products,reports
 Minerals Technologies Inc,MTX,Materials,Specialty Chemicals,reports
 MasTec,MTZ,Industrials,Construction & Engineering,reports
@@ -238,19 +234,20 @@ National Instruments Corp,NATI,Information Technology,Electronic Equipment & Ins
 Navient Corp.,NAVI,Financials,Consumer Finance,reports
 NCR Corp,NCR,Information Technology,IT Consulting & Other Services,reports
 Nordson Corp,NDSN,Industrials,Industrial Machinery,reports
+Neogen Corp,NEOG,Health Care,Health Care Supplies,reports
 NewMarket Corporation,NEU,Materials,Specialty Chemicals,reports
 National Fuel Gas,NFG,Utilities,Gas Utilities,reports
 New Jersey Resources,NJR,Utilities,Gas Utilities,reports
 Nektar Therapeutics,NKTR,Health Care,Biotechnology,reports
 National Retail Properties Inc,NNN,Real Estate,Retail REITs,reports
 NetScout Systems,NTCT,Information Technology,Communications Equipment,reports
+Nordstrom Inc,JWN,Consumer Discretionary,Department Stores,reports
 Nu Skin Enterprises,NUS,Consumer Staples,Personal Products,reports
 NuVasive Inc,NUVA,Health Care,Health Care Equipment,reports
 nVent Electric plc,NVT,Industrials,Electrical Components & Equipment,reports
 NorthWestern Corporation,NWE,Utilities,Multi-Utilities,reports
 New York Community Bancorp Inc,NYCB,Financials,Thrifts & Mortgage Finance,reports
 New York Times Company,NYT,Communication Services,Publishing,reports
-Office Depot Inc,ODP,Consumer Discretionary,Specialty Stores,reports
 Corporate Office Properties Trust,OFC,Real Estate,Office REITs,reports
 OGE Energy Corp,OGE,Utilities,Multi-Utilities,reports
 ONE Gas,OGS,Utilities,Gas Utilities,reports
@@ -265,7 +262,10 @@ Owens Corning,OC,Industrials,Building Products,reports
 Bank OZK,OZK,Financials,Regional Banks,reports
 PacWest Bancorp,PACW,Financials,Regional Banks,reports
 Park Hotels & Resorts,PK,Real Estate,Hotel & Resort REITs,reports
-PBF Energy Inc,PBF,Energy,Oil & Gas Refining & Marketing,reports
+Paylocity Holding Corp,PCTY,Information Technology,Application Software,reports
+Perspecta Inc.,PRSP,Information Technology,IT Consulting & Other Services,reports
+Physicians Realty Trust,DOC,Real Estate,Health Care REITs,reports
+"PROG Holdings, Inc.",PRG,Financials,Specialized Finance,reports
 Prosperity Bancshares Inc,PB,Financials,Regional Banks,reports
 Prestige Brands Holdings Inc,PBH,Health Care,Pharmaceuticals,reports
 Potlatch Corp,PCH,Real Estate,Specialized REITs,reports
@@ -277,38 +277,41 @@ Pilgrim's Pride,PPC,Consumer Staples,Packaged Foods & Meats,reports
 Polaris Industries Inc,PII,Consumer Discretionary,Leisure Products,reports
 Pinnacle Financial Partners,PNFP,Financials,Regional Banks,reports
 PNM Resources,PNM,Utilities,Electric Utilities,reports
-PolyOne Corp,POL,Materials,Specialty Chemicals,reports
-Pool Corp,POOL,Consumer Discretionary,Distributors,reports
+Avient Corporation,AVNT,Materials,Specialty Chemicals,reports
 Post Holdings Inc,POST,Consumer Staples,Packaged Foods & Meats,reports
 PRA Health Sciences,PRAH,Health Care,Life Sciences Tools & Services,reports
 PS Business Parks,PSB,Real Estate,Diversified REITs,reports
 Primerica Inc,PRI,Financials,Life & Health Insurance,reports
 PTC Inc,PTC,Information Technology,Application Software,reports
-Patterson-UTI Energy,PTEN,Energy,Oil & Gas Drilling,reports
 Papa John's International Inc,PZZA,Consumer Discretionary,Restaurants,reports
+"Qualys, Inc.",QLYS,Information Technology,Systems Software,reports
+Quidel Corp,QDEL,Health Care,Health Care Supplies,reports
 RH,RH,Consumer Discretionary,Homefurnishing Retail,reports
 Ryder System,R,Industrials,Trucking,reports
 Regal Beloit Corp,RBC,Industrials,Electrical Components & Equipment,reports
 Reinsurance Group of America,RGA,Financials,Reinsurance,reports
 Repligen,RGEN,Health Care,Biotechnology,reports
+"Rexford Industrial Realty, Inc.",REXR,Real Estate,Industrial REITs,reports
+RLI Corp,RLI,Financials,Property & Casualty Insurance,reports
 Royal Gold Inc,RGLD,Materials,Precious Metals & Minerals,reports
-Transocean,RIG,Energy,Oil & Gas Drilling,reports
 RenaissanceRe Holdings Ltd,RNR,Financials,Reinsurance,reports
-Rollins Inc.,ROL,Industrials,Environmental & Facilities Services,reports
 RPM International Inc,RPM,Materials,Specialty Chemicals,reports
 Reliance Steel & Aluminum Co.,RS,Materials,Steel,reports
 Rayonier Inc,RYN,Real Estate,Specialized REITs,reports
 Sabre Corp,SABR,Information Technology,Data Processing & Outsourced Services,reports
+"Sailpoint Technologies Holdings, Inc.",SAIL,Information Technology,Application Software,reports
 Sanderson Farms,SAFM,Consumer Staples,Packaged Foods & Meats,reports
 Science Applications Intl Corp,SAIC,Information Technology,IT Consulting & Other Services,reports
 Boston Beer Company,SAM,Consumer Staples,Brewers,reports
-Sally Beauty Holdings Inc,SBH,Consumer Discretionary,Specialty Stores,reports
 Signature Bank,SBNY,Financials,Regional Banks,reports
 Sabra Health Care REIT,SBRA,Real Estate,Health Care REITs,reports
 Selective Insurance Group,SIGI,Financials,Property & Casualty Insurance,reports
 Semtech,SMTC,Information Technology,Semiconductors,reports
 Service Corp Intl,SCI,Consumer Discretionary,Specialized Consumer Services,reports
 SEI Investments Corp,SEIC,Financials,Asset Management & Custody Banks,reports
+"Simpson Manufacturing Co., Inc.",SSD,Industrials,Building Products,reports
+"Solaredge Technologies, Inc.",SEDG,Information Technology,Semiconductor Equipment,reports
+Spire Inc,SR,Utilities,Gas Utilities,reports
 Stifel Financial Corp,SF,Financials,Investment Banking & Brokerage,reports
 Sprouts Farmers Market,SFM,Consumer Staples,Food Retail,reports
 Scientific Games Corporation,SGMS,Consumer Discretionary,Casinos & Gaming,reports
@@ -318,7 +321,9 @@ Silicon Laboratories Inc,SLAB,Information Technology,Semiconductors,reports
 Silgan Holdings Inc,SLGN,Materials,Metal & Glass Containers,reports
 SLM Corp,SLM,Financials,Consumer Finance,reports
 Scotts Miracle-Gro Company,SMG,Materials,Fertilizers & Agricultural Chemicals,reports
-Senior Housing Properties Trust,SNH,Real Estate,Specialized REITs,reports
+Store Capital Corp,STOR,Real Estate,Diversified REITs,reports
+"Strategic Education, Inc.",STRA,Consumer Discretionary,Education Services,reports
+Sunrun Inc.,RUN,Industrials,Building Products,reports
 Synovus Financial Corp (GA),SNV,Financials,Regional Banks,reports
 SYNNEX Corporation,SNX,Information Technology,Technology Distributors,reports
 Sonoco Products Co,SON,Materials,Paper Packaging,reports
@@ -330,16 +335,13 @@ Southwest Gas Corp,SWX,Utilities,Gas Utilities,reports
 Sensient Technologies Corp,SXT,Materials,Specialty Chemicals,reports
 Synaptics,SYNA,Information Technology,Semiconductors,reports
 Syneos Health,SYNH,Health Care,Life Sciences Tools & Services,reports
+TCF Financial Corporation,TCF,Financials,Regional Banks,reports
 Tetra Tech,TTEK,Industrials,Environmental & Facilities Services,reports
 Texas Capital Bancshares,TCBI,Financials,Regional Banks,reports
-Taubman Centers,TCO,Real Estate,Retail REITs,reports
 Taylor Morrison Home Corp,TMHC,Consumer Discretionary,Homebuilding,reports
 Teradata,TDC,Information Technology,IT Consulting & Other Services,reports
 Telephone and Data Systems,TDS,Communication Services,Integrated Telecommunication Services,reports
-Teledyne Technologies Inc,TDY,Industrials,Aerospace & Defense,reports
-Tech Data Corp,TECD,Information Technology,Technology Distributors,reports
 Bio-Techne,TECH,Health Care,Life Sciences Tools & Services,reports
-Teradyne,TER,Information Technology,Semiconductor Equipment,reports
 Terex Corp,TEX,Industrials,Construction Machinery & Heavy Trucks,reports
 "Tegna, Inc.",TGNA,Communication Services,Broadcasting,reports
 Tenet Healthcare Corp,THC,Health Care,Health Care Facilities,reports
@@ -351,50 +353,47 @@ Toll Brothers Inc,TOL,Consumer Discretionary,Homebuilding,reports
 TRI Pointe Group,TPH,Consumer Discretionary,Homebuilding,reports
 Tempur Sealy International,TPX,Consumer Discretionary,Home Furnishings,reports
 Tootsie Roll Industries Inc,TR,Consumer Staples,Packaged Foods & Meats,reports
+TopBuild Corp,BLD,Consumer Discretionary,Homebuilding,reports
 LendingTree,TREE,Financials,Thrifts & Mortgage Finance,reports
 "Trex Company, Inc.",TREX,Industrials,Building Products,reports
-Trimble Inc,TRMB,Information Technology,Electronic Manufacturing Services,reports
 TripAdvisor,TRIP,Communication Services,Interactive Media & Services,reports
 Trustmark Corp (MS),TRMK,Financials,Regional Banks,reports
 Trinity Industries Inc,TRN,Industrials,Construction Machinery & Heavy Trucks,reports
 Toro Company,TTC,Industrials,Agricultural & Farm Machinery,reports
 Texas Roadhouse,TXRH,Consumer Discretionary,Restaurants,reports
-Tyler Technologies,TYL,Information Technology,Application Software,reports
 United Bankshares Inc,UBSI,Financials,Regional Banks,reports
 Urban Edge Properties,UE,Real Estate,Retail REITs,reports
 Domtar Corp,UFS,Materials,Paper Products,reports
 UGI Corp,UGI,Utilities,Gas Utilities,reports
 UMB Financial Corp.,UMBF,Financials,Regional Banks,reports
 Umpqua Holdings Corporation,UMPQ,Financials,Regional Banks,reports
-United Natural Foods Inc,UNFI,Consumer Staples,Food Retail,reports
 United Therapeutics Corp,UTHR,Health Care,Biotechnology,reports
+Univar Solutions Inc.,UNVR,Industrials,Trading Companies & Distributors,reports
 Urban Outfitters,URBN,Consumer Discretionary,Apparel Retail,reports
 Marriott Vacations Worldwide,VAC,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",reports
 Visteon,VC,Consumer Discretionary,Auto Parts & Equipment,reports
 Valley National Bancorp,VLY,Financials,Regional Banks,reports
 Valmont Industries Inc,VMI,Industrials,Industrial Machinery,reports
 Valvoline Inc,VVV,Materials,Commodity Chemicals,reports
-Versum Materials Inc,VSM,Information Technology,Semiconductor Equipment,reports
 ViaSat Inc,VSAT,Information Technology,Communications Equipment,reports
 Vishay Intertechnology Inc,VSH,Information Technology,Electronic Components,reports
-W.R. Berkley Corp,WRB,Financials,Property & Casualty Insurance,reports
 Washington Federal Inc.,WAFD,Financials,Thrifts & Mortgage Finance,reports
 Webster Financial Corp (CT),WBS,Financials,Regional Banks,reports
 Wendy's Company,WEN,Consumer Discretionary,Restaurants,reports
 Werner Enterprises Inc,WERN,Industrials,Trucking,reports
 WEX Inc.,WEX,Information Technology,Data Processing & Outsourced Services,reports
+Wingstop Inc.,WING,Consumer Discretionary,Restaurants,reports
 Worthington Industries,WOR,Materials,Steel,reports
-WPX Energy,WPX,Energy,Oil & Gas Exploration & Production,reports
 Weingarten Realty Investors,WRI,Real Estate,Retail REITs,reports
 Williams-Sonoma Inc,WSM,Consumer Discretionary,Homefurnishing Retail,reports
 Watsco Inc,WSO,Industrials,Trading Companies & Distributors,reports
-West Pharmaceutical Services,WST,Health Care,Health Care Supplies,reports
 Wintrust Financial Corp,WTFC,Financials,Regional Banks,reports
 Essential Utilities,WTRG,Utilities,Water Utilities,reports
 Weight Watchers,WW,Consumer Discretionary,Specialized Consumer Services,reports
 Woodward Inc,WWD,Industrials,Electrical Components & Equipment,reports
 World Wrestling Entertainment,WWE,Communication Services,Movies & Entertainment,reports
 Wyndham Destinations,WYND,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",reports
+"Wyndham Hotels & Resorts, Inc.",WH,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",reports
 United States Steel Corporation,X,Materials,Steel,reports
 Alleghany Corporation,Y,Financials,Reinsurance,reports
 XPO Logistics,XPO,Industrials,Air Freight & Logistics,reports
