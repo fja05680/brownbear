@@ -1,1 +1,2 @@
 (1) Figure out install steps to get qgrid_widget working.
+(2) Change Bonds to US Bonds, add Asset Class Global Bonds and subclasses.  Remove Bonds:Global Bonds

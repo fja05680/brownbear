@@ -73,6 +73,7 @@
 #   Moderate Allocation (40/60)
 #   Growth Allocation (60/40)
 #   Aggressive Allocation (80/20)
+# Risk-Free Asset
 
 
 #---------------------------- Top Level Classes --------------------------------
@@ -86,6 +87,7 @@
 # Currencies
 # Managed Futures
 # Balanced
+# Risk-Free Asset
  
 # Correlation between investment options in same Asset Class
 "US Stocks","US Stocks","0.85"
@@ -97,6 +99,7 @@
 "Currencies","Currencies","1"
 "Managed Futures","Managed Futures","1"
 "Balanced","Balanced","0.65"
+"Risk-Free Asset","Risk-Free Asset","1"
 
 # Correlation between investment options in different Asset Classes
 "US Stocks","Global Stocks","0.85"
@@ -107,6 +110,7 @@
 "US Stocks","Currencies","-0.46"
 "US Stocks","Managed Futures",
 "US Stocks","Balanced",
+"US Stocks","Risk-Free Asset",
 "Global Stocks","Bonds","-0.11"
 "Global Stocks","Cash Equivalents","0.00"
 "Global Stocks","Real Estate","0.58"
@@ -114,27 +118,35 @@
 "Global Stocks","Currencies","-0.66"
 "Global Stocks","Managed Futures",
 "Global Stocks","Balanced",
+"Global Stocks","Risk-Free Asset",
 "Bonds","Cash Equivalents","0.11"
 "Bonds","Real Estate","0.30"
 "Bonds","Commodities","-0.25"
 "Bonds","Currencies","0.00"
 "Bonds","Managed Futures",
 "Bonds","Balanced",
+"Bonds","Risk-Free Asset",
 "Cash Equivalents","Real Estate","0.02"
 "Cash Equivalents","Commodities","0.07"
 "Cash Equivalents","Currencies","-0.08"
 "Cash Equivalents","Managed Futures",
 "Cash Equivalents","Balanced",
+"Cash Equivalents","Risk-Free Asset",
 "Real Estate","Commodities","0.25"
 "Real Estate","Currencies","-0.31"
 "Real Estate","Managed Futures",
 "Real Estate","Balanced",
+"Real Estate","Risk-Free Asset",
 "Commodities","Currencies","-0.54"
 "Commodities","Managed Futures",
 "Commodities","Balanced",
+"Commodities","Risk-Free Asset",
 "Currencies","Managed Futures",
 "Currencies","Balanced",
+"Currencies","Risk-Free Asset",
 "Managed Futures","Balanced",
+"Managed Futures","Risk-Free Asset",
+"Balanced","Risk-Free Asset",
 
 #------------------------------ Subclasses -------------------------------------
 

@@ -39,6 +39,3 @@ DEBUG = False
 def DBG(*s):
     if DEBUG: print('{}() {}\n'.format(_whosdaddy(), s))
     else:     pass
-
-
-

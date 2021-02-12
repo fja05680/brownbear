@@ -12,6 +12,7 @@
 "Currencies","DBV"
 "Managed Futures","FUT"
 "Balanced","AOM"
+"Risk-Free Asset","BIL"
 
 "US Stocks:Large Cap","SPY"
 "US Stocks:Mid Cap","MDY"

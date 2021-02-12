@@ -161,7 +161,6 @@ def annualized_standard_deviation(returns, timeperiod='monthly', years=3,
     elif timeperiod == 'monthly':   factor = 12
     elif timeperiod == 'quarterly': factor = 4
 
-
     # use downside deviation?
     if downside:
         _returns = returns.copy()
@@ -173,4 +172,3 @@ def annualized_standard_deviation(returns, timeperiod='monthly', years=3,
     dev = np.std(_returns.tail(int(factor*years)), axis=0)
     dev = dev * math.sqrt(factor)
     return dev
-

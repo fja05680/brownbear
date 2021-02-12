@@ -161,7 +161,7 @@ def rank(df, rank_by, group_by=None, num_per_group=None, ascending=False):
         grouped by asset class or subclass
         group_by = None, Asset Class, or Asset Subclass
     '''
- 
+
     group_by_choices = (None, 'Asset Class', 'Asset Subclass')
     assert group_by in group_by_choices, \
         "Invalid group_by '{}'".format(group_by)
@@ -316,8 +316,8 @@ def _calc_weights(df, asset_dict, weight_by):
         "Invalid weight_by '{}'".format(weight_by)
 
     ml = _get_metric_lists(df, asset_dict)
-    bb.DBG('_calc_weights: asset_dict = {}'.format(asset_dict))
-    bb.DBG('_calc_weights: asset_dict_ml = {}'.format(ml))
+    bb.DBG('asset_dict = {}'.format(asset_dict))
+    bb.DBG('asset_dict_ml = {}'.format(ml))
 
     if weight_by == 'Equal':
         n = len(asset_dict)
@@ -365,7 +365,6 @@ def _get_cmpt_weights(df, d, user_weights, user_weight_by):
         for key in d: d[key] *= multi
         w.update(d)
     return w
-
 
 def _calc_portfolio_option_weights(portfolio_option, ml, cmpt, user):
     """ calculate portfolio option weights using asset class. asset subclass,
@@ -503,7 +502,7 @@ def _assign_weights(df, ml, portfolio_option, weight_by):
         bb.DBG('cmpt.asset_class_weights', cmpt.asset_class_weights)
 
          # compute asset subclass weights within each asset class
-        assert(set(user.asset_subclass_weights).issubset(set(user.asset_subclass_weights))), \
+        assert(set(user.asset_subclass_weights).issubset(set(cmpt.asset_subclass_weights))), \
                "Invalid Asset Sublass in weight_by!"
         for asset_class in cmpt.asset_class_weights.copy():
             # d: get asset subclasses for this asset_class
@@ -518,7 +517,7 @@ def _assign_weights(df, ml, portfolio_option, weight_by):
         bb.DBG('cmpt.asset_subclass_weights', cmpt.asset_subclass_weights)
 
         # compute investment option weights within each asset subclass
-        assert(set(user.inv_opt_weights).issubset(set(user.inv_opt_weights))), \
+        assert(set(user.inv_opt_weights).issubset(set(cmpt.inv_opt_weights))), \
                "Invalid Investment Option in weight_by!"
         for asset_subclass in cmpt.asset_subclass_weights.copy():
             # d: get investment options for this asset_subclass
@@ -554,7 +553,7 @@ def _assign_weights(df, ml, portfolio_option, weight_by):
         bb.DBG('cmpt.asset_class_weights', cmpt.asset_class_weights)
 
         # compute investment option weights within each asset class
-        assert(set(user.inv_opt_weights).issubset(set(user.inv_opt_weights))), \
+        assert(set(user.inv_opt_weights).issubset(set(cmpt.inv_opt_weights))), \
                "Invalid Investment Option in weight_by!"
         for asset_class in cmpt.asset_class_weights.copy():
             # d: get investment options for this asset_class
@@ -591,7 +590,7 @@ def _assign_weights(df, ml, portfolio_option, weight_by):
         bb.DBG('cmpt.asset_subclass_weights', cmpt.asset_subclass_weights)
 
         # compute investment option weights within each asset subclass
-        assert(set(user.inv_opt_weights).issubset(set(user.inv_opt_weights))), \
+        assert(set(user.inv_opt_weights).issubset(set(cmpt.inv_opt_weights))), \
                "Invalid Investment Option in weight_by!"
         for asset_subclass in cmpt.asset_subclass_weights.copy():
             # d: get investment options for this asset_subclass
@@ -617,7 +616,6 @@ def print_portfolio(portfolio_option):
 def analyze(df, portfolio_option, weight_by=None, default_correlation=1):
     ''' analyze portfolio_option and return the annual_ret, std_dev, sharpe_ratio
         portfolio_option may also be modified if weight_by is not None
-    
         default_correlation - correlation to use when no correlation has been
         specified between two asset classes.  If you use only the Asset Classes
         defined in universe/asset-classes.csv, then this will never happen.
@@ -628,10 +626,9 @@ def analyze(df, portfolio_option, weight_by=None, default_correlation=1):
 
     # set default correlation
     __m.default_correlation = default_correlation
-    
+
     # get metric_lists
     ml = _get_metric_lists(df, portfolio_option)
-    
     bb.DBG('ml = {}'.format(ml))
 
     # assign weights
@@ -639,6 +636,9 @@ def analyze(df, portfolio_option, weight_by=None, default_correlation=1):
 
     # make sure total adds to 100
     _check_allocation(portfolio_option, __m.portfolio_title)
+
+    # update metric_lists
+    ml = _get_metric_lists(df, portfolio_option)
 
     # compute metrics
     annual_return = _expected_return(ml.annual_returns, ml.weights)
@@ -917,4 +917,3 @@ def optimizer(df, portfolio_option, constraints=None):
         if math.isclose(std_dev, 0):
             print(risk_free_msg.format(ml.inv_opts[i]))
             break
-
