@@ -32,33 +32,39 @@
 "XLY","S&P500 Consumer Discretionary Sector ETF","US Stocks:Consumer Discretionary"
 
 # Investment Options - Global Stocks ETFs
-"VXUS","Vanguard Total International Stock ETF","Global Stocks:EX-US"
-"VPL","Vanguard FTSE Pacific ETF","Global Stocks:Asia"
+"VXUS","Total International Stock ETF","Global Stocks:EX-US"
+"VPL","FTSE Pacific ETF","Global Stocks:Asia"
 "EFA","MSCI EAFE ETF","Global Stocks:Developed Markets"
 "EEM","Emerging Markets ETF","Global Stocks:Emerging Markets"
 "IEUR","Core MSCI Europe ETF","Global Stocks:Europe"
 
-# Investment Options - Bonds ETFs
-"LQD","Investment Grade Corp Bond ETF","Bonds:Investment Grade"
-"JNK","High Yield Bond ETF","Bonds:High Yield"
-"IBND",Barclays Int Corp Bond ETF,"Bonds:Global"
-"PFF","Preferred and Income Securities ETF","Bonds:Preferred Stock"
-"VCIT","Intermediate Term Corporate Bond ETF","Bonds"
-"VCSH","Short Term Corporate Bond ETF","Bonds"
-"AGG","US Aggregate Bond ETF","Bonds"
-"BND","Total Bond Market ETF","Bonds"
-"PGX","Preferred Portfolio ETF","Bonds:Preferred Stock"
-"SHY","1-3 Year Treasury Bond ETF","Bonds"
-"TLT","20+ Year Treasury Bond ETF","Bonds:Long Term Treasury"
+# Investment Options - US Bonds ETFs
+"LQD","Investment Grade Corp Bond ETF","US Bonds:Investment Grade"
+"JNK","High Yield Bond ETF","US Bonds:High Yield"
+"PFF","Preferred and Income Securities ETF","US Bonds:Preferred Stock"
+"VCIT","Intermediate Term Corporate Bond ETF","US Bonds"
+"VCSH","Short Term Corporate Bond ETF","US Bonds"
+"AGG","US Aggregate Bond ETF","US Bonds"
+"BND","Total Bond Market ETF","US Bonds"
+"PGX","Preferred Portfolio ETF","US Bonds:Preferred Stock"
+"SHY","1-3 Year Treasury Bond ETF","US Bonds"
+"TLT","20+ Year Treasury Bond ETF","US Bonds:Long Term Treasury"
+
+# Investment Options - Global Bonds ETFs
+"BNDX","Total International Bond Index Fund ETF","Global Bonds"
+"IBND","International Corporate Bond ETF","Global Bonds:Investment Grade Corp"
+"BWX","International Treasury Bond ETF","Global Bonds:Investment Grade Treasury"
+"EBND","Emerging Markets Bond ETF","Global Bonds:Emerging Markets Gov"
+"BWZ","Short Term International Treasury Bond ETF","Global Bonds:Short Term Treasury"
 
 # Investment Options - Cash Equivalents ETFs
-"JPST","JPMorgan Ultra-Short Income ETF","Cash Equivalents:Money Markets"
-"BIL","Barclays 1-3 Month T-Bill ETF","Cash Equivalents:Treasury Bills"
+"JPST","Ultra-Short Income ETF","Cash Equivalents:Money Markets"
+"BIL","1-3 Month T-Bill ETF","Cash Equivalents:Treasury Bills"
 "SHV","Short Treasury Bond ETF","Cash Equivalents:Short Term Gov Bonds"
 
 # Investment Options - Real Estate ETFs
 "IYR","U.S. Real Estate ETF","Real Estate:REIT"
-"VNQ","Vanguard Real Estate Index Fund ETF","Real Estate:Real Estate Funds"
+"VNQ","Real Estate Index Fund ETF","Real Estate:Real Estate Funds"
 
 # Investment Options - Commodities ETFs
 "GLD","Gold ETF","Commodities:Gold"
@@ -89,5 +95,5 @@
 # Investment Options - Special
 "GDX","Gold Miners ETF","US Stocks"
 "XOP","S&P Oil & Gas Exploration & Production ETF","US Stocks"
-"OIH","Vectors Oil Services ETF","US Stocks"
-"VDE","Vanguard Energy ETF","US Stocks"
+"OIH","Oil Services ETF","US Stocks"
+"VDE","Energy ETF","US Stocks"

@@ -5,12 +5,12 @@
 
 # Investment Options
 "FRS Money Market Fund (60)","Cash Equivalents:Money Markets","0.68","1.75","1.41","0.25"
-"FRS Inflation Sensitive Fund (300)","Bonds","4.01","3.54","4.94","9.31"
-"FRS U.S.Bond Enhanced Index Fund (80)","Bonds:Investment Grade","7.77","5.43","4.52","3.44"
-"FRS Core Plus Bond Fund (310)","Bonds:High Yield","8.59","6.25","5.94","4.8"
+"FRS Inflation Sensitive Fund (300)","Cash Equivalents:Short Term Gov Bonds","4.01","3.54","4.94","9.31"
+"FRS U.S.Bond Enhanced Index Fund (80)","US Bonds","7.77","5.43","4.52","3.44"
+"FRS Core Plus Bond Fund (310)","US Bonds","8.59","6.25","5.94","4.8"
 "FRS U.S. Stock Market Index Fund (120)","US Stocks","20.99","14.56","15.52","19.69"
 "FRS U.S. Stock Fund (340)","US Stocks","18.97","12.16","14.28","22.53"
-"FRS Foreign Stock Index Fund (200)","Bonds:Preferred Stock","11.48","5.17","9.46","18.6"
+"FRS Foreign Stock Index Fund (200)","Global Stocks","11.48","5.17","9.46","18.6"
 "FRS Global Stock Fund (210)","Global Stocks","33.78","18.13","16.84","19.34"
 "FRS Foreign Stock Fund (220)","Global Stocks","25.27","10.74","12.47","19.13"
 "FRS Retirement Fund (2000)","Balanced:Moderate Allocation (40/60)","10.25","6.82","7.48","8.19"

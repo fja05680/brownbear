@@ -10,6 +10,7 @@
 #   Mid Cap
 #   Small Cap
 #   Growth
+#   Growth and Income
 #   Value
 #   Total Stock Market
 # US Stocks - Market Sectors
@@ -31,12 +32,16 @@
 #   Emerging Markets
 #   Europe
 #   EX-US
-# Bonds
+# US Bonds
 #   Investment Grade Corp
 #   Long Term Treasury
 #   High Yield
-#   Global
 #   Preferred Stock
+# Global Bonds
+#   Investment Grade Corp
+#   Investment Grade Treasury
+#   Emerging Markets Gov
+#   Short Term Treasury
 # Cash Equivalents
 #   Money Markets
 #   Treasury Bills (Maturity ranges from a few days to 52 weeks)
@@ -80,7 +85,8 @@
 
 # US Stocks
 # Global Stocks
-# Bonds
+# US Bonds
+# Global Bonds
 # Cash Equivalents
 # Real Estate
 # Commodities
@@ -92,7 +98,8 @@
 # Correlation between investment options in same Asset Class
 "US Stocks","US Stocks","0.85"
 "Global Stocks","Global Stocks","0.70"
-"Bonds","Bonds","0.55"
+"US Bonds","US Bonds","0.55"
+"Global Bonds","Global Bonds","0.55"
 "Cash Equivalents","Cash Equivalents","1"
 "Real Estate","Real Estate","1"
 "Commodities","Commodities","1"
@@ -103,45 +110,55 @@
 
 # Correlation between investment options in different Asset Classes
 "US Stocks","Global Stocks","0.85"
-"US Stocks","Bonds","-0.22"
+"US Stocks","US Bonds","-0.22"
+"US Stocks","Global Bonds","-0.17"
 "US Stocks","Cash Equivalents","0.00"
 "US Stocks","Real Estate","0.65"
 "US Stocks","Commodities","0.57"
 "US Stocks","Currencies","-0.46"
-"US Stocks","Managed Futures",
+"US Stocks","Managed Futures","0.16"
 "US Stocks","Balanced",
 "US Stocks","Risk-Free Asset",
-"Global Stocks","Bonds","-0.11"
+"Global Stocks","US Bonds","-0.11"
+"Global Stocks","Global Bonds","-0.17"
 "Global Stocks","Cash Equivalents","0.00"
 "Global Stocks","Real Estate","0.58"
 "Global Stocks","Commodities","0.58"
 "Global Stocks","Currencies","-0.66"
-"Global Stocks","Managed Futures",
+"Global Stocks","Managed Futures","0.16"
 "Global Stocks","Balanced",
 "Global Stocks","Risk-Free Asset",
-"Bonds","Cash Equivalents","0.11"
-"Bonds","Real Estate","0.30"
-"Bonds","Commodities","-0.25"
-"Bonds","Currencies","0.00"
-"Bonds","Managed Futures",
-"Bonds","Balanced",
-"Bonds","Risk-Free Asset",
+"US Bonds","Global Bonds","-0.01"
+"US Bonds","Cash Equivalents","0.11"
+"US Bonds","Real Estate","0.30"
+"US Bonds","Commodities","-0.25"
+"US Bonds","Currencies","0.00"
+"US Bonds","Managed Futures","0.42"
+"US Bonds","Balanced",
+"US Bonds","Risk-Free Asset",
+"Global Bonds","Cash Equivalents","0.03"
+"Global Bonds","Real Estate","0.03"
+"Global Bonds","Commodities","-0.25"
+"Global Bonds","Currencies","0.00"
+"Global Bonds","Managed Futures","0.42"
+"Global Bonds","Balanced",
+"Global Bonds","Risk-Free Asset",
 "Cash Equivalents","Real Estate","0.02"
 "Cash Equivalents","Commodities","0.07"
 "Cash Equivalents","Currencies","-0.08"
-"Cash Equivalents","Managed Futures",
+"Cash Equivalents","Managed Futures","0.02"
 "Cash Equivalents","Balanced",
 "Cash Equivalents","Risk-Free Asset",
 "Real Estate","Commodities","0.25"
 "Real Estate","Currencies","-0.31"
-"Real Estate","Managed Futures",
+"Real Estate","Managed Futures","0.29"
 "Real Estate","Balanced",
 "Real Estate","Risk-Free Asset",
 "Commodities","Currencies","-0.54"
-"Commodities","Managed Futures",
+"Commodities","Managed Futures","-0.07"
 "Commodities","Balanced",
 "Commodities","Risk-Free Asset",
-"Currencies","Managed Futures",
+"Currencies","Managed Futures","0.02"
 "Currencies","Balanced",
 "Currencies","Risk-Free Asset",
 "Managed Futures","Balanced",
@@ -164,6 +181,7 @@
 "US Stocks","US Stocks:Mid Cap",
 "US Stocks","US Stocks:Small Cap",
 "US Stocks","US Stocks:Growth",
+"US Stocks","US Stocks:Growth and Income",
 "US Stocks","US Stocks:Value",
 "US Stocks","US Stocks:Total Stock Market",
 
@@ -173,6 +191,7 @@
 "US Stocks:Mid Cap","US Stocks:Mid Cap","1"
 "US Stocks:Small Cap","US Stocks:Small Cap","1"
 "US Stocks:Growth","US Stocks:Growth","1"
+"US Stocks:Growth and Income","US Stocks:Growth and Income","1"
 "US Stocks:Value","US Stocks:Value","1"
 "US Stocks:Total Stock Market","US Stocks","US Stocks:Total Stock Market","1"
 
@@ -181,17 +200,23 @@
 "US Stocks:Large Cap","US Stocks:Mid Cap",
 "US Stocks:Large Cap","US Stocks:Small Cap",
 "US Stocks:Large Cap","US Stocks:Growth",
+"US Stocks:Large Cap","US Stocks:Growth and Income",
 "US Stocks:Large Cap","US Stocks:Value",
 "US Stocks:Large Cap","US Stocks","US Stocks:Total Stock Market",
 "US Stocks:Mid Cap","US Stocks:Small Cap",
 "US Stocks:Mid Cap","US Stocks:Growth",
+"US Stocks:Mid Cap","US Stocks:Growth and Income",
 "US Stocks:Mid Cap","US Stocks:Value",
 "US Stocks:Mid Cap","US Stocks:Total Stock Market",
 "US Stocks:Small Cap","US Stocks:Growth",
+"US Stocks:Small Cap","US Stocks:Growth and Income",
 "US Stocks:Small Cap","US Stocks:Value",
 "US Stocks:Small Cap","US Stocks:Total Stock Market",
+"US Stocks:Growth","US Stocks:Growth and Income",
 "US Stocks:Growth","US Stocks:Value",
 "US Stocks:Growth","US Stocks:Total Stock Market",
+"US Stocks:Growth and Income","US Stocks:Value",
+"US Stocks:Growth and Income","US Stocks:Total Stock Market",
 "US Stocks:Value","US Stocks:Total Stock Market",
 
 # US Stocks - Market Sectors
@@ -319,41 +344,63 @@
 "Global Stocks:Emerging Markets","Global Stocks:EX-US",
 "Global Stocks:Europe","Global Stocks:EX-US",
 
-# Bonds
+# US Bonds
 #   Investment Grade Corp
 #   Long Term Treasury
 #   High Yield
-#   Global
 #   Preferred Stock
 
 # Correlation between investment options in Asset Class vs Subclass
 # Asset Class:Asset Subclass
-"Bonds","Bonds:Investment Grade",
-"Bonds","Bonds:Long Term Treasury",
-"Bonds","Bonds:High Yield",
-"Bonds","Bonds:Global",
-"Bonds","Bonds:Preferred Stock",
+"US Bonds","US Bonds:Investment Grade",
+"US Bonds","US Bonds:Long Term Treasury",
+"US Bonds","US Bonds:High Yield",
+"US Bonds","US Bonds:Preferred Stock",
 
 # Correlation between investment options in same Asset Subclass
 # Asset Subclass:Asset Subclass
-"Bonds:Investment Grade","Bonds:Investment Grade","1"
-"Bonds:Long Term Treasury","Bonds:Long Term Treasury","1"
-"Bonds:High Yield","Bonds:High Yield","1"
-"Bonds:Global","Bonds:Global","1"
-"Bonds:Preferred Stock","Bonds:Preferred Stock,"1"
+"US Bonds:Investment Grade","US Bonds:Investment Grade","1"
+"US Bonds:Long Term Treasury","US Bonds:Long Term Treasury","1"
+"US Bonds:High Yield","US Bonds:High Yield","1"
+"US Bonds:Preferred Stock","US Bonds:Preferred Stock,"1"
 
 # Correlation between investment options in same Asset Class but different Subclass
 # Asset Subclass:Asset Subclass
-"Bonds:Investment Grade","Bonds:Long Term Treasury",
-"Bonds:Investment Grade","Bonds:High Yield",
-"Bonds:Investment Grade","Bonds:Global",
-"Bonds:Investment Grade","Bonds:Preferred Stock"
-"Bonds:Long Term Treasury","Bonds:High Yield",
-"Bonds:Long Term Treasury","Bonds:Global",
-"Bonds:Long Term Treasury","Bonds:Preferred Stock"
-"Bonds:High Yield","Bonds:Global",
-"Bonds:High Yield","Bonds:Preferred Stock",
-"Bonds:Global","Bonds:Preferred Stock",
+"US Bonds:Investment Grade","US Bonds:Long Term Treasury",
+"US Bonds:Investment Grade","US Bonds:High Yield",
+"US Bonds:Investment Grade","US Bonds:Preferred Stock",
+"US Bonds:Long Term Treasury","US Bonds:High Yield",
+"US Bonds:Long Term Treasury","US Bonds:Preferred Stock",
+"US Bonds:High Yield","US Bonds:Preferred Stock",
+
+# Global Bonds
+#   Investment Grade Corp
+#   Investment Grade Treasury
+#   Emerging Markets Gov
+#   Short Term Treasury
+
+# Correlation between investment options in Asset Class vs Subclass
+# Asset Class:Asset Subclass
+"Global Bonds","Global Bonds:Investment Grade Corp",
+"Global Bonds","Global Bonds:Investment Grade Treasury",
+"Global Bonds","Global Bonds:Emerging Markets Gov",
+"Global Bonds","Global Bonds:Short Term Treasury",
+
+# Correlation between investment options in same Asset Subclass
+# Asset Subclass:Asset Subclass
+"Global Bonds:Investment Grade Corp","Global Bonds:Investment Grade Corp","1"
+"Global Bonds:Investment Grade Treasury","Global Bonds:Investment Grade Treasury","1"
+"Global Bonds:Emerging Markets Gov","Global Bonds:Emerging Markets Gov","1"
+"Global Bonds:Short Term Treasury","Global Bonds:Short Term Treasury","1"
+
+# Correlation between investment options in same Asset Class but different Subclass
+# Asset Subclass:Asset Subclass
+"Global Bonds:Investment Grade Corp","Global Bonds:Investment Grade Treasury",
+"Global Bonds:Investment Grade Corp","Global Bonds:Emerging Markets Gov",
+"Global Bonds:Investment Grade Corp","Global Bonds:Short Term Treasury",
+"Global Bonds:Investment Grade Treasury","Global Bonds:Emerging Markets Gov",
+"Global Bonds:Investment Grade Treasury","Global Bonds:Short Term Treasury",
+"Global Bonds:Emerging Markets Gov","Global Bonds:Short Term Treasury",
 
 # Cash Equivalents
 #   Money Markets

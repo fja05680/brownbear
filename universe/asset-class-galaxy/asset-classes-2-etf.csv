@@ -5,7 +5,8 @@
 
 "US Stocks","VTSMX"
 "Global Stocks","VXUS"
-"Bonds","AGG"
+"US Bonds","AGG"
+"Global Bonds","BNDX"
 "Cash Equivalents","BIL"
 "Real Estate","VNQ"
 "Commodities","DBC"
@@ -18,6 +19,7 @@
 "US Stocks:Mid Cap","MDY"
 "US Stocks:Small Cap","IWM"
 "US Stocks:Growth","QQQ"
+"US Stocks:Growth and Income","VOO"
 "US Stocks:Value","IWD"
 "US Stocks:Total Stock Market","VTI"
 
@@ -39,11 +41,15 @@
 "Global Stocks:Europe","IEUR"
 "Global Stocks:EX-US","VXUS"
 
-"Bonds:Investment Grade","LQD"
-"Bonds:Long Term Treasury","TLT"
-"Bonds:High Yield","JNK"
-"Bonds:Global","IBND"
-"Bonds:Preferred Stock","PFF"
+"US Bonds:Investment Grade","LQD"
+"US Bonds:Long Term Treasury","TLT"
+"US Bonds:High Yield","JNK"
+"US Bonds:Preferred Stock","PFF"
+
+"Global Bonds:Investment Grade Corp","IBND"
+"Global Bonds:Investment Grade Treasury","BWX"
+"Global Bonds:Emerging Markets Gov","EBND"
+"Global Bonds:Short Term Treasury","BWZ"
 
 "Cash Equivalents:Money Markets","JPST"
 "Cash Equivalents:Treasury Bills","BIL"
