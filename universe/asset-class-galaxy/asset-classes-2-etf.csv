@@ -42,9 +42,11 @@
 "Global Stocks:EX-US","VXUS"
 
 "US Bonds:Investment Grade","LQD"
-"US Bonds:Long Term Treasury","TLT"
 "US Bonds:High Yield","JNK"
 "US Bonds:Preferred Stock","PFF"
+"US Bonds:Treasury notes (T-notes)","IEI"
+"US Bonds:Treasury bonds (T-bonds)","TLT"
+"US Bonds:Treasury Inflation-Protected Securities (TIPS)","TIP"
 
 "Global Bonds:Investment Grade Corp","IBND"
 "Global Bonds:Investment Grade Treasury","BWX"
@@ -52,8 +54,7 @@
 "Global Bonds:Short Term Treasury","BWZ"
 
 "Cash Equivalents:Money Markets","JPST"
-"Cash Equivalents:Treasury Bills","BIL"
-"Cash Equivalents:Short Term Gov Bonds","SHV"
+"Cash Equivalents:Treasury Bills (T-bills)","BIL"
 
 "Real Estate:REIT","IYR"
 "Real Estate:Real Estate Funds","VNQ"

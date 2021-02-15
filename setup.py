@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='brownbear',
-    version='0.15.0',
+    version='0.16.0',
     description='A financial tool that can analyze and maximize investment portfolios on a risk adjusted basis.',
     author='Farrell Aultman',
     author_email='fja0568@gmail.com',

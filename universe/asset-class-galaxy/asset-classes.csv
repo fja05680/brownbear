@@ -34,9 +34,11 @@
 #   EX-US
 # US Bonds
 #   Investment Grade Corp
-#   Long Term Treasury
 #   High Yield
 #   Preferred Stock
+#   Treasury notes (T-notes)
+#   Treasury bonds (T-bonds)
+#   Treasury Inflation-Protected Securities (TIPS)
 # Global Bonds
 #   Investment Grade Corp
 #   Investment Grade Treasury
@@ -44,8 +46,7 @@
 #   Short Term Treasury
 # Cash Equivalents
 #   Money Markets
-#   Treasury Bills (Maturity ranges from a few days to 52 weeks)
-#   Short Term Gov Bonds
+#   Treasury Bills (T-bills)
 # Real Estate
 #   REIT
 #   Real Estate Funds
@@ -80,7 +81,6 @@
 #   Aggressive Allocation (80/20)
 # Risk-Free Asset
 
-
 #---------------------------- Top Level Classes --------------------------------
 
 # US Stocks
@@ -114,7 +114,7 @@
 "US Stocks","Global Bonds","0.30"
 "US Stocks","Cash Equivalents","-0.04"
 "US Stocks","Real Estate","0.90"
-"US Stocks","Commodities","0.64"
+"US Stocks","Commodities","0.63"
 "US Stocks","Currencies","0.45"
 "US Stocks","Managed Futures","-0.31"
 "US Stocks","Balanced","0.92"
@@ -133,7 +133,7 @@
 "US Bonds","Real Estate","0.17"
 "US Bonds","Commodities","0.17"
 "US Bonds","Currencies","0.39"
-"US Bonds","Managed Futures","-0.01"
+"US Bonds","Managed Futures","-0.02"
 "US Bonds","Balanced","0.38"
 "US Bonds","Risk-Free Asset","-0.14"
 "Global Bonds","Cash Equivalents","-0.08"
@@ -144,7 +144,7 @@
 "Global Bonds","Balanced","0.47"
 "Global Bonds","Risk-Free Asset","-0.08"
 "Cash Equivalents","Real Estate","-0.02"
-"Cash Equivalents","Commodities","-0.17"
+"Cash Equivalents","Commodities","-0.18"
 "Cash Equivalents","Currencies","-0.09"
 "Cash Equivalents","Managed Futures","-0.01"
 "Cash Equivalents","Balanced","-0.08"
@@ -157,11 +157,11 @@
 "Commodities","Currencies","0.51"
 "Commodities","Managed Futures","-0.16"
 "Commodities","Balanced","0.64"
-"Commodities","Risk-Free Asset","-0.17"
+"Commodities","Risk-Free Asset","-0.18"
 "Currencies","Managed Futures","-0.20"
 "Currencies","Balanced","0.49"
 "Currencies","Risk-Free Asset","-0.09"
-"Managed Futures","Balanced","-0.27"
+"Managed Futures","Balanced","-0.26"
 "Managed Futures","Risk-Free Asset","-0.01"
 "Balanced","Risk-Free Asset","-0.08"
 
@@ -239,7 +239,7 @@
 "US Stocks","US Stocks:Communication Services","0.92"
 "US Stocks","US Stocks:Energy","0.78"
 "US Stocks","US Stocks:Financials","0.91"
-"US Stocks","US Stocks:Industrials","0.92"
+"US Stocks","US Stocks:Industrials","0.93"
 "US Stocks","US Stocks:Technology","0.95"
 "US Stocks","US Stocks:Consumer Staples","0.87"
 "US Stocks","US Stocks:Real Estate","0.89"
@@ -346,32 +346,47 @@
 
 # US Bonds
 #   Investment Grade Corp
-#   Long Term Treasury
 #   High Yield
 #   Preferred Stock
+#   Treasury notes (T-notes)
+#   Treasury bonds (T-bonds)
+#   Treasury Inflation-Protected Securities (TIPS)
 
 # Correlation between investment options in Asset Class vs Subclass
 # Asset Class:Asset Subclass
 "US Bonds","US Bonds:Investment Grade","0.69"
-"US Bonds","US Bonds:Long Term Treasury","0.62"
 "US Bonds","US Bonds:High Yield","0.24"
 "US Bonds","US Bonds:Preferred Stock","0.50"
+"US Bonds","US Bonds:Treasury notes (T-notes)","0.55"
+"US Bonds","US Bonds:Treasury bonds (T-bonds)","0.62"
+"US Bonds","US Bonds:Treasury Inflation-Protected Securities (TIPS)","0.56"
 
 # Correlation between investment options in same Asset Subclass
 # Asset Subclass:Asset Subclass
 "US Bonds:Investment Grade","US Bonds:Investment Grade","1"
-"US Bonds:Long Term Treasury","US Bonds:Long Term Treasury","1"
 "US Bonds:High Yield","US Bonds:High Yield","1"
 "US Bonds:Preferred Stock","US Bonds:Preferred Stock,"1"
+"US Bonds:Treasury notes (T-notes)","US Bonds:Treasury notes (T-notes)",
+"US Bonds:Treasury bonds (T-bonds)","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds:Treasury Inflation-Protected Securities (TIPS)","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
 
 # Correlation between investment options in same Asset Class but different Subclass
 # Asset Subclass:Asset Subclass
-"US Bonds:Investment Grade","US Bonds:Long Term Treasury","0.32"
 "US Bonds:Investment Grade","US Bonds:High Yield","0.53"
 "US Bonds:Investment Grade","US Bonds:Preferred Stock","0.41"
-"US Bonds:Long Term Treasury","US Bonds:High Yield","-0.35"
-"US Bonds:Long Term Treasury","US Bonds:Preferred Stock","-0.09"
+"US Bonds:Investment Grade","US Bonds:Treasury notes (T-notes)","0.30"
+"US Bonds:Investment Grade","US Bonds:Treasury bonds (T-bonds)","0.32"
+"US Bonds:Investment Grade","US Bonds:Treasury Inflation-Protected Securities (TIPS)","0.46"
 "US Bonds:High Yield","US Bonds:Preferred Stock","0.73"
+"US Bonds:High Yield","US Bonds:Treasury notes (T-notes)","-0.34"
+"US Bonds:High Yield","US Bonds:Treasury bonds (T-bonds)","-0.35"
+"US Bonds:High Yield","US Bonds:Treasury Inflation-Protected Securities (TIPS)","0.04"
+"US Bonds:Preferred Stock","US Bonds:Treasury notes (T-notes)","-0.15"
+"US Bonds:Preferred Stock","US Bonds:Treasury bonds (T-bonds)","-0.09"
+"US Bonds:Preferred Stock","US Bonds:Treasury Inflation-Protected Securities (TIPS)","0.22"
+"US Bonds:Treasury notes (T-notes)","US Bonds:Treasury bonds (T-bonds)","0.89"
+"US Bonds:Treasury notes (T-notes)","US Bonds:Treasury Inflation-Protected Securities (TIPS)","0.56"
+"US Bonds:Treasury bonds (T-bonds)","US Bonds:Treasury Inflation-Protected Securities (TIPS)","0.62"
 
 # Global Bonds
 #   Investment Grade Corp
@@ -404,26 +419,21 @@
 
 # Cash Equivalents
 #   Money Markets
-#   Treasury Bills (Maturity ranges from a few days to 52 weeks)
-#   Short Term Gov Bonds
+#   Treasury Bills (T-bills)
 
 # Correlation between investment options in Asset Class vs Subclass
 # Asset Class:Asset Subclass
 "Cash Equivalents","Cash Equivalents:Money Markets","-0.13"
-"Cash Equivalents","Cash Equivalents:Treasury Bills","1.00"
-"Cash Equivalents","Cash Equivalents:Short Term Gov Bonds","0.30"
+"Cash Equivalents","Cash Equivalents:Treasury Bills (T-bills)","1.00"
 
 # Correlation between investment options in same Asset Subclass
 # Asset Subclass:Asset Subclass
 "Cash Equivalents:Money Markets","Cash Equivalents:Money Markets","1"
-"Cash Equivalents:Treasury Bills","Cash Equivalents:Treasury Bills","1"
-"Cash Equivalents:Short Term Gov Bonds","Cash Equivalents:Short Term Gov Bonds","1"
+"Cash Equivalents:Treasury Bills (T-bills)","Cash Equivalents:Treasury Bills (T-bills)","1"
 
 # Correlation between investment options in same Asset Class but different Subclass
 # Asset Subclass:Asset Subclass
-"Cash Equivalents:Money Markets","Cash Equivalents:Treasury Bills","-0.13"
-"Cash Equivalents:Money Markets","Cash Equivalents:Short Term Gov Bonds","-0.33"
-"Cash Equivalents:Treasury Bills","Cash Equivalents:Short Term Gov Bonds","0.30"
+"Cash Equivalents:Money Markets","Cash Equivalents:Treasury Bills (T-bills)","-0.13"
 
 # Real Estate
 #   REIT
@@ -600,7 +610,7 @@
 # Correlation between investment options in Asset Class vs Subclass
 # Asset Class:Asset Subclass
 "Currencies","Currencies:US Dollar","-0.09"
-"Currencies","Currencies:Euro","0.04"
+"Currencies","Currencies:Euro","0.03"
 "Currencies","Currencies:Japanese Yen","-0.23"
 "Currencies","Currencies:Swiss Franc","-0.11"
 "Currencies","Currencies:Australian Dollar","0.47"

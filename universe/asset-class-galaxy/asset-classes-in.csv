@@ -34,9 +34,11 @@
 #   EX-US
 # US Bonds
 #   Investment Grade Corp
-#   Long Term Treasury
 #   High Yield
 #   Preferred Stock
+#   Treasury notes (T-notes)
+#   Treasury bonds (T-bonds)
+#   Treasury Inflation-Protected Securities (TIPS)
 # Global Bonds
 #   Investment Grade Corp
 #   Investment Grade Treasury
@@ -44,8 +46,7 @@
 #   Short Term Treasury
 # Cash Equivalents
 #   Money Markets
-#   Treasury Bills (Maturity ranges from a few days to 52 weeks)
-#   Short Term Gov Bonds
+#   Treasury Bills (T-bills)
 # Real Estate
 #   REIT
 #   Real Estate Funds
@@ -79,7 +80,6 @@
 #   Growth Allocation (60/40)
 #   Aggressive Allocation (80/20)
 # Risk-Free Asset
-
 
 #---------------------------- Top Level Classes --------------------------------
 
@@ -346,32 +346,47 @@
 
 # US Bonds
 #   Investment Grade Corp
-#   Long Term Treasury
 #   High Yield
 #   Preferred Stock
+#   Treasury notes (T-notes)
+#   Treasury bonds (T-bonds)
+#   Treasury Inflation-Protected Securities (TIPS)
 
 # Correlation between investment options in Asset Class vs Subclass
 # Asset Class:Asset Subclass
 "US Bonds","US Bonds:Investment Grade",
-"US Bonds","US Bonds:Long Term Treasury",
 "US Bonds","US Bonds:High Yield",
 "US Bonds","US Bonds:Preferred Stock",
+"US Bonds","US Bonds:Treasury notes (T-notes)",
+"US Bonds","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
 
 # Correlation between investment options in same Asset Subclass
 # Asset Subclass:Asset Subclass
 "US Bonds:Investment Grade","US Bonds:Investment Grade","1"
-"US Bonds:Long Term Treasury","US Bonds:Long Term Treasury","1"
 "US Bonds:High Yield","US Bonds:High Yield","1"
 "US Bonds:Preferred Stock","US Bonds:Preferred Stock,"1"
+"US Bonds:Treasury notes (T-notes)","US Bonds:Treasury notes (T-notes)",
+"US Bonds:Treasury bonds (T-bonds)","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds:Treasury Inflation-Protected Securities (TIPS)","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
 
 # Correlation between investment options in same Asset Class but different Subclass
 # Asset Subclass:Asset Subclass
-"US Bonds:Investment Grade","US Bonds:Long Term Treasury",
 "US Bonds:Investment Grade","US Bonds:High Yield",
 "US Bonds:Investment Grade","US Bonds:Preferred Stock",
-"US Bonds:Long Term Treasury","US Bonds:High Yield",
-"US Bonds:Long Term Treasury","US Bonds:Preferred Stock",
+"US Bonds:Investment Grade","US Bonds:Treasury notes (T-notes)",
+"US Bonds:Investment Grade","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds:Investment Grade","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
 "US Bonds:High Yield","US Bonds:Preferred Stock",
+"US Bonds:High Yield","US Bonds:Treasury notes (T-notes)",
+"US Bonds:High Yield","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds:High Yield","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
+"US Bonds:Preferred Stock","US Bonds:Treasury notes (T-notes)",
+"US Bonds:Preferred Stock","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds:Preferred Stock","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
+"US Bonds:Treasury notes (T-notes)","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds:Treasury notes (T-notes)","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
+"US Bonds:Treasury bonds (T-bonds)","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
 
 # Global Bonds
 #   Investment Grade Corp
@@ -404,26 +419,21 @@
 
 # Cash Equivalents
 #   Money Markets
-#   Treasury Bills (Maturity ranges from a few days to 52 weeks)
-#   Short Term Gov Bonds
+#   Treasury Bills (T-bills)
 
 # Correlation between investment options in Asset Class vs Subclass
 # Asset Class:Asset Subclass
 "Cash Equivalents","Cash Equivalents:Money Markets",
-"Cash Equivalents","Cash Equivalents:Treasury Bills",
-"Cash Equivalents","Cash Equivalents:Short Term Gov Bonds",
+"Cash Equivalents","Cash Equivalents:Treasury Bills (T-bills)",
 
 # Correlation between investment options in same Asset Subclass
 # Asset Subclass:Asset Subclass
 "Cash Equivalents:Money Markets","Cash Equivalents:Money Markets","1"
-"Cash Equivalents:Treasury Bills","Cash Equivalents:Treasury Bills","1"
-"Cash Equivalents:Short Term Gov Bonds","Cash Equivalents:Short Term Gov Bonds","1"
+"Cash Equivalents:Treasury Bills (T-bills)","Cash Equivalents:Treasury Bills (T-bills)","1"
 
 # Correlation between investment options in same Asset Class but different Subclass
 # Asset Subclass:Asset Subclass
-"Cash Equivalents:Money Markets","Cash Equivalents:Treasury Bills",
-"Cash Equivalents:Money Markets","Cash Equivalents:Short Term Gov Bonds",
-"Cash Equivalents:Treasury Bills","Cash Equivalents:Short Term Gov Bonds",
+"Cash Equivalents:Money Markets","Cash Equivalents:Treasury Bills (T-bills)",
 
 # Real Estate
 #   REIT
