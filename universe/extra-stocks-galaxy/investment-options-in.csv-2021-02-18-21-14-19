@@ -1,0 +1,11 @@
+# Description: custom investment options. 10/04/2020
+
+# Format
+"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
+# Note: "Description" field is optional
+
+# Investment Options
+"BTI","British American Tobacco","Global Stocks:Developed Markets"
+"BUD","Anheuser-Busch","Global Stocks:Developed Markets"
+"PM","Philip Morris International","Global Stocks:Developed Markets"
+"RDS-B","Royal Dutch Shell","Global Stocks:Developed Markets"
