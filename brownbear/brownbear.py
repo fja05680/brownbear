@@ -327,8 +327,20 @@ def _calc_weights(df, asset_dict, weight_by):
     elif weight_by in ('Sharpe Ratio', 'Annual Returns'):
         if weight_by == 'Sharpe Ratio':  metric = ml.sharpe_ratios
         else:                            metric = ml.annual_returns
+        # apply unity-based normalization if there are any negative returns
+        numpy.seterr('raise')
+        xmin = min(metric)
+        if xmin < 0:
+            if len(metric) == 1:
+                metric[0] = 1
+            else:
+                # Z = a + (x − xmin)*(b − a) (xmax − xmin)
+                xmax = max(metric)
+                a = 1
+                b = 10
+                z = [a + (x-xmin)*(b-a)/(xmax-xmin) for x in metric]
+                metric = z
         # investment options with negative metrics will have weight=0
-        metric = [m if m >= 0 else 0 for m in metric]
         metric_sum = sum(metric)
         if not math.isclose(metric_sum, 0):
             weights = [m/metric_sum for m in metric]
