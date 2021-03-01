@@ -1,5 +1,6 @@
 from .brownbear import (
     fetch,
+    add_fundamental_columns,
     rank,
     print_portfolio,
     analyze,
@@ -8,20 +9,31 @@ from .brownbear import (
     optimizer
 )
 
-from .utility import (
-    ROOT,
-    SYMBOL_CACHE,
+from .metrics import (
     TRADING_DAYS_PER_YEAR,
     TRADING_DAYS_PER_MONTH,
     TRADING_DAYS_PER_WEEK,
-    dotdict,
     correlation_map,
-    fetch_timeseries,
-    compile_timeseries,
-    print_full,
     cagr,
     annualize_returns,
     annualized_standard_deviation
+)
+
+from .symbol_cache import (
+    fetch_timeseries,
+    compile_timeseries,
+    remove_cache_symbols,
+    update_cache_symbols,
+    get_symbol_metadata,
+    get_symbol_fundamentals
+)
+
+from .utility import (
+    ROOT,
+    SYMBOL_CACHE,
+    dotdict,
+    print_full,
+    get_quote
 )
 
 def _whoami():

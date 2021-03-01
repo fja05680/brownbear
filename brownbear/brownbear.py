@@ -39,7 +39,7 @@ __m.ds_vola_column = None
 __m.portfolio_title = 'Portfolio'
 
 #####################################################################
-# INVESTMENT OPTIONS
+# FETCH
 
 def _cvs_to_df(filepaths):
     ''' read multiple csv files into a dataframe '''
@@ -155,6 +155,27 @@ def fetch(investment_universe, risk_free_rate=0, annual_returns='Annual Returns'
         inv_opts.reset_index(drop=True, inplace=True)
 
     return inv_opts
+
+#####################################################################
+# FUNDAMENTALS
+
+def add_fundamental_columns(df, clean=True):
+    filepath = Path(bb.ROOT + '/tools/symbol-cache/fundamentals.csv')
+    df2 = pd.read_csv(filepath)
+    df2.rename(columns={'symbol': 'Investment Option',
+                        'previousClose': 'Previous Close',
+                        'trailingPE': 'Trailing PE',
+                        'dividendYield': 'Dividend Yield',
+                        'marketCap': 'Market Cap'}, inplace=True)
+    df = df.merge(df2, how='left')
+    if clean:
+        # remove any rows that have nan for column values
+        df = df.dropna()
+        df.reset_index(drop=True, inplace=True)
+    return df
+
+#####################################################################
+# RANK
 
 def rank(df, rank_by, group_by=None, num_per_group=None, ascending=False):
     ''' return dataframe of ranked investment choices optionally
@@ -305,7 +326,7 @@ def _get_metric_lists(df, portfolio_option):
     return ml
 
 #####################################################################
-# ANALYZE
+# ASSIGN WEIGHTS
 
 def _calc_weights(df, asset_dict, weight_by):
     """ calculate weights for assets in asset_dict using weight_by method """
@@ -620,10 +641,8 @@ def _assign_weights(df, ml, portfolio_option, weight_by):
         bb.DBG('portfolio_option', portfolio_option)
         return
 
-def print_portfolio(portfolio_option):
-    print('{} Weights:'.format(__m.portfolio_title))
-    for k, v in portfolio_option.items():
-        print('    {:30} {:0.4f}'.format(k, v))
+#####################################################################
+# ANALYZE
 
 def analyze(df, portfolio_option, weight_by=None, default_correlation=1):
     ''' analyze portfolio_option and return the annual_ret, std_dev, sharpe_ratio
@@ -730,6 +749,11 @@ def summary(df, portfolio_option, annual_ret, std_dev, sharpe_ratio):
     _plot_returns(summary, column_names)
 
     return summary
+
+def print_portfolio(portfolio_option):
+    print('{} Weights:'.format(__m.portfolio_title))
+    for k, v in portfolio_option.items():
+        print('    {:30} {:0.4f}'.format(k, v))
 
 #####################################################################
 # SHOW PIE CHARTS

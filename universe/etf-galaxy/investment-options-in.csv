@@ -59,8 +59,8 @@
 
 # Investment Options - Cash Equivalents ETFs
 "JPST","Ultra-Short Income ETF","Cash Equivalents:Money Markets"
-"BIL","1-3 Month T-Bill ETF","Cash Equivalents:Treasury Bills"
-"SHV","Short Treasury Bond ETF","Cash Equivalents:Short Term Gov Bonds"
+"BIL","1-3 Month T-Bill ETF","Cash Equivalents:Treasury Bills (T-bills)"
+"SHV","Short Treasury Bond ETF","Cash Equivalents:Treasury Bills (T-bills)"
 
 # Investment Options - Real Estate ETFs
 "IYR","U.S. Real Estate ETF","Real Estate:REIT"
