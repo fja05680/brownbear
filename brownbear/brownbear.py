@@ -346,22 +346,26 @@ def _calc_weights(df, asset_dict, weight_by):
         asset_dict.update(zip(asset_dict, weights))
 
     elif weight_by in ('Sharpe Ratio', 'Annual Returns'):
-        if weight_by == 'Sharpe Ratio':  metric = ml.sharpe_ratios
-        else:                            metric = ml.annual_returns
-        # apply unity-based normalization if there are any negative returns
+        # if there are any negative returns, apply unity-based normalization
+        # if a return is negative, then sharpe_ratio will also be negative
         numpy.seterr('raise')
-        xmin = min(metric)
+        xmin = min(ml.annual_returns)
         if xmin < 0:
-            if len(metric) == 1:
-                metric[0] = 1
+            a = 1; b = 10
+            if len(ml.annual_returns) == 1:
+                ml.annual_returns[0] = ml.sharpe_ratios[0] = a
             else:
                 # Z = a + (x − xmin)*(b − a) (xmax − xmin)
-                xmax = max(metric)
-                a = 1
-                b = 10
-                z = [a + (x-xmin)*(b-a)/(xmax-xmin) for x in metric]
-                metric = z
-        # investment options with negative metrics will have weight=0
+                xmax = max(ml.annual_returns)
+                z = [a + (x-xmin)*(b-a)/(xmax-xmin) for x in ml.annual_returns]
+                ml.annual_returns = z
+                # recalculate sharpe_ratios besed on normalized annual_returns
+                ml.sharpe_ratios = [_sharpe_ratio(annual_ret, std_dev, __m.risk_free_rate) 
+                    for annual_ret, std_dev in zip(ml.annual_returns, ml.std_devs)]
+
+        if weight_by == 'Sharpe Ratio':  metric = ml.sharpe_ratios
+        else:                            metric = ml.annual_returns
+
         metric_sum = sum(metric)
         if not math.isclose(metric_sum, 0):
             weights = [m/metric_sum for m in metric]
