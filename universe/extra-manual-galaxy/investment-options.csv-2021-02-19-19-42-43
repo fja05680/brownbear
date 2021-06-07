@@ -1,8 +1,0 @@
-# Description: investment options
-
-# Format
-"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
-
-# Investment Options
-"ROKU","Roku,Inc.","US Stocks:Technology","286.28","1510.83","259.39","116.79","116.79","46.26","22.97","80.85"
-"LUMN","Lumen Technologies","US Stocks:Technology","96.49","82.25","-12.49","-4.44","-6.11","43.01","43.01","43.01"

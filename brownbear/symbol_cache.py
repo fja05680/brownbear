@@ -201,10 +201,13 @@ def get_symbol_fundamentals(symbols=None):
 
             previousClose = trailingPE = dividendYield = marketCap = np.nan
             if isinstance(d, dict):
-                previousClose = d.get('previousClose', np.nan)
-                trailingPE = d.get('trailingPE', 0)
-                dividendYield = d.get('dividendYield', 0) * 100
-                marketCap = d.get('marketCap', 0) / 1000000
+                try:
+                    previousClose = d.get('previousClose', np.nan)
+                    trailingPE = d.get('trailingPE', 0)
+                    dividendYield = d.get('dividendYield', 0) * 100
+                    marketCap = d.get('marketCap', 0) / 1000000
+                except Exception as e:
+                    print(e)
             else:
                 print('\n({})'.format(d))
 

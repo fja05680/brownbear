@@ -4,10 +4,10 @@
 "Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
 
 # Investment Options
-"BTI","British American Tobacco","Global Stocks:Developed Markets","-65.27","-4.67","-6.48","-11.63","-3.04","28.18","21.47","28.96"
-"BUD","Anheuser-Busch","Global Stocks:Developed Markets","-67.88","-50.68","-3.20","-17.17","-10.17","36.70","30.33","37.19"
-"PM","Philip Morris International","Global Stocks:Developed Markets","85.59","42.45","7.79","-2.09","3.24","23.64","12.11","28.40"
-"RDS-B","Royal Dutch Shell","Global Stocks:Developed Markets","183.14","45.02","-11.92","-14.05","0.98","38.01","18.78","32.84"
-"UL","Unilever","Global Stocks:Developed Markets","-76.69","-33.08","-1.61","2.21","6.98","28.31","23.11","16.50"
-"ROKU","Roku,Inc.","-18.45","340.34","259.43","113.85","nan","59.79","36.54","80.83"
-"NLY","Annaly Capital Management,Inc.","15.64","17.20","2.98","4.58","7.77","24.55","15.63","33.72"
+"BTI","British American Tobacco","Global Stocks:Developed Markets","25.02","37.42","2.52","-1.50","-2.98","13.08","7.09","29.64"
+"BUD","Anheuser-Busch","Global Stocks:Developed Markets","173.23","160.35","42.06","-5.58","-7.37","12.31","6.22","37.93"
+"PM","Philip Morris International","Global Stocks:Developed Markets","35.71","75.83","38.15","14.26","5.00","11.38","6.61","26.66"
+"RDS-B","Royal Dutch Shell","Global Stocks:Developed Markets","8.66","-33.44","11.34","-17.92","-1.64","28.45","15.94","32.35"
+"UL","Unilever","Global Stocks:Developed Markets","54.95","63.99","12.55","6.31","9.20","11.42","7.11","16.71"
+"ROKU","Roku,Inc.","139.38","-26.71","217.81","104.89","104.89","58.66","23.59","80.49"
+"NLY","Annaly Capital Management,Inc.","55.22","84.19","58.86","8.76","9.25","17.46","11.50","33.76"
