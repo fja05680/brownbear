@@ -10,9 +10,6 @@ from .brownbear import (
 )
 
 from .metrics import (
-    TRADING_DAYS_PER_YEAR,
-    TRADING_DAYS_PER_MONTH,
-    TRADING_DAYS_PER_WEEK,
     correlation_map,
     cagr,
     annualize_returns,
@@ -29,8 +26,12 @@ from .symbol_cache import (
 )
 
 from .utility import (
+    TRADING_DAYS_PER_YEAR,
+    TRADING_DAYS_PER_MONTH,
+    TRADING_DAYS_PER_WEEK,
     ROOT,
     SYMBOL_CACHE,
+    cvs_to_df,
     dotdict,
     print_full,
     get_quote

@@ -1,7 +1,8 @@
 To update brownbear data
 
-(1) Run universe/asset-class-galaxy/asset-classes.ipynb (refresh_timeseries = True)
-(2) For each of the remaining /universe, run ipynb (if exists) to update index, then investment-options.ipynb
-(manul updated required for extra-manual-galaxy)
+(1) Run universe/asset-class-galaxy/asset-classes.ipynb (refresh_timeseries = True).
+(2) For each of the remaining /universe, run ipynb (if exists) to update index,
+then investment-options.ipynb (manually updated required for extra-manual-galaxy).
 (3) tools/symbol-cache/get-symbol-fundamentals.ipynb
-(4) For each portfolio in /portfolio, run investment-options.ipynb (if exists), then portfolio.ipynb
+(4) For each portfolio in /portfolio, run investment-options.ipynb (if exists),
+then portfolio.ipynb

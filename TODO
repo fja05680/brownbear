@@ -1,4 +1,6 @@
-(1) Figure out install steps to get qgrid_widget working.
-(2) Add more ETFs
-(3) Add fundamentals
-(4) Add real time quotes
+(1) Add numpy docstrings.
+(2) Generate HTML documentation.
+(3) Replace qgrid_widget with something else.
+(4) Better formatting for dictionary output.
+(5) Split up brownbear.py into several other .py files.
+
