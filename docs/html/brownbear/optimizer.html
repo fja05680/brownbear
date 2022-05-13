@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>brownbear.optimizer API documentation</title>
+<meta name="description" content="Portfolio analysis and optimization." />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>brownbear.optimizer</code></h1>
+</header>
+<section id="section-intro">
+<p>Portfolio analysis and optimization.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+Portfolio analysis and optimization.
+&#34;&#34;&#34;
+
+import math
+import random
+
+import pandas as pd
+
+import brownbear as bb
+from brownbear.portfolio import (
+    PORT,
+    get_metric_lists,
+    expected_return,
+    standard_deviation,
+    sharpe_ratio
+)
+
+
+########################################################################
+# OPTIMIZER
+
+def _sim(ml, min_annual_return, max_worst_typical_down_year, max_black_swan):
+    &#34;&#34;&#34;
+    Calculation is done via a Monte Carlo Simulation by trying random
+    combinations of weights and checking which combination has the best
+    sharpe_ratio.
+    &#34;&#34;&#34;
+
+    o_sharpe_ratio = 0
+    o_weights = []
+
+    N = 100000
+    i = 0
+    while i &lt; N:
+        rands = [round(random.random(), 2) for x in range(0, len(ml.annual_returns))]
+        s = sum(rands)
+        if math.isclose(s, 0):
+            continue
+        rands = [x/s for x in rands]
+
+        annual_return = expected_return(ml.annual_returns, weights=rands)
+        std_dev = standard_deviation(weights=rands, std_devs=ml.std_devs,
+                                      asset_classes=ml.asset_classes)
+        sr = sharpe_ratio(annual_return, std_dev, PORT.risk_free_rate)
+        worst_typical_down_year = annual_return - 2*std_dev
+        black_swan = annual_return - 3*std_dev
+
+        if (annual_return &lt; min_annual_return or
+            worst_typical_down_year &lt; max_worst_typical_down_year or
+            black_swan &lt; max_black_swan):
+            pass
+        elif sr &gt; o_sharpe_ratio:
+            o_sharpe_ratio = sr
+            o_weights = rands
+            print(&#39;.&#39;, end=&#39;&#39;)
+            #print(i)
+            i = 0
+        i += 1
+    success = o_sharpe_ratio != 0
+
+    return success, o_weights
+
+
+def optimizer(df, portfolio_option, constraints=None):
+    &#34;&#34;&#34;
+    Optimize the Portfolio based on Sharpe Ratio.
+
+    Optimize sharpe ratio while specifying Annual Rate,
+    Worst Typical Down Year, and Black Swan.  Setting a constraint
+    to None optimizes absolute Sharpe Ratio without regard to that
+    constraint.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performace metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+        `portfolio_option` may be modified if `weight_by` is not None,
+        i.e. the weights for each investment option might be adjusted.
+    constraints : dict
+        Used to specify constraints for the optimization.  Valid
+        constraints are: &#39;Annual Return&#39;, &#39;Worst Typical Down Year&#39;,
+        and &#39;Black Swan&#39; (default is None, which implies maximize
+        Sharpe Ratio without considering any constraints).
+
+    Returns
+    -------
+    None
+    &#34;&#34;&#34;
+    # Unpack contraints dict.
+    min_annual_return = max_worst_typical_down_year = max_black_swan = None
+    if constraints:
+        min_annual_return           = constraints.get(&#39;Annual Return&#39;)
+        max_worst_typical_down_year = constraints.get(&#39;Worst Typical Down Year&#39;)
+        max_black_swan              = constraints.get(&#39;Black Swan&#39;)
+
+    if min_annual_return is None:           min_annual_return = 0
+    if max_worst_typical_down_year is None: max_worst_typical_down_year = -1000
+    if max_black_swan is None:              max_black_swan = -1000
+
+    ml = get_metric_lists(df, portfolio_option)
+
+    print(&#39;Running optimizer&#39;, end=&#39;&#39;)
+    success, optimal_weights = \
+        _sim(ml, min_annual_return, max_worst_typical_down_year, max_black_swan)
+    print(&#39;\n&#39;)
+
+    if not success:
+        print(&#39;Impossible criteria specified, lower your expectations!!!&#39;)
+        return
+
+    # Round weights to 2 decimal places.
+    optimal_weights = [round(x, 2) for x in optimal_weights]
+    # Set any weights less than 0.03 to 0.
+    optimal_weights = [0 if x &lt; 0.03 else x for x in optimal_weights]
+
+    # Insure the weights add to 1.
+    slots = [i for i, x in enumerate(optimal_weights) if x &gt; 0]
+    for i in range(1000):
+        if math.isclose(sum(optimal_weights), 1):
+            break
+        factor = -1 if sum(optimal_weights) &gt; 1 else 1
+        optimal_weights[random.choice(slots)] += .01*factor
+    if not math.isclose(sum(optimal_weights), 1):
+        print(&#39;Error: weights don\&#39;t add to 1&#39;)
+
+    # Make a local copy of portfolio_options.
+    _portfolio_option = portfolio_option.copy()
+
+    # Display results.
+    annual_return = expected_return(annual_returns=ml.annual_returns,
+                                     weights=optimal_weights)
+    std_dev = standard_deviation(weights=optimal_weights, std_devs=ml.std_devs,
+                                  asset_classes=ml.asset_classes)
+    sr = sharpe_ratio(annual_return, std_dev, PORT.risk_free_rate)
+    worst_typical_down_year = annual_return - 2*std_dev
+    black_swan = annual_return - 3*std_dev
+    _portfolio_option.update(zip(_portfolio_option, optimal_weights))
+
+    s = pd.Series()
+    s[PORT.portfolio_title + &#39; Metrics:&#39;] = &#39;&#39;
+    s[&#39;    max_sharpe_ratio&#39;] = sr
+    s[&#39;    annual_return&#39;] = annual_return
+    s[&#39;    std_dev&#39;] = std_dev
+    s[&#39;    worst typical down year&#39;] = worst_typical_down_year
+    s[&#39;    black_swan&#39;] = black_swan
+    s = str(s).split(&#39;dtype:&#39;)[0]
+    print(s)
+    print()
+    bb.print_portfolio(_portfolio_option)
+    print()
+
+    # Check to see if one of the inv_options is a risk_free asset.
+    risk_free_msg = \
+        &#34;&#34;&#34;
+        NOTE: \&#39;{}\&#39; is a risk free asset.
+              Although risk free assets don\&#39;t affect the sharpe ratio of a portfolio,
+              adding a risk free asset does reduce the worst typical down year
+              and black swawn percentages.
+        &#34;&#34;&#34;
+
+    for i, std_dev in enumerate(ml.std_devs):
+        if math.isclose(std_dev, 0):
+            print(risk_free_msg.format(ml.inv_opts[i]))
+            break</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="brownbear.optimizer.optimizer"><code class="name flex">
+<span>def <span class="ident">optimizer</span></span>(<span>df, portfolio_option, constraints=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Optimize the Portfolio based on Sharpe Ratio.</p>
+<p>Optimize sharpe ratio while specifying Annual Rate,
+Worst Typical Down Year, and Black Swan.
+Setting a constraint
+to None optimizes absolute Sharpe Ratio without regard to that
+constraint.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Dataframe of investment options with columns for asset class,
+description, and performace metrics.</dd>
+<dt><strong><code>portfolio_option</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary of investment options along with their weights.
+The
+keys are the investment options and the values are the weights.
+The first entry in the dict must be the title of the portfolio.
+<code>portfolio_option</code> may be modified if <code>weight_by</code> is not None,
+i.e. the weights for each investment option might be adjusted.</dd>
+<dt><strong><code>constraints</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Used to specify constraints for the optimization.
+Valid
+constraints are: 'Annual Return', 'Worst Typical Down Year',
+and 'Black Swan' (default is None, which implies maximize
+Sharpe Ratio without considering any constraints).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def optimizer(df, portfolio_option, constraints=None):
+    &#34;&#34;&#34;
+    Optimize the Portfolio based on Sharpe Ratio.
+
+    Optimize sharpe ratio while specifying Annual Rate,
+    Worst Typical Down Year, and Black Swan.  Setting a constraint
+    to None optimizes absolute Sharpe Ratio without regard to that
+    constraint.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performace metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+        `portfolio_option` may be modified if `weight_by` is not None,
+        i.e. the weights for each investment option might be adjusted.
+    constraints : dict
+        Used to specify constraints for the optimization.  Valid
+        constraints are: &#39;Annual Return&#39;, &#39;Worst Typical Down Year&#39;,
+        and &#39;Black Swan&#39; (default is None, which implies maximize
+        Sharpe Ratio without considering any constraints).
+
+    Returns
+    -------
+    None
+    &#34;&#34;&#34;
+    # Unpack contraints dict.
+    min_annual_return = max_worst_typical_down_year = max_black_swan = None
+    if constraints:
+        min_annual_return           = constraints.get(&#39;Annual Return&#39;)
+        max_worst_typical_down_year = constraints.get(&#39;Worst Typical Down Year&#39;)
+        max_black_swan              = constraints.get(&#39;Black Swan&#39;)
+
+    if min_annual_return is None:           min_annual_return = 0
+    if max_worst_typical_down_year is None: max_worst_typical_down_year = -1000
+    if max_black_swan is None:              max_black_swan = -1000
+
+    ml = get_metric_lists(df, portfolio_option)
+
+    print(&#39;Running optimizer&#39;, end=&#39;&#39;)
+    success, optimal_weights = \
+        _sim(ml, min_annual_return, max_worst_typical_down_year, max_black_swan)
+    print(&#39;\n&#39;)
+
+    if not success:
+        print(&#39;Impossible criteria specified, lower your expectations!!!&#39;)
+        return
+
+    # Round weights to 2 decimal places.
+    optimal_weights = [round(x, 2) for x in optimal_weights]
+    # Set any weights less than 0.03 to 0.
+    optimal_weights = [0 if x &lt; 0.03 else x for x in optimal_weights]
+
+    # Insure the weights add to 1.
+    slots = [i for i, x in enumerate(optimal_weights) if x &gt; 0]
+    for i in range(1000):
+        if math.isclose(sum(optimal_weights), 1):
+            break
+        factor = -1 if sum(optimal_weights) &gt; 1 else 1
+        optimal_weights[random.choice(slots)] += .01*factor
+    if not math.isclose(sum(optimal_weights), 1):
+        print(&#39;Error: weights don\&#39;t add to 1&#39;)
+
+    # Make a local copy of portfolio_options.
+    _portfolio_option = portfolio_option.copy()
+
+    # Display results.
+    annual_return = expected_return(annual_returns=ml.annual_returns,
+                                     weights=optimal_weights)
+    std_dev = standard_deviation(weights=optimal_weights, std_devs=ml.std_devs,
+                                  asset_classes=ml.asset_classes)
+    sr = sharpe_ratio(annual_return, std_dev, PORT.risk_free_rate)
+    worst_typical_down_year = annual_return - 2*std_dev
+    black_swan = annual_return - 3*std_dev
+    _portfolio_option.update(zip(_portfolio_option, optimal_weights))
+
+    s = pd.Series()
+    s[PORT.portfolio_title + &#39; Metrics:&#39;] = &#39;&#39;
+    s[&#39;    max_sharpe_ratio&#39;] = sr
+    s[&#39;    annual_return&#39;] = annual_return
+    s[&#39;    std_dev&#39;] = std_dev
+    s[&#39;    worst typical down year&#39;] = worst_typical_down_year
+    s[&#39;    black_swan&#39;] = black_swan
+    s = str(s).split(&#39;dtype:&#39;)[0]
+    print(s)
+    print()
+    bb.print_portfolio(_portfolio_option)
+    print()
+
+    # Check to see if one of the inv_options is a risk_free asset.
+    risk_free_msg = \
+        &#34;&#34;&#34;
+        NOTE: \&#39;{}\&#39; is a risk free asset.
+              Although risk free assets don\&#39;t affect the sharpe ratio of a portfolio,
+              adding a risk free asset does reduce the worst typical down year
+              and black swawn percentages.
+        &#34;&#34;&#34;
+
+    for i, std_dev in enumerate(ml.std_devs):
+        if math.isclose(std_dev, 0):
+            print(risk_free_msg.format(ml.inv_opts[i]))
+            break</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="brownbear" href="index.html">brownbear</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="brownbear.optimizer.optimizer" href="#brownbear.optimizer.optimizer">optimizer</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

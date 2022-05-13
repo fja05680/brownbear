@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='brownbear',
-    version='0.20.0',
+    version='1.0.0',
     description='A financial tool that can analyze and maximize investment portfolios on a risk adjusted basis.',
     author='Farrell Aultman',
     author_email='fja0568@gmail.com',
@@ -15,11 +15,11 @@ setup(
     license='MIT',
     install_requires=requirements,
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
         'Intended Audience :: Science/Research',
         'Topic :: Office/Business :: Financial',

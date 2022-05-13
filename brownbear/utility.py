@@ -38,7 +38,7 @@ str : Full path to symbol-cache dir.
 ########################################################################
 # FUNCTIONS
 
-def cvs_to_df(filepaths):
+def csv_to_df(filepaths):
     """
     Read multiple csv files into a dataframe.
 

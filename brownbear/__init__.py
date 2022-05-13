@@ -1,19 +1,24 @@
-from .brownbear import (
-    fetch,
-    add_fundamental_columns,
-    rank,
-    print_portfolio,
-    analyze,
-    summary,
-    show_pie_charts,
-    optimizer
-)
-
 from .metrics import (
     correlation_map,
-    cagr,
-    annualize_returns,
+    annualized_returns,
     annualized_standard_deviation
+)
+
+from .fetch import (
+    fetch,
+    add_fundamental_columns,
+    rank
+)
+
+from .analyze import (
+    analyze,
+    summary,
+    print_portfolio,
+    show_pie_charts
+)
+
+from .optimizer import (
+    optimizer
 )
 
 from .symbol_cache import (
@@ -31,8 +36,6 @@ from .utility import (
     TRADING_DAYS_PER_WEEK,
     ROOT,
     SYMBOL_CACHE,
-    cvs_to_df,
-    dotdict,
     print_full,
     get_quote
 )
@@ -47,7 +50,6 @@ def _whosdaddy():
     import inspect
     return inspect.stack()[2][3]
 
-# debug
 DEBUG = False
 def DBG(*s):
     if DEBUG: print('{}() {}\n'.format(_whosdaddy(), s))

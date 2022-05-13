@@ -82,7 +82,7 @@ def compile_timeseries(symbols):
 
     Returns
     -------
-    None   
+    None
     """
     compiled_df = pd.DataFrame()
 
@@ -273,7 +273,7 @@ def get_symbol_fundamentals(symbols=None):
 
         t = (symbol, previousClose, trailingPE, dividendYield, marketCap)
         l.append(t)
-    
+
     columns = ['symbol', 'previousClose', 'trailingPE', 'dividendYield', 'marketCap']
     df = pd.DataFrame(l, columns=columns)
     df.set_index('symbol', inplace=True)

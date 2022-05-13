@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>brownbear.analyze API documentation</title>
+<meta name="description" content="Portfolio analysis and optimization." />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>brownbear.analyze</code></h1>
+</header>
+<section id="section-intro">
+<p>Portfolio analysis and optimization.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+Portfolio analysis and optimization.
+&#34;&#34;&#34;
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+import brownbear as bb
+
+from brownbear.portfolio import (
+    PORT,
+    get_metric_lists,
+    expected_return,
+    standard_deviation,
+    sharpe_ratio
+)
+
+from brownbear.weight import (
+    check_allocation,
+    assign_weights
+)
+
+
+#####################################################################
+# ANALYZE
+
+def analyze(df, portfolio_option, weight_by=None, default_correlation=1):
+    &#34;&#34;&#34;
+    Analyze Portfolio.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performace metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+        `portfolio_option` may be modified if `weight_by` is not None,
+        i.e. the weights for each investment option might be adjusted.
+    weight_by : dict of dicts, optional
+        Specify the weighting scheme.  If not None, it will replace the
+        weights specified in the portfolio.  You can also fix the
+        weights on some Investent Options, Asset Classes, and Asset
+        Subclasses, while the others are automatically calculated
+        (default is None, which implies use the user specified weights
+        specified in `portfolio_option`).
+
+        &#39;Equal&#39; - use equal weights.
+
+        &#39;Sharpe Ratio&#39; - use proportionally weighted allocations
+        based on the percent of an investment option&#39;s sharpe ratio to
+        the sum of all the sharpe ratios in the portfolio.
+
+        &#39;Std Dev&#39; - use standard deviation adjusted weights.
+
+        &#39;Annual Returns&#39; - use return adjusted weights.
+
+        &#39;Vola&#39; - use volatility adjusted weights.
+
+        &#39;DS Vola&#39; - use downside volatility adjusted weights.
+
+        None:   &#39;Investment Option&#39; means use user specified weights
+                &#39;Asset Class&#39; means do not group by Asset Class
+                &#39;Asset Subclass&#39; means do not group by Asset Subclass
+
+        Example:
+
+        At the Asset Class level, explicitly specify
+        US Stock, US Bonds, and Risk-Free Asset weights, then equally
+        allocate among any remaining asset classes.  Next, do not
+        consider the Asset Subclass within an Asset Class.  Finally,
+        weight the Investment Options within each Asset Class by
+        Annual Return.
+
+        &gt;&gt;&gt; weight_by = {  
+        &gt;&gt;&gt;     &#39;Asset Class&#39;:       {&#39;weight_by&#39;: &#39;Equal&#39;,  
+        &gt;&gt;&gt;                           &#39;US Stocks&#39;: 0.40,  
+        &gt;&gt;&gt;                           &#39;US Bonds&#39;: 0.40,  
+        &gt;&gt;&gt;                           &#39;Risk-Free Asset&#39;: 0.10},  
+        &gt;&gt;&gt;     &#39;Asset Subclass&#39;:    {&#39;weight_by&#39;: None},  
+        &gt;&gt;&gt;     &#39;Investment Option&#39;: {&#39;weight_by&#39;: &#39;Annual Returns&#39;},  
+        &gt;&gt;&gt; }  
+
+        default_correlation : int, optional
+            Correlation to use when no correlation has been specified
+            between two asset classes.  If you use only the Asset
+            Classes defined in universe/asset-classes.csv, then this
+            will never happen. (default is 1, which assumes that the
+            assets are perfectly coorelated, i.e. worst case for
+            asset diversification).
+
+    Returns
+    -------
+    annual_return : float
+        The expected annualized return of the portfolio.
+
+    std_dev : float
+        The standard deviation of the portfolio.
+
+    sharpe_ratio : float
+        The overall sharpe ratio of the portfolio.
+    &#34;&#34;&#34;
+
+    # Pop the title.
+    PORT.portfolio_title = portfolio_option.pop(&#39;Title&#39;, PORT.portfolio_title)
+
+    # Set default correlation.
+    PORT.default_correlation = default_correlation
+
+    # Get metric_lists.
+    ml = get_metric_lists(df, portfolio_option)
+    bb.DBG(f&#39;ml = {ml}&#39;)
+
+    # Assign weights.
+    assign_weights(df, ml, portfolio_option, weight_by)
+
+    # Make sure total adds to 100 percent.
+    check_allocation(portfolio_option, PORT.portfolio_title)
+
+    # Update metric_lists.
+    ml = get_metric_lists(df, portfolio_option)
+
+    # Compute metrics.
+    annual_return = expected_return(ml.annual_returns, ml.weights)
+    std_dev = standard_deviation(ml.weights, ml.std_devs, ml.asset_classes)
+    sr = sharpe_ratio(annual_return, std_dev, PORT.risk_free_rate)
+
+    return annual_return, std_dev, sr
+
+
+########################################################################
+# SUMMARY
+
+def _plot_returns(summary, columns):
+    &#34;&#34;&#34;
+    Bar Plot of returns with 1, 2, and 3 standard deviations.
+    &#34;&#34;&#34;
+    means = list(summary.loc[&#39;Annual Returns&#39;])
+    Xs = list(range(0, len(means)))
+    # Plot 1 std dev.
+    maxs = list(summary.loc[&#39;Std Dev&#39;])
+    plt.errorbar(Xs, means, maxs, fmt=&#39;.k&#39;, lw=20)
+    # Plot 2 std dev.
+    maxs_2 = [x * 2 for x in maxs]
+    plt.errorbar(Xs, means, maxs_2, fmt=&#39;.k&#39;, lw=5)
+    # Plot 3 std dev.
+    maxs_3 = [x * 3 for x in maxs]
+    plt.errorbar(Xs, means, maxs_3, fmt=&#39;.k&#39;, lw=1)
+    # Plot horizontal line for median.
+    max_std_dev = max(maxs)
+    maxs_median = [max_std_dev*.02 for x in means]
+    plt.errorbar(Xs, means, maxs_median, fmt=&#39;.k&#39;, lw=50)
+    plt.xlim(-1, len(means))
+    plt.xticks(range(len(columns)), columns, rotation=60)
+
+
+def summary(df, portfolio_option, annual_ret, std_dev, sharpe_ratio):
+    &#34;&#34;&#34;
+    Generate summary results.
+
+    Note: analyze() must be called before calling summary().
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performace metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+        `portfolio_option` may be modified if `weight_by` is not None,
+        i.e. the weights for each investment option might be adjusted.
+    annual_return : float
+        The expected annualized return of the portfolio.
+    std_dev : float
+        The standard deviation of the portfolio.
+    sharpe_ratio : float
+        The overall sharpe ratio of the portfolio.
+
+    Returns
+    -------
+    summary : pd.DataFrame
+        Summary results.
+    &#34;&#34;&#34;
+    ml = get_metric_lists(df, portfolio_option)
+
+    metrics = [&#39;Annual Returns&#39;, &#39;Std Dev&#39;, &#39;Sharpe Ratio&#39;]
+    index = []
+    columns = [inv_opt for inv_opt in ml.inv_opts]
+    data = []
+
+    # Add metrics.
+    for metric in metrics:
+        index.append(metric)
+        data.append([df.loc[df[&#39;Investment Option&#39;] == inv_opt, metric].values[0]
+                    for inv_opt in ml.inv_opts])
+
+    # Add weight.
+    index.append(&#39;Weight&#39;)
+    data.append([portfolio_option[inv_opt] for inv_opt in ml.inv_opts])
+
+    # Worst Typical Down Year.
+    index.append(&#39;Worst Typical Down Year&#39;)
+    data.append([df.loc[df[&#39;Investment Option&#39;] == inv_opt, &#39;Annual Returns&#39;].values[0] +
+              -2*df.loc[df[&#39;Investment Option&#39;] == inv_opt, &#39;Std Dev&#39;].values[0]
+                for inv_opt in ml.inv_opts])
+
+    # Add Black Swan.
+    index.append(&#39;Black Swan&#39;)
+    data.append([df.loc[df[&#39;Investment Option&#39;] == inv_opt, &#39;Annual Returns&#39;].values[0] +
+              -3*df.loc[df[&#39;Investment Option&#39;] == inv_opt, &#39;Std Dev&#39;].values[0]
+                for inv_opt in ml.inv_opts])
+
+    # Create dataframe.
+    summary = pd.DataFrame(data, columns=columns, index=index)
+
+    # Set portfolio values.
+    summary[PORT.portfolio_title] = \
+        [annual_ret, std_dev, sharpe_ratio, sum(ml.weights),
+         annual_ret + -2*std_dev, annual_ret + -3*std_dev]
+
+    # Plot returns.
+    column_names = columns.copy()
+    column_names.append(PORT.portfolio_title)
+    _plot_returns(summary, column_names)
+
+    return summary
+
+
+def print_portfolio(portfolio_option):
+    &#34;&#34;&#34;
+    Print portfolio options with their weights.
+    &#34;&#34;&#34;
+    print(f&#39;{PORT.portfolio_title} Weights:&#39;)
+    for k, v in portfolio_option.items():
+        print(f&#39;    {k:30} {v:0.4f}&#39;)
+
+
+#####################################################################
+# SHOW PIE CHARTS
+
+def _show_pie_chart(df, chart):
+    &#34;&#34;&#34;
+    Show a single investment pie chart.
+    &#34;&#34;&#34;
+    title = f&#39;{PORT.portfolio_title} - by {chart}&#39;
+
+    if chart == &#39;Investment Option&#39;:
+        weights = list(df[&#39;Weight&#39;])
+        labels = list(df[&#39;Investment Option&#39;])
+        plt.title(title)
+    else:
+        asset_classes = df[&#39;Asset Class&#39;]
+        asset_classes = list(asset_classes)
+        if chart == &#39;Asset Class&#39;:
+            asset_classes = [asset_class.split(&#39;:&#39;)[0] for asset_class in asset_classes]
+        else:
+            asset_classes = [asset_class for asset_class in asset_classes]
+        asset_classes = list(set(asset_classes))
+        asset_classes.sort()
+        weights = []
+        labels = asset_classes
+        for asset_class in asset_classes:
+            if chart == &#39;Asset Class&#39;:
+                weight = df.loc[df[&#39;Asset Class&#39;].str.startswith(asset_class), &#39;Weight&#39;].sum()
+            else:
+                weight = df.loc[df[&#39;Asset Class&#39;].eq(asset_class), &#39;Weight&#39;].sum()
+            weights.append(weight)
+
+    plt.pie(weights, labels=labels, counterclock=False, startangle=90,
+            autopct=&#39;%1.1f%%&#39;, normalize=True)
+    plt.title(title)
+    plt.axis(&#39;equal&#39;)
+    plt.show()
+
+    s = pd.Series()
+    for i, label in enumerate(labels):
+        s[label] = weights[i]
+    s = str(s).split(&#39;dtype:&#39;)[0]
+    return s
+
+
+def show_pie_charts(df, portfolio_option, charts=None):
+    &#34;&#34;&#34;
+    Show pie chart(s) of investment allocations by percent.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performace metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+        `portfolio_option` may be modified if `weight_by` is not None,
+        i.e. the weights for each investment option might be adjusted.
+    charts : list of str, optional
+        {&#39;Investment Option&#39;, &#39;Asset Class&#39;, &#39;Asset Subclass&#39;}.
+        The charts to display (default is None, which implies all
+        charts).
+
+    Returns
+    -------
+    None
+    &#34;&#34;&#34;
+
+    def _add_weight_column(row, portfolio_option):
+        inv_opt = row[&#39;Investment Option&#39;]
+        return portfolio_option[inv_opt]
+
+    # If charts is None, that imples all charts.
+    if (charts is None):
+        charts =[&#39;Investment Option&#39;, &#39;Asset Class&#39;, &#39;Asset Subclass&#39;]
+    # If user specified a single chart, put it in a list.
+    if not isinstance(charts, list):
+        charts = [charts]
+    # Check `charts` against valid chart choices.
+    chart_choices = (&#39;Investment Option&#39;, &#39;Asset Class&#39;, &#39;Asset Subclass&#39;)
+    assert(set(charts).issubset(set(chart_choices))), \
+           &#34;Invalid Chart type in charts!&#34;
+
+    df = df.copy()
+    df = df[df[&#39;Investment Option&#39;].isin(list(portfolio_option))]
+    df.reset_index(drop=True, inplace=True)
+    df[&#39;Weight&#39;] = df.apply(_add_weight_column, portfolio_option=portfolio_option, axis=1)
+    df.sort_values(&#39;Asset Class&#39;, inplace=True)
+
+    for chart in charts:
+        s = _show_pie_chart(df, chart)
+        print(s)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="brownbear.analyze.analyze"><code class="name flex">
+<span>def <span class="ident">analyze</span></span>(<span>df, portfolio_option, weight_by=None, default_correlation=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Analyze Portfolio.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Dataframe of investment options with columns for asset class,
+description, and performace metrics.</dd>
+<dt><strong><code>portfolio_option</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary of investment options along with their weights.
+The
+keys are the investment options and the values are the weights.
+The first entry in the dict must be the title of the portfolio.
+<code>portfolio_option</code> may be modified if <code>weight_by</code> is not None,
+i.e. the weights for each investment option might be adjusted.</dd>
+<dt><strong><code>weight_by</code></strong> :&ensp;<code>dict</code> of <code>dicts</code>, optional</dt>
+<dd>
+<p>Specify the weighting scheme.
+If not None, it will replace the
+weights specified in the portfolio.
+You can also fix the
+weights on some Investent Options, Asset Classes, and Asset
+Subclasses, while the others are automatically calculated
+(default is None, which implies use the user specified weights
+specified in <code>portfolio_option</code>).</p>
+<p>'Equal' - use equal weights.</p>
+<p>'Sharpe Ratio' - use proportionally weighted allocations
+based on the percent of an investment option's sharpe ratio to
+the sum of all the sharpe ratios in the portfolio.</p>
+<p>'Std Dev' - use standard deviation adjusted weights.</p>
+<p>'Annual Returns' - use return adjusted weights.</p>
+<p>'Vola' - use volatility adjusted weights.</p>
+<p>'DS Vola' - use downside volatility adjusted weights.</p>
+<p>None:
+'Investment Option' means use user specified weights
+'Asset Class' means do not group by Asset Class
+'Asset Subclass' means do not group by Asset Subclass</p>
+<p>Example:</p>
+<p>At the Asset Class level, explicitly specify
+US Stock, US Bonds, and Risk-Free Asset weights, then equally
+allocate among any remaining asset classes.
+Next, do not
+consider the Asset Subclass within an Asset Class.
+Finally,
+weight the Investment Options within each Asset Class by
+Annual Return.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>weight_by = {<br>
+'Asset Class':
+{'weight_by': 'Equal',<br>
+'US Stocks': 0.40,<br>
+'US Bonds': 0.40,<br>
+'Risk-Free Asset': 0.10},<br>
+'Asset Subclass':
+{'weight_by': None},<br>
+'Investment Option': {'weight_by': 'Annual Returns'},<br>
+}
+</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>default_correlation : int, optional
+Correlation to use when no correlation has been specified
+between two asset classes.
+If you use only the Asset
+Classes defined in universe/asset-classes.csv, then this
+will never happen. (default is 1, which assumes that the
+assets are perfectly coorelated, i.e. worst case for
+asset diversification).</p>
+</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>annual_return</code></strong> :&ensp;<code>float</code></dt>
+<dd>The expected annualized return of the portfolio.</dd>
+<dt><strong><code>std_dev</code></strong> :&ensp;<code>float</code></dt>
+<dd>The standard deviation of the portfolio.</dd>
+<dt><strong><code>sharpe_ratio</code></strong> :&ensp;<code>float</code></dt>
+<dd>The overall sharpe ratio of the portfolio.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def analyze(df, portfolio_option, weight_by=None, default_correlation=1):
+    &#34;&#34;&#34;
+    Analyze Portfolio.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performace metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+        `portfolio_option` may be modified if `weight_by` is not None,
+        i.e. the weights for each investment option might be adjusted.
+    weight_by : dict of dicts, optional
+        Specify the weighting scheme.  If not None, it will replace the
+        weights specified in the portfolio.  You can also fix the
+        weights on some Investent Options, Asset Classes, and Asset
+        Subclasses, while the others are automatically calculated
+        (default is None, which implies use the user specified weights
+        specified in `portfolio_option`).
+
+        &#39;Equal&#39; - use equal weights.
+
+        &#39;Sharpe Ratio&#39; - use proportionally weighted allocations
+        based on the percent of an investment option&#39;s sharpe ratio to
+        the sum of all the sharpe ratios in the portfolio.
+
+        &#39;Std Dev&#39; - use standard deviation adjusted weights.
+
+        &#39;Annual Returns&#39; - use return adjusted weights.
+
+        &#39;Vola&#39; - use volatility adjusted weights.
+
+        &#39;DS Vola&#39; - use downside volatility adjusted weights.
+
+        None:   &#39;Investment Option&#39; means use user specified weights
+                &#39;Asset Class&#39; means do not group by Asset Class
+                &#39;Asset Subclass&#39; means do not group by Asset Subclass
+
+        Example:
+
+        At the Asset Class level, explicitly specify
+        US Stock, US Bonds, and Risk-Free Asset weights, then equally
+        allocate among any remaining asset classes.  Next, do not
+        consider the Asset Subclass within an Asset Class.  Finally,
+        weight the Investment Options within each Asset Class by
+        Annual Return.
+
+        &gt;&gt;&gt; weight_by = {  
+        &gt;&gt;&gt;     &#39;Asset Class&#39;:       {&#39;weight_by&#39;: &#39;Equal&#39;,  
+        &gt;&gt;&gt;                           &#39;US Stocks&#39;: 0.40,  
+        &gt;&gt;&gt;                           &#39;US Bonds&#39;: 0.40,  
+        &gt;&gt;&gt;                           &#39;Risk-Free Asset&#39;: 0.10},  
+        &gt;&gt;&gt;     &#39;Asset Subclass&#39;:    {&#39;weight_by&#39;: None},  
+        &gt;&gt;&gt;     &#39;Investment Option&#39;: {&#39;weight_by&#39;: &#39;Annual Returns&#39;},  
+        &gt;&gt;&gt; }  
+
+        default_correlation : int, optional
+            Correlation to use when no correlation has been specified
+            between two asset classes.  If you use only the Asset
+            Classes defined in universe/asset-classes.csv, then this
+            will never happen. (default is 1, which assumes that the
+            assets are perfectly coorelated, i.e. worst case for
+            asset diversification).
+
+    Returns
+    -------
+    annual_return : float
+        The expected annualized return of the portfolio.
+
+    std_dev : float
+        The standard deviation of the portfolio.
+
+    sharpe_ratio : float
+        The overall sharpe ratio of the portfolio.
+    &#34;&#34;&#34;
+
+    # Pop the title.
+    PORT.portfolio_title = portfolio_option.pop(&#39;Title&#39;, PORT.portfolio_title)
+
+    # Set default correlation.
+    PORT.default_correlation = default_correlation
+
+    # Get metric_lists.
+    ml = get_metric_lists(df, portfolio_option)
+    bb.DBG(f&#39;ml = {ml}&#39;)
+
+    # Assign weights.
+    assign_weights(df, ml, portfolio_option, weight_by)
+
+    # Make sure total adds to 100 percent.
+    check_allocation(portfolio_option, PORT.portfolio_title)
+
+    # Update metric_lists.
+    ml = get_metric_lists(df, portfolio_option)
+
+    # Compute metrics.
+    annual_return = expected_return(ml.annual_returns, ml.weights)
+    std_dev = standard_deviation(ml.weights, ml.std_devs, ml.asset_classes)
+    sr = sharpe_ratio(annual_return, std_dev, PORT.risk_free_rate)
+
+    return annual_return, std_dev, sr</code></pre>
+</details>
+</dd>
+<dt id="brownbear.analyze.print_portfolio"><code class="name flex">
+<span>def <span class="ident">print_portfolio</span></span>(<span>portfolio_option)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Print portfolio options with their weights.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_portfolio(portfolio_option):
+    &#34;&#34;&#34;
+    Print portfolio options with their weights.
+    &#34;&#34;&#34;
+    print(f&#39;{PORT.portfolio_title} Weights:&#39;)
+    for k, v in portfolio_option.items():
+        print(f&#39;    {k:30} {v:0.4f}&#39;)</code></pre>
+</details>
+</dd>
+<dt id="brownbear.analyze.show_pie_charts"><code class="name flex">
+<span>def <span class="ident">show_pie_charts</span></span>(<span>df, portfolio_option, charts=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Show pie chart(s) of investment allocations by percent.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Dataframe of investment options with columns for asset class,
+description, and performace metrics.</dd>
+<dt><strong><code>portfolio_option</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary of investment options along with their weights.
+The
+keys are the investment options and the values are the weights.
+The first entry in the dict must be the title of the portfolio.
+<code>portfolio_option</code> may be modified if <code>weight_by</code> is not None,
+i.e. the weights for each investment option might be adjusted.</dd>
+<dt><strong><code>charts</code></strong> :&ensp;<code>list</code> of <code>str</code>, optional</dt>
+<dd>{'Investment Option', 'Asset Class', 'Asset Subclass'}.
+The charts to display (default is None, which implies all
+charts).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_pie_charts(df, portfolio_option, charts=None):
+    &#34;&#34;&#34;
+    Show pie chart(s) of investment allocations by percent.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performace metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+        `portfolio_option` may be modified if `weight_by` is not None,
+        i.e. the weights for each investment option might be adjusted.
+    charts : list of str, optional
+        {&#39;Investment Option&#39;, &#39;Asset Class&#39;, &#39;Asset Subclass&#39;}.
+        The charts to display (default is None, which implies all
+        charts).
+
+    Returns
+    -------
+    None
+    &#34;&#34;&#34;
+
+    def _add_weight_column(row, portfolio_option):
+        inv_opt = row[&#39;Investment Option&#39;]
+        return portfolio_option[inv_opt]
+
+    # If charts is None, that imples all charts.
+    if (charts is None):
+        charts =[&#39;Investment Option&#39;, &#39;Asset Class&#39;, &#39;Asset Subclass&#39;]
+    # If user specified a single chart, put it in a list.
+    if not isinstance(charts, list):
+        charts = [charts]
+    # Check `charts` against valid chart choices.
+    chart_choices = (&#39;Investment Option&#39;, &#39;Asset Class&#39;, &#39;Asset Subclass&#39;)
+    assert(set(charts).issubset(set(chart_choices))), \
+           &#34;Invalid Chart type in charts!&#34;
+
+    df = df.copy()
+    df = df[df[&#39;Investment Option&#39;].isin(list(portfolio_option))]
+    df.reset_index(drop=True, inplace=True)
+    df[&#39;Weight&#39;] = df.apply(_add_weight_column, portfolio_option=portfolio_option, axis=1)
+    df.sort_values(&#39;Asset Class&#39;, inplace=True)
+
+    for chart in charts:
+        s = _show_pie_chart(df, chart)
+        print(s)</code></pre>
+</details>
+</dd>
+<dt id="brownbear.analyze.summary"><code class="name flex">
+<span>def <span class="ident">summary</span></span>(<span>df, portfolio_option, annual_ret, std_dev, sharpe_ratio)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate summary results.</p>
+<p>Note: analyze() must be called before calling summary().</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Dataframe of investment options with columns for asset class,
+description, and performace metrics.</dd>
+<dt><strong><code>portfolio_option</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary of investment options along with their weights.
+The
+keys are the investment options and the values are the weights.
+The first entry in the dict must be the title of the portfolio.
+<code>portfolio_option</code> may be modified if <code>weight_by</code> is not None,
+i.e. the weights for each investment option might be adjusted.</dd>
+<dt><strong><code>annual_return</code></strong> :&ensp;<code>float</code></dt>
+<dd>The expected annualized return of the portfolio.</dd>
+<dt><strong><code>std_dev</code></strong> :&ensp;<code>float</code></dt>
+<dd>The standard deviation of the portfolio.</dd>
+<dt><strong><code>sharpe_ratio</code></strong> :&ensp;<code>float</code></dt>
+<dd>The overall sharpe ratio of the portfolio.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>summary</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Summary results.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def summary(df, portfolio_option, annual_ret, std_dev, sharpe_ratio):
+    &#34;&#34;&#34;
+    Generate summary results.
+
+    Note: analyze() must be called before calling summary().
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performace metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+        `portfolio_option` may be modified if `weight_by` is not None,
+        i.e. the weights for each investment option might be adjusted.
+    annual_return : float
+        The expected annualized return of the portfolio.
+    std_dev : float
+        The standard deviation of the portfolio.
+    sharpe_ratio : float
+        The overall sharpe ratio of the portfolio.
+
+    Returns
+    -------
+    summary : pd.DataFrame
+        Summary results.
+    &#34;&#34;&#34;
+    ml = get_metric_lists(df, portfolio_option)
+
+    metrics = [&#39;Annual Returns&#39;, &#39;Std Dev&#39;, &#39;Sharpe Ratio&#39;]
+    index = []
+    columns = [inv_opt for inv_opt in ml.inv_opts]
+    data = []
+
+    # Add metrics.
+    for metric in metrics:
+        index.append(metric)
+        data.append([df.loc[df[&#39;Investment Option&#39;] == inv_opt, metric].values[0]
+                    for inv_opt in ml.inv_opts])
+
+    # Add weight.
+    index.append(&#39;Weight&#39;)
+    data.append([portfolio_option[inv_opt] for inv_opt in ml.inv_opts])
+
+    # Worst Typical Down Year.
+    index.append(&#39;Worst Typical Down Year&#39;)
+    data.append([df.loc[df[&#39;Investment Option&#39;] == inv_opt, &#39;Annual Returns&#39;].values[0] +
+              -2*df.loc[df[&#39;Investment Option&#39;] == inv_opt, &#39;Std Dev&#39;].values[0]
+                for inv_opt in ml.inv_opts])
+
+    # Add Black Swan.
+    index.append(&#39;Black Swan&#39;)
+    data.append([df.loc[df[&#39;Investment Option&#39;] == inv_opt, &#39;Annual Returns&#39;].values[0] +
+              -3*df.loc[df[&#39;Investment Option&#39;] == inv_opt, &#39;Std Dev&#39;].values[0]
+                for inv_opt in ml.inv_opts])
+
+    # Create dataframe.
+    summary = pd.DataFrame(data, columns=columns, index=index)
+
+    # Set portfolio values.
+    summary[PORT.portfolio_title] = \
+        [annual_ret, std_dev, sharpe_ratio, sum(ml.weights),
+         annual_ret + -2*std_dev, annual_ret + -3*std_dev]
+
+    # Plot returns.
+    column_names = columns.copy()
+    column_names.append(PORT.portfolio_title)
+    _plot_returns(summary, column_names)
+
+    return summary</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="brownbear" href="index.html">brownbear</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="brownbear.analyze.analyze" href="#brownbear.analyze.analyze">analyze</a></code></li>
+<li><code><a title="brownbear.analyze.print_portfolio" href="#brownbear.analyze.print_portfolio">print_portfolio</a></code></li>
+<li><code><a title="brownbear.analyze.show_pie_charts" href="#brownbear.analyze.show_pie_charts">show_pie_charts</a></code></li>
+<li><code><a title="brownbear.analyze.summary" href="#brownbear.analyze.summary">summary</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

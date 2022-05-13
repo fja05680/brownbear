@@ -1,0 +1,28 @@
+# Description: investment options
+
+# Format
+"Investment Option","Asset Class","1 Yr","3 Yr","5 Yr","Std Dev"
+
+# Investment Options
+"Minnesota Life General Account","Risk-Free Asset","0.45","0.45","0.45","0.0"
+"Securian AM Money Market","Cash Equivalents:Money Markets","-0.03","1.25","1.07","0.28"
+"Hotchkis & Wiley High Yield I","US Bonds:High Yield","20.56","4.55","6.1","11.35"
+"Loomis Sayles Investment Grade Bond Adm","US Bonds:Investment Grade","7.25","6.66","5.58","5.49"
+"Metropolitan West Total Return Bd Admin","US Bonds","1.54","5.82","3.79","3.65"
+"Columbia Limited Duration Credit Adv","US Bonds","3.87","4.7","3.55","4.38"
+"Columbia Contrarian Core","US Stocks","43.28","19.67","16.63","19.12"
+"Securian AM S&P 500 Index","US Stocks:Large Cap","39.96","17.74","16.85","18.48"
+"ClearBridge Large Cap Growth","US Stocks:Growth","34.97","19.94","19.34","19.25"
+"Morgan Stanley Advantage Large Growth","US Stocks:Growth","44.19","27.75","26.11","22.58"
+"Schwab Fundamental US Large Company Idx","US Stocks:Large Cap","53.65","16.51","15.27","20.7"
+"Disciplined Growth Mid Cap Growth","US Stocks:Mid Cap","54.99","18.17","18.84","24.41"
+"American Century Equity Income R6","US Stocks:Growth and Income","26.44","10.52","10.4","15.35"
+"Vanguard Small Cap Growth Index Admiral","US Stocks:Small Cap","43.07","17.23","18.14","24.13"
+"Perkins Small Cap Value","US Stocks:Small Cap","46.19","7.02","10.4","22.66"
+"DFA Emerging Markets Value I","Global Stocks:Emerging Markets","54.79","5.29","11.85","21.88"
+"TIAA-CREF International Eq Idx Instl","Global Stocks","38.14","8.43","9.91","17.76"
+"Invesco Oppenheimer International Gr A","Global Stocks","41.16","10.78","10.9","18.39"
+"Ivy Securian Real Estate Securities Y","Real Estate","35.09","12.41","7.83","17.11"
+"Vanguard LifeStrategy Cnsrv Gr Inv","Balanced:Conservative Allocation (30/70)","15.58","8.7","7.76","7.79"
+"Vanguard LifeStrategy Growth Inv","Balanced:Growth Allocation (60/40)","33.56","12.49","12.36","14.85"
+"Vanguard LifeStrategy Moderate Gr Inv","Balanced:Moderate Allocation (40/60)","24.26","10.62","10.07","11.27"

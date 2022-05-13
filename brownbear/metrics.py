@@ -9,7 +9,6 @@ import numpy as np
 import seaborn
 
 
-
 def correlation_map(df, method='log', days=None):
     """
     Compute and Plot correlation map between symbols.
@@ -49,13 +48,13 @@ def correlation_map(df, method='log', days=None):
         df = df.pct_change()
 
     df = df.corr(method='pearson')
-    
+
     # Take the bottom triangle since it repeats itself.
     mask = np.zeros_like(df)
     mask[np.triu_indices_from(mask)] = True
-    
+
     # Generate plot.
-    fig = plt.figure(figsize=(16,12))
+    plt.figure(figsize=(16, 12))
     seaborn.heatmap(df, cmap='RdYlGn', vmax=1.0, vmin=-1.0, mask=mask,
                     linewidths=2.5)
     plt.yticks(rotation=0)
@@ -86,7 +85,7 @@ def cagr(B, A, n):
     return (math.pow(B / A, 1 / n) - 1) * 100
 
 
-def annualize_returns(df, timeperiod='daily', years=5):
+def annualized_returns(df, timeperiod='daily', years=5):
     """
     Calculate the annualized returns of entire dataframe.
 
@@ -170,3 +169,4 @@ def annualized_standard_deviation(returns, timeperiod='monthly', years=3,
     s = np.std(_returns.tail(int(factor*years)), axis=0)
     s = s * math.sqrt(factor)
     return s
+
