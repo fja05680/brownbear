@@ -1,0 +1,4 @@
+#!/home/fja0568/src/brownbear/venv/bin/python
+# EASY-INSTALL-SCRIPT: 'jsonpointer==2.3','jsonpointer'
+__requires__ = 'jsonpointer==2.3'
+__import__('pkg_resources').run_script('jsonpointer==2.3', 'jsonpointer')

@@ -9,9 +9,14 @@ import numpy as np
 import pandas as pd
 from pandas_datareader._utils import RemoteDataError
 import pandas_datareader.data as pdr
+import yfinance as yf
 from yahooquery import Ticker
 
 import brownbear as bb
+
+
+# Override pandas_datareader with yfinance
+yf.pdr_override()
 
 
 def fetch_timeseries(symbols, start=None, end=None, refresh=False):
@@ -45,21 +50,23 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False):
         end = datetime.datetime.now() - datetime.timedelta(1)
 
     if not os.path.exists(bb.SYMBOL_CACHE):
-        os.makedirs(bb.SYMBOL_CACHE)  
+        os.makedirs(bb.SYMBOL_CACHE)
 
     for symbol in symbols:
-        print('.', end='')
+        print(symbol, end=' ')
         filepath = bb.SYMBOL_CACHE / (symbol + '.csv')
         if refresh or not os.path.isfile(filepath):
             try:
-                df = pdr.DataReader(symbol, 'yahoo', start, end)
+                #df = pdr.DataReader(symbol, 'yahoo', start, end)
+                df = pdr.get_data_yahoo(symbol, start, end, progress=False)
             except RemoteDataError as e:
-                print(f'\n({e})')
+                print(f'\n{e}')
             except Exception as e:
-                print(f'\n({e})')
-            df.reset_index(inplace=True)
-            df.set_index("Date", inplace=True)
-            df.to_csv(filepath)
+                print(f'\n{e}')
+            else:
+                df.reset_index(inplace=True)
+                df.set_index("Date", inplace=True)
+                df.to_csv(filepath)
     print()
 
 

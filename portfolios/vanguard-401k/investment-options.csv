@@ -1,0 +1,8 @@
+# Description: investment options
+
+# Format
+"Investment Option","Asset Class","1 Yr","3 Yr","5 Yr","Std Dev"
+
+# Investment Options
+"Minnesota Life General Account","Risk-Free Asset","0.2","0.2","0.2","0.0"
+"somthing someting","Real Estate","0.2","0.2","0.2","0.0"

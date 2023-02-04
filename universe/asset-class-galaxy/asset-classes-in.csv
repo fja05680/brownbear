@@ -3,6 +3,7 @@
 # Format
 "Asset Class A","Asset Class B","Correlation"
 
+
 #---------------------------- Asset Class Structure ----------------------------
 
 # US Stocks - Market Indexes
@@ -36,8 +37,9 @@
 #   Investment Grade Corp
 #   High Yield
 #   Preferred Stock
-#   Treasury notes (T-notes)
-#   Treasury bonds (T-bonds)
+#   Treasury Bills (T-bills)
+#   Treasury Notes (T-notes)
+#   Treasury Bonds (T-bonds)
 #   Treasury Inflation-Protected Securities (TIPS)
 # Global Bonds
 #   Investment Grade Corp
@@ -80,6 +82,7 @@
 #   Growth Allocation (60/40)
 #   Aggressive Allocation (80/20)
 # Risk-Free Asset
+
 
 #---------------------------- Top Level Classes --------------------------------
 
@@ -165,9 +168,10 @@
 "Managed Futures","Risk-Free Asset",
 "Balanced","Risk-Free Asset",
 
+
 #------------------------------ Subclasses -------------------------------------
 
-# US Stocks - Market Indexes
+# US Stocks - Market Indexes ##########
 #   Large Cap
 #   Mid Cap
 #   Small Cap
@@ -219,7 +223,8 @@
 "US Stocks:Growth and Income","US Stocks:Total Stock Market",
 "US Stocks:Value","US Stocks:Total Stock Market",
 
-# US Stocks - Market Sectors
+
+# US Stocks - Market Sectors ##########
 #   Materials
 #   Communication Services
 #   Energy
@@ -309,7 +314,8 @@
 "US Stocks:Utilities","US Stocks:Consumer Discretionary",
 "US Stocks:Healthcare","US Stocks:Consumer Discretionary",
 
-# Global Stocks
+
+# Global Stocks ##########
 #   Asia
 #   Developed Markets
 #   Emerging Markets
@@ -344,12 +350,14 @@
 "Global Stocks:Emerging Markets","Global Stocks:EX-US",
 "Global Stocks:Europe","Global Stocks:EX-US",
 
-# US Bonds
+
+# US Bonds ##########
 #   Investment Grade Corp
 #   High Yield
 #   Preferred Stock
-#   Treasury notes (T-notes)
-#   Treasury bonds (T-bonds)
+#   Treasury Bills (T-bills)
+#   Treasury Notes (T-notes)
+#   Treasury Bonds (T-bonds)
 #   Treasury Inflation-Protected Securities (TIPS)
 
 # Correlation between investment options in Asset Class vs Subclass
@@ -357,8 +365,9 @@
 "US Bonds","US Bonds:Investment Grade",
 "US Bonds","US Bonds:High Yield",
 "US Bonds","US Bonds:Preferred Stock",
-"US Bonds","US Bonds:Treasury notes (T-notes)",
-"US Bonds","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds","US Bonds:Treasury Bills (T-bills)",
+"US Bonds","US Bonds:Treasury Notes (T-notes)",
+"US Bonds","US Bonds:Treasury Bonds (T-bonds)",
 "US Bonds","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
 
 # Correlation between investment options in same Asset Subclass
@@ -366,29 +375,37 @@
 "US Bonds:Investment Grade","US Bonds:Investment Grade","1"
 "US Bonds:High Yield","US Bonds:High Yield","1"
 "US Bonds:Preferred Stock","US Bonds:Preferred Stock,"1"
-"US Bonds:Treasury notes (T-notes)","US Bonds:Treasury notes (T-notes)",
-"US Bonds:Treasury bonds (T-bonds)","US Bonds:Treasury bonds (T-bonds)",
-"US Bonds:Treasury Inflation-Protected Securities (TIPS)","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
+"US Bonds:Treasury Bills (T-bills)","US Bonds:Treasury Bills (T-bills)","1"
+"US Bonds:Treasury Notes (T-notes)","US Bonds:Treasury Notes (T-notes)","1"
+"US Bonds:Treasury Bonds (T-bonds)","US Bonds:Treasury Bonds (T-bonds)","1"
+"US Bonds:Treasury Inflation-Protected Securities (TIPS)","US Bonds:Treasury Inflation-Protected Securities (TIPS)","1"
 
 # Correlation between investment options in same Asset Class but different Subclass
 # Asset Subclass:Asset Subclass
 "US Bonds:Investment Grade","US Bonds:High Yield",
 "US Bonds:Investment Grade","US Bonds:Preferred Stock",
-"US Bonds:Investment Grade","US Bonds:Treasury notes (T-notes)",
-"US Bonds:Investment Grade","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds:Investment Grade","US Bonds:Treasury Bills (T-bills)",
+"US Bonds:Investment Grade","US Bonds:Treasury Notes (T-notes)",
+"US Bonds:Investment Grade","US Bonds:Treasury Bonds (T-bonds)",
 "US Bonds:Investment Grade","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
 "US Bonds:High Yield","US Bonds:Preferred Stock",
-"US Bonds:High Yield","US Bonds:Treasury notes (T-notes)",
-"US Bonds:High Yield","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds:High Yield","US Bonds:Treasury Bills (T-bills)",
+"US Bonds:High Yield","US Bonds:Treasury Notes (T-notes)",
+"US Bonds:High Yield","US Bonds:Treasury Bonds (T-bonds)",
 "US Bonds:High Yield","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
-"US Bonds:Preferred Stock","US Bonds:Treasury notes (T-notes)",
-"US Bonds:Preferred Stock","US Bonds:Treasury bonds (T-bonds)",
+"US Bonds:Preferred Stock","US Bonds:Treasury Bills (T-bills)",
+"US Bonds:Preferred Stock","US Bonds:Treasury Notes (T-notes)",
+"US Bonds:Preferred Stock","US Bonds:Treasury Bonds (T-bonds)",
 "US Bonds:Preferred Stock","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
-"US Bonds:Treasury notes (T-notes)","US Bonds:Treasury bonds (T-bonds)",
-"US Bonds:Treasury notes (T-notes)","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
-"US Bonds:Treasury bonds (T-bonds)","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
+"US Bonds:Treasury Bills (T-bills)","US Bonds:Treasury Notes (T-notes)",
+"US Bonds:Treasury Bills (T-bills)","US Bonds:Treasury Bonds (T-bonds)",
+"US Bonds:Treasury Bills (T-bills)","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
+"US Bonds:Treasury Notes (T-notes)","US Bonds:Treasury Bonds (T-bonds)",
+"US Bonds:Treasury Notes (T-notes)","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
+"US Bonds:Treasury Bonds (T-bonds)","US Bonds:Treasury Inflation-Protected Securities (TIPS)",
 
-# Global Bonds
+
+# Global Bonds ##########
 #   Investment Grade Corp
 #   Investment Grade Treasury
 #   Emerging Markets Gov
@@ -417,7 +434,8 @@
 "Global Bonds:Investment Grade Treasury","Global Bonds:Short Term Treasury",
 "Global Bonds:Emerging Markets Gov","Global Bonds:Short Term Treasury",
 
-# Cash Equivalents
+
+# Cash Equivalents ##########
 #   Money Markets
 #   Treasury Bills (T-bills)
 
@@ -435,7 +453,8 @@
 # Asset Subclass:Asset Subclass
 "Cash Equivalents:Money Markets","Cash Equivalents:Treasury Bills (T-bills)",
 
-# Real Estate
+
+# Real Estate ##########
 #   REIT
 #   Real Estate Funds
 
@@ -453,7 +472,8 @@
 # Asset Subclass:Asset Subclass
 "Real Estate:REIT","Real Estate:Real Estate Funds",
 
-# Commodities
+
+# Commodities ##########
 #   Gold
 #   Silver
 #   Cooper
@@ -597,7 +617,8 @@
 "Commodities:Base Metals","Commodities:Precious Metals",
 "Commodities:Energy","Commodities:Precious Metals",
 
-# Currencies
+
+# Currencies ##########
 #   US Dollar
 #   Euro
 #   Japanese Yen
@@ -660,7 +681,8 @@
 "Currencies:Canadian Dollar","Currencies:Chinese Yuan",
 "Currencies:British Pound","Currencies:Chinese Yuan",
 
-# Balanced
+
+# Balanced ##########
 #   Conservative Allocation (30/70)
 #   Moderate Allocation (40/60)
 #   Growth Allocation (60/40)
@@ -689,6 +711,7 @@
 "Balanced:Moderate Allocation (40/60)","Balanced:Aggressive Allocation (80/20)",
 "Balanced:Growth Allocation (60/40)","Balanced:Aggressive Allocation (80/20)",
 
+
 #---------------------------- Mixed Subclasses ---------------------------------
 
 # Correlation between investment options in different Asset Class and different Subclass
@@ -698,11 +721,8 @@
 "US Stocks:Large Cap","Commodities:Natural Gas",
 "US Stocks:Large Cap","Real Estate:REIT",
 "US Stocks:Large Cap","Currencies:US Dollar",
-"Commodities:Gold","Commodities:Oil",
-"Commodities:Gold","Commodities:Natural Gas",
 "Commodities:Gold","Real Estate:REIT",
 "Commodities:Gold","Currencies:US Dollar",
-"Commodities:Oil","Commodities:Natural Gas",
 "Commodities:Oil","Real Estate:REIT",
 "Commodities:Oil","Currencies:US Dollar",
 "Commodities:Natural Gas","Real Estate:REIT",

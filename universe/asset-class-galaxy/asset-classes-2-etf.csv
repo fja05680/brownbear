@@ -44,8 +44,10 @@
 "US Bonds:Investment Grade","LQD"
 "US Bonds:High Yield","JNK"
 "US Bonds:Preferred Stock","PFF"
-"US Bonds:Treasury notes (T-notes)","IEI"
-"US Bonds:Treasury bonds (T-bonds)","TLT"
+
+"US Bonds:Treasury Bills (T-bills)","BIL"
+"US Bonds:Treasury Notes (T-notes)","IEI"
+"US Bonds:Treasury Bonds (T-bonds)","TLT"
 "US Bonds:Treasury Inflation-Protected Securities (TIPS)","TIP"
 
 "Global Bonds:Investment Grade Corp","IBND"
