@@ -38,9 +38,14 @@ import numpy as np
 import pandas as pd
 from pandas_datareader._utils import RemoteDataError
 import pandas_datareader.data as pdr
+import yfinance as yf
 from yahooquery import Ticker
 
 import brownbear as bb
+
+
+# Override pandas_datareader with yfinance
+yf.pdr_override()
 
 
 def fetch_timeseries(symbols, start=None, end=None, refresh=False):
@@ -74,21 +79,23 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False):
         end = datetime.datetime.now() - datetime.timedelta(1)
 
     if not os.path.exists(bb.SYMBOL_CACHE):
-        os.makedirs(bb.SYMBOL_CACHE)  
+        os.makedirs(bb.SYMBOL_CACHE)
 
     for symbol in symbols:
-        print(&#39;.&#39;, end=&#39;&#39;)
+        print(symbol, end=&#39; &#39;)
         filepath = bb.SYMBOL_CACHE / (symbol + &#39;.csv&#39;)
         if refresh or not os.path.isfile(filepath):
             try:
-                df = pdr.DataReader(symbol, &#39;yahoo&#39;, start, end)
+                #df = pdr.DataReader(symbol, &#39;yahoo&#39;, start, end)
+                df = pdr.get_data_yahoo(symbol, start, end, progress=False)
             except RemoteDataError as e:
-                print(f&#39;\n({e})&#39;)
+                print(f&#39;\n{e}&#39;)
             except Exception as e:
-                print(f&#39;\n({e})&#39;)
-            df.reset_index(inplace=True)
-            df.set_index(&#34;Date&#34;, inplace=True)
-            df.to_csv(filepath)
+                print(f&#39;\n{e}&#39;)
+            else:
+                df.reset_index(inplace=True)
+                df.set_index(&#34;Date&#34;, inplace=True)
+                df.to_csv(filepath)
     print()
 
 
@@ -443,21 +450,23 @@ symbol cache (default is False).</dd>
         end = datetime.datetime.now() - datetime.timedelta(1)
 
     if not os.path.exists(bb.SYMBOL_CACHE):
-        os.makedirs(bb.SYMBOL_CACHE)  
+        os.makedirs(bb.SYMBOL_CACHE)
 
     for symbol in symbols:
-        print(&#39;.&#39;, end=&#39;&#39;)
+        print(symbol, end=&#39; &#39;)
         filepath = bb.SYMBOL_CACHE / (symbol + &#39;.csv&#39;)
         if refresh or not os.path.isfile(filepath):
             try:
-                df = pdr.DataReader(symbol, &#39;yahoo&#39;, start, end)
+                #df = pdr.DataReader(symbol, &#39;yahoo&#39;, start, end)
+                df = pdr.get_data_yahoo(symbol, start, end, progress=False)
             except RemoteDataError as e:
-                print(f&#39;\n({e})&#39;)
+                print(f&#39;\n{e}&#39;)
             except Exception as e:
-                print(f&#39;\n({e})&#39;)
-            df.reset_index(inplace=True)
-            df.set_index(&#34;Date&#34;, inplace=True)
-            df.to_csv(filepath)
+                print(f&#39;\n{e}&#39;)
+            else:
+                df.reset_index(inplace=True)
+                df.set_index(&#34;Date&#34;, inplace=True)
+                df.to_csv(filepath)
     print()</code></pre>
 </details>
 </dd>

@@ -1,12 +1,8 @@
-#!/home/fja0568/src/brownbear/venv/bin/python
-# EASY-INSTALL-ENTRY-SCRIPT: 'fonttools','console_scripts','pyftmerge'
-__requires__ = 'fonttools'
+#!/home/pf/src/brownbear/venv/bin/python
+# -*- coding: utf-8 -*-
 import re
 import sys
-from pkg_resources import load_entry_point
-
+from fontTools.merge import main
 if __name__ == '__main__':
-    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
-    sys.exit(
-        load_entry_point('fonttools', 'console_scripts', 'pyftmerge')()
-    )
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())

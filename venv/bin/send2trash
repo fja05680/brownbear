@@ -1,12 +1,8 @@
-#!/home/fja0568/src/brownbear/venv/bin/python
-# EASY-INSTALL-ENTRY-SCRIPT: 'Send2Trash','console_scripts','send2trash'
-__requires__ = 'Send2Trash'
+#!/home/pf/src/brownbear/venv/bin/python
+# -*- coding: utf-8 -*-
 import re
 import sys
-from pkg_resources import load_entry_point
-
+from send2trash.__main__ import main
 if __name__ == '__main__':
-    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
-    sys.exit(
-        load_entry_point('Send2Trash', 'console_scripts', 'send2trash')()
-    )
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())

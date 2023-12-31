@@ -158,7 +158,7 @@ Analyze Portfolio.
 :   The standard deviation of the portfolio.
 
 
-**```sharpe_ratio```** :&ensp;<code>float</code>
+**```sr```** :&ensp;<code>float</code>
 :   The overall sharpe ratio of the portfolio.
 
 
@@ -175,6 +175,20 @@ Analyze Portfolio.
 
 
 Print portfolio options with their weights.
+
+###### Parameters
+
+**```portfolio_option```** :&ensp;<code>dict</code>
+:   Dictionary of investment options along with their weights.  The
+    keys are the investment options and the values are the weights.
+    The first entry in the dict must be the title of the portfolio.
+
+###### Returns
+
+<code>None</code>
+:   &nbsp;
+
+
 
     
 ### Function `show_pie_charts` {#id}
@@ -229,7 +243,7 @@ Show pie chart(s) of investment allocations by percent.
 >         portfolio_option,
 >         annual_ret,
 >         std_dev,
->         sharpe_ratio
+>         sr
 >     )
 
 
@@ -248,8 +262,6 @@ Note: analyze() must be called before calling summary().
 :   Dictionary of investment options along with their weights.  The
     keys are the investment options and the values are the weights.
     The first entry in the dict must be the title of the portfolio.
-    <code>portfolio\_option</code> may be modified if <code>weight\_by</code> is not None,
-    i.e. the weights for each investment option might be adjusted.
 
 
 **```annual_return```** :&ensp;<code>float</code>
@@ -260,12 +272,12 @@ Note: analyze() must be called before calling summary().
 :   The standard deviation of the portfolio.
 
 
-**```sharpe_ratio```** :&ensp;<code>float</code>
+**```sr```** :&ensp;<code>float</code>
 :   The overall sharpe ratio of the portfolio.
 
 ###### Returns
 
-**```summary```** :&ensp;<code>pd.DataFrame</code>
+**```summary_results```** :&ensp;<code>pd.DataFrame</code>
 :   Summary results.
 
 
@@ -701,7 +713,7 @@ Portfolio analysis and optimization.
 
 
 
-class : Single instance of Portfolio object to be used glabally.
+class : Single instance of Portfolio object to be used globally.
 
 
     
@@ -803,6 +815,8 @@ Reference: <https://en.wikipedia.org/wiki/Modern_portfolio_theory>
 
 >     class Portfolio
 
+
+Portfolio class.
 
 Initialize instance variables.
 
@@ -1240,23 +1254,40 @@ in the portfolio.  You can also fix the weights on some
 Investent Options, Asset Classes, and Asset Subclasses while the
 others are automatically calculated.
 
-'Equal' - will use equal weights.
+###### Parameters
 
-'Sharpe Ratio' - will use proportionally weighted allocations
-based on the percent of an investment option's sharpe ratio to
-the sum of all the sharpe ratios in the portfolio.
+**```df```** :&ensp;<code>pd.DataFrame</code>
+:   Dataframe of investment options with columns for asset class,
+    description, and performace metrics.
 
-'Std Dev' - will use standard deviation adjusted weights.
 
-'Annual Returns' - will use return adjusted weights.
+**```ml```** :&ensp;<code>bb.dotdict</code> of <code>lists</code>
+:   Creates dict of lists for investment option, std_dev,
+    asset_class, etc... for each investment option for the
+    specified portfolio.
 
-'Vola' - will use volatility adjusted weights.
 
-'DS Vola' - will use downside volatility adjusted weights.
+**```portfolio_option```** :&ensp;<code>dict</code>
+:   Dictionary of investment options along with their weights.  The
+    keys are the investment options and the values are the weights.
+    The first entry in the dict must be the title of the portfolio.
 
-None:   'Investment Option' means use use specified weights.
-        'Asset Class' means do not group by Asset Class.
-        'Asset Subclass means do not group by Asset Subclass.
+
+**```weight_by```** :&ensp;<code>dict</code> of <code>dicts</code>, optional
+:   Specify the weighting scheme.  If not None, it will replace the
+    weights specified in the portfolio.  You can also fix the
+    weights on some Investent Options, Asset Classes, and Asset
+    Subclasses, while the others are automatically calculated
+    (default is None, which implies use the user specified weights
+    specified in <code>portfolio\_option</code>).  See bb.analyze.analyze()
+    for more information about this parameter.
+
+###### Returns
+
+<code>None</code>
+:   &nbsp;
+
+
 
     
 ### Function `check_allocation` {#id}
@@ -1271,6 +1302,12 @@ None:   'Investment Option' means use use specified weights.
 
 
 Make sure total adds to 100.
+
+weights : dict
+    Dictionary of investment options along with their weights.  The
+    keys are the investment options and the values are the weights.
+asset_class_name : str
+    Description of the asset class.
 
 
 

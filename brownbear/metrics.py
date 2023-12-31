@@ -43,7 +43,7 @@ def correlation_map(df, method='log', days=None):
     if method == 'price':
         pass
     elif method == 'log':
-        df = np.log(df.pct_change()+1)
+        df = np.log(df.pct_change(fill_method=None) + 1)
     elif method == 'returns':
         df = df.pct_change()
 
@@ -110,8 +110,8 @@ def annualized_returns(df, timeperiod='daily', years=5):
     """
     def _cagr(column, n, f):
         time_units = int(n*f)
-        A = column[-(time_units+1)]
-        B = column[-1]
+        A = column.iloc[-(time_units+1)]
+        B = column.iloc[-1]
         annual_return = cagr(B, A, n)
         return annual_return
 

@@ -148,6 +148,12 @@ def _calc_portfolio_option_weights(portfolio_option, ml, cmpt, user):
 def check_allocation(weights, asset_class_name):
     &#34;&#34;&#34;
     Make sure total adds to 100.
+
+    weights : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+    asset_class_name : str
+        Description of the asset class.
     &#34;&#34;&#34;
     s = sum(weights.values())
     if not math.isclose(s, 1, rel_tol=1e-09, abs_tol=0.0):
@@ -162,23 +168,31 @@ def assign_weights(df, ml, portfolio_option, weight_by):
     Investent Options, Asset Classes, and Asset Subclasses while the
     others are automatically calculated.
 
-    &#39;Equal&#39; - will use equal weights.
-
-    &#39;Sharpe Ratio&#39; - will use proportionally weighted allocations
-    based on the percent of an investment option&#39;s sharpe ratio to
-    the sum of all the sharpe ratios in the portfolio.
-
-    &#39;Std Dev&#39; - will use standard deviation adjusted weights.
-
-    &#39;Annual Returns&#39; - will use return adjusted weights.
-
-    &#39;Vola&#39; - will use volatility adjusted weights.
-
-    &#39;DS Vola&#39; - will use downside volatility adjusted weights.
-
-    None:   &#39;Investment Option&#39; means use use specified weights.
-            &#39;Asset Class&#39; means do not group by Asset Class.
-            &#39;Asset Subclass means do not group by Asset Subclass.
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performace metrics.
+    ml: bb.dotdict of lists
+        Creates dict of lists for investment option, std_dev,
+        asset_class, etc... for each investment option for the
+        specified portfolio.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+    weight_by : dict of dicts, optional
+        Specify the weighting scheme.  If not None, it will replace the
+        weights specified in the portfolio.  You can also fix the
+        weights on some Investent Options, Asset Classes, and Asset
+        Subclasses, while the others are automatically calculated
+        (default is None, which implies use the user specified weights
+        specified in `portfolio_option`).  See bb.analyze.analyze()
+        for more information about this parameter.
+    
+    Returns
+    -------
+    None
     &#34;&#34;&#34;
 
     # `weight_by` user specified portfolio weights #####################
@@ -233,7 +247,7 @@ def assign_weights(df, ml, portfolio_option, weight_by):
         return
 
     # `weight_by` inv_opts only.
-    if (user.inv_opt_weight_by and 
+    if (user.inv_opt_weight_by and
         user.asset_class_weight_by is None and
         user.asset_subclass_weight_by is None):
 
@@ -280,8 +294,8 @@ def assign_weights(df, ml, portfolio_option, weight_by):
             d = {k: v for k, v in cmpt.asset_subclass_weights.items() if k.startswith(asset_class)}
             # i: get the intersection of d and user specified asset_subclasses.
             i = d.keys() &amp; user.asset_subclass_weights.keys()
-            user._asset_subclass_weights = {k: user.asset_subclass_weights[k] for k in i}
-            w = _get_cmpt_weights(PORT.asset_class_table, d, user._asset_subclass_weights,
+            user.asset_subclass_weights_ = {k: user.asset_subclass_weights[k] for k in i}
+            w = _get_cmpt_weights(PORT.asset_class_table, d, user.asset_subclass_weights_,
                                   user.asset_subclass_weight_by)
             check_allocation(w, &#39;Asset Sublass&#39;)
             cmpt.asset_subclass_weights.update(w)
@@ -296,8 +310,8 @@ def assign_weights(df, ml, portfolio_option, weight_by):
                       if ml.asset_classes[i] == asset_subclass}
             # i: get the intersection of d and user specified inv_opts.
             i = d.keys() &amp; user.inv_opt_weights.keys()
-            user._inv_opt_weights = {k: user.inv_opt_weights[k] for k in i}
-            w = _get_cmpt_weights(df, d, user._inv_opt_weights, user.inv_opt_weight_by)
+            user.inv_opt_weights_ = {k: user.inv_opt_weights[k] for k in i}
+            w = _get_cmpt_weights(df, d, user.inv_opt_weights_, user.inv_opt_weight_by)
             check_allocation(w, &#39;Investment Option&#39;)
             cmpt.inv_opt_weights.update(w)
         bb.DBG(&#39;cmpt.inv_opt_weights&#39;, cmpt.inv_opt_weights)
@@ -332,8 +346,8 @@ def assign_weights(df, ml, portfolio_option, weight_by):
                       if ml.asset_classes[i].split(&#39;:&#39;)[0] == asset_class}
             # i: get the intersection of d and user specified `inv_opts`.
             i = d.keys() &amp; user.inv_opt_weights.keys()
-            user._inv_opt_weights = {k: user.inv_opt_weights[k] for k in i}
-            w = _get_cmpt_weights(df, d, user._inv_opt_weights, user.inv_opt_weight_by)
+            user.inv_opt_weights_ = {k: user.inv_opt_weights[k] for k in i}
+            w = _get_cmpt_weights(df, d, user.inv_opt_weights_, user.inv_opt_weight_by)
             check_allocation(w, &#39;Investment Option&#39;)
             cmpt.inv_opt_weights.update(w)
         bb.DBG(&#39;cmpt.inv_opt_weights&#39;, cmpt.inv_opt_weights)
@@ -369,8 +383,8 @@ def assign_weights(df, ml, portfolio_option, weight_by):
                       if ml.asset_classes[i] == asset_subclass}
             # i: get the intersection of d and user specified inv_opts.
             i = d.keys() &amp; user.inv_opt_weights.keys()
-            user._inv_opt_weights = {k: user.inv_opt_weights[k] for k in i}
-            w = _get_cmpt_weights(df, d, user._inv_opt_weights, user.inv_opt_weight_by)
+            user.inv_opt_weights_ = {k: user.inv_opt_weights[k] for k in i}
+            w = _get_cmpt_weights(df, d, user.inv_opt_weights_, user.inv_opt_weight_by)
             check_allocation(w, &#39;Investment Option&#39;)
             cmpt.inv_opt_weights.update(w)
         bb.DBG(&#39;cmpt.inv_opt_weights&#39;, cmpt.inv_opt_weights)
@@ -397,18 +411,37 @@ in the portfolio.
 You can also fix the weights on some
 Investent Options, Asset Classes, and Asset Subclasses while the
 others are automatically calculated.</p>
-<p>'Equal' - will use equal weights.</p>
-<p>'Sharpe Ratio' - will use proportionally weighted allocations
-based on the percent of an investment option's sharpe ratio to
-the sum of all the sharpe ratios in the portfolio.</p>
-<p>'Std Dev' - will use standard deviation adjusted weights.</p>
-<p>'Annual Returns' - will use return adjusted weights.</p>
-<p>'Vola' - will use volatility adjusted weights.</p>
-<p>'DS Vola' - will use downside volatility adjusted weights.</p>
-<p>None:
-'Investment Option' means use use specified weights.
-'Asset Class' means do not group by Asset Class.
-'Asset Subclass means do not group by Asset Subclass.</p></div>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>df</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Dataframe of investment options with columns for asset class,
+description, and performace metrics.</dd>
+<dt><strong><code>ml</code></strong> :&ensp;<code>bb.dotdict</code> of <code>lists</code></dt>
+<dd>Creates dict of lists for investment option, std_dev,
+asset_class, etc&hellip; for each investment option for the
+specified portfolio.</dd>
+<dt><strong><code>portfolio_option</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary of investment options along with their weights.
+The
+keys are the investment options and the values are the weights.
+The first entry in the dict must be the title of the portfolio.</dd>
+<dt><strong><code>weight_by</code></strong> :&ensp;<code>dict</code> of <code>dicts</code>, optional</dt>
+<dd>Specify the weighting scheme.
+If not None, it will replace the
+weights specified in the portfolio.
+You can also fix the
+weights on some Investent Options, Asset Classes, and Asset
+Subclasses, while the others are automatically calculated
+(default is None, which implies use the user specified weights
+specified in <code>portfolio_option</code>).
+See bb.analyze.analyze()
+for more information about this parameter.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -421,23 +454,31 @@ the sum of all the sharpe ratios in the portfolio.</p>
     Investent Options, Asset Classes, and Asset Subclasses while the
     others are automatically calculated.
 
-    &#39;Equal&#39; - will use equal weights.
-
-    &#39;Sharpe Ratio&#39; - will use proportionally weighted allocations
-    based on the percent of an investment option&#39;s sharpe ratio to
-    the sum of all the sharpe ratios in the portfolio.
-
-    &#39;Std Dev&#39; - will use standard deviation adjusted weights.
-
-    &#39;Annual Returns&#39; - will use return adjusted weights.
-
-    &#39;Vola&#39; - will use volatility adjusted weights.
-
-    &#39;DS Vola&#39; - will use downside volatility adjusted weights.
-
-    None:   &#39;Investment Option&#39; means use use specified weights.
-            &#39;Asset Class&#39; means do not group by Asset Class.
-            &#39;Asset Subclass means do not group by Asset Subclass.
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performace metrics.
+    ml: bb.dotdict of lists
+        Creates dict of lists for investment option, std_dev,
+        asset_class, etc... for each investment option for the
+        specified portfolio.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+    weight_by : dict of dicts, optional
+        Specify the weighting scheme.  If not None, it will replace the
+        weights specified in the portfolio.  You can also fix the
+        weights on some Investent Options, Asset Classes, and Asset
+        Subclasses, while the others are automatically calculated
+        (default is None, which implies use the user specified weights
+        specified in `portfolio_option`).  See bb.analyze.analyze()
+        for more information about this parameter.
+    
+    Returns
+    -------
+    None
     &#34;&#34;&#34;
 
     # `weight_by` user specified portfolio weights #####################
@@ -492,7 +533,7 @@ the sum of all the sharpe ratios in the portfolio.</p>
         return
 
     # `weight_by` inv_opts only.
-    if (user.inv_opt_weight_by and 
+    if (user.inv_opt_weight_by and
         user.asset_class_weight_by is None and
         user.asset_subclass_weight_by is None):
 
@@ -539,8 +580,8 @@ the sum of all the sharpe ratios in the portfolio.</p>
             d = {k: v for k, v in cmpt.asset_subclass_weights.items() if k.startswith(asset_class)}
             # i: get the intersection of d and user specified asset_subclasses.
             i = d.keys() &amp; user.asset_subclass_weights.keys()
-            user._asset_subclass_weights = {k: user.asset_subclass_weights[k] for k in i}
-            w = _get_cmpt_weights(PORT.asset_class_table, d, user._asset_subclass_weights,
+            user.asset_subclass_weights_ = {k: user.asset_subclass_weights[k] for k in i}
+            w = _get_cmpt_weights(PORT.asset_class_table, d, user.asset_subclass_weights_,
                                   user.asset_subclass_weight_by)
             check_allocation(w, &#39;Asset Sublass&#39;)
             cmpt.asset_subclass_weights.update(w)
@@ -555,8 +596,8 @@ the sum of all the sharpe ratios in the portfolio.</p>
                       if ml.asset_classes[i] == asset_subclass}
             # i: get the intersection of d and user specified inv_opts.
             i = d.keys() &amp; user.inv_opt_weights.keys()
-            user._inv_opt_weights = {k: user.inv_opt_weights[k] for k in i}
-            w = _get_cmpt_weights(df, d, user._inv_opt_weights, user.inv_opt_weight_by)
+            user.inv_opt_weights_ = {k: user.inv_opt_weights[k] for k in i}
+            w = _get_cmpt_weights(df, d, user.inv_opt_weights_, user.inv_opt_weight_by)
             check_allocation(w, &#39;Investment Option&#39;)
             cmpt.inv_opt_weights.update(w)
         bb.DBG(&#39;cmpt.inv_opt_weights&#39;, cmpt.inv_opt_weights)
@@ -591,8 +632,8 @@ the sum of all the sharpe ratios in the portfolio.</p>
                       if ml.asset_classes[i].split(&#39;:&#39;)[0] == asset_class}
             # i: get the intersection of d and user specified `inv_opts`.
             i = d.keys() &amp; user.inv_opt_weights.keys()
-            user._inv_opt_weights = {k: user.inv_opt_weights[k] for k in i}
-            w = _get_cmpt_weights(df, d, user._inv_opt_weights, user.inv_opt_weight_by)
+            user.inv_opt_weights_ = {k: user.inv_opt_weights[k] for k in i}
+            w = _get_cmpt_weights(df, d, user.inv_opt_weights_, user.inv_opt_weight_by)
             check_allocation(w, &#39;Investment Option&#39;)
             cmpt.inv_opt_weights.update(w)
         bb.DBG(&#39;cmpt.inv_opt_weights&#39;, cmpt.inv_opt_weights)
@@ -628,8 +669,8 @@ the sum of all the sharpe ratios in the portfolio.</p>
                       if ml.asset_classes[i] == asset_subclass}
             # i: get the intersection of d and user specified inv_opts.
             i = d.keys() &amp; user.inv_opt_weights.keys()
-            user._inv_opt_weights = {k: user.inv_opt_weights[k] for k in i}
-            w = _get_cmpt_weights(df, d, user._inv_opt_weights, user.inv_opt_weight_by)
+            user.inv_opt_weights_ = {k: user.inv_opt_weights[k] for k in i}
+            w = _get_cmpt_weights(df, d, user.inv_opt_weights_, user.inv_opt_weight_by)
             check_allocation(w, &#39;Investment Option&#39;)
             cmpt.inv_opt_weights.update(w)
         bb.DBG(&#39;cmpt.inv_opt_weights&#39;, cmpt.inv_opt_weights)
@@ -643,7 +684,13 @@ the sum of all the sharpe ratios in the portfolio.</p>
 <span>def <span class="ident">check_allocation</span></span>(<span>weights, asset_class_name)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Make sure total adds to 100.</p></div>
+<div class="desc"><p>Make sure total adds to 100.</p>
+<p>weights : dict
+Dictionary of investment options along with their weights.
+The
+keys are the investment options and the values are the weights.
+asset_class_name : str
+Description of the asset class.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -651,6 +698,12 @@ the sum of all the sharpe ratios in the portfolio.</p>
 <pre><code class="python">def check_allocation(weights, asset_class_name):
     &#34;&#34;&#34;
     Make sure total adds to 100.
+
+    weights : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+    asset_class_name : str
+        Description of the asset class.
     &#34;&#34;&#34;
     s = sum(weights.values())
     if not math.isclose(s, 1, rel_tol=1e-09, abs_tol=0.0):

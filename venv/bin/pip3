@@ -1,4 +1,4 @@
-#!/home/fja0568/src/brownbear/venv/bin/python
+#!/home/pf/src/brownbear/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

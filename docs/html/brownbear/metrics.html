@@ -72,7 +72,7 @@ def correlation_map(df, method=&#39;log&#39;, days=None):
     if method == &#39;price&#39;:
         pass
     elif method == &#39;log&#39;:
-        df = np.log(df.pct_change()+1)
+        df = np.log(df.pct_change(fill_method=None) + 1)
     elif method == &#39;returns&#39;:
         df = df.pct_change()
 
@@ -83,7 +83,7 @@ def correlation_map(df, method=&#39;log&#39;, days=None):
     mask[np.triu_indices_from(mask)] = True
 
     # Generate plot.
-    plt.figure(figsize=(16,12))
+    plt.figure(figsize=(16, 12))
     seaborn.heatmap(df, cmap=&#39;RdYlGn&#39;, vmax=1.0, vmin=-1.0, mask=mask,
                     linewidths=2.5)
     plt.yticks(rotation=0)
@@ -139,8 +139,8 @@ def annualized_returns(df, timeperiod=&#39;daily&#39;, years=5):
     &#34;&#34;&#34;
     def _cagr(column, n, f):
         time_units = int(n*f)
-        A = column[-(time_units+1)]
-        B = column[-1]
+        A = column.iloc[-(time_units+1)]
+        B = column.iloc[-1]
         annual_return = cagr(B, A, n)
         return annual_return
 
@@ -261,8 +261,8 @@ value is the annualized return.</dd>
     &#34;&#34;&#34;
     def _cagr(column, n, f):
         time_units = int(n*f)
-        A = column[-(time_units+1)]
-        B = column[-1]
+        A = column.iloc[-(time_units+1)]
+        B = column.iloc[-1]
         annual_return = cagr(B, A, n)
         return annual_return
 
@@ -465,7 +465,7 @@ does not alter the timeseries.
     if method == &#39;price&#39;:
         pass
     elif method == &#39;log&#39;:
-        df = np.log(df.pct_change()+1)
+        df = np.log(df.pct_change(fill_method=None) + 1)
     elif method == &#39;returns&#39;:
         df = df.pct_change()
 
@@ -476,7 +476,7 @@ does not alter the timeseries.
     mask[np.triu_indices_from(mask)] = True
 
     # Generate plot.
-    plt.figure(figsize=(16,12))
+    plt.figure(figsize=(16, 12))
     seaborn.heatmap(df, cmap=&#39;RdYlGn&#39;, vmax=1.0, vmin=-1.0, mask=mask,
                     linewidths=2.5)
     plt.yticks(rotation=0)

@@ -128,12 +128,13 @@ def analyze(df, portfolio_option, weight_by=None, default_correlation=1):
     std_dev : float
         The standard deviation of the portfolio.
 
-    sharpe_ratio : float
+    sr : float
         The overall sharpe ratio of the portfolio.
     &#34;&#34;&#34;
 
     # Pop the title.
-    PORT.portfolio_title = portfolio_option.pop(&#39;Title&#39;, PORT.portfolio_title)
+    PORT.portfolio_title = \
+        portfolio_option.pop(&#39;Title&#39;, PORT.portfolio_title)
 
     # Set default correlation.
     PORT.default_correlation = default_correlation
@@ -162,14 +163,14 @@ def analyze(df, portfolio_option, weight_by=None, default_correlation=1):
 ########################################################################
 # SUMMARY
 
-def _plot_returns(summary, columns):
+def _plot_returns(summary_results, columns):
     &#34;&#34;&#34;
     Bar Plot of returns with 1, 2, and 3 standard deviations.
     &#34;&#34;&#34;
-    means = list(summary.loc[&#39;Annual Returns&#39;])
+    means = list(summary_results.loc[&#39;Annual Returns&#39;])
     Xs = list(range(0, len(means)))
     # Plot 1 std dev.
-    maxs = list(summary.loc[&#39;Std Dev&#39;])
+    maxs = list(summary_results.loc[&#39;Std Dev&#39;])
     plt.errorbar(Xs, means, maxs, fmt=&#39;.k&#39;, lw=20)
     # Plot 2 std dev.
     maxs_2 = [x * 2 for x in maxs]
@@ -185,7 +186,7 @@ def _plot_returns(summary, columns):
     plt.xticks(range(len(columns)), columns, rotation=60)
 
 
-def summary(df, portfolio_option, annual_ret, std_dev, sharpe_ratio):
+def summary(df, portfolio_option, annual_ret, std_dev, sr):
     &#34;&#34;&#34;
     Generate summary results.
 
@@ -200,18 +201,16 @@ def summary(df, portfolio_option, annual_ret, std_dev, sharpe_ratio):
         Dictionary of investment options along with their weights.  The
         keys are the investment options and the values are the weights.
         The first entry in the dict must be the title of the portfolio.
-        `portfolio_option` may be modified if `weight_by` is not None,
-        i.e. the weights for each investment option might be adjusted.
     annual_return : float
         The expected annualized return of the portfolio.
     std_dev : float
         The standard deviation of the portfolio.
-    sharpe_ratio : float
+    sr : float
         The overall sharpe ratio of the portfolio.
 
     Returns
     -------
-    summary : pd.DataFrame
+    summary_results : pd.DataFrame
         Summary results.
     &#34;&#34;&#34;
     ml = get_metric_lists(df, portfolio_option)
@@ -244,24 +243,35 @@ def summary(df, portfolio_option, annual_ret, std_dev, sharpe_ratio):
                 for inv_opt in ml.inv_opts])
 
     # Create dataframe.
-    summary = pd.DataFrame(data, columns=columns, index=index)
+    summary_results = pd.DataFrame(data, columns=columns, index=index)
 
     # Set portfolio values.
-    summary[PORT.portfolio_title] = \
-        [annual_ret, std_dev, sharpe_ratio, sum(ml.weights),
+    summary_results[PORT.portfolio_title] = \
+        [annual_ret, std_dev, sr, sum(ml.weights),
          annual_ret + -2*std_dev, annual_ret + -3*std_dev]
 
     # Plot returns.
     column_names = columns.copy()
     column_names.append(PORT.portfolio_title)
-    _plot_returns(summary, column_names)
+    _plot_returns(summary_results, column_names)
 
-    return summary
+    return summary_results
 
 
 def print_portfolio(portfolio_option):
     &#34;&#34;&#34;
     Print portfolio options with their weights.
+
+    Parameters
+    ----------
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+
+    Returns
+    -------
+    None
     &#34;&#34;&#34;
     print(f&#39;{PORT.portfolio_title} Weights:&#39;)
     for k, v in portfolio_option.items():
@@ -342,7 +352,7 @@ def show_pie_charts(df, portfolio_option, charts=None):
         return portfolio_option[inv_opt]
 
     # If charts is None, that imples all charts.
-    if (charts is None):
+    if charts is None:
         charts =[&#39;Investment Option&#39;, &#39;Asset Class&#39;, &#39;Asset Subclass&#39;]
     # If user specified a single chart, put it in a list.
     if not isinstance(charts, list):
@@ -451,7 +461,7 @@ asset diversification).</p>
 <dd>The expected annualized return of the portfolio.</dd>
 <dt><strong><code>std_dev</code></strong> :&ensp;<code>float</code></dt>
 <dd>The standard deviation of the portfolio.</dd>
-<dt><strong><code>sharpe_ratio</code></strong> :&ensp;<code>float</code></dt>
+<dt><strong><code>sr</code></strong> :&ensp;<code>float</code></dt>
 <dd>The overall sharpe ratio of the portfolio.</dd>
 </dl></div>
 <details class="source">
@@ -533,12 +543,13 @@ asset diversification).</p>
     std_dev : float
         The standard deviation of the portfolio.
 
-    sharpe_ratio : float
+    sr : float
         The overall sharpe ratio of the portfolio.
     &#34;&#34;&#34;
 
     # Pop the title.
-    PORT.portfolio_title = portfolio_option.pop(&#39;Title&#39;, PORT.portfolio_title)
+    PORT.portfolio_title = \
+        portfolio_option.pop(&#39;Title&#39;, PORT.portfolio_title)
 
     # Set default correlation.
     PORT.default_correlation = default_correlation
@@ -568,7 +579,20 @@ asset diversification).</p>
 <span>def <span class="ident">print_portfolio</span></span>(<span>portfolio_option)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Print portfolio options with their weights.</p></div>
+<div class="desc"><p>Print portfolio options with their weights.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>portfolio_option</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary of investment options along with their weights.
+The
+keys are the investment options and the values are the weights.
+The first entry in the dict must be the title of the portfolio.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -576,6 +600,17 @@ asset diversification).</p>
 <pre><code class="python">def print_portfolio(portfolio_option):
     &#34;&#34;&#34;
     Print portfolio options with their weights.
+
+    Parameters
+    ----------
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+
+    Returns
+    -------
+    None
     &#34;&#34;&#34;
     print(f&#39;{PORT.portfolio_title} Weights:&#39;)
     for k, v in portfolio_option.items():
@@ -643,7 +678,7 @@ charts).</dd>
         return portfolio_option[inv_opt]
 
     # If charts is None, that imples all charts.
-    if (charts is None):
+    if charts is None:
         charts =[&#39;Investment Option&#39;, &#39;Asset Class&#39;, &#39;Asset Subclass&#39;]
     # If user specified a single chart, put it in a list.
     if not isinstance(charts, list):
@@ -665,7 +700,7 @@ charts).</dd>
 </details>
 </dd>
 <dt id="brownbear.analyze.summary"><code class="name flex">
-<span>def <span class="ident">summary</span></span>(<span>df, portfolio_option, annual_ret, std_dev, sharpe_ratio)</span>
+<span>def <span class="ident">summary</span></span>(<span>df, portfolio_option, annual_ret, std_dev, sr)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Generate summary results.</p>
@@ -679,26 +714,24 @@ description, and performace metrics.</dd>
 <dd>Dictionary of investment options along with their weights.
 The
 keys are the investment options and the values are the weights.
-The first entry in the dict must be the title of the portfolio.
-<code>portfolio_option</code> may be modified if <code>weight_by</code> is not None,
-i.e. the weights for each investment option might be adjusted.</dd>
+The first entry in the dict must be the title of the portfolio.</dd>
 <dt><strong><code>annual_return</code></strong> :&ensp;<code>float</code></dt>
 <dd>The expected annualized return of the portfolio.</dd>
 <dt><strong><code>std_dev</code></strong> :&ensp;<code>float</code></dt>
 <dd>The standard deviation of the portfolio.</dd>
-<dt><strong><code>sharpe_ratio</code></strong> :&ensp;<code>float</code></dt>
+<dt><strong><code>sr</code></strong> :&ensp;<code>float</code></dt>
 <dd>The overall sharpe ratio of the portfolio.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>summary</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dt><strong><code>summary_results</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
 <dd>Summary results.</dd>
 </dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def summary(df, portfolio_option, annual_ret, std_dev, sharpe_ratio):
+<pre><code class="python">def summary(df, portfolio_option, annual_ret, std_dev, sr):
     &#34;&#34;&#34;
     Generate summary results.
 
@@ -713,18 +746,16 @@ i.e. the weights for each investment option might be adjusted.</dd>
         Dictionary of investment options along with their weights.  The
         keys are the investment options and the values are the weights.
         The first entry in the dict must be the title of the portfolio.
-        `portfolio_option` may be modified if `weight_by` is not None,
-        i.e. the weights for each investment option might be adjusted.
     annual_return : float
         The expected annualized return of the portfolio.
     std_dev : float
         The standard deviation of the portfolio.
-    sharpe_ratio : float
+    sr : float
         The overall sharpe ratio of the portfolio.
 
     Returns
     -------
-    summary : pd.DataFrame
+    summary_results : pd.DataFrame
         Summary results.
     &#34;&#34;&#34;
     ml = get_metric_lists(df, portfolio_option)
@@ -757,19 +788,19 @@ i.e. the weights for each investment option might be adjusted.</dd>
                 for inv_opt in ml.inv_opts])
 
     # Create dataframe.
-    summary = pd.DataFrame(data, columns=columns, index=index)
+    summary_results = pd.DataFrame(data, columns=columns, index=index)
 
     # Set portfolio values.
-    summary[PORT.portfolio_title] = \
-        [annual_ret, std_dev, sharpe_ratio, sum(ml.weights),
+    summary_results[PORT.portfolio_title] = \
+        [annual_ret, std_dev, sr, sum(ml.weights),
          annual_ret + -2*std_dev, annual_ret + -3*std_dev]
 
     # Plot returns.
     column_names = columns.copy()
     column_names.append(PORT.portfolio_title)
-    _plot_returns(summary, column_names)
+    _plot_returns(summary_results, column_names)
 
-    return summary</code></pre>
+    return summary_results</code></pre>
 </details>
 </dd>
 </dl>
