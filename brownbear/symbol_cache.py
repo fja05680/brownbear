@@ -60,7 +60,7 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False):
             else:
                 df.reset_index(inplace=True)
                 df.set_index("Date", inplace=True)
-                df.to_csv(filepath, encoding="utf-8")
+                df.to_csv(filepath, encoding='utf-8')
     print()
 
 
@@ -99,7 +99,7 @@ def compile_timeseries(symbols):
             compiled_df = df
         else:
             compiled_df = compiled_df.join(df, how='outer')
-    compiled_df.to_csv('symbols-timeseries.csv')
+    compiled_df.to_csv('symbols-timeseries.csv', encoding='utf-8')
 
 
 def remove_cache_symbols(symbols=None):

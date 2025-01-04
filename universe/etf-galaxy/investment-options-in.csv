@@ -1,4 +1,4 @@
-# Description: ETF investment options. 09/19/2020
+# Description: ETF investment options. 01/04/2025
 
 # Format
 "Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
@@ -12,9 +12,9 @@
 "IWM","Russell 2000 ETF","US Stocks:Small Cap"
 "MDY","S&P 400 Midcap ETF","US Stocks:Mid Cap"
 "IWD","Russell 1000 Value ETF","US Stocks:Value"
-"IWF","Russell 1000 Growth ETF","US Stocks"
-"RSP","S&P 500 Equal Weight ETF","US Stocks"
-"SLY","S&P 600 Small Cap ETF","US Stocks:Small Cap"
+"IWF","Russell 1000 Growth ETF","US Stocks:Growth"
+"RSP","S&P 500 Equal Weight ETF","US Stocks:Growth"
+"SPSM","S&P 600 Small Cap ETF","US Stocks:Small Cap"
 "NOBL","S&P 500 Aristocrats","US Stocks:Large Cap"
 "SDY","S&P Dividend ETF","US Stocks:Large Cap"
 
@@ -90,10 +90,16 @@
 "FXA","Australian Dollar ETF","Currencies:Australian Dollar"
 "FXC","Canadian Dollar ETF","Currencies:Canadian Dollar"
 "FXB","British Pound ETF","Currencies:British Pound"
-"CYB","Chinese Yuan ETF","Currencies:Chinese Yuan"
+
+# Investment Options - Currencies:Cryptocurrency ETFs
+"IBIT","iShares Bitcoin Trust ETF","Currencies:Cryptocurrency"
+"GBTC","Grayscale Bitcoin Trust ETF","Currencies:Cryptocurrency"
+"FBTC","Fidelity Wise Origin Bitcoin Fund","Currencies:Cryptocurrency"
+"ETHE","Grayscale Ethereum Trust ETF","Currencies:Cryptocurrency"
+"BITW","Bitwise 10 Crypto Index Fund","Currencies:Cryptocurrency"
 
 # Investment Options - Special
-"GDX","Gold Miners ETF","US Stocks"
-"XOP","S&P Oil & Gas Exploration & Production ETF","US Stocks"
-"OIH","Oil Services ETF","US Stocks"
-"VDE","Energy ETF","US Stocks"
+"GDX","Gold Miners ETF","US Stocks:Industrials"
+"XOP","S&P Oil & Gas Exploration & Production ETF","US Stocks:Energy"
+"OIH","Oil Services ETF","US Stocks:Energy"
+"VDE","Energy ETF","US Stocks:Energy"

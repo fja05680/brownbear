@@ -74,7 +74,7 @@
 #   Australian Dollar
 #   Canadian Dollar
 #   British Pound
-#   Chinese Yuan
+#   Cryptocurrency
 # Balanced
 #   Conservative Allocation (30/70)
 #   Moderate Allocation (40/60)
@@ -625,7 +625,7 @@
 #   Australian Dollar
 #   Canadian Dollar
 #   British Pound
-#   Chinese Yuan
+#   Cryptocurrency
 
 # Correlation between investment options in Asset Class vs Subclass
 # Asset Class:Asset Subclass
@@ -636,7 +636,7 @@
 "Currencies","Currencies:Australian Dollar",
 "Currencies","Currencies:Canadian Dollar",
 "Currencies","Currencies:British Pound",
-"Currencies","Currencies:Chinese Yuan",
+"Currencies","Currencies:Cryptocurrency",
 
 # Correlation between investment options in same Asset Subclass
 # Asset Subclass:Asset Subclass
@@ -647,7 +647,7 @@
 "Currencies:Australian Dollar","Currencies:Australian Dollar","1"
 "Currencies:Canadian Dollar","Currencies:Canadian Dollar","1"
 "Currencies:British Pound","Currencies:British Pound","1"
-"Currencies:Chinese Yuan","Currencies:Chinese Yuan","1"
+"Currencies:Cryptocurrency","Currencies:Cryptocurrency","1"
 
 # Correlation between investment options in same Asset Class but different Subclass
 # Asset Subclass:Asset Subclass
@@ -657,29 +657,28 @@
 "Currencies:US Dollar","Currencies:Australian Dollar",
 "Currencies:US Dollar","Currencies:Canadian Dollar",
 "Currencies:US Dollar","Currencies:British Pound",
-"Currencies:US Dollar","Currencies:Chinese Yuan",
+"Currencies:US Dollar","Currencies:Cryptocurrency",
 "Currencies:Euro","Currencies:Japanese Yen",
 "Currencies:Euro","Currencies:Swiss Franc",
 "Currencies:Euro","Currencies:Australian Dollar",
 "Currencies:Euro","Currencies:Canadian Dollar",
 "Currencies:Euro","Currencies:British Pound",
-"Currencies:Euro","Currencies:Chinese Yuan",
+"Currencies:Euro","Currencies:Cryptocurrency",
 "Currencies:Japanese Yen","Currencies:Swiss Franc",
 "Currencies:Japanese Yen","Currencies:Australian Dollar",
 "Currencies:Japanese Yen","Currencies:Canadian Dollar",
 "Currencies:Japanese Yen","Currencies:British Pound",
-"Currencies:Japanese Yen","Currencies:Chinese Yuan",
+"Currencies:Japanese Yen","Currencies:Cryptocurrency",
 "Currencies:Swiss Franc","Currencies:Australian Dollar",
 "Currencies:Swiss Franc","Currencies:Canadian Dollar",
 "Currencies:Swiss Franc","Currencies:British Pound",
-"Currencies:Swiss Franc","Currencies:Chinese Yuan",
+"Currencies:Swiss Franc","Currencies:Cryptocurrency",
 "Currencies:Australian Dollar","Currencies:Canadian Dollar",
 "Currencies:Australian Dollar","Currencies:British Pound",
-"Currencies:Australian Dollar","Currencies:Chinese Yuan",
+"Currencies:Australian Dollar","Currencies:Cryptocurrency",
 "Currencies:Canadian Dollar","Currencies:British Pound",
-"Currencies:Canadian Dollar","Currencies:Chinese Yuan",
-"Currencies:British Pound","Currencies:Chinese Yuan",
-
+"Currencies:Canadian Dollar","Currencies:Cryptocurrency",
+"Currencies:British Pound","Currencies:Cryptocurrency",
 
 # Balanced ##########
 #   Conservative Allocation (30/70)

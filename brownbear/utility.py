@@ -11,6 +11,19 @@ import yfinance as yf
 ########################################################################
 # CONSTANTS
 
+def _get_project_top_level():
+    """
+    Returns the outermost brownbear path.
+    """
+    current_path = Path(__file__).resolve()
+    brownbear_path = None
+    for parent in current_path.parents:
+        if parent.name == "brownbear":
+            brownbear_path = parent
+    if brownbear_path:
+        return brownbear_path
+    raise RuntimeError("Top-level brownbear directory not found")
+
 TRADING_DAYS_PER_YEAR = 252
 """
 int : The number of trading days per year.
@@ -23,12 +36,10 @@ TRADING_DAYS_PER_WEEK = 5
 """
 int : The number of trading days per week.
 """
-
-ROOT = Path(str(Path.cwd()).split('brownbear')[0]) / 'brownbear'
+ROOT = _get_project_top_level()
 """
 str : Full path to brownbear project root dir.
 """
-
 SYMBOL_CACHE = ROOT / 'symbol-cache'
 """
 str : Full path to symbol-cache dir.
