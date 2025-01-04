@@ -5,7 +5,7 @@ Utility functions.
 from pathlib import Path
 
 import pandas as pd
-from pandas_datareader.data import get_quote_yahoo
+import yfinance as yf
 
 
 ########################################################################
@@ -94,5 +94,9 @@ def get_quote(symbols):
     """
     Returns the current quote for a list of symbols as a dict.
     """
-    d = get_quote_yahoo(symbols).price.to_dict()
+    d = {}
+    for symbol in symbols:
+        ticker = yf.Ticker(symbol)
+        d[symbol] = ticker.info.get('currentPrice', 'N/A')
+
     return d

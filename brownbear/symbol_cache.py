@@ -7,16 +7,10 @@ import os
 
 import numpy as np
 import pandas as pd
-from pandas_datareader._utils import RemoteDataError
-import pandas_datareader.data as pdr
 import yfinance as yf
 from yahooquery import Ticker
 
 import brownbear as bb
-
-
-# Override pandas_datareader with yfinance
-yf.pdr_override()
 
 
 def fetch_timeseries(symbols, start=None, end=None, refresh=False):
@@ -57,16 +51,16 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False):
         filepath = bb.SYMBOL_CACHE / (symbol + '.csv')
         if refresh or not os.path.isfile(filepath):
             try:
-                #df = pdr.DataReader(symbol, 'yahoo', start, end)
-                df = pdr.get_data_yahoo(symbol, start, end, progress=False)
-            except RemoteDataError as e:
-                print(f'\n{e}')
+                df = yf.download(symbol, start, end, progress=False)
+                if df.empty:
+                    print(f'No Data for {symbol}')
+                    continue
             except Exception as e:
                 print(f'\n{e}')
             else:
                 df.reset_index(inplace=True)
                 df.set_index("Date", inplace=True)
-                df.to_csv(filepath)
+                df.to_csv(filepath, encoding="utf-8")
     print()
 
 
@@ -264,8 +258,8 @@ def get_symbol_fundamentals(symbols=None):
     for i, symbol in enumerate(symbols):
         print(symbol, end=' ')
         ticker = Ticker(symbol)
+        
         d = ticker.summary_detail[symbol]
-
         previousClose = trailingPE = dividendYield = marketCap = np.nan
         if isinstance(d, dict):
             try:
@@ -278,10 +272,20 @@ def get_symbol_fundamentals(symbols=None):
         else:
             print(f'\n({d})')
 
-        t = (symbol, previousClose, trailingPE, dividendYield, marketCap)
+        d = ticker.quote_type[symbol]
+        shortName = None
+        if isinstance(d, dict):
+            try:
+                shortName = d.get('shortName', None)
+            except Exception as e:
+                print(e)
+        else:
+            print(f'\n({d})')
+
+        t = (symbol, shortName, previousClose, trailingPE, dividendYield, marketCap)
         l.append(t)
 
-    columns = ['symbol', 'previousClose', 'trailingPE', 'dividendYield', 'marketCap']
+    columns = ['symbol', 'shortName', 'previousClose', 'trailingPE', 'dividendYield', 'marketCap']
     df = pd.DataFrame(l, columns=columns)
     df.set_index('symbol', inplace=True)
     return df

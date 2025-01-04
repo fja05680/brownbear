@@ -5,8 +5,12 @@
 # Note: "Description" field is optional
 
 # Investment Options
-"EHC","Encompass Health","US Stocks:Healthcare","59.13","-1.72","14.86","2.07","8.07","18.89","12.44","29.11"
-"RF","Regions Financial","US Stocks:Financials","734.80","70.55","-4.31","10.76","12.07","42.31","15.26","33.31"
-"VMC","Vulcan Materials Company","US Stocks:Materials","118.69","60.76","31.52","16.80","19.35","12.80","7.02","25.13"
-"HIBB","Hibbett Sports","US Stocks:Consumer Discretionary","431.19","436.40","10.66","14.61","39.67","35.30","17.27","53.53"
-"ADTN","ADTRAN","US Stocks:Technology","3967.13","-36.73","-58.69","-20.85","-5.36","51.77","10.55","53.21"
+"ROAD","Construction Partners Inc","US Stocks:Industrials","-79.31","179.83","106.93","43.05","39.01","34.22","26.82","35.83"
+"EHC","Encompass Health","US Stocks:Healthcare","-72.27","-12.30","37.76","22.07","12.27","13.94","12.73","26.33"
+"RF","Regions Financial","US Stocks:Financials","-79.37","17.24","24.83","6.54","10.75","23.96","19.95","32.48"
+"VMC","Vulcan Materials Company","US Stocks:Materials","-75.19","28.48","15.11","7.83","13.38","16.42","12.94","26.62"
+"ADTN","ADTRAN","US Stocks:Technology","7.16","357.10","17.09","-26.68","-0.53","37.91","23.94","61.71"
+"PRA","ProAssurance Corporation","US Stocks:Financials","-51.97","20.00","13.84","-13.99","-14.53","23.92","14.78","39.48"
+"TBRG","TruBridge,Inc.","211.96","663.90","83.41","-12.05","-5.33","26.84","15.33","46.24"
+"MPW","Medical Properties Trust,Inc.","-40.32","-70.44","-12.65","-38.68","-22.04","33.15","16.19","56.00"
+"LAKE","Lakeland Industries,Inc.","438.90","205.03","41.26","6.50","19.41","41.43","21.45","42.60"
