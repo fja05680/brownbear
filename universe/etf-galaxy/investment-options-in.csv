@@ -17,6 +17,9 @@
 "SPSM","S&P 600 Small Cap ETF","US Stocks:Small Cap"
 "NOBL","S&P 500 Aristocrats","US Stocks:Large Cap"
 "SDY","S&P Dividend ETF","US Stocks:Large Cap"
+"PEY","NASDAQ US Dividend Achievers 50 Index ETF","US Stocks:Large Cap"
+"SPYD","Portfolio S&P 500 High Dividend ETF","US Stocks:Large Cap"
+
 
 # Investment Options - S&P500 Sector ETFs
 "XLB","S&P500 Materials Sector ETF","US Stocks:Materials"
