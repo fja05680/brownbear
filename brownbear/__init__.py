@@ -14,7 +14,8 @@ from .analyze import (
     analyze,
     summary,
     print_portfolio,
-    show_pie_charts
+    show_pie_charts,
+    show_correlation_heatmap
 )
 
 from .optimizer import (

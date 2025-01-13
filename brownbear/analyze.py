@@ -2,13 +2,18 @@
 Portfolio analysis and optimization.
 """
 
+import itertools
+
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
+import seaborn
 
 import brownbear as bb
 
 from brownbear.portfolio import (
     PORT,
+    correlation,
     get_metric_lists,
     expected_return,
     standard_deviation,
@@ -32,7 +37,7 @@ def analyze(df, portfolio_option, weight_by=None, default_correlation=1):
     ----------
     df : pd.DataFrame
         Dataframe of investment options with columns for asset class,
-        description, and performace metrics.
+        description, and performance metrics.
     portfolio_option : dict
         Dictionary of investment options along with their weights.  The
         keys are the investment options and the values are the weights.
@@ -301,7 +306,7 @@ def show_pie_charts(df, portfolio_option, charts=None):
     ----------
     df : pd.DataFrame
         Dataframe of investment options with columns for asset class,
-        description, and performace metrics.
+        description, and performance metrics.
     portfolio_option : dict
         Dictionary of investment options along with their weights.  The
         keys are the investment options and the values are the weights.
@@ -342,3 +347,62 @@ def show_pie_charts(df, portfolio_option, charts=None):
     for chart in charts:
         s = _show_pie_chart(df, chart)
         print(s)
+
+
+#####################################################################
+# SHOW PIE CHARTS
+
+def show_correlation_heatmap(df, portfolio_option):
+    """
+    Show correlation heatmap for portfolio options.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performance metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+        `portfolio_option` may be modified if `weight_by` is not None,
+        i.e. the weights for each investment option might be adjusted.
+
+    Returns
+    -------
+    correlation_matrix : pd.DataFrame
+        Correlation matrix.
+    """
+    df = df.copy()
+    df = df[df['Investment Option'].isin(list(portfolio_option))]
+    df.reset_index(drop=True, inplace=True)
+
+    # Create an empty matrix for correlations
+    investment_options = df['Investment Option'].tolist()
+    correlation_matrix = pd.DataFrame(index=investment_options, columns=investment_options, dtype=float)
+    correlation_matrix
+
+    # Fill the matrix using itertools.combinations
+    for option_a, option_b in itertools.combinations(investment_options, 2):
+        asset_a = df.loc[df['Investment Option'] == option_a, 'Asset Class'].values[0]
+        asset_b = df.loc[df['Investment Option'] == option_b, 'Asset Class'].values[0]
+        corr = correlation(PORT.correlation_table, asset_a, asset_b)
+        correlation_matrix.loc[option_a, option_b] = corr
+        correlation_matrix.loc[option_b, option_a] = corr  # Mirror the value for symmetry
+
+    # Fill diagonal with 1.0 for self-correlation
+    for option in investment_options:
+        correlation_matrix.loc[option, option] = 1.0
+
+    # Take the bottom triangle since it repeats itself.
+    mask = np.zeros_like(correlation_matrix)
+    mask[np.triu_indices_from(mask)] = True
+
+    # Generate plot.
+    plt.figure(figsize=(8, 6))
+    seaborn.heatmap(correlation_matrix, cmap='RdYlGn', vmax=1.0, vmin=-1.0, mask=mask,
+                    linewidths=2.5)
+    plt.yticks(rotation=0)
+    plt.xticks(rotation=90)
+
+    return correlation_matrix

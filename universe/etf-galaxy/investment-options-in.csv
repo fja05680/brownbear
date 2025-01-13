@@ -40,6 +40,15 @@
 "EFA","MSCI EAFE ETF","Global Stocks:Developed Markets"
 "EEM","Emerging Markets ETF","Global Stocks:Emerging Markets"
 "IEUR","Core MSCI Europe ETF","Global Stocks:Europe"
+"EWH","MSCI Hong Kong ETF","Global Stocks:Asia"
+"EWJ","MSCI Japan ETF","Global Stocks:Asia"
+"EWT","MSCI Taiwan ETF","Global Stocks:Asia"
+"EWZ","MSCI Brazil ETF","Global Stocks:Emerging Markets"
+"FXI","China Large-Cap ETF","Global Stocks:Asia"
+"IFL","Latin America 40 ETF","Global Stocks:Emerging Markets"
+
+
+
 
 # Investment Options - US Bonds ETFs
 "LQD","Investment Grade Corp Bond ETF","US Bonds:Investment Grade"
@@ -104,5 +113,6 @@
 # Investment Options - Special
 "GDX","Gold Miners ETF","US Stocks:Industrials"
 "XOP","S&P Oil & Gas Exploration & Production ETF","US Stocks:Energy"
+"XHB","S&P Homebuilders ETF","US Stocks:Real Estate"
 "OIH","Oil Services ETF","US Stocks:Energy"
 "VDE","Energy ETF","US Stocks:Energy"
