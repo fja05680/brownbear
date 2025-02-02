@@ -108,6 +108,10 @@ def get_quote(symbols):
     d = {}
     for symbol in symbols:
         ticker = yf.Ticker(symbol)
-        d[symbol] = ticker.info.get('currentPrice', 'N/A')
-
+        try:
+            d[symbol] = float(ticker.fast_info['last_price'])
+        except KeyError:
+            print(f'Could not fetch quote for {symbol}')
+            d[symbol] = None
     return d
+

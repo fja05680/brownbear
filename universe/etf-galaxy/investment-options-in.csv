@@ -45,10 +45,7 @@
 "EWT","MSCI Taiwan ETF","Global Stocks:Asia"
 "EWZ","MSCI Brazil ETF","Global Stocks:Emerging Markets"
 "FXI","China Large-Cap ETF","Global Stocks:Asia"
-"IFL","Latin America 40 ETF","Global Stocks:Emerging Markets"
-
-
-
+#"IFL","Latin America 40 ETF","Global Stocks:Emerging Markets" # Might be delisted
 
 # Investment Options - US Bonds ETFs
 "LQD","Investment Grade Corp Bond ETF","US Bonds:Investment Grade"
@@ -116,3 +113,4 @@
 "XHB","S&P Homebuilders ETF","US Stocks:Real Estate"
 "OIH","Oil Services ETF","US Stocks:Energy"
 "VDE","Energy ETF","US Stocks:Energy"
+"QTUM","Defiance Quantum ETF","US Stocks:Technology"
