@@ -5,7 +5,6 @@ Utility functions.
 from pathlib import Path
 
 import pandas as pd
-import yfinance as yf
 
 
 ########################################################################
@@ -24,18 +23,6 @@ def _get_project_top_level():
         return brownbear_path
     raise RuntimeError("Top-level brownbear directory not found")
 
-TRADING_DAYS_PER_YEAR = 252
-"""
-int : The number of trading days per year.
-"""
-TRADING_DAYS_PER_MONTH = 20
-"""
-int : The number of trading days per month.
-"""
-TRADING_DAYS_PER_WEEK = 5
-"""
-int : The number of trading days per week.
-"""
 ROOT = _get_project_top_level()
 """
 str : Full path to brownbear project root dir.
@@ -99,19 +86,3 @@ def print_full(x):
     pd.set_option('display.max_rows', len(x))
     print(x)
     pd.reset_option('display.max_rows')
-
-
-def get_quote(symbols):
-    """
-    Returns the current quote for a list of symbols as a dict.
-    """
-    d = {}
-    for symbol in symbols:
-        ticker = yf.Ticker(symbol)
-        try:
-            d[symbol] = float(ticker.fast_info['last_price'])
-        except KeyError:
-            print(f'Could not fetch quote for {symbol}')
-            d[symbol] = None
-    return d
-

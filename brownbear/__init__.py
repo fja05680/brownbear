@@ -31,14 +31,22 @@ from .symbol_cache import (
     get_symbol_fundamentals
 )
 
-from .utility import (
+from .trade import (
     TRADING_DAYS_PER_YEAR,
     TRADING_DAYS_PER_MONTH,
     TRADING_DAYS_PER_WEEK,
+    calc_cash_per_investment,
+    get_quote,
+    calculate_target_portfolio,
+    rebalance_portfolio,
+    calculate_free_cash,
+    allocate_free_cash
+)
+
+from .utility import (
     ROOT,
     SYMBOL_CACHE,
-    print_full,
-    get_quote
+    print_full
 )
 
 def _whoami():
