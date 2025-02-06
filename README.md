@@ -3,14 +3,16 @@ brownbear
 
 brownbear is a tool to help you screen for stocks to build a portfolio,
 analyze past performance of the portfolio you constructed, and
-calculate the shares need to build the portfolio using real time quotes.
+calculate the shares needed to build the portfolio using real time quotes.
 
 brownbear is a very sophisticated tool that takes into account
-asset classes, asset sub-classes, individual stocks, and correlations
-between any combination of these.
+the correlations between asset classes, asset sub-classes,
+and individual stocks.
 
-The shares allocated to each investment choise can be manual, or
-adjust based on returns, sharp ratio, volatility, or equal.
+The shares allocated to each investment choice can be based on
+returns, sharp ratio, volatility, equal, or manually specified 
+using percentages.  Allocations can be specified by asset class,
+asset sub-class, and individual stocks.
 
 brownbear could give you the edge to beat the professionals :)
 All for free!!
