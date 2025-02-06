@@ -100,49 +100,6 @@ def calculate_target_portfolio(cash_per_investment, quote_per_investment):
     return target_portfolio
 
 
-def rebalance_portfolio(current_portfolio=None, target_portfolio=None):
-    """
-    Determine the stocks to buy and sell to match the target allocation.
-
-    Parameters
-    ----------
-    current_portfolio : dict, optional
-        Dictionary of stocks and the number of shares currently held.
-        Defaults to None, which is treated as an empty portfolio.
-    target_portfolio : dict, optional
-        Dictionary of stocks and the number of shares desired.
-        Defaults to None, which is treated as an empty allocation.
-
-    Returns
-    -------
-    rebalance_orders : dict
-        A dictionary with two keys:
-        - 'sell': A dict of stocks and the number of shares to sell.
-        - 'buy': A dict of stocks and the number of shares to buy.
-    """
-    if current_portfolio is None:
-        current_portfolio = {}
-    if target_portfolio is None:
-        target_portfolio = {}
-
-    sell = {}
-    buy = {}
-
-    all_stocks = set(current_portfolio.keys()).union(set(target_portfolio.keys()))
-
-    for stock in all_stocks:
-        current = current_portfolio.get(stock, 0)
-        target = target_portfolio.get(stock, 0)
-
-        if target > current:
-            buy[stock] = target - current
-        elif target < current:
-            sell[stock] = current - target
-
-    rebalance_orders = {"sell": sell, "buy": buy}
-    return rebalance_orders
-
-
 def calculate_free_cash(capital, quote_per_investment, target_portfolio):
     """
     Calculate the free cash remaining after allocating funds to the target portfolio.
@@ -185,11 +142,17 @@ def allocate_free_cash(target_portfolio, quote_per_investment, free_cash, symbol
     Returns
     -------
     tuple
-        Updated target portfolio with additional shares allocated to the specified stock,
+        Updated and sorted target portfolio with additional shares allocated to the specified stock,
         and the remaining free cash after allocation.
     """
-    if symbol not in quote_per_investment or quote_per_investment[symbol] in ['N/A', 'None', '', 0]:
-        raise ValueError(f"Invalid or missing price for symbol: {symbol}")
+    if (symbol not in quote_per_investment or
+        quote_per_investment[symbol] in ['N/A', 'None', '', 0, None]):
+        # Fetch the latest quote
+        latest_quote = get_quote([symbol]).get(symbol)
+        if latest_quote is None:
+            print(f"Warning: Could not fetch quote for {symbol}. Skipping allocation.")
+            return dict(sorted(target_portfolio.items())), free_cash
+        quote_per_investment[symbol] = latest_quote
 
     share_price = float(quote_per_investment[symbol])
     shares_to_add = int(free_cash / share_price)
@@ -199,7 +162,51 @@ def allocate_free_cash(target_portfolio, quote_per_investment, free_cash, symbol
     if shares_to_add > 0:
         target_portfolio[symbol] = target_portfolio.get(symbol, 0) + shares_to_add
 
-    return target_portfolio, free_cash
+    return dict(sorted(target_portfolio.items())), free_cash
 
 
+def rebalance_portfolio(current_portfolio=None, target_portfolio=None):
+    """
+    Determine the stocks to buy and sell to match the target allocation.
 
+    Parameters
+    ----------
+    current_portfolio : dict, optional
+        Dictionary of stocks and the number of shares currently held.
+        Defaults to None, which is treated as an empty portfolio.
+    target_portfolio : dict, optional
+        Dictionary of stocks and the number of shares desired.
+        Defaults to None, which is treated as an empty allocation.
+
+    Returns
+    -------
+    rebalance_orders : dict
+        A dictionary with two keys:
+        - 'sell': A sorted dict of stocks and the number of shares to sell.
+        - 'buy': A sorted dict of stocks and the number of shares to buy.
+    """
+    if current_portfolio is None:
+        current_portfolio = {}
+    if target_portfolio is None:
+        target_portfolio = {}
+
+    sell = {}
+    buy = {}
+
+    all_stocks = set(current_portfolio.keys()).union(set(target_portfolio.keys()))
+
+    for stock in all_stocks:
+        current = current_portfolio.get(stock, 0)
+        target = target_portfolio.get(stock, 0)
+
+        if target > current:
+            buy[stock] = target - current
+        elif target < current:
+            sell[stock] = current - target
+
+    rebalance_orders = {
+        "sell": dict(sorted(sell.items())),
+        "buy": dict(sorted(buy.items()))
+    }
+    
+    return rebalance_orders

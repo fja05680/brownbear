@@ -67,7 +67,8 @@ def fetch(investment_universe, risk_free_rate=0, annual_returns='Annual Returns'
         Risk free rate (default is 0).
     annual_returns : str, optional
         Specifies which column to use for annualized returns
-        (default is 'Annual Returns').
+        (default is 'Annual Returns').  It will also be used
+        in the sharpe_ratio calculation.
     vola : str, optional
         Specifies which column to use for volatility
         (default is 'Std Dev').

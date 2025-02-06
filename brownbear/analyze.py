@@ -380,7 +380,6 @@ def show_correlation_heatmap(df, portfolio_option):
     # Create an empty matrix for correlations
     investment_options = df['Investment Option'].tolist()
     correlation_matrix = pd.DataFrame(index=investment_options, columns=investment_options, dtype=float)
-    correlation_matrix
 
     # Fill the matrix using itertools.combinations
     for option_a, option_b in itertools.combinations(investment_options, 2):
@@ -406,3 +405,42 @@ def show_correlation_heatmap(df, portfolio_option):
     plt.xticks(rotation=90)
 
     return correlation_matrix
+
+
+def calc_portfolio_correlation(df, portfolio_option):
+    """
+    Return the portfolio correlation.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performance metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+        The first entry in the dict must be the title of the portfolio.
+        `portfolio_option` may be modified if `weight_by` is not None,
+        i.e. the weights for each investment option might be adjusted.
+
+    Returns
+    -------
+    portfolio_corr : float
+        Portfolio Correlation.
+    """
+    ml = get_metric_lists(df, portfolio_option)
+
+    portfolio_corr = 0
+
+    if ml.asset_classes:
+        # Include self-correlation terms (corr(A, A) = 1)
+        for i, asset in enumerate(ml.asset_classes):
+            portfolio_corr += ml.weights[i] * ml.weights[i] * 1  # Self-correlation
+
+        # Include pairwise correlation terms
+        for (a_i, a_class), (b_i, b_class) in itertools.combinations(enumerate(ml.asset_classes), 2):
+            corr = correlation(PORT.correlation_table, a_class, b_class)
+            portfolio_corr += 2 * ml.weights[a_i] * ml.weights[b_i] * corr  # Multiply by 2 to count both directions
+
+    return float(portfolio_corr)
+
