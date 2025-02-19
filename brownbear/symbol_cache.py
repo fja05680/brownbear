@@ -55,7 +55,8 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False, throttle_limi
 
         if refresh or not filepath.is_file():
             try:
-                df = yf.download(symbol, start, end, progress=False)
+            	ts = yf.download(symbol, start=datetime.datetime(from_year, 1, 1),
+            		         progress=False, auto_adjust=False, multi_level_index=False)
                 if df.empty:
                     print(f'No Data for {symbol}')
                     continue
