@@ -3,6 +3,7 @@ Symbol cache management.
 """
 
 import datetime
+import json
 from pathlib import Path
 import time
 
@@ -51,12 +52,12 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False, throttle_limi
 
     for i, symbol in enumerate(symbols):
         print(symbol, end=' ')
-        filepath = symbol_cache_path / f"{symbol}.csv"
+        filepath = symbol_cache_path / f'{symbol}.csv'
 
         if refresh or not filepath.is_file():
             try:
-                df = yf.download(symbol, start=datetime.datetime(from_year, 1, 1),
-            		             progress=False, auto_adjust=False, multi_level_index=False)
+                df = yf.download(symbol, start, end, progress=False,
+                                 auto_adjust=False, multi_level_index=False)
                 if df.empty:
                     print(f'No Data for {symbol}')
                     continue
@@ -64,14 +65,14 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False, throttle_limi
                 print(f'\n{e}')
             else:
                 df.reset_index(inplace=True)
-                df.set_index("Date", inplace=True)
+                df.set_index('Date', inplace=True)
                 df.to_csv(filepath, encoding='utf-8')
 
         request_count += 1
 
         # Throttle: wait after every `throttle_limit` requests
         if request_count >= throttle_limit:
-            print(f"\nThrottle limit reached. Waiting for {wait_time} seconds...")
+            print(f'\nThrottle limit reached. Waiting for {wait_time} seconds...')
             time.sleep(wait_time)
             request_count = 0  # Reset the counter after waiting
 
@@ -233,7 +234,7 @@ def get_symbol_metadata(symbols=None):
 
     l = []
     for i, symbol in enumerate(symbols):
-        filepath = symbol_cache_path / f"{symbol}.csv"
+        filepath = symbol_cache_path / f'{symbol}.csv'
         ts = pd.read_csv(filepath)
         ts.set_index('Date', inplace=True)
         start = datetime.datetime.strptime(ts.index[0], '%Y-%m-%d')
@@ -249,11 +250,9 @@ def get_symbol_metadata(symbols=None):
     return df
 
 
-def get_symbol_fundamentals(symbols=None, throttle_limit=100, wait_time=30):
+def get_symbol_fundamentals(symbols=None, throttle_limit=100, wait_time=30, reset_cache=False):
     """
-    Get fundamental data for list of symbols with throttling to avoid hitting rate limits.
-
-    Filter out any symbols prefixed with '__'.
+    Get fundamental data for list of symbols with caching and throttling.
 
     Parameters
     ----------
@@ -264,6 +263,8 @@ def get_symbol_fundamentals(symbols=None, throttle_limit=100, wait_time=30):
         The number of symbols to fetch before waiting (default is 100).
     wait_time : int, optional
         The number of seconds to wait after reaching the throttle limit (default is 30).
+    reset_cache : bool, optional
+        If True, delete the existing cache and start fresh (default is False).
 
     Returns
     -------
@@ -271,9 +272,20 @@ def get_symbol_fundamentals(symbols=None, throttle_limit=100, wait_time=30):
         DataFrame containing the fundamental data for the provided symbols.
     """
     symbol_cache_path = Path(bb.SYMBOL_CACHE)
+    cache_file = Path('fundamentals_cache.json')
 
+    # Handle reset_cache option
+    if reset_cache and cache_file.exists():
+        cache_file.unlink()  # Use pathlib to remove the file
+
+    # Load existing cache if available
+    cache = {}
+    if cache_file.exists():
+        with open(cache_file, 'r') as f:
+            cache = json.load(f)
+
+    # Get the list of symbols
     if symbols:
-        # In case user forgot to put a single symbol in a list.
         if not isinstance(symbols, list):
             symbols = [symbols]
     else:
@@ -281,46 +293,56 @@ def get_symbol_fundamentals(symbols=None, throttle_limit=100, wait_time=30):
                      if filename.suffix == '.csv' and not filename.stem.startswith('__')]
         symbols = [Path(filename).stem for filename in filenames]
 
-    # Make symbol names uppercase.
+    # Convert symbols to uppercase
     symbols = [symbol.upper() for symbol in symbols]
 
-    l = []
-    request_count = 0  # Counter to track the number of requests made
+    # Remove already cached symbols from the list
+    symbols_to_fetch = [symbol for symbol in symbols if symbol not in cache]
+    print(f'Fetching fundamental data for {len(symbols_to_fetch)} symbols...')
 
-    for i, symbol in enumerate(symbols):
+    request_count = 0
+
+    for symbol in symbols_to_fetch:
         print(symbol, end=' ')
 
-        # Use yfinance to fetch data for the symbol
-        ticker = yf.Ticker(symbol)
-
-        # Fetch the fundamental data
-        previousClose = trailingPE = dividendYield = marketCap = np.nan
         try:
+            # Fetch fundamental data from Yahoo Finance
+            ticker = yf.Ticker(symbol)
             info = ticker.info
+
+            # Extract relevant data
             previousClose = info.get('previousClose', np.nan)
             trailingPE = info.get('trailingPE', 0)
             dividendYield = info.get('dividendYield', 0) * 100  # Convert to percentage
             marketCap = info.get('marketCap', 0) / 1_000_000  # Convert to million
-            companyName = info.get('shortName', None)  # Short name of the company
+            companyName = info.get('shortName', None)
+
+            # Store result in cache
+            cache[symbol] = {
+                'companyName': companyName,
+                'previousClose': previousClose,
+                'trailingPE': trailingPE,
+                'dividendYield': dividendYield,
+                'marketCap': marketCap
+            }
+
+            # Save updated cache to file after each symbol
+            with open(cache_file, 'w') as f:
+                json.dump(cache, f, indent=4)
 
         except Exception as e:
-            print(f"\nError fetching data for {symbol}: {e}")
-
-        # Add the data to the list
-        t = (symbol, companyName, previousClose, trailingPE, dividendYield, marketCap)
-        l.append(t)
+            print(f'\nError fetching data for {symbol}: {e}')
 
         request_count += 1
 
-        # Throttle: wait after every 100 requests
+        # Throttle after hitting the limit
         if request_count >= throttle_limit:
-            print(f"\nThrottle limit reached. Waiting for {wait_time} seconds...")
-            time.sleep(wait_time)  # Wait for the specified time
-            request_count = 0  # Reset the counter after waiting
+            print(f'\nThrottle limit reached. Waiting for {wait_time} seconds...')
+            time.sleep(wait_time)
+            request_count = 0  # Reset counter
 
-    # Define the columns and create the DataFrame
-    columns = ['symbol', 'companyName', 'previousClose', 'trailingPE', 'dividendYield', 'marketCap']
-    df = pd.DataFrame(l, columns=columns)
-    df.set_index('symbol', inplace=True)
+    # Convert cache dict to DataFrame
+    df = pd.DataFrame.from_dict(cache, orient='index')
+    df.index.name = 'symbol'
 
     return df

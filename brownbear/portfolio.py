@@ -168,7 +168,7 @@ def sharpe_ratio(annual_ret, std_dev, risk_free_rate):
     Return the sharpe ratio.
 
     This is the modified sharpe ratio formulated by Craig L. Israelsen.
-    It's the same as the sharpe ration when the excess return is
+    It's the same as the sharpe ratio when the excess return is
     positive.
     """
     if math.isclose(std_dev, 0):
