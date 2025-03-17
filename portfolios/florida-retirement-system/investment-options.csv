@@ -1,15 +1,15 @@
 # Description: investment options
 
 # Format
-"Investment Option","Asset Class","1 Yr","3 Yr","5 Yr","Std Dev"
+"Investment Option","Asset Class","1 Yr","3 Yr","5 Yr","SD 1 Yr","SD 3 Yr","SD 5 Yr"
 
 # Investment Options
-"FRS Inflation Sensitive Fund (300)","US Bonds:Treasury Inflation-Protected Securities (TIPS)","-7.7","2.7","2.94","10.87"
-"FRS U.S. Bond Enhanced Index Fund (80)","US Bonds","-13.11","-2.71","3.25","5.94"
-"FRS Core Plus Bond Fund (310)","US Bonds","-13.16","-1.97","0.8","6.92"
-"FRS U.S. Stock Market Index Fund (120)","US Stocks","-19.19","7.11","8.84","21.79"
-"FRS U.S. Stock Fund (340)","US Stocks","-22.39","4.31","6.12","24.02"
-"FRS Foreign Stock Index Fund (200)","Global Stocks","-16.58","0.34","1.06","20.41"
-"FRS Global Stock Fund (210)","Global Stocks","-25.64","5.51","7.67","22.43"
-"FRS Foreign Stock Fund (220)","Global Stocks","-22.72","-0.15","1.54","21.45"
-"FRS Stable Value Fund (350)","Cash Equivalents","1.84","1.93","2.06","0.08"
+"FRS Inflation Sensitive Fund (300)","US Bonds:Treasury Inflation-Protected Securities (TIPS)","-7.7","2.7","2.94","10.87","10.87","10.87"
+"FRS U.S. Bond Enhanced Index Fund (80)","US Bonds","-13.11","-2.71","3.25","5.94","5.94","5.94"
+"FRS Core Plus Bond Fund (310)","US Bonds","-13.16","-1.97","0.8","6.92","6.92","6.92"
+"FRS U.S. Stock Market Index Fund (120)","US Stocks","-19.19","7.11","8.84","21.79","21.79","21.79"
+"FRS U.S. Stock Fund (340)","US Stocks","-22.39","4.31","6.12","24.02","24.02","24.02"
+"FRS Foreign Stock Index Fund (200)","Global Stocks","-16.58","0.34","1.06","20.41","20.41","20.41"
+"FRS Global Stock Fund (210)","Global Stocks","-25.64","5.51","7.67","22.43","22.43","22.43"
+"FRS Foreign Stock Fund (220)","Global Stocks","-22.72","-0.15","1.54","21.45","21.45","21.45"
+"FRS Stable Value Fund (350)","Cash Equivalents","1.84","1.93","2.06","0.08","0.08","0.08"

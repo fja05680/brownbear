@@ -3,6 +3,7 @@ AA,Alcoa,Materials,Aluminum,"Pittsburgh, Pennsylvania",reports
 AAL,American Airlines Group,Industrials,Passenger Airlines,"Fort Worth, Texas",reports
 AAON,AAON,Industrials,Building Products,"Tulsa, Oklahoma",reports
 ACHC,Acadia Healthcare,Health Care,Health Care Facilities,"Franklin, Tennessee",reports
+ACI,Albertsons,Consumer Staples,Food Retail,"Boise, Idaho",reports
 ACM,AECOM,Industrials,Construction & Engineering,"Dallas, Texas",reports
 ADC,Agree Realty,Real Estate,Retail REITs,"Bloomfield Hills, Michigan",reports
 AFG,American Financial Group,Financials,Multi-line Insurance,"Cincinnati, Ohio",reports
@@ -11,7 +12,6 @@ AIT,Applied Industrial Technologies,Industrials,Trading Companies & Distributors
 ALE,ALLETE,Utilities,Electric Utilities,"Duluth, Minnesota",reports
 ALGM,Allegro MicroSystems,Information Technology,Semiconductors,"Manchester, New Hampshire",reports
 ALLY,Ally Financial,Financials,Consumer Finance,"Detroit, Michigan",reports
-ALTM,Arcadium Lithium,Materials,Specialty Chemicals,"Shannon, Ireland",reports
 ALTR,Altair Engineering,Information Technology,Application Software,"Troy, Michigan",reports
 ALV,Autoliv,Consumer Discretionary,Automotive Parts & Equipment,"Stockholm, Sweden",reports
 AM,Antero Midstream,Energy,Oil & Gas Storage & Transportation,"Denver, Colorado",reports
@@ -34,7 +34,6 @@ AVT,Avnet,Information Technology,Technology Distributors,"Phoenix, Arizona",repo
 AVTR,Avantor,Health Care,Life Sciences Tools & Services,"Radnor, Pennsylvania",reports
 AXTA,Axalta,Materials,Specialty Chemicals,"Philadelphia, Pennsylvania",reports
 AYI,Acuity Brands,Industrials,Electrical Components & Equipment,"Atlanta, Georgia",reports
-AZPN,Aspen Technology,Information Technology,Application Software,"Bedford, Massachusetts",reports
 BC,Brunswick,Consumer Discretionary,Leisure Products,"Mettawa, Illinois",reports
 BCO,Brink's,Industrials,Security & Alarm Services,"Richmond, Virginia",reports
 BDC,Belden,Information Technology,Electronic Components,"St. Louis, Missouri",reports
@@ -120,6 +119,7 @@ ELS,Equity Lifestyle Properties,Real Estate,Single-Family Residential REITs,"Chi
 EME,Emcor,Industrials,Construction & Engineering,"Norwalk, Connecticut",reports
 ENS,EnerSys,Industrials,Electrical Components & Equipment,"Reading, Pennsylvania",reports
 ENSG,Ensign Group,Health Care,Health Care Facilities,"San Juan Capistrano, California",reports
+ENTG,Entegris,Information Technology,Semiconductor Materials & Equipment,"Billerica, Massachusetts",reports
 EPR,EPR Properties,Real Estate,Other Specialized REITs,"Kansas City, Missouri",reports
 EQH,Equitable Holdings,Financials,Diversified Financial Services,"New York City, New York",reports
 ESAB,ESAB,Industrials,Industrial Machinery & Supplies & Components,"North Bethesda, Maryland",reports
@@ -319,6 +319,7 @@ SCI,Service Corp Intl,Consumer Discretionary,Specialized Consumer Services,"Hous
 SEIC,SEI,Financials,Asset Management & Custody Banks,"Oaks, Pennsylvania",reports
 SF,Stifel,Financials,Investment Banking & Brokerage,"St. Louis, Missouri",reports
 SFM,Sprouts Farmers Market,Consumer Staples,Food Retail,"Phoenix, Arizona",reports
+SGI,Somnigroup International,Consumer Discretionary,Home Furnishings,"Lexington, Kentucky",reports
 SHC,Sotera Health,Health Care,Health Care Services,"Broadview Heights, Ohio",reports
 SIGI,Selective Insurance Group,Financials,Property & Casualty Insurance,,reports
 SKX,Skechers,Consumer Discretionary,Footwear,"Manhattan Beach, California",reports
@@ -349,7 +350,6 @@ TKR,Timken,Industrials,Industrial Machinery & Supplies & Components,"North Canto
 TMHC,Taylor Morrison,Consumer Discretionary,Homebuilding,"Scottsdale, Arizona",reports
 TNL,Travel + Leisure Co.,Consumer Discretionary,"Hotels, Resorts & Cruise Lines","Orlando, Florida",reports
 TOL,Toll Brothers,Consumer Discretionary,Homebuilding,"Fort Washington, Pennsylvania",reports
-TPX,Tempur Sealy,Consumer Discretionary,Home Furnishings,"Lexington, Kentucky",reports
 TREX,Trex,Industrials,Building Products,"Winchester, Virginia",reports
 TTC,Toro,Industrials,Agricultural & Farm Machinery,"Bloomington, Minnesota",reports
 TTEK,Tetra Tech,Industrials,Construction & Engineering,"Pasadena, California",reports

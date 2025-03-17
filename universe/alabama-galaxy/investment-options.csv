@@ -1,16 +1,15 @@
 # Description: custom investment options. 10/04/2020
 
 # Format
-"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
-# Note: "Description" field is optional
+"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","SD 1 Yr","SD 3 Yr","SD 5 Yr"
 
 # Investment Options
-"ROAD","Construction Partners Inc","US Stocks:Industrials","-65.61","-73.66","56.31","40.81","32.99","45.22","28.19","37.29"
-"EHC","Encompass Health","US Stocks:Healthcare","75.16","-6.41","33.89","25.98","11.79","24.00","15.43","26.37"
-"RF","Regions Financial","US Stocks:Financials","-35.11","-42.42","33.54","4.77","14.48","20.25","13.95","32.54"
-"VMC","Vulcan Materials Company","US Stocks:Materials","-68.36","-47.38","-5.50","13.09","15.60","21.14","14.95","27.33"
-"ADTN","ADTRAN","US Stocks:Technology","141.86","119.90","69.39","-18.20","5.92","47.69","23.56","63.14"
-"PRA","ProAssurance Corporation","US Stocks:Financials","33.28","-23.99","19.85","-13.16","-12.03","56.32","17.04","39.71"
-"TBRG","TruBridge,Inc.","773.40","766.88","209.37","-0.83","-0.01","38.79","17.32","49.23"
-"MPW","Medical Properties Trust,Inc.","3279.03","225.42","55.57","-26.59","-17.67","64.84","11.61","59.18"
-"LAKE","Lakeland Industries,Inc.","-31.98","42.94","27.27","7.88","9.02","37.94","23.61","42.63"
+"ROAD","Construction Partners Inc","US Stocks:Industrials","-75.93","-70.04","40.05","39.48","36.65","42.67","25.87","42.98","37.25","34.61"
+"EHC","Encompass Health","US Stocks:Healthcare","-22.40","-18.78","25.64","21.83","12.39","23.02","13.93","16.81","26.38","29.68"
+"RF","Regions Financial","US Stocks:Financials","-70.68","-46.55","15.62","3.10","18.03","24.69","17.30","27.02","32.66","31.56"
+"VMC","Vulcan Materials Company","US Stocks:Materials","-78.79","-50.44","-13.54","10.29","14.46","33.37","24.74","25.68","27.66","25.18"
+"ADTN","ADTRAN","US Stocks:Technology","-90.37","27.72","54.50","-21.80","6.18","57.67","44.13","65.19","63.36","55.94"
+"PRA","ProAssurance Corporation","US Stocks:Financials","157.34","-21.31","31.91","-14.01","-6.34","56.58","16.52","26.24","39.06","41.91"
+"TBRG","TruBridge,Inc.","12.35","390.39","170.55","-7.98","2.51","44.56","25.03","48.95","49.01","41.37"
+"MPW","Medical Properties Trust,Inc.","1591.23","379.52","53.55","-26.82","-16.44","71.62","16.03","55.97","59.07","47.77"
+"LAKE","Lakeland Industries,Inc.","-90.33","-30.61","30.93","2.63","7.17","42.29","29.73","45.74","43.62","49.35"

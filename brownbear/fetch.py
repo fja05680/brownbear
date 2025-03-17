@@ -42,8 +42,9 @@ def _add_sharpe_ratio_column(inv_opts, risk_free_rate):
     return inv_opts
 
 
-def fetch(investment_universe, risk_free_rate=0, annual_returns='Annual Returns',
-          vola='Std Dev', ds_vola='Std Dev', clean=True):
+def fetch(investment_universe, risk_free_rate=0,
+          annual_returns='5 Yr', standard_deviation='SD 3 Yr',
+          vola='Vola', ds_vola='DS Vola', clean=True):
     """
     Fetch Investment Universe and asset classes
 
@@ -55,7 +56,7 @@ def fetch(investment_universe, risk_free_rate=0, annual_returns='Annual Returns'
         "Asset Class A", "Asset Class B","Correlation"
         "Description" field is optional.  It is not referenced in code.
         "Annual Returns" column(s) can named anything.
-            Recommend "1 Yr", "3 Yr", "5 Yr", or "10 Yr".  Then
+            Recommend "1 Yr", "3 Yr", or "5 Yr".  Then
             annual_returns parameter can select the column to use.
 
     Parameters
@@ -67,14 +68,18 @@ def fetch(investment_universe, risk_free_rate=0, annual_returns='Annual Returns'
         Risk free rate (default is 0).
     annual_returns : str, optional
         Specifies which column to use for annualized returns
-        (default is 'Annual Returns').  It will also be used
+        (default is '5 Yr').  It will also be used
+        in the sharpe_ratio calculation.
+    standard_deviation : str, optional
+        Specifies which column to use for standard deviation
+        (default is 'SD 3 Yr').  It will also be used
         in the sharpe_ratio calculation.
     vola : str, optional
         Specifies which column to use for volatility
-        (default is 'Std Dev').
+        (default is 'Vola').
     ds_vola : str, optional
         Specifies which column to use for downside volatility
-        (default is 'Std Dev').
+        (default is 'DS Vola').
     clean : bool, optional
         True to remove rows that have a 'nan' as a column value
         (default is True).
@@ -108,8 +113,11 @@ def fetch(investment_universe, risk_free_rate=0, annual_returns='Annual Returns'
 
     # Allows the use of different annualized returns,
     # e.g. 1, 3, or 5 year annaulized returns.
-    if annual_returns != 'Annual Returns':
-        inv_opts['Annual Returns'] = inv_opts[annual_returns]
+    inv_opts['Annual Returns'] = inv_opts[annual_returns]
+
+    # Allows the use of different standard deviations,
+    # e.g. 1 or 3 year standard deviation.
+    inv_opts['Std Dev'] = inv_opts[standard_deviation]
 
     # Add Sharpe Ratio column.
     inv_opts = _add_sharpe_ratio_column(inv_opts, risk_free_rate)
@@ -119,10 +127,10 @@ def fetch(investment_universe, risk_free_rate=0, annual_returns='Annual Returns'
         [bb.ROOT / 'universe' / 'asset-class-galaxy' / 'investment-options.csv'])
 
     # Add Annual Returns column to asset class table.
-    if annual_returns in PORT.asset_class_table.columns:
-        PORT.asset_class_table['Annual Returns'] = PORT.asset_class_table[annual_returns]
-    else:
-        PORT.asset_class_table['Annual Returns'] = PORT.asset_class_table['5 Yr']
+    PORT.asset_class_table['Annual Returns'] = PORT.asset_class_table[annual_returns]
+
+    # Add Std Dev column to asset class table.
+    PORT.asset_class_table['Std Dev'] = PORT.asset_class_table[standard_deviation]
 
     # Add Sharpe Ratio column to asset class table.
     PORT.asset_class_table = _add_sharpe_ratio_column(PORT.asset_class_table, risk_free_rate)

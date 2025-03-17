@@ -1,14 +1,14 @@
 # Description: investment options
 
 # Format
-"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
+"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","SD 1 Yr","SD 3 Yr","SD 5 Yr"
 
 # Investment Options
-"BTI","British American Tobacco","Global Stocks:Developed Markets","-9.63","28.31","41.17","2.52","7.27","31.29","26.37","20.81"
-"BUD","Anheuser-Busch","Global Stocks:Developed Markets","955.59","39.72","-3.70","-0.28","-1.12","27.95","5.50","26.57"
-"PM","Philip Morris International","Global Stocks:Developed Markets","776.05","108.17","80.82","18.67","19.09","39.23","7.06","23.14"
-"UL","Unilever","Global Stocks:Developed Markets","-4.07","-11.13","17.86","7.17","3.52","23.99","19.56","17.35"
-"ROKU","Roku,Inc.","14.38","124.55","30.83","-10.97","-6.79","69.89","31.79","72.26"
-"EPD","Enterprise Products Partners L.P.","US Stocks:Energy","10.98","21.36","29.75","21.09","15.62","15.52","9.67","19.58"
-"ET","Energy Transfer LP","US Stocks:Energy","-42.57","14.02","41.47","36.38","21.95","22.26","15.04","22.83"
-"TDG","TransDigm Group Incorporated","US Stocks:Industrials","28.51","38.20","22.93","34.89","21.88","26.61","14.74","25.07"
+"BTI","British American Tobacco","Global Stocks:Developed Markets","-32.55","56.65","48.12","9.15","9.77","17.87","10.49","20.03","20.95","22.67"
+"BUD","Anheuser-Busch","Global Stocks:Developed Markets","726.37","91.99","-0.05","4.21","5.20","27.23","6.95","30.42","26.60","28.91"
+"PM","Philip Morris International","Global Stocks:Developed Markets","17.15","100.96","68.47","23.69","18.64","20.39","12.57","24.84","22.83","21.83"
+"UL","Unilever","Global Stocks:Developed Markets","1.22","3.38","22.16","12.84","4.94","16.34","8.59","16.66","16.38","17.10"
+"ROKU","Roku,Inc.","-93.18","-52.91","5.69","-16.77","-6.98","77.31","39.40","36.44","72.85","70.60"
+"EPD","Enterprise Products Partners L.P.","US Stocks:Energy","26.89","26.32","26.51","18.39","21.79","16.98","7.62","22.19","19.44","22.42"
+"ET","Energy Transfer LP","US Stocks:Energy","-43.75","6.42","34.43","33.26","30.96","31.26","15.64","22.99","22.60","45.71"
+"TDG","TransDigm Group Incorporated","US Stocks:Industrials","-6.00","29.77","20.16","33.72","25.05","24.04","12.84","14.03","25.03","25.88"

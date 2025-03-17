@@ -1,9 +1,9 @@
 # Description: investment options
 
 # Format
-"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","Std Dev"
+"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","SD 1 Yr","SD 3 Yr","SD 5 Yr"
 
 # Investment Options
-"ROKU","Roku,Inc.","US Stocks:Technology","1.09","-12.33","216.6","109.96","74.46","79.86","39.56","79.86"
-"LUMN","Lumen Technologies","US Stocks:Technology","9.82","16.77","52.89","0.68","-3.87","29.44","18.46","29.44"
-"NLY","Annaly Capital Management, Inc.","US Stocks:Real Estate","2.09","14.37","68.73","8.24","9.13","23.67","15.9","23.67"
+"ROKU","Roku,Inc.","US Stocks:Technology","1.09","-12.33","216.6","109.96","74.46","79.86","39.56","79.86","79.86","79.86"
+"LUMN","Lumen Technologies","US Stocks:Technology","9.82","16.77","52.89","0.68","-3.87","29.44","18.46","29.44","29.44","29.44"
+"NLY","Annaly Capital Management, Inc.","US Stocks:Real Estate","2.09","14.37","68.73","8.24","9.13","23.67","15.9","23.67","23.67","23.67"
