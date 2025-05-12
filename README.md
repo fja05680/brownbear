@@ -19,9 +19,12 @@ All for free!!
 
 Install
 
-    - git clone https://github.com/fja05680/brownbear.git
-    - cd brownbear
-    - sudo python setup.py install
+    $ git clone https://github.com/fja05680/brownbear.git
+    $ cd brownbear
+    $ python -m venv venv
+    $ pip install setuptools
+    $ . venv/bin/activate
+    $ python setup.py install (or develop)
 
 How to guide
 

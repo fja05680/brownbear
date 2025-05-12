@@ -9,6 +9,7 @@ ACA,"Arcosa, Inc.",Industrials,Industrial Machinery,"Dallas, Texas",view,1739445
 ACAD,Acadia Pharmaceuticals,Health Care,Pharmaceuticals,"San Diego, California",view,1070494
 ACIW,ACI Worldwide,Information Technology,Application Software,"Miami, Florida",view,935036
 ACLS,"Axcelis Technologies, Inc.",Information Technology,Semiconductor Equipment,"Beverly, Massachusetts",view,1113232
+ACT,"Enact Holdings, Inc.",Financials,Commercial & Residential Mortgage Finance,"Raleigh, North Carolina",view,1823529
 ADEA,"Adeia, Inc.",Information Technology,IT Consulting & Other Services,"San Jose, California",view,1803696
 ADMA,"ADMA Biologics, Inc.",Health Care,Biotechnology,"Ramsey, New Jersey",view,1368514
 ADNT,Adient,Consumer Discretionary,Automotive Parts & Equipment,"Plymouth, Michigan",view,1670541
@@ -27,10 +28,8 @@ AL,Air Lease Corporation,Industrials,Passenger Airlines,"Los Angeles, California
 ALEX,Alexander & Baldwin,Real Estate,Diversified REITs,"Honolulu, Hawaii",view,1545654
 ALG,Alamo Group,Industrials,Construction Machinery & Heavy Trucks,"Seguin, Texas",view,897077
 ALGT,Allegiant Travel Company,Industrials,Airlines,"Summerlin, Nevada",view,1362468
-ALK,Alaska Air Group,Industrials,Passenger Airlines,"SeaTac, Washington",view,766421
 ALKS,Alkermes plc,Health Care,Pharmaceuticals,"Dublin, Ireland",view,1520262
 ALRM,"Alarm.Com, Inc.",Financials,Application Software,"Tysons, Virginia",view,1459200
-AMBC,Ambac Financial Group,Financials,Property & Casualty Insurance,"New York City, New York",view,874501
 AMN,"Amn Healthcare Services, Inc.",Health Care,Health Care Services,"Dallas, Texas",view,1142750
 AMPH,"Amphstar Pharmaceuticals, Inc.",Health Care,Pharmaceuticals,"Rancho Cucamonga, California",view,1297184
 AMR,"Alpha Metallurgical Resources, Inc.",Materials,Steel,"Bristol, Tennessee",view,1704715
@@ -38,6 +37,7 @@ AMSF,"Amerisafe, Inc.",Financials,Property & Casualty Insurance,"DeRidder, Louis
 AMTM,Amentum,Industrials,Diversified Support Services,"Chantilly, Virginia",view,2011286
 AMWD,American Woodmark Corp.,Industrials,Building Products,"Winchester, Virginia",view,794619
 ANDE,"The Andersons, Inc.",Consumer Staples,Food Distributors,"Maumee, Ohio",view,821026
+ANGI,Angi Inc.,Communication Services,Advertising,"Denver, Colorado",view,1705110
 ANIP,"ANI Pharmaceuticals, Inc.",Health Care,Pharmaceuticals,"Baudette, Minnesota",view,1023024
 AORT,Artivion,Health Care,Health Care Equipment,"Kennesaw, Georgia",view,784199
 AOSL,"Alpha and Omega Semiconductor, Ltd.",Information Technology,Semiconductors,"Sunnyvale, California",view,1387467
@@ -56,7 +56,6 @@ ASTE,"Astec Industries, Inc.",Industrials,Construction Machinery & Heavy Trucks,
 ASTH,"Astrana Health, Inc.",Health Care,Health Care Facilities,"Alhambra, California",view,1083446
 ATEN,"A10 Networks, Inc.",Information Technology,Systems Software,"San Jose, California",view,1580808
 ATGE,Adtalem Global Education,Consumer Discretionary,Education Services,"Chicago, Illinois",view,730464
-ATI,ATI Inc.,Materials,Steel,"Dallas, Texas",view,1018963
 AUB,"Atlantic Union Bankshares, Corp.",Financials,Regional Banks,"Richmond, Virginia",view,883948
 AVA,Avista Corporation,Utilities,Multi-Utilities,"Spokane, Washington",view,104918
 AVAV,"AeroVironment, Inc.",Industrials,Aerospace & Defense,"Arlington County, Virginia",view,1368622
@@ -70,7 +69,6 @@ AZZ,"AZZ, Inc.",Industrials,Heavy Electrical Equipment,"Fort Worth, Texas",view,
 BANC,"Banc Of California, Inc.",Financials,Regional Banks,"Santa Ana, California",view,1169770
 BANF,Bancfirst Corp,Financials,Regional Banks,"Oklahoma City, Oklahoma",view,760498
 BANR,Banner Corporation,Financials,Regional Banks,"Walla Walla, Washington",view,946673
-BBWI,"Bath & Body Works, Inc.",Consumer Discretionary,Other Specialty Retail,"Columbus, Ohio",view,701985
 BCC,Boise Cascade,Industrials,Building Products,"Boise, Idaho",view,1328581
 BCPC,Balchem Corporation,Materials,Specialty Chemicals,"Montvale, New Jersey",view,9326
 BDN,Brandywine Realty Trust,Real Estate,Office REITs,"Philadelphia, Pennsylvania",view,790816
@@ -94,6 +92,7 @@ BRC,Brady Corporation,Industrials,Commercial Printing,"Milwaukee, Wisconsin",vie
 BRKL,"Brookline Bancorp, Inc.",Financials,Regional Banks,"Boston, Massachusetts",view,1049782
 BSIG,"BrightSphere Investment Group, Inc.",Financials,Asset Management & Custody Banks,"Boston, Massachusetts",view,1748824
 BTU,"Peabody Energy, Inc.",Energy,Coal & Consumable Fuels,"St. Louis, Missouri",view,1064728
+BWA,BorgWarner,Consumer Discretionary,Automotive Parts & Equipment,"Auburn Hills, Michigan",view,908255
 BXMT,"Blackstone Mortgage Trust, Inc.",Financials,Mortgage REITs,"New York City, New York",view,1061630
 CABO,Cable One,Communication Services,Cable & Satellite,"Phoenix, Arizona",view,1632127
 CAKE,"The Cheesecake Factory, Inc.",Consumer Discretionary,Restaurants,"Calabasas, California",view,887596
@@ -106,8 +105,10 @@ CASH,"Pathward Financial, Inc.",Financials,Regional Banks,"Sioux Falls, South Da
 CATY,Cathay General Bancorp,Financials,Regional Banks,"Los Angeles, California",view,861842
 CBRL,Cracker Barrel,Consumer Discretionary,Restaurants,"Lebanon, Tennessee",view,1067294
 CBU,"Community Bank System, Inc.",Financials,Regional Banks,"DeWitt, New York",view,723188
+CC,Chemours,Materials,Diversified Chemicals,"Wilmington, Delaware",view,1627223
 CCOI,"Cogent Communications Holdings, Inc.",Communication Services,Alternative Carriers,"Washington, D.C.",view,1158324
 CCS,"Century Communities, Inc.",Consumer Discretionary,Homebuilding,"Greenwood Village, Colorado",view,1576940
+CE,Celanese,Materials,Specialty Chemicals,"Irving, Texas",view,1306830
 CENT,Central Garden & Pet Company,Consumer Staples,Household Products,"Walnut Creek, California",view,887733
 CENTA,Central Garden & Pet Company (Class A),Consumer Staples,Household Products,"Walnut Creek, California",view,887733
 CENX,Century Aluminum Company,Materials,Aluminum,"Chicago, Illinois",view,949157
@@ -117,6 +118,7 @@ CFFN,Capitol Federal Savings Bank,Financials,Regional Banks,"Topeka, Kansas",vie
 CHCO,City Holding Company,Financials,Regional Banks,"Charleston, West Virginia",view,726854
 CHEF,"Chefs' Warehouse, Inc.",Consumer Staples,Food Distributors,"Ridgefield, Connecticut",view,1517175
 CLB,Core Laboratories,Energy,Oil & Gas Equipment & Services,"Amsterdam, the Netherlands",view,1958086
+CLSK,"CleanSpark, Inc.",Information Technology,Internet Services & Infrastructure,"Henderson, Nevada",view,827876
 CNK,"Cinemark Holdings, Inc.",Communication Services,Movies & Entertainment,"Plano, Texas",view,1385280
 CNMD,CONMED Corporation,Health Care,Health Care Equipment,"Largo, Florida",view,816956
 CNR,"Core Natural Resources, Inc.",Energy,Coal & Consumable Fuels,"Cecil Township, Pennsylvania",view,1710366
@@ -187,6 +189,7 @@ EPAC,Enerpac Tool Group,Industrials,Industrial Machinery,"Menomonee Falls, Wisco
 EPC,Edgewell Personal Care,Consumer Staples,Household Products,"Shelton, Connecticut",view,1096752
 EPRT,"Essential Properties Realty Trust, Inc.",Real Estate,Diversified REITs,"Princeton, New Jersey",view,1728951
 ESE,ESCO Technologies Inc.,Industrials,Industrial Machinery,"St. Louis, Missouri",view,866706
+ESI,Element Solutions,Materials,Specialty Chemicals,"Fort Lauderdale, Florida",view,1590714
 ETD,"Ethan Allen Interiors, Inc.",Consumer Discretionary,Home Furnishings,"Danbury, Connecticut",view,896156
 ETSY,Etsy,Consumer Discretionary,Broadline Retail,"New York City, New York",view,1370637
 EVTC,"EVERTEC, Inc.",Financials,Transaction & Payment Processing Services,"San Juan, Puerto Rico",view,1559865
@@ -206,9 +209,10 @@ FFBC,First Financial Bancorp.,Financials,Regional Banks,"Cincinnati, Ohio",view,
 FHB,"First Hawaiian, Inc.",Financials,Regional Banks,"Honolulu, Hawaii",view,36377
 FIZZ,National Beverage Corp.,Consumer Staples,Soft Drinks,"Fort Lauderdale, Florida",view,69891
 FL,Foot Locker,Consumer Discretionary,Apparel Retail,"New York City, New York",view,850209
-FLGT,"Fulgent Genetics, Inc.",Health Care,Health Care Services,"El Monte, California",view,1674930
+FMC,FMC Corporation,Materials,Fertilizers & Agricultural Chemicals,"Philadelphia, Pennsylvania",view,37785
 FORM,"FormFactor, Inc.",Information Technology,Semiconductor Equipment,"Livermore, California",view,1039399
 FOXF,Fox Factory,Consumer Discretionary,Automotive Parts & Equipment,"Duluth, Georgia",view,1424929
+FRPT,Freshpet,Consumer Staples,Packaged Foods & Meats,"Bedminster, New Jersey",view,1611647
 FSS,Federal Signal Corporation,Industrials,Construction Machinery & Heavy Trucks,"Oak Brook, Illinois",view,277509
 FTDR,"Frontdoor, Inc.",Consumer Discretionary,Specialized Consumer Services,"Memphis, Tennessee",view,1727263
 FTRE,Fortrea,Health Care,Biotechnology,"Durham, North Carolina",view,1965040
@@ -218,7 +222,6 @@ FUN,Six Flags,Consumer Discretionary,Leisure Facilities,"Charlotte, North Caroli
 FWRD,Forward Air Corp.,Industrials,Air Freight & Logistics,"Greeneville, Tennessee",view,912728
 GBX,"The Greenbrier Companies, Inc.",Industrials,Construction Machinery & Heavy Trucks,"Lake Oswego, Oregon",view,923120
 GDEN,Golden Entertainment,Consumer Discretionary,Casinos & Gaming,"Enterprise, Nevada",view,1071255
-GDOT,Green Dot Corporation,Financials,Consumer Finance,"Austin, Texas",view,1386278
 GDYN,"Grid Dynamics Holdings, Inc.",Information Technology,IT Consulting & Other Services,"San Ramon, California",view,1743725
 GEO,"GEO Group, Inc.",Industrials,Environmental & Facilities Services,"Boca Raton, Florida",view,923796
 GES,"Guess, Inc.",Consumer Discretionary,Apparel Retail,"Los Angeles, California",view,912463
@@ -232,14 +235,12 @@ GO,Grocery Outlet,Consumer Staples,Food Retail,"Emeryville, California",view,177
 GOGO,"Gogo, Inc.",Communication Services,Wireless Telecommunication Services,"Broomfield, Colorado",view,1537054
 GOLF,Acushnet Company,Consumer Discretionary,Leisure Products,"Fairhaven, Massachusetts",view,1672013
 GPI,"Group 1 Automotive, Inc.",Consumer Discretionary,Automotive Retail,"Houston, Texas",view,1031203
-GPRE,"Green Plains, Inc.",Energy,Coal & Consumable Fuels,"Omaha, Nebraska",view,1309402
 GRBK,"Green Brick Partners, Inc.",Consumer Discretionary,Homebuilding,"Plano, Texas",view,1373670
 GSHD,"Goosehead Insurance, Inc.",Financials,Insurance Brokers,"Westlake, Texas",view,1726978
 GTES,Gates Corporation,Industrials,Industrial Machinery & Supplies & Components,"Denver, Colorado",view,1718512
 GTY,Getty Realty Corp.,Real Estate,Retail REITs,"New York City, New York",view,1052752
 GVA,"Granite Construction, Inc.",Industrials,Construction & Engineering,"Watsonville, California",view,861459
 HAFC,Hanmi Financial Corporation,Financials,Regional Banks,"Los Angeles, California",view,1109242
-HAIN,Hain Celestial Group,Consumer Staples,Packaged Foods & Meats,"Lake Success, New York",view,910406
 HASI,"Hannon Armstrong Sustainable Infrastructure Capital, Inc.",Financials,Specialized Finance,"Annapolis, Maryland",view,1561894
 HAYW,"Hayward Holdings, Inc.",Industrials,Electrical Components & Equipment,"Charlotte, North Carolina",view,1834622
 HBI,"Hanesbrands, Inc.",Consumer Discretionary,"Apparel, Accessories & Luxury Goods","Winston-Salem, North Carolina",view,1359841
@@ -249,7 +250,6 @@ HCSG,"Healthcare Services Group, Inc.",Industrials,Environmental & Facilities Se
 HELE,Helen of Troy Limited,Consumer Discretionary,Household Appliances,"Hamilton, Bermuda",view,916789
 HFWA,Heritage Financial Corporation,Health Care,Regional Banks,"Olympia, Washington",view,1046025
 HI,"Hillenbrand, Inc.",Industrials,Industrial Machinery,"Batesville, Indiana",view,1417398
-HIMS,"Hims & Hers Health, Inc.",Health Care,Health Care Services,"San Francisco, California",view,1773751
 HIW,Highwoods Properties],Real Estate,Office REITs,"Raleigh, North Carolina",view,921082
 HLIT,Harmonic Inc.,Information Technology,Communications Equipment,"San Jose, California",view,851310
 HLX,"Helix Energy Solutions Group, Inc.",Energy,Oil & Gas Equipment & Services,"Houston, Texas",view,866829
@@ -304,6 +304,7 @@ KREF,"KKR Real Estate Finance Trust, Inc.",Financials,Mortgage REITs,"New York C
 KRYS,"Krystal Biotech, Inc.",Health Care,Biotechnology,"Pittsburgh, Pennsylvania",view,1711279
 KSS,Kohl's Corp.,Consumer Discretionary,Broadline Retail,"Menomonee Falls, Wisconsin",view,885639
 KTB,Kontoor Brands,Consumer Discretionary,"Apparel, Accessories & Luxury Goods","Greensboro, North Carolina",view,1760965
+KTOS,Kratos Defense & Security Solutions,Industrials,Aerospace & Defense,"San Diego, California",view,1069258
 KW,"Kennedy-Wilson Holdings, Inc.",Real Estate,Real Estate Services,"Beverly Hills, California",view,1408100
 KWR,Quaker Chemical Corporation,Materials,Specialty Chemicals,"Conshohocken, Pennsylvania",view,81362
 LBRT,"Liberty Energy, Inc.",Energy,Oil & Gas Equipment & Services,"Denver, Colorado",view,1694028
@@ -323,9 +324,8 @@ LUMN,Lumen Technologies,Communication Services,Alternative Carriers,"Monroe, Lou
 LXP,Lexington Realty Trust,Real Estate,Diversified REITs,"New York City, New York",view,910108
 LZB,"La-Z-Boy, Inc.",Consumer Discretionary,Home Furnishings,"Monroe, Michigan",view,57131
 MAC,Macerich,Real Estate,Retail REITs,"Santa Monica, California",view,912242
-MARA,"Marathon Digital Holdings, Inc.",Information Technology,IT Consulting & Other Services,"Fort Lauderdale, Florida",view,1507605
-MATV,"Mativ Holdings, Inc.",Materials,Specialty Chemicals,"Alpharetta, Georgia",view,1000623
-MATW,Matthews International Corporation,Industrials,Diversified Support Services,"Pittsburgh, Pennsylvania",view,63296
+MARA,"MARA Holdings, Inc.",Information Technology,Internet Services & Infrastructure,"Fort Lauderdale, Florida",view,1507605
+MATW,Matthews International Corporation,Consumer Discretionary,Specialized Consumer Services,"Pittsburgh, Pennsylvania",view,63296
 MATX,"Matson, Inc.",Industrials,Marine,"Honolulu, Hawaii",view,3453
 MBC,"MasterBrand, Inc.",Industrials,Building Products,"Jasper, Indiana",view,1941365
 MC,Moelis & Company,Financials,Investment Banking & Brokerage,"New York City, New York",view,1596967
@@ -348,7 +348,7 @@ MOG.A,Moog Inc.,Industrials,Aerospace & Defense,"Elma, New York",view,67887
 MP,MP Materials,Materials,Diversified Metals & Mining,"Las Vegas, Nevada",view,1801368
 MPW,Medical Properties Trust,Real Estate,Health Care REITs,"Birmingham, Alabama",view,1287865
 MRCY,Mercury Systems,Industrials,Electrical Components & Equipment,"Andover, Massachusetts",view,1049521
-MRP,"Millrose Properties, Inc.",Consumer Discretionary,Homebuilding,"Chevy Chase, Maryland",view,2017206
+MRP,"Millrose Properties, Inc.",Real Estate,Single-Family Residential REITs,"Chevy Chase, Maryland",view,2017206
 MRTN,Marten Transport Ltd.,Industrials,Cargo Ground Transportation,"Mondovi, Wisconsin",view,799167
 MSEX,Middlesex Water Company,Utilities,Water Utilities,"Iselin, New Jersey",view,66004
 MSGS,Madison Square Garden Sports Corp.,Communication Services,Movies & Entertainment,"New York City, New York",view,1636519
@@ -356,6 +356,7 @@ MTH,Meritage Homes Corporation,Consumer Discretionary,Homebuilding,"Scottsdale, 
 MTRN,Materion Corp.,Materials,Diversified Metals & Mining,"Mayfield Heights, Ohio",view,1104657
 MTUS,Metallus Inc,Materials,Steel,"Canton, Ohio",view,1598428
 MTX,Minerals Technologies,Materials,Specialty Chemicals,"New York City, New York",view,891014
+MWA,Mueller Water Products,Industrials,Industrial Machinery & Supplies & Components,"Atlanta, Georgia",view,1350593
 MXL,"MaxLinear, Inc.",Information Technology,Semiconductors,"Carlsbad, California",view,1288469
 MYGN,"Myriad Genetics, Inc.",Health Care,Biotechnology,"Salt Lake City, Utah",view,899923
 MYRG,"MYR Group, Inc.",Industrials,Construction & Engineering,"Thornton, Colorado",view,700923
@@ -363,9 +364,9 @@ NABL,"N-able, Inc.",Information Technology,Systems Software,"Wilmington, Delawar
 NATL,NCR Atleos,Financials,Transaction & Payment Processing Services,"Atlanta, Georgia",view,1974138
 NAVI,Navient,Financials,Consumer Finance,"Wilmington, Delaware",view,1593538
 NBHC,National Bank Holdings Corporation,Financials,Regional Banks,"Greenwood Village, Colorado",view,1475841
-NBR,"Nabors Industries, Ltd.",Energy,Oil & Gas Drilling,"Houston, Texas",view,1163739
 NBTB,"NBT Bancorp, Inc.",Financials,Regional Banks,"Norwich, New York",view,790359
 NEO,"NeoGenomics Laboratories, Inc.",Health Care,Health Care Services,"Fort Myers, Florida",view,1077183
+NEOG,Neogen,Health Care,Health Care Supplies,"Lansing, Michigan",view,711377
 NGVT,"Ingevity, Corp.",Materials,Specialty Chemicals,"North Charleston, South Carolina",view,1653477
 NHC,"National Healthcare, Corp.",Health Care,Health Care Facilities,"Murfreesboro, Tennessee",view,1047335
 NMIH,"NMI Holdings, Inc.",Financials,Commercial & Residential Mortgage Finance,"Emeryville, California",view,1547903
@@ -382,7 +383,6 @@ NWN,NW Natural,Utilities,Gas Utilities,"Portland, Oregon",view,1733998
 NX,Quanex Building Products Corporation,Industrials,Building Products,"Houston, Texas",view,1423221
 NXRT,"NexPoint Residential Trust, Inc.",Real Estate,Multi-Family Residential REITs,"Dallas, Texas",view,1620393
 NYMT,"New York Mortgage Trust, Inc.",Real Estate,Mortgage REITs,"New York City, New York",view,1273685
-ODP,The ODP Corporation,Consumer Discretionary,Specialty Stores,"Boca Raton, Florida",view,800240
 OFG,OFG Bancorp,Financials,Regional Banks,"San Juan, Puerto Rico",view,1030469
 OGN,Organon & Co.,Health Care,Pharmaceuticals,"Jersey City, New Jersey",view,1821825
 OI,"O-I Glass, Inc.",Materials,Metal & Glass Containers,"Perrysburg, Ohio",view,812074
@@ -400,7 +400,6 @@ PATK,"Patrick Industries, Inc.",Consumer Discretionary,Auto Parts & Equipment,"E
 PBH,Prestige Consumer Healthcare,Health Care,Pharmaceuticals,"Tarrytown, New York",view,1295947
 PBI,"Pitney Bowes, Inc.",Industrials,Office Services & Supplies,"Stamford, Connecticut",view,78814
 PCRX,"Pacira BioSciences, Inc.",Health Care,Pharmaceuticals,"Tampa, Florida",view,1396814
-PDCO,Patterson Companies,Health Care,Health Care Distributors,"Saint Paul, Minnesota",view,891024
 PDFS,"PDF Solutions, Inc.",Information Technology,Semiconductor Equipment,"Santa Clara, California",view,1120914
 PEB,Pebblebrook Hotel Trust,Real Estate,Hotel & Resort REITs,"Bethesda, Maryland",view,1474098
 PECO,Phillips Edison & Company,Real Estate,Retail REITs,"Cincinnati, Ohio",view,1476204
@@ -447,6 +446,7 @@ REX,REX American Resources Corporation,Energy,Oil & Gas Refining & Marketing,"Da
 REZI,"Resideo Technologies, Inc.",Industrials,Trading Companies & Distributors,"Scottsdale, Arizona",view,1740332
 RGR,"Sturm, Ruger & Company, Inc.",Consumer Discretionary,Leisure Products,"Southport, Connecticut",view,95029
 RHI,Robert Half,Industrials,Human Resource & Employment Services,"Menlo Park, California",view,315213
+RHP,Ryman Hospitality Properties,Real Estate,Hotel & Resort REITs,"Nashville, Tennessee",view,1040829
 RNST,Renasant Corp.,Financials,Regional Banks,"Tupelo, Mississippi",view,715072
 ROCK,"Gibraltar Industries, Inc.",Industrials,Building Products,"Buffalo, New York",view,912562
 ROG,Rogers Corporation,Information Technology,Electronic Components,"Chandler, Arizona",view,84748
@@ -459,7 +459,6 @@ SABR,Sabre,Consumer Discretionary,"Hotels, Resorts & Cruise Lines","Southlake, T
 SAFT,"Safety Insurance Group, Inc.",Financials,Property & Casualty Insurance,"Boston, Massachusetts",view,1172052
 SAH,"Sonic Automotive, Inc.",Consumer Discretionary,Automotive Retail,"Charlotte, North Carolina",view,1043509
 SANM,Sanmina Corporation,Information Technology,Electronic Manufacturing Services,"San Jose, California",view,897723
-SATS,EchoStar Corporation,Communication Services,Wireless Telecommunication Services,"Englewood, Colorado",view,1415404
 SBCF,Seacoast Banking Corporation of Florida,Financials,Regional Banks,"Stuart, Florida",view,730708
 SBH,"Sally Beauty Holdings, Inc.",Consumer Discretionary,Specialty Stores,"Denton, Texas",view,1368458
 SBSI,"Southside Bancshares, Inc.",Financials,Regional Banks,"Tyler, Texas",view,705432
@@ -508,16 +507,18 @@ STC,Stewart Information Services Corporation,Financials,Property & Casualty Insu
 STEL,"Stellar Bancorp, Inc.",Financials,Regional Banks,"Houston, Texas",view,1473844
 STEP,StepStone Group,Financials,Asset Management & Custody Banks,"New York City, New York",view,1796022
 STRA,"Strategic Education, Inc.",Consumer Discretionary,Education Services,"Herndon, Virginia",view,1013934
+STRL,"Sterling Infrastructure, Inc.",Industrials,Construction & Engineering,"The Woodlands, Texas",view,874238
 SUPN,"Supernus Pharmaceuticals, Inc.",Health Care,Pharmaceuticals,"Rockville, Maryland",view,1356576
 SXC,"SunCoke Energy, Inc.",Materials,Steel,"Lisle, Illinois",view,1514705
 SXI,Standex International Corporation,Industrials,Industrial Machinery,"Salem, New Hampshire",view,310354
 SXT,Sensient Technologies,Materials,Specialty Chemicals,"Milwaukee, Wisconsin",view,310142
-SWI,SolarWinds Corporation,Information Technology,Systems Software,"Austin, Texas",view,1739942
 TALO,"Talos Energy, Inc.",Energy,Oil & Gas Exploration & Production,"Houston, Texas",view,1724965
 TBBK,"The Bancorp, Inc.",Financials,Regional Banks,"Wilmington, Delaware",view,1295401
+TDC,Teradata,Information Technology,IT Consulting & Other Services,"San Diego, California",view,816761
 TDS,"Telephone and Data Systems, Inc.",Communication Services,Integrated Telecommunication Services,"Chicago, Illinois",view,1051512
 TDW,"Tidewater, Inc.",Energy,Oil & Gas Equipment & Services,"Houston, Texas",view,98222
 TFIN,"Triumph Bancorp, Inc.",Financials,Regional Banks,"Dallas, Texas",view,1539638
+TFX,Teleflex,Health Care,Health Care Equipment,"Wayne, Pennsylvania",view,96943
 TGI,"Triumph Group, Inc.",Industrials,Aerospace & Defense,"Berwyn, Pennsylvania",view,1021162
 TGNA,Tegna,Communication Services,Broadcasting,"Tysons, Virginia",view,39899
 TGTX,"TG Therapeutics, Inc.",Health Care,Biotechnology,"Morrisville, North Carolina",view,1001316
@@ -537,7 +538,7 @@ TRN,"Trinity Industries, Inc.",Industrials,Construction Machinery & Heavy Trucks
 TRNO,Terreno Realty Corporation,Real Estate,Industrial REITs,"San Francisco, California",view,1476150
 TRST,TrustCo Bank Corp NY,Financials,Regional Banks,"Glenville, New York",view,357301
 TRUP,Trupanion,Financials,Life & Health Insurance,"Seattle, Washington",view,1371285
-TTGT,TechTarget,Information Technology,IT Consulting & Other Services,"Newton, Massachusetts",view,2018064
+TTGT,TechTarget,Communication Services,Interactive Media & Services,"Newton, Massachusetts",view,2018064
 TTMI,"TTM Technologies, Inc.",Information Technology,Electronic Manufacturing Services,"Santa Ana, California",view,1116942
 TWI,"Titan International, Inc.",Materials,Agricultural & Farm Machinery,"Quincy, Illinois",view,899751
 TWO,Two Harbors Investment Corp.,Financials,Mortgage REITs,"St. Louis Park, Minnesota",view,1465740
@@ -559,7 +560,6 @@ UVV,Universal Corporation,Consumer Staples,Tobacco,"Richmond, Virginia",view,102
 VBTX,"Veritex Holdings, Inc.",Financials,Regional Banks,"Dallas, Texas",view,1501570
 VCEL,Vericel,Health Care,Biotechnology,"Cambridge, Massachusetts",view,887359
 VECO,Veeco Instruments Inc.,Information Technology,Semiconductor Equipment,"Plainview, New York",view,103145
-VFC,VF Corporation,Consumer Discretionary,"Apparel, Accessories & Luxury Goods","Denver, Colorado",view,103379
 VIAV,VIAVI Solutions,Information Technology,Communications Equipment,"Chandler, Arizona",view,912093
 VICR,Vicor Corporation,Industrials,Electrical Components & Equipment,"Andover, Massachusetts",view,751978
 VIR,"Vir Biotechnology, Inc.",Health Care,Biotechnology,"San Francisco, California",view,1706431
@@ -584,11 +584,11 @@ WGO,"Winnebago Industries, Inc.",Consumer Discretionary,Automobile Manufacturers
 WHD,"Cactus, Inc.",Energy,Oil & Gas Equipment & Services,"Houston, Texas",view,1699136
 WKC,World Kinect Corporation,Energy,Oil & Gas Refining & Marketing,"Doral, Florida",view,789460
 WLY,John Wiley & Sons,Communication Services,Publishing,"Hoboken, New Jersey",view,107140
-WNC,Wabash National,Industrials,Construction Machinery & Heavy Trucks,"Lafayette, Indiana",view,879526
 WOLF,Wolfspeed,Information Technology,Semiconductors,"Research Triangle Park, North Carolina",view,895419
-WOR,Worthington Enterprises,Consumer Discretionary,Other Specialty Retail,"Columbus, Ohio",view,108516
+WOR,Worthington Enterprises,Industrials,Building Products,"Columbus, Ohio",view,108516
 WRLD,World Acceptance Corporation,Financials,Consumer Finance,"Greenville, South Carolina",view,108385
 WS,Worthington Steel,Materials,Steel,"Columbus, Ohio",view,1968487
+WSC,WillScot Holdings Corp.,Industrials,Office Services & Supplies,"Phoenix, Arizona",view,1647088
 WSFS,WSFS Financial Corporation,Financials,Regional Banks,"Wilmington, Delaware",view,828944
 WSR,Whitestone REIT,Real Estate,Retail REITs,"Houston, Texas",view,1175535
 WT,"WisdomTree Investments, Inc.",Financials,Asset Management & Custody Banks,"New York City, New York",view,880631
