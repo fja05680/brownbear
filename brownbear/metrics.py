@@ -85,7 +85,7 @@ def cagr(B, A, n):
     return (math.pow(B / A, 1 / n) - 1) * 100
 
 
-def annualized_returns(df, timeperiod='daily', years=5):
+def annualized_returns(df, timeperiod='daily', years=5, offset=0):
     """
     Calculate the annualized returns of entire dataframe.
 
@@ -101,6 +101,9 @@ def annualized_returns(df, timeperiod='daily', years=5):
     years : float, optional
         Number of years over which to calculate annualized returns
         (default is 5).
+    offset : int, optional
+        Number of most recent data points to exclude from calculation
+        (default is 0).
 
     Returns
     -------
@@ -108,10 +111,12 @@ def annualized_returns(df, timeperiod='daily', years=5):
         Series of key[value] pairs in which key is the symbol and
         value is the annualized return.
     """
-    def _cagr(column, n, f):
-        time_units = int(n*f)
-        A = column.iloc[-(time_units+1)]
-        B = column.iloc[-1]
+    def _cagr(column, n, f, offset):
+        time_units = int(n * f)
+        end = -1 - offset
+        start = end - time_units
+        A = column.iloc[start]
+        B = column.iloc[end]
         annual_return = cagr(B, A, n)
         return annual_return
 
@@ -121,7 +126,7 @@ def annualized_returns(df, timeperiod='daily', years=5):
     factor = {'daily': 252, 'weekly': 52, 'monthly': 12, 'quarterly': 4}
     factor = factor[timeperiod]
 
-    s = df.apply(_cagr, n=years, f=factor, axis=0)
+    s = df.apply(_cagr, n=years, f=factor, offset=offset, axis=0)
     return s
 
 

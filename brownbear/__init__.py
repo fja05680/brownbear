@@ -1,3 +1,5 @@
+from . import _yfinance_config  # noqa: F401
+
 from .metrics import (
     correlation_map,
     annualized_returns,

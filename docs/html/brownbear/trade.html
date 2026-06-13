@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>brownbear.trade API documentation</title>
+<meta name="description" content="Trade functions.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>brownbear.trade</code></h1>
+</header>
+<section id="section-intro">
+<p>Trade functions.</p>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-variables">Global variables</h2>
+<dl>
+<dt id="brownbear.trade.TRADING_DAYS_PER_MONTH"><code class="name">var <span class="ident">TRADING_DAYS_PER_MONTH</span></code></dt>
+<dd>
+<div class="desc"><p>int : The number of trading days per month.</p></div>
+</dd>
+<dt id="brownbear.trade.TRADING_DAYS_PER_WEEK"><code class="name">var <span class="ident">TRADING_DAYS_PER_WEEK</span></code></dt>
+<dd>
+<div class="desc"><p>int : The number of trading days per week.</p></div>
+</dd>
+<dt id="brownbear.trade.TRADING_DAYS_PER_YEAR"><code class="name">var <span class="ident">TRADING_DAYS_PER_YEAR</span></code></dt>
+<dd>
+<div class="desc"><p>int : The number of trading days per year.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="brownbear.trade.allocate_free_cash"><code class="name flex">
+<span>def <span class="ident">allocate_free_cash</span></span>(<span>target_portfolio, quote_per_investment, free_cash, symbol)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def allocate_free_cash(target_portfolio, quote_per_investment, free_cash, symbol):
+    &#34;&#34;&#34;
+    Allocate free cash to purchase additional shares of a specified stock.
+
+    Parameters
+    ----------
+    target_portfolio : dict
+        Dictionary of stocks and the number of shares currently targeted.
+    quote_per_investment : dict
+        Dictionary of stocks and their current price per share.
+    free_cash : float
+        The amount of free cash available for allocation.
+    symbol : str
+        The stock symbol to which free cash should be allocated.
+
+    Returns
+    -------
+    tuple
+        Updated and sorted target portfolio with additional shares allocated to the specified stock,
+        and the remaining free cash after allocation.
+    &#34;&#34;&#34;
+    if (symbol not in quote_per_investment or
+        quote_per_investment[symbol] in [&#39;N/A&#39;, &#39;None&#39;, &#39;&#39;, 0, None]):
+        # Fetch the latest quote
+        latest_quote = get_quote([symbol]).get(symbol)
+        if latest_quote is None:
+            print(f&#34;Warning: Could not fetch quote for {symbol}. Skipping allocation.&#34;)
+            return dict(sorted(target_portfolio.items())), free_cash
+        quote_per_investment[symbol] = latest_quote
+
+    share_price = float(quote_per_investment[symbol])
+    shares_to_add = int(free_cash / share_price)
+    allocated_cash = shares_to_add * share_price
+    free_cash -= allocated_cash
+
+    if shares_to_add &gt; 0:
+        target_portfolio[symbol] = target_portfolio.get(symbol, 0) + shares_to_add
+
+    return dict(sorted(target_portfolio.items())), free_cash</code></pre>
+</details>
+<div class="desc"><p>Allocate free cash to purchase additional shares of a specified stock.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>target_portfolio</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary of stocks and the number of shares currently targeted.</dd>
+<dt><strong><code>quote_per_investment</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary of stocks and their current price per share.</dd>
+<dt><strong><code>free_cash</code></strong> :&ensp;<code>float</code></dt>
+<dd>The amount of free cash available for allocation.</dd>
+<dt><strong><code>symbol</code></strong> :&ensp;<code>str</code></dt>
+<dd>The stock symbol to which free cash should be allocated.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>tuple</code></dt>
+<dd>Updated and sorted target portfolio with additional shares allocated to the specified stock,
+and the remaining free cash after allocation.</dd>
+</dl></div>
+</dd>
+<dt id="brownbear.trade.calc_cash_per_investment"><code class="name flex">
+<span>def <span class="ident">calc_cash_per_investment</span></span>(<span>capital, portfolio_option)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calc_cash_per_investment(capital, portfolio_option):
+    &#34;&#34;&#34; 
+    Calculate how much cash to allocate to each investment based on the given
+    portfolio option.
+
+    Parameters
+    ----------
+    capital : float
+        The total capital available for investment.
+    portfolio_option : dict
+        Dictionary where keys are stock symbols and values are the proportion 
+        of capital allocated to each stock.
+
+    Returns
+    -------
+    dict
+        A dictionary where keys are stock symbols and values are the allocated
+        cash amounts.
+    &#34;&#34;&#34;
+    cash_per_investment = {k: float(capital * v) for k, v in portfolio_option.items()}
+    return  cash_per_investment</code></pre>
+</details>
+<div class="desc"><p>Calculate how much cash to allocate to each investment based on the given
+portfolio option.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>capital</code></strong> :&ensp;<code>float</code></dt>
+<dd>The total capital available for investment.</dd>
+<dt><strong><code>portfolio_option</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary where keys are stock symbols and values are the proportion
+of capital allocated to each stock.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>A dictionary where keys are stock symbols and values are the allocated
+cash amounts.</dd>
+</dl></div>
+</dd>
+<dt id="brownbear.trade.calculate_free_cash"><code class="name flex">
+<span>def <span class="ident">calculate_free_cash</span></span>(<span>capital, quote_per_investment, target_portfolio)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculate_free_cash(capital, quote_per_investment, target_portfolio):
+    &#34;&#34;&#34;
+    Calculate the free cash remaining after allocating funds to the target portfolio.
+
+    Parameters
+    ----------
+    capital : float
+        The total available capital for investment.
+    quote_per_investment : dict
+        Dictionary mapping stock symbols to their current prices.
+    target_portfolio : dict
+        Dictionary mapping stock symbols to the number of shares allocated.
+
+    Returns
+    -------
+    float
+        The amount of free cash remaining.
+    &#34;&#34;&#34;
+    invested_amount = sum(target_portfolio[k] * float(quote_per_investment[k]) 
+                          for k in target_portfolio if quote_per_investment[k] not in [&#39;N/A&#39;, &#39;None&#39;, &#39;&#39;])
+    free_cash = capital - invested_amount
+    return free_cash</code></pre>
+</details>
+<div class="desc"><p>Calculate the free cash remaining after allocating funds to the target portfolio.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>capital</code></strong> :&ensp;<code>float</code></dt>
+<dd>The total available capital for investment.</dd>
+<dt><strong><code>quote_per_investment</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary mapping stock symbols to their current prices.</dd>
+<dt><strong><code>target_portfolio</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary mapping stock symbols to the number of shares allocated.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>The amount of free cash remaining.</dd>
+</dl></div>
+</dd>
+<dt id="brownbear.trade.calculate_target_portfolio"><code class="name flex">
+<span>def <span class="ident">calculate_target_portfolio</span></span>(<span>cash_per_investment, quote_per_investment)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculate_target_portfolio(cash_per_investment, quote_per_investment):
+    &#34;&#34;&#34;
+    Calculate the target portfolio based on cash per investment and the quote per investment.
+
+    Parameters
+    ----------
+    cash_per_investment : dict
+        Dictionary of investments and the amount of cash allocated to each.
+    quote_per_investment : dict
+        Dictionary of investments and the quote for each investment.
+
+    Returns
+    -------
+    target_portfolio : dict
+        A dictionary of stocks and the number of shares in the target portfolio.
+    &#34;&#34;&#34;
+    target_portfolio = {
+        k: int(v / float(quote_per_investment[k])) if quote_per_investment[k] not in [&#39;N/A&#39;, &#39;None&#39;, &#39;&#39;] else 0
+        for k, v in cash_per_investment.items()
+    }
+    return target_portfolio</code></pre>
+</details>
+<div class="desc"><p>Calculate the target portfolio based on cash per investment and the quote per investment.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>cash_per_investment</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary of investments and the amount of cash allocated to each.</dd>
+<dt><strong><code>quote_per_investment</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary of investments and the quote for each investment.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>target_portfolio</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary of stocks and the number of shares in the target portfolio.</dd>
+</dl></div>
+</dd>
+<dt id="brownbear.trade.get_quote"><code class="name flex">
+<span>def <span class="ident">get_quote</span></span>(<span>symbols)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_quote(symbols):
+    &#34;&#34;&#34;
+    Fetch the latest stock prices for a list of symbols.
+
+    Parameters
+    ----------
+    symbols : list of str
+        A list of stock symbols to retrieve quotes for.
+
+    Returns
+    -------
+    dict
+        A dictionary where keys are stock symbols and values are the latest stock prices.
+        If a quote cannot be fetched, the value will be None.
+    &#34;&#34;&#34;
+    d = {}
+    for symbol in symbols:
+        ticker = yf.Ticker(symbol)
+        try:
+            d[symbol] = float(ticker.fast_info[&#39;last_price&#39;])
+        except KeyError:
+            print(f&#39;Could not fetch quote for {symbol}&#39;)
+            d[symbol] = None
+    return d</code></pre>
+</details>
+<div class="desc"><p>Fetch the latest stock prices for a list of symbols.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>symbols</code></strong> :&ensp;<code>list</code> of <code>str</code></dt>
+<dd>A list of stock symbols to retrieve quotes for.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>A dictionary where keys are stock symbols and values are the latest stock prices.
+If a quote cannot be fetched, the value will be None.</dd>
+</dl></div>
+</dd>
+<dt id="brownbear.trade.rebalance_portfolio"><code class="name flex">
+<span>def <span class="ident">rebalance_portfolio</span></span>(<span>current_portfolio=None, target_portfolio=None)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rebalance_portfolio(current_portfolio=None, target_portfolio=None):
+    &#34;&#34;&#34;
+    Determine the stocks to buy and sell to match the target allocation.
+
+    Parameters
+    ----------
+    current_portfolio : dict, optional
+        Dictionary of stocks and the number of shares currently held.
+        Defaults to None, which is treated as an empty portfolio.
+    target_portfolio : dict, optional
+        Dictionary of stocks and the number of shares desired.
+        Defaults to None, which is treated as an empty allocation.
+
+    Returns
+    -------
+    rebalance_orders : dict
+        A dictionary with two keys:
+        - &#39;sell&#39;: A sorted dict of stocks and the number of shares to sell.
+        - &#39;buy&#39;: A sorted dict of stocks and the number of shares to buy.
+    &#34;&#34;&#34;
+    if current_portfolio is None:
+        current_portfolio = {}
+    if target_portfolio is None:
+        target_portfolio = {}
+
+    sell = {}
+    buy = {}
+
+    all_stocks = set(current_portfolio.keys()).union(set(target_portfolio.keys()))
+
+    for stock in all_stocks:
+        current = current_portfolio.get(stock, 0)
+        target = target_portfolio.get(stock, 0)
+
+        if target &gt; current:
+            buy[stock] = target - current
+        elif target &lt; current:
+            sell[stock] = current - target
+
+    rebalance_orders = {
+        &#34;sell&#34;: dict(sorted(sell.items())),
+        &#34;buy&#34;: dict(sorted(buy.items()))
+    }
+    
+    return rebalance_orders</code></pre>
+</details>
+<div class="desc"><p>Determine the stocks to buy and sell to match the target allocation.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>current_portfolio</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Dictionary of stocks and the number of shares currently held.
+Defaults to None, which is treated as an empty portfolio.</dd>
+<dt><strong><code>target_portfolio</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Dictionary of stocks and the number of shares desired.
+Defaults to None, which is treated as an empty allocation.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>rebalance_orders</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary with two keys:
+- 'sell': A sorted dict of stocks and the number of shares to sell.
+- 'buy': A sorted dict of stocks and the number of shares to buy.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="brownbear" href="index.html">brownbear</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-variables">Global variables</a></h3>
+<ul class="">
+<li><code><a title="brownbear.trade.TRADING_DAYS_PER_MONTH" href="#brownbear.trade.TRADING_DAYS_PER_MONTH">TRADING_DAYS_PER_MONTH</a></code></li>
+<li><code><a title="brownbear.trade.TRADING_DAYS_PER_WEEK" href="#brownbear.trade.TRADING_DAYS_PER_WEEK">TRADING_DAYS_PER_WEEK</a></code></li>
+<li><code><a title="brownbear.trade.TRADING_DAYS_PER_YEAR" href="#brownbear.trade.TRADING_DAYS_PER_YEAR">TRADING_DAYS_PER_YEAR</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="brownbear.trade.allocate_free_cash" href="#brownbear.trade.allocate_free_cash">allocate_free_cash</a></code></li>
+<li><code><a title="brownbear.trade.calc_cash_per_investment" href="#brownbear.trade.calc_cash_per_investment">calc_cash_per_investment</a></code></li>
+<li><code><a title="brownbear.trade.calculate_free_cash" href="#brownbear.trade.calculate_free_cash">calculate_free_cash</a></code></li>
+<li><code><a title="brownbear.trade.calculate_target_portfolio" href="#brownbear.trade.calculate_target_portfolio">calculate_target_portfolio</a></code></li>
+<li><code><a title="brownbear.trade.get_quote" href="#brownbear.trade.get_quote">get_quote</a></code></li>
+<li><code><a title="brownbear.trade.rebalance_portfolio" href="#brownbear.trade.rebalance_portfolio">rebalance_portfolio</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,14 +1,15 @@
 # Description: investment options
 
 # Format
-"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","SD 1 Yr","SD 3 Yr","SD 5 Yr"
+"Investment Option","Description","Asset Class","3 mo","6 mo","1 Yr","1-1 Yr","3 Yr","5 Yr","Vola","DS Vola","SD 1 Yr","SD 3 Yr","SD 5 Yr"
 
 # Investment Options
-"BTI","British American Tobacco","Global Stocks:Developed Markets","131.74","51.38","59.33","9.77","10.45","24.12","17.26","19.63","21.11","22.32"
-"BUD","Anheuser-Busch","Global Stocks:Developed Markets","108.07","224.55","12.28","6.04","8.29","29.49","14.31","30.11","26.63","28.94"
-"PM","Philip Morris International","Global Stocks:Developed Markets","194.11","207.17","88.05","25.03","23.51","31.55","24.43","24.51","22.73","21.89"
-"UL","Unilever","Global Stocks:Developed Markets","103.07","55.05","26.52","16.32","8.24","29.65","18.79","16.98","16.61","17.25"
-"ROKU","Roku,Inc.","-83.22","-69.41","6.75","-10.12","-12.41","82.67","44.53","34.43","71.26","68.44"
-"EPD","Enterprise Products Partners L.P.","US Stocks:Energy","-67.59","-18.75","16.27","13.78","21.68","41.14","30.20","25.20","20.50","20.24"
-"ET","Energy Transfer LP","US Stocks:Energy","-78.25","-53.19","14.17","23.98","29.25","52.03","34.69","26.41","23.67","29.40"
-"TDG","TransDigm Group Incorporated","US Stocks:Industrials","53.28","31.88","22.69","38.45","37.13","46.44","32.62","12.30","24.01","24.56"
+"BTI","British American Tobacco","Global Stocks:Developed Markets","-11.89","28.56","43.59","47.32","25.66","17.25","25.97","16.27","22.81","21.96","21.71"
+"BUD","Anheuser-Busch","Global Stocks:Developed Markets","18.26","39.57","13.75","16.46","5.07","2.00","23.82","13.02","31.33","28.49","27.32"
+"PM","Philip Morris International","Global Stocks:Developed Markets","-28.61","16.91","-0.41","0.90","23.65","17.02","41.38","21.10","24.73","23.97","23.03"
+"UL","Unilever","Global Stocks:Developed Markets","-44.84","-32.93","-17.32","-15.43","0.85","1.04","23.20","9.80","27.88","21.13","19.46"
+"ROKU","Roku,Inc.","55.57","29.91","65.28","70.87","24.01","-20.29","33.55","16.96","33.10","63.50","64.01"
+"EPD","Enterprise Products Partners L.P.","US Stocks:Energy","92.76","65.66","32.44","31.98","21.42","19.40","13.99","8.36","11.26","17.20","18.25"
+"ET","Energy Transfer LP","US Stocks:Energy","48.37","47.49","23.44","20.07","25.78","29.44","13.75","7.72","14.16","18.54","23.49"
+"TDG","TransDigm Group Incorporated","US Stocks:Industrials","-57.12","-28.82","-12.50","-10.50","20.44","18.28","39.77","22.01","22.25","22.37","23.64"
+"OKLO","Oklo Inc","US Stocks:Energy","-77.54","-77.64","165.33","191.03","84.84","84.84","104.53","49.64","141.65","147.10","118.33"

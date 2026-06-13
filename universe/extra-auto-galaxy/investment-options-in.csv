@@ -1,7 +1,7 @@
 # Description: investment options
 
 # Format
-"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","SD 1 Yr","SD 3 Yr","SD 5 Yr"
+"Investment Option","Description","Asset Class","3 mo","6 mo","1 Yr","1-1 Yr","3 Yr","5 Yr","Vola","DS Vola","SD 1 Yr","SD 3 Yr","SD 5 Yr"
 
 # Investment Options
 "BTI","British American Tobacco","Global Stocks:Developed Markets","","","","","","","",""
@@ -12,3 +12,4 @@
 "EPD","Enterprise Products Partners L.P.","US Stocks:Energy","","","","","","","",""
 "ET","Energy Transfer LP","US Stocks:Energy","","","","","","","",""
 "TDG","TransDigm Group Incorporated","US Stocks:Industrials","","","","","","","",""
+"OKLO","Oklo Inc","US Stocks:Energy","","","","","","","",""

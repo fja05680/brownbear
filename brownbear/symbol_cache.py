@@ -9,9 +9,34 @@ import time
 
 import numpy as np
 import pandas as pd
+
+from . import _yfinance_config  # noqa: F401
 import yfinance as yf
 
 import brownbear as bb
+
+
+def _get_cutoff_date(reference_date=None):
+    """
+    Returns a cutoff date based on the following rules:
+    - If today is before the 25th: return last day of two months ago
+    - If today is on or after the 25th: return last day of previous month
+    """
+    if reference_date is None:
+        reference_date = datetime.date.today()
+
+    first_of_this_month = reference_date.replace(day=1)
+    last_of_prev_month = first_of_this_month - datetime.timedelta(days=1)
+
+    if reference_date.day < 25:
+        # Go to the first day of the previous month
+        first_of_prev_month = last_of_prev_month.replace(day=1)
+        # Then subtract 1 day to get last of two months ago
+        return first_of_prev_month - datetime.timedelta(days=1)
+    else:
+        # Just return last of previous month
+        return last_of_prev_month
+
 
 
 def fetch_timeseries(symbols, start=None, end=None, refresh=False, throttle_limit=100, wait_time=30):
@@ -28,7 +53,11 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False, throttle_limi
         Starting date. Parses many different kinds of date representations
         (e.g., 'JAN-01-2010', '1/1/10', 'Jan, 1, 1980') (default is None, which implies 01-01-2019).
     end : (string, int, date, datetime, Timestamp), optional
-        Ending date, timestamp. Same format as starting date (default is None, which implies yesterday).
+        Ending date, timestamp. Same format as starting date (default is None).
+        Can be:
+        - None -> compute default cutoff date
+        - 'latest' -> yesterday's date
+        - any -> use as-is
     refresh : bool, optional
         True to retrieve timeseries from the internet instead of using symbol cache (default is False).
     throttle_limit : int, optional
@@ -43,7 +72,11 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False, throttle_limi
     if start is None:
         start = datetime.datetime(2019, 1, 1)
     if end is None:
+        end = _get_cutoff_date()
+    elif isinstance(end, str) and end.lower() == 'latest':
         end = datetime.datetime.now() - datetime.timedelta(1)
+    else:
+        pass
 
     symbol_cache_path = Path(bb.SYMBOL_CACHE)
     symbol_cache_path.mkdir(parents=True, exist_ok=True)
@@ -56,8 +89,11 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False, throttle_limi
 
         if refresh or not filepath.is_file():
             try:
-                df = yf.download(symbol, start, end, progress=False,
-                                 auto_adjust=False, multi_level_index=False)
+                df = yf.download(
+                    symbol, start, end, progress=False,
+                    auto_adjust=False, multi_level_index=False,
+                    threads=False, timeout=30,
+                )
                 if df.empty:
                     print(f'No Data for {symbol}')
                     continue

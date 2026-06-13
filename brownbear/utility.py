@@ -2,9 +2,16 @@
 Utility functions.
 """
 
+import io
 from pathlib import Path
+from urllib.parse import quote
 
 import pandas as pd
+import requests
+
+WIKIPEDIA_USER_AGENT = (
+    'brownbear/1.0 (portfolio research; https://github.com/brownbear)'
+)
 
 
 ########################################################################
@@ -35,6 +42,50 @@ str : Full path to symbol-cache dir.
 
 ########################################################################
 # FUNCTIONS
+
+def _wikipedia_slug(title):
+    """Build a Wikipedia article path from a page title."""
+    return quote(title.replace(' ', '_'), safe='_')
+
+
+def get_wikipedia_table(title, filename, match, use_cache=False):
+    """
+    Fetch a table from a Wikipedia page and cache it as CSV.
+
+    Wikipedia blocks API clients without a descriptive User-Agent. This
+    fetches the rendered HTML page directly instead of using the
+    ``wikipedia`` package.
+
+    Parameters
+    ----------
+    title : str
+        Wikipedia page title, e.g. ``'Dow Jones Industrial Average'``.
+    filename : str or Path
+        CSV file used to cache the table.
+    match : str
+        Substring passed to :func:`pandas.read_html` to select the table.
+    use_cache : bool, optional
+        When True and ``filename`` exists, skip the Wikipedia fetch.
+
+    Returns
+    -------
+    pd.DataFrame
+    """
+    filename = Path(filename)
+    if not (use_cache and filename.is_file()):
+        slug = _wikipedia_slug(title)
+        url = f'https://en.wikipedia.org/wiki/{slug}'
+        response = requests.get(
+            url,
+            headers={'User-Agent': WIKIPEDIA_USER_AGENT},
+            timeout=30,
+        )
+        response.raise_for_status()
+        df = pd.read_html(io.StringIO(response.text), header=0, match=match)[0]
+        df.to_csv(filename, header=True, index=False, encoding='utf-8')
+
+    return pd.read_csv(filename)
+
 
 def csv_to_df(filepaths):
     """

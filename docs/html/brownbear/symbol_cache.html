@@ -2,18 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.10.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>brownbear.symbol_cache API documentation</title>
-<meta name="description" content="Symbol cache management." />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="Symbol cache management.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -23,298 +37,6 @@
 </header>
 <section id="section-intro">
 <p>Symbol cache management.</p>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">&#34;&#34;&#34;
-Symbol cache management.
-&#34;&#34;&#34;
-
-import datetime
-import os
-
-import numpy as np
-import pandas as pd
-from pandas_datareader._utils import RemoteDataError
-import pandas_datareader.data as pdr
-import yfinance as yf
-from yahooquery import Ticker
-
-import brownbear as bb
-
-
-# Override pandas_datareader with yfinance
-yf.pdr_override()
-
-
-def fetch_timeseries(symbols, start=None, end=None, refresh=False):
-    &#34;&#34;&#34;
-    Fetch timeseries for one or more symbols from yahoo finance.
-
-    Write the timeseries to the symbol cache as `symbol`.csv
-
-    Parameters
-    ----------
-    symbols : list of str
-        The list of symbols for securities.
-    start : (string, int, date, datetime, Timestamp), optional
-        Starting date. Parses many different kind of date
-        representations (e.g., &#39;JAN-01-2010&#39;, &#39;1/1/10&#39;, &#39;Jan, 1, 1980&#39;)
-        (Default is None, which implies 01-01-2015).
-    end : (string, int, date, datetime, Timestamp), optional
-        Ending date, timestamp. Same format as starting date
-        (Default is NONE, which implies yesterday).
-    refresh : bool, optional
-        True to retrieve timeseries from internet instead of using
-        symbol cache (default is False).
-
-    Returns
-    -------
-    None
-    &#34;&#34;&#34;
-    if start is None:
-        start = datetime.datetime(2015, 1, 1)
-    if end is None:
-        end = datetime.datetime.now() - datetime.timedelta(1)
-
-    if not os.path.exists(bb.SYMBOL_CACHE):
-        os.makedirs(bb.SYMBOL_CACHE)
-
-    for symbol in symbols:
-        print(symbol, end=&#39; &#39;)
-        filepath = bb.SYMBOL_CACHE / (symbol + &#39;.csv&#39;)
-        if refresh or not os.path.isfile(filepath):
-            try:
-                #df = pdr.DataReader(symbol, &#39;yahoo&#39;, start, end)
-                df = pdr.get_data_yahoo(symbol, start, end, progress=False)
-            except RemoteDataError as e:
-                print(f&#39;\n{e}&#39;)
-            except Exception as e:
-                print(f&#39;\n{e}&#39;)
-            else:
-                df.reset_index(inplace=True)
-                df.set_index(&#34;Date&#34;, inplace=True)
-                df.to_csv(filepath)
-    print()
-
-
-def compile_timeseries(symbols):
-    &#34;&#34;&#34;
-    Compile one or more symbols&#39; timeseries into a single dataframe.
-
-    The timeseries are read from the symbol cache only, so the
-    timeseries must exists for every symbol in `symbols`.  Otherwise
-    an exception will be thrown.
-
-    The compiled timeseries has a column for each symbol.  Each row
-    contains the daily closing prices for the symbols.  This timeseries
-    is written to &#39;symbols-timeseries.csv&#39; in the current directory.
-
-    Parameters
-    ----------
-    symbols : list of str
-        The list of symbols for securities.
-
-    Returns
-    -------
-    None
-    &#34;&#34;&#34;
-    compiled_df = pd.DataFrame()
-
-    for symbol in symbols:
-        filepath = bb.SYMBOL_CACHE / (symbol + &#39;.csv&#39;)
-        df = pd.read_csv(filepath)
-        df.set_index(&#39;Date&#39;, inplace=True)
-
-        df.rename(columns={&#39;Adj Close&#39;: symbol}, inplace=True)
-        df.drop([&#39;Open&#39;, &#39;High&#39;, &#39;Low&#39;, &#39;Close&#39;, &#39;Volume&#39;], axis=1, inplace=True)
-
-        if compiled_df.empty:
-            compiled_df = df
-        else:
-            compiled_df = compiled_df.join(df, how=&#39;outer&#39;)
-    compiled_df.to_csv(&#39;symbols-timeseries.csv&#39;)
-
-
-def remove_cache_symbols(symbols=None):
-    &#34;&#34;&#34;
-    Remove cached timeseries for list of symbols.
-
-    Filter out any symbols prefixed with &#39;__&#39;.
-
-    Parameters
-    ----------
-    symbols : list of str, optional
-        The list of symbols for securities (default is None, which
-        imples all symbols in symbol cache).
-
-    Returns
-    -------
-    None
-    &#34;&#34;&#34;
-    if symbols:
-        # In case user forgot to put single symbol in a list.
-        if not isinstance(symbols, list):
-            symbols = [symbols]
-        filenames = [symbol.upper() + &#39;.csv&#39; for symbol in symbols]
-    else:
-        filenames = [f for f in os.listdir(bb.SYMBOL_CACHE) if f.endswith(&#39;.csv&#39;)]
-
-    # Filter out any filename prefixed with &#39;__&#39;.
-    filenames = [f for f in filenames if not f.startswith(&#39;__&#39;)]
-
-    print(&#39;removing symbols:&#39;)
-    for i, f in enumerate(filenames):
-        symbol = os.path.splitext(f)[0]
-        print(symbol + &#39; &#39;, end=&#39;&#39;)
-        if i % 10 == 0 and i != 0: print()
-
-        filepath = bb.SYMBOL_CACHE / f
-        if os.path.exists(filepath):
-            os.remove(filepath)
-        else:
-            print(f&#39;\n({f} not found)&#39;)
-    print()
-
-
-def update_cache_symbols(symbols=None):
-    &#34;&#34;&#34;
-    Update cached timeseries for list of symbols.
-
-    Filter out any symbols prefixed with &#39;__&#39;.
-
-    Parameters
-    ----------
-    symbols : list of str, optional
-        The list of symbols for securities (default is None, which
-        imples all symbols in symbol cache).
-
-    Returns
-    -------
-    None
-    &#34;&#34;&#34;
-    if symbols:
-        # In case user forgot to put single symbol in list.
-        if not isinstance(symbols, list):
-            symbols = [symbols]
-    else:
-        filenames = ([f for f in os.listdir(bb.SYMBOL_CACHE)
-                     if f.endswith(&#39;.csv&#39;) and not f.startswith(&#39;__&#39;)])
-        symbols = [os.path.splitext(filename)[0] for filename in filenames]
-
-    # Make symbol names uppercase.
-    symbols = [symbol.upper() for symbol in symbols]
-
-    # Update timeseries for symbols.
-    bb.fetch_timeseries(symbols, refresh=True)
-
-
-def get_symbol_metadata(symbols=None):
-    &#34;&#34;&#34;
-    Get symbol metadata for list of symbols
-
-    Filter out any symbols prefixed with &#39;__&#39;.
-
-    Parameters
-    ----------
-    symbols : list of str, optional
-        The list of symbols for securities (default is None, which
-        imples all symbols in symbol cache).
-
-    Returns
-    -------
-    None
-    &#34;&#34;&#34;
-    def _difference_in_years(start, end):
-        &#34;&#34;&#34; Calculate the number of years between two dates. &#34;&#34;&#34;
-        diff  = end - start
-        diff_in_years = (diff.days + diff.seconds/86400)/365.2425
-        return diff_in_years
-
-    if symbols:
-        # In case user forgot to put single symbol in list.
-        if not isinstance(symbols, list):
-            symbols = [symbols]
-    else:
-        filenames = ([f for f in os.listdir(bb.SYMBOL_CACHE)
-                      if f.endswith(&#39;.csv&#39;) and not f.startswith(&#39;__&#39;)])
-        symbols = [os.path.splitext(filename)[0] for filename in filenames]
-
-    # Make symbol names uppercase.
-    symbols = [symbol.upper() for symbol in symbols]
-
-    l = []
-    for i, symbol in enumerate(symbols):
-        filepath = bb.SYMBOL_CACHE / (symbol + &#39;.csv&#39;)
-        ts = pd.read_csv(filepath)
-        ts.set_index(&#39;Date&#39;, inplace=True)
-        start = datetime.datetime.strptime(ts.index[0], &#39;%Y-%m-%d&#39;)
-        end = datetime.datetime.strptime(ts.index[-1], &#39;%Y-%m-%d&#39;)
-        num_years = _difference_in_years(start, end)
-        start = start.strftime(&#39;%Y-%m-%d&#39;)
-        end = end.strftime(&#39;%Y-%m-%d&#39;)
-        t = (symbol, start, end, num_years)
-        l.append(t)
-    columns = [&#39;symbol&#39;, &#39;start_date&#39;, &#39;end_date&#39;, &#39;num_years&#39;]
-    df = pd.DataFrame(l, columns=columns)
-    return df
-
-
-def get_symbol_fundamentals(symbols=None):
-    &#34;&#34;&#34;
-    Get fundamental data for list of symbols.
-
-     Filter out any symbols prefixed with &#39;__&#39;.
-
-    Parameters
-    ----------
-    symbols : list of str, optional
-        The list of symbols for securities (default is None, which
-        imples all symbols in symbol cache).
-
-    Returns
-    -------
-    None
-    &#34;&#34;&#34;
-    if symbols:
-        # In case user forgot to put single symbol in list.
-        if not isinstance(symbols, list):
-            symbols = [symbols]
-    else:
-        filenames = ([f for f in os.listdir(bb.SYMBOL_CACHE)
-                      if f.endswith(&#39;.csv&#39;) and not f.startswith(&#39;__&#39;)])
-        symbols = [os.path.splitext(filename)[0] for filename in filenames]
-
-    # Make symbol names uppercase.
-    symbols = [symbol.upper() for symbol in symbols]
-
-    l = []
-    for i, symbol in enumerate(symbols):
-        print(symbol, end=&#39; &#39;)
-        ticker = Ticker(symbol)
-        d = ticker.summary_detail[symbol]
-
-        previousClose = trailingPE = dividendYield = marketCap = np.nan
-        if isinstance(d, dict):
-            try:
-                previousClose = d.get(&#39;previousClose&#39;, np.nan)
-                trailingPE = d.get(&#39;trailingPE&#39;, 0)
-                dividendYield = d.get(&#39;dividendYield&#39;, 0) * 100
-                marketCap = d.get(&#39;marketCap&#39;, 0) / 1000000
-            except Exception as e:
-                print(e)
-        else:
-            print(f&#39;\n({d})&#39;)
-
-        t = (symbol, previousClose, trailingPE, dividendYield, marketCap)
-        l.append(t)
-
-    columns = [&#39;symbol&#39;, &#39;previousClose&#39;, &#39;trailingPE&#39;, &#39;dividendYield&#39;, &#39;marketCap&#39;]
-    df = pd.DataFrame(l, columns=columns)
-    df.set_index(&#39;symbol&#39;, inplace=True)
-    return df</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -327,26 +49,6 @@ def get_symbol_fundamentals(symbols=None):
 <span>def <span class="ident">compile_timeseries</span></span>(<span>symbols)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Compile one or more symbols' timeseries into a single dataframe.</p>
-<p>The timeseries are read from the symbol cache only, so the
-timeseries must exists for every symbol in <code>symbols</code>.
-Otherwise
-an exception will be thrown.</p>
-<p>The compiled timeseries has a column for each symbol.
-Each row
-contains the daily closing prices for the symbols.
-This timeseries
-is written to 'symbols-timeseries.csv' in the current directory.</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>symbols</code></strong> :&ensp;<code>list</code> of <code>str</code></dt>
-<dd>The list of symbols for securities.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>None</code></dt>
-<dd>&nbsp;</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -386,183 +88,268 @@ is written to 'symbols-timeseries.csv' in the current directory.</p>
             compiled_df = df
         else:
             compiled_df = compiled_df.join(df, how=&#39;outer&#39;)
-    compiled_df.to_csv(&#39;symbols-timeseries.csv&#39;)</code></pre>
+    compiled_df.to_csv(&#39;symbols-timeseries.csv&#39;, encoding=&#39;utf-8&#39;)</code></pre>
 </details>
-</dd>
-<dt id="brownbear.symbol_cache.fetch_timeseries"><code class="name flex">
-<span>def <span class="ident">fetch_timeseries</span></span>(<span>symbols, start=None, end=None, refresh=False)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Fetch timeseries for one or more symbols from yahoo finance.</p>
-<p>Write the timeseries to the symbol cache as <code>symbol</code>.csv</p>
+<div class="desc"><p>Compile one or more symbols' timeseries into a single dataframe.</p>
+<p>The timeseries are read from the symbol cache only, so the
+timeseries must exists for every symbol in <code>symbols</code>.
+Otherwise
+an exception will be thrown.</p>
+<p>The compiled timeseries has a column for each symbol.
+Each row
+contains the daily closing prices for the symbols.
+This timeseries
+is written to 'symbols-timeseries.csv' in the current directory.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>symbols</code></strong> :&ensp;<code>list</code> of <code>str</code></dt>
 <dd>The list of symbols for securities.</dd>
-<dt><strong><code>start</code></strong> :&ensp;<code>(string, int, date, datetime, Timestamp)</code>, optional</dt>
-<dd>Starting date. Parses many different kind of date
-representations (e.g., 'JAN-01-2010', '1/1/10', 'Jan, 1, 1980')
-(Default is None, which implies 01-01-2015).</dd>
-<dt><strong><code>end</code></strong> :&ensp;<code>(string, int, date, datetime, Timestamp)</code>, optional</dt>
-<dd>Ending date, timestamp. Same format as starting date
-(Default is NONE, which implies yesterday).</dd>
-<dt><strong><code>refresh</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>True to retrieve timeseries from internet instead of using
-symbol cache (default is False).</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><code>None</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="brownbear.symbol_cache.fetch_timeseries"><code class="name flex">
+<span>def <span class="ident">fetch_timeseries</span></span>(<span>symbols, start=None, end=None, refresh=False, throttle_limit=100, wait_time=30)</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def fetch_timeseries(symbols, start=None, end=None, refresh=False):
+<pre><code class="python">def fetch_timeseries(symbols, start=None, end=None, refresh=False, throttle_limit=100, wait_time=30):
     &#34;&#34;&#34;
-    Fetch timeseries for one or more symbols from yahoo finance.
+    Fetch timeseries for one or more symbols from Yahoo Finance.
 
-    Write the timeseries to the symbol cache as `symbol`.csv
+    Write the timeseries to the symbol cache as `symbol.csv`.
 
     Parameters
     ----------
     symbols : list of str
         The list of symbols for securities.
     start : (string, int, date, datetime, Timestamp), optional
-        Starting date. Parses many different kind of date
-        representations (e.g., &#39;JAN-01-2010&#39;, &#39;1/1/10&#39;, &#39;Jan, 1, 1980&#39;)
-        (Default is None, which implies 01-01-2015).
+        Starting date. Parses many different kinds of date representations
+        (e.g., &#39;JAN-01-2010&#39;, &#39;1/1/10&#39;, &#39;Jan, 1, 1980&#39;) (default is None, which implies 01-01-2019).
     end : (string, int, date, datetime, Timestamp), optional
-        Ending date, timestamp. Same format as starting date
-        (Default is NONE, which implies yesterday).
+        Ending date, timestamp. Same format as starting date (default is None).
+        Can be:
+        - None -&gt; compute default cutoff date
+        - &#39;latest&#39; -&gt; yesterday&#39;s date
+        - any -&gt; use as-is
     refresh : bool, optional
-        True to retrieve timeseries from internet instead of using
-        symbol cache (default is False).
+        True to retrieve timeseries from the internet instead of using symbol cache (default is False).
+    throttle_limit : int, optional
+        The number of symbols to fetch before waiting (default is 100).
+    wait_time : int, optional
+        The number of seconds to wait after reaching the throttle limit (default is 30).
 
     Returns
     -------
     None
     &#34;&#34;&#34;
     if start is None:
-        start = datetime.datetime(2015, 1, 1)
+        start = datetime.datetime(2019, 1, 1)
     if end is None:
+        end = _get_cutoff_date()
+    elif isinstance(end, str) and end.lower() == &#39;latest&#39;:
         end = datetime.datetime.now() - datetime.timedelta(1)
+    else:
+        pass
 
-    if not os.path.exists(bb.SYMBOL_CACHE):
-        os.makedirs(bb.SYMBOL_CACHE)
+    symbol_cache_path = Path(bb.SYMBOL_CACHE)
+    symbol_cache_path.mkdir(parents=True, exist_ok=True)
 
-    for symbol in symbols:
+    request_count = 0  # Counter to track the number of requests made
+
+    for i, symbol in enumerate(symbols):
         print(symbol, end=&#39; &#39;)
-        filepath = bb.SYMBOL_CACHE / (symbol + &#39;.csv&#39;)
-        if refresh or not os.path.isfile(filepath):
+        filepath = symbol_cache_path / f&#39;{symbol}.csv&#39;
+
+        if refresh or not filepath.is_file():
             try:
-                #df = pdr.DataReader(symbol, &#39;yahoo&#39;, start, end)
-                df = pdr.get_data_yahoo(symbol, start, end, progress=False)
-            except RemoteDataError as e:
-                print(f&#39;\n{e}&#39;)
+                df = yf.download(
+                    symbol, start, end, progress=False,
+                    auto_adjust=False, multi_level_index=False,
+                    threads=False, timeout=30,
+                )
+                if df.empty:
+                    print(f&#39;No Data for {symbol}&#39;)
+                    continue
             except Exception as e:
                 print(f&#39;\n{e}&#39;)
             else:
                 df.reset_index(inplace=True)
-                df.set_index(&#34;Date&#34;, inplace=True)
-                df.to_csv(filepath)
+                df.set_index(&#39;Date&#39;, inplace=True)
+                df.to_csv(filepath, encoding=&#39;utf-8&#39;)
+
+        request_count += 1
+
+        # Throttle: wait after every `throttle_limit` requests
+        if request_count &gt;= throttle_limit:
+            print(f&#39;\nThrottle limit reached. Waiting for {wait_time} seconds...&#39;)
+            time.sleep(wait_time)
+            request_count = 0  # Reset the counter after waiting
+
     print()</code></pre>
 </details>
-</dd>
-<dt id="brownbear.symbol_cache.get_symbol_fundamentals"><code class="name flex">
-<span>def <span class="ident">get_symbol_fundamentals</span></span>(<span>symbols=None)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get fundamental data for list of symbols.</p>
-<p>Filter out any symbols prefixed with '__'.</p>
+<div class="desc"><p>Fetch timeseries for one or more symbols from Yahoo Finance.</p>
+<p>Write the timeseries to the symbol cache as <code>symbol.csv</code>.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
-<dt><strong><code>symbols</code></strong> :&ensp;<code>list</code> of <code>str</code>, optional</dt>
-<dd>The list of symbols for securities (default is None, which
-imples all symbols in symbol cache).</dd>
+<dt><strong><code>symbols</code></strong> :&ensp;<code>list</code> of <code>str</code></dt>
+<dd>The list of symbols for securities.</dd>
+<dt><strong><code>start</code></strong> :&ensp;<code>(string, int, date, datetime, Timestamp)</code>, optional</dt>
+<dd>Starting date. Parses many different kinds of date representations
+(e.g., 'JAN-01-2010', '1/1/10', 'Jan, 1, 1980') (default is None, which implies 01-01-2019).</dd>
+<dt><strong><code>end</code></strong> :&ensp;<code>(string, int, date, datetime, Timestamp)</code>, optional</dt>
+<dd>Ending date, timestamp. Same format as starting date (default is None).
+Can be:
+- None -&gt; compute default cutoff date
+- 'latest' -&gt; yesterday's date
+- any -&gt; use as-is</dd>
+<dt><strong><code>refresh</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>True to retrieve timeseries from the internet instead of using symbol cache (default is False).</dd>
+<dt><strong><code>throttle_limit</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>The number of symbols to fetch before waiting (default is 100).</dd>
+<dt><strong><code>wait_time</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>The number of seconds to wait after reaching the throttle limit (default is 30).</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><code>None</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="brownbear.symbol_cache.get_symbol_fundamentals"><code class="name flex">
+<span>def <span class="ident">get_symbol_fundamentals</span></span>(<span>symbols=None, throttle_limit=100, wait_time=30, reset_cache=False)</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_symbol_fundamentals(symbols=None):
+<pre><code class="python">def get_symbol_fundamentals(symbols=None, throttle_limit=100, wait_time=30, reset_cache=False):
     &#34;&#34;&#34;
-    Get fundamental data for list of symbols.
-
-     Filter out any symbols prefixed with &#39;__&#39;.
+    Get fundamental data for list of symbols with caching and throttling.
 
     Parameters
     ----------
     symbols : list of str, optional
-        The list of symbols for securities (default is None, which
-        imples all symbols in symbol cache).
+        The list of symbols for securities (default is None, which implies all symbols
+        in symbol cache).
+    throttle_limit : int, optional
+        The number of symbols to fetch before waiting (default is 100).
+    wait_time : int, optional
+        The number of seconds to wait after reaching the throttle limit (default is 30).
+    reset_cache : bool, optional
+        If True, delete the existing cache and start fresh (default is False).
 
     Returns
     -------
-    None
+    DataFrame
+        DataFrame containing the fundamental data for the provided symbols.
     &#34;&#34;&#34;
+    symbol_cache_path = Path(bb.SYMBOL_CACHE)
+    cache_file = Path(&#39;fundamentals_cache.json&#39;)
+
+    # Handle reset_cache option
+    if reset_cache and cache_file.exists():
+        cache_file.unlink()  # Use pathlib to remove the file
+
+    # Load existing cache if available
+    cache = {}
+    if cache_file.exists():
+        with open(cache_file, &#39;r&#39;) as f:
+            cache = json.load(f)
+
+    # Get the list of symbols
     if symbols:
-        # In case user forgot to put single symbol in list.
         if not isinstance(symbols, list):
             symbols = [symbols]
     else:
-        filenames = ([f for f in os.listdir(bb.SYMBOL_CACHE)
-                      if f.endswith(&#39;.csv&#39;) and not f.startswith(&#39;__&#39;)])
-        symbols = [os.path.splitext(filename)[0] for filename in filenames]
+        filenames = [filename.name for filename in symbol_cache_path.iterdir()
+                     if filename.suffix == &#39;.csv&#39; and not filename.stem.startswith(&#39;__&#39;)]
+        symbols = [Path(filename).stem for filename in filenames]
 
-    # Make symbol names uppercase.
+    # Convert symbols to uppercase
     symbols = [symbol.upper() for symbol in symbols]
 
-    l = []
-    for i, symbol in enumerate(symbols):
+    # Remove already cached symbols from the list
+    symbols_to_fetch = [symbol for symbol in symbols if symbol not in cache]
+    print(f&#39;Fetching fundamental data for {len(symbols_to_fetch)} symbols...&#39;)
+
+    request_count = 0
+
+    for symbol in symbols_to_fetch:
         print(symbol, end=&#39; &#39;)
-        ticker = Ticker(symbol)
-        d = ticker.summary_detail[symbol]
 
-        previousClose = trailingPE = dividendYield = marketCap = np.nan
-        if isinstance(d, dict):
-            try:
-                previousClose = d.get(&#39;previousClose&#39;, np.nan)
-                trailingPE = d.get(&#39;trailingPE&#39;, 0)
-                dividendYield = d.get(&#39;dividendYield&#39;, 0) * 100
-                marketCap = d.get(&#39;marketCap&#39;, 0) / 1000000
-            except Exception as e:
-                print(e)
-        else:
-            print(f&#39;\n({d})&#39;)
+        try:
+            # Fetch fundamental data from Yahoo Finance
+            ticker = yf.Ticker(symbol)
+            info = ticker.info
 
-        t = (symbol, previousClose, trailingPE, dividendYield, marketCap)
-        l.append(t)
+            # Extract relevant data
+            previousClose = info.get(&#39;previousClose&#39;, np.nan)
+            trailingPE = info.get(&#39;trailingPE&#39;, 0)
+            dividendYield = info.get(&#39;dividendYield&#39;, 0) * 100  # Convert to percentage
+            marketCap = info.get(&#39;marketCap&#39;, 0) / 1_000_000  # Convert to million
+            companyName = info.get(&#39;shortName&#39;, None)
 
-    columns = [&#39;symbol&#39;, &#39;previousClose&#39;, &#39;trailingPE&#39;, &#39;dividendYield&#39;, &#39;marketCap&#39;]
-    df = pd.DataFrame(l, columns=columns)
-    df.set_index(&#39;symbol&#39;, inplace=True)
+            # Store result in cache
+            cache[symbol] = {
+                &#39;companyName&#39;: companyName,
+                &#39;previousClose&#39;: previousClose,
+                &#39;trailingPE&#39;: trailingPE,
+                &#39;dividendYield&#39;: dividendYield,
+                &#39;marketCap&#39;: marketCap
+            }
+
+            # Save updated cache to file after each symbol
+            with open(cache_file, &#39;w&#39;) as f:
+                json.dump(cache, f, indent=4)
+
+        except Exception as e:
+            print(f&#39;\nError fetching data for {symbol}: {e}&#39;)
+
+        request_count += 1
+
+        # Throttle after hitting the limit
+        if request_count &gt;= throttle_limit:
+            print(f&#39;\nThrottle limit reached. Waiting for {wait_time} seconds...&#39;)
+            time.sleep(wait_time)
+            request_count = 0  # Reset counter
+
+    # Convert cache dict to DataFrame
+    df = pd.DataFrame.from_dict(cache, orient=&#39;index&#39;)
+    df.index.name = &#39;symbol&#39;
+
     return df</code></pre>
 </details>
+<div class="desc"><p>Get fundamental data for list of symbols with caching and throttling.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>symbols</code></strong> :&ensp;<code>list</code> of <code>str</code>, optional</dt>
+<dd>The list of symbols for securities (default is None, which implies all symbols
+in symbol cache).</dd>
+<dt><strong><code>throttle_limit</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>The number of symbols to fetch before waiting (default is 100).</dd>
+<dt><strong><code>wait_time</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>The number of seconds to wait after reaching the throttle limit (default is 30).</dd>
+<dt><strong><code>reset_cache</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>If True, delete the existing cache and start fresh (default is False).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>DataFrame</code></dt>
+<dd>DataFrame containing the fundamental data for the provided symbols.</dd>
+</dl></div>
 </dd>
 <dt id="brownbear.symbol_cache.get_symbol_metadata"><code class="name flex">
 <span>def <span class="ident">get_symbol_metadata</span></span>(<span>symbols=None)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Get symbol metadata for list of symbols</p>
-<p>Filter out any symbols prefixed with '__'.</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>symbols</code></strong> :&ensp;<code>list</code> of <code>str</code>, optional</dt>
-<dd>The list of symbols for securities (default is None, which
-imples all symbols in symbol cache).</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>None</code></dt>
-<dd>&nbsp;</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -577,33 +364,35 @@ imples all symbols in symbol cache).</dd>
     ----------
     symbols : list of str, optional
         The list of symbols for securities (default is None, which
-        imples all symbols in symbol cache).
+        implies all symbols in symbol cache).
 
     Returns
     -------
-    None
+    pd.DataFrame
     &#34;&#34;&#34;
     def _difference_in_years(start, end):
         &#34;&#34;&#34; Calculate the number of years between two dates. &#34;&#34;&#34;
-        diff  = end - start
-        diff_in_years = (diff.days + diff.seconds/86400)/365.2425
+        diff = end - start
+        diff_in_years = (diff.days + diff.seconds / 86400) / 365.2425
         return diff_in_years
 
+    symbol_cache_path = Path(bb.SYMBOL_CACHE)
+
     if symbols:
-        # In case user forgot to put single symbol in list.
+        # In case user forgot to put a single symbol in a list.
         if not isinstance(symbols, list):
             symbols = [symbols]
     else:
-        filenames = ([f for f in os.listdir(bb.SYMBOL_CACHE)
-                      if f.endswith(&#39;.csv&#39;) and not f.startswith(&#39;__&#39;)])
-        symbols = [os.path.splitext(filename)[0] for filename in filenames]
+        filenames = [filename.name for filename in symbol_cache_path.iterdir()
+                     if filename.suffix == &#39;.csv&#39; and not filename.stem.startswith(&#39;__&#39;)]
+        symbols = [Path(filename).stem for filename in filenames]
 
     # Make symbol names uppercase.
     symbols = [symbol.upper() for symbol in symbols]
 
     l = []
     for i, symbol in enumerate(symbols):
-        filepath = bb.SYMBOL_CACHE / (symbol + &#39;.csv&#39;)
+        filepath = symbol_cache_path / f&#39;{symbol}.csv&#39;
         ts = pd.read_csv(filepath)
         ts.set_index(&#39;Date&#39;, inplace=True)
         start = datetime.datetime.strptime(ts.index[0], &#39;%Y-%m-%d&#39;)
@@ -613,28 +402,29 @@ imples all symbols in symbol cache).</dd>
         end = end.strftime(&#39;%Y-%m-%d&#39;)
         t = (symbol, start, end, num_years)
         l.append(t)
+
     columns = [&#39;symbol&#39;, &#39;start_date&#39;, &#39;end_date&#39;, &#39;num_years&#39;]
     df = pd.DataFrame(l, columns=columns)
     return df</code></pre>
 </details>
-</dd>
-<dt id="brownbear.symbol_cache.remove_cache_symbols"><code class="name flex">
-<span>def <span class="ident">remove_cache_symbols</span></span>(<span>symbols=None)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Remove cached timeseries for list of symbols.</p>
+<div class="desc"><p>Get symbol metadata for list of symbols</p>
 <p>Filter out any symbols prefixed with '__'.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>symbols</code></strong> :&ensp;<code>list</code> of <code>str</code>, optional</dt>
 <dd>The list of symbols for securities (default is None, which
-imples all symbols in symbol cache).</dd>
+implies all symbols in symbol cache).</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>None</code></dt>
+<dt><code>pd.DataFrame</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="brownbear.symbol_cache.remove_cache_symbols"><code class="name flex">
+<span>def <span class="ident">remove_cache_symbols</span></span>(<span>symbols=None)</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -649,54 +439,58 @@ imples all symbols in symbol cache).</dd>
     ----------
     symbols : list of str, optional
         The list of symbols for securities (default is None, which
-        imples all symbols in symbol cache).
+        implies all symbols in symbol cache).
 
     Returns
     -------
     None
     &#34;&#34;&#34;
+    symbol_cache_path = Path(bb.SYMBOL_CACHE)
+
     if symbols:
-        # In case user forgot to put single symbol in a list.
+        # In case user forgot to put a single symbol in a list.
         if not isinstance(symbols, list):
             symbols = [symbols]
         filenames = [symbol.upper() + &#39;.csv&#39; for symbol in symbols]
     else:
-        filenames = [f for f in os.listdir(bb.SYMBOL_CACHE) if f.endswith(&#39;.csv&#39;)]
+        filenames = [filename.name for filename in symbol_cache_path.iterdir() 
+                     if filename.suffix == &#39;.csv&#39;]
 
     # Filter out any filename prefixed with &#39;__&#39;.
-    filenames = [f for f in filenames if not f.startswith(&#39;__&#39;)]
+    filenames = [filename for filename in filenames if not filename.startswith(&#39;__&#39;)]
 
     print(&#39;removing symbols:&#39;)
-    for i, f in enumerate(filenames):
-        symbol = os.path.splitext(f)[0]
+    for i, filename in enumerate(filenames):
+        symbol = Path(filename).stem
         print(symbol + &#39; &#39;, end=&#39;&#39;)
-        if i % 10 == 0 and i != 0: print()
+        if i % 10 == 0 and i != 0:
+            print()
 
-        filepath = bb.SYMBOL_CACHE / f
-        if os.path.exists(filepath):
-            os.remove(filepath)
+        filepath = symbol_cache_path / filename
+        if filepath.exists():
+            filepath.unlink()
         else:
-            print(f&#39;\n({f} not found)&#39;)
+            print(f&#39;\n({filename} not found)&#39;)
     print()</code></pre>
 </details>
-</dd>
-<dt id="brownbear.symbol_cache.update_cache_symbols"><code class="name flex">
-<span>def <span class="ident">update_cache_symbols</span></span>(<span>symbols=None)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Update cached timeseries for list of symbols.</p>
+<div class="desc"><p>Remove cached timeseries for list of symbols.</p>
 <p>Filter out any symbols prefixed with '__'.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>symbols</code></strong> :&ensp;<code>list</code> of <code>str</code>, optional</dt>
 <dd>The list of symbols for securities (default is None, which
-imples all symbols in symbol cache).</dd>
+implies all symbols in symbol cache).</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><code>None</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="brownbear.symbol_cache.update_cache_symbols"><code class="name flex">
+<span>def <span class="ident">update_cache_symbols</span></span>(<span>symbols=None)</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -711,20 +505,22 @@ imples all symbols in symbol cache).</dd>
     ----------
     symbols : list of str, optional
         The list of symbols for securities (default is None, which
-        imples all symbols in symbol cache).
+        implies all symbols in symbol cache).
 
     Returns
     -------
     None
     &#34;&#34;&#34;
+    symbol_cache_path = Path(bb.SYMBOL_CACHE)
+
     if symbols:
         # In case user forgot to put single symbol in list.
         if not isinstance(symbols, list):
             symbols = [symbols]
     else:
-        filenames = ([f for f in os.listdir(bb.SYMBOL_CACHE)
-                     if f.endswith(&#39;.csv&#39;) and not f.startswith(&#39;__&#39;)])
-        symbols = [os.path.splitext(filename)[0] for filename in filenames]
+        filenames = [filename.name for filename in symbol_cache_path.iterdir()
+                     if filename.suffix == &#39;.csv&#39; and not filename.stem.startswith(&#39;__&#39;)]
+        symbols = [Path(filename).stem for filename in filenames]
 
     # Make symbol names uppercase.
     symbols = [symbol.upper() for symbol in symbols]
@@ -732,6 +528,19 @@ imples all symbols in symbol cache).</dd>
     # Update timeseries for symbols.
     bb.fetch_timeseries(symbols, refresh=True)</code></pre>
 </details>
+<div class="desc"><p>Update cached timeseries for list of symbols.</p>
+<p>Filter out any symbols prefixed with '__'.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>symbols</code></strong> :&ensp;<code>list</code> of <code>str</code>, optional</dt>
+<dd>The list of symbols for securities (default is None, which
+implies all symbols in symbol cache).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>None</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
 </dd>
 </dl>
 </section>
@@ -739,7 +548,6 @@ imples all symbols in symbol cache).</dd>
 </section>
 </article>
 <nav id="sidebar">
-<h1>Index</h1>
 <div class="toc">
 <ul></ul>
 </div>
@@ -763,7 +571,7 @@ imples all symbols in symbol cache).</dd>
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>

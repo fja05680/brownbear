@@ -1,7 +1,7 @@
 # Description: investment options
 
 # Format
-"Investment Option","Description","Asset Class","1 mo","3 mo","1 Yr","3 Yr","5 Yr","Vola","DS Vola","SD 1 Yr","SD 3 Yr","SD 5 Yr"
+"Investment Option","Description","Asset Class","3 mo","6 mo","1 Yr","1-1 Yr","3 Yr","5 Yr","Vola","DS Vola","SD 1 Yr","SD 3 Yr","SD 5 Yr"
 
 # Investment Options
 "ROKU","Roku,Inc.","US Stocks:Technology","1.09","-12.33","216.6","109.96","74.46","79.86","39.56","79.86","79.86","79.86"

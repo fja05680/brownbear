@@ -5,6 +5,8 @@ Trade functions.
 from pathlib import Path
 
 import pandas as pd
+
+from . import _yfinance_config  # noqa: F401
 import yfinance as yf
 
 
