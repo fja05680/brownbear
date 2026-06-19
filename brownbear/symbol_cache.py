@@ -286,6 +286,30 @@ def get_symbol_metadata(symbols=None):
     return df
 
 
+def _fundamentals_dir():
+    return bb.ROOT / 'tools' / 'symbol-cache'
+
+
+def _fundamentals_cache_path():
+    return _fundamentals_dir() / 'fundamentals_cache.json'
+
+
+def reset_fundamentals_cache():
+    """
+    Delete the fundamentals JSON cache used by get_symbol_fundamentals.
+
+    Returns
+    -------
+    bool
+        True if a cache file was deleted, False if none existed.
+    """
+    cache_file = _fundamentals_cache_path()
+    if cache_file.exists():
+        cache_file.unlink()
+        return True
+    return False
+
+
 def get_symbol_fundamentals(symbols=None, throttle_limit=100, wait_time=30, reset_cache=False):
     """
     Get fundamental data for list of symbols with caching and throttling.
@@ -308,11 +332,10 @@ def get_symbol_fundamentals(symbols=None, throttle_limit=100, wait_time=30, rese
         DataFrame containing the fundamental data for the provided symbols.
     """
     symbol_cache_path = Path(bb.SYMBOL_CACHE)
-    cache_file = Path('fundamentals_cache.json')
+    cache_file = _fundamentals_cache_path()
 
-    # Handle reset_cache option
-    if reset_cache and cache_file.exists():
-        cache_file.unlink()  # Use pathlib to remove the file
+    if reset_cache:
+        reset_fundamentals_cache()
 
     # Load existing cache if available
     cache = {}
@@ -363,6 +386,7 @@ def get_symbol_fundamentals(symbols=None, throttle_limit=100, wait_time=30, rese
             }
 
             # Save updated cache to file after each symbol
+            cache_file.parent.mkdir(parents=True, exist_ok=True)
             with open(cache_file, 'w') as f:
                 json.dump(cache, f, indent=4)
 

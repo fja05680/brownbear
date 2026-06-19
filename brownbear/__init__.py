@@ -31,7 +31,8 @@ from .symbol_cache import (
     remove_cache_symbols,
     update_cache_symbols,
     get_symbol_metadata,
-    get_symbol_fundamentals
+    get_symbol_fundamentals,
+    reset_fundamentals_cache
 )
 
 from .trade import (

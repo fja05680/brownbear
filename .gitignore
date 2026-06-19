@@ -75,6 +75,9 @@ target/
 # ipython metadata
 .ipynb_checkpoints
 
+# update-universe.sh checkpoint
+tools/.update-universe.state
+
 # private algos
 algos/
 strategies/

@@ -83,14 +83,14 @@ Each portfolio folder may also include `investment-options.ipynb` for refreshing
 
 ## Updating market data
 
-Maintainers refreshing the full dataset should follow [UPDATE](UPDATE). In short:
+Maintainers can refresh the full dataset with [tools/update-universe.sh](tools/update-universe.sh):
 
-1. Rebuild [symbol-cache/](symbol-cache/) when needed.
-2. Run universe notebooks under [universe/](universe/) to refresh indices and `investment-options.csv`.
-3. Run [tools/symbol-cache/get-symbol-fundamentals.ipynb](tools/symbol-cache/get-symbol-fundamentals.ipynb).
-4. Run portfolio notebooks.
+```bash
+./tools/update-universe.sh --full      # first run: clean caches, run all steps
+./tools/update-universe.sh             # resume after an error
+```
 
-Run `tools/cleanup-kernels.sh` between notebook runs if Jupyter becomes sluggish.
+See [UPDATE](UPDATE) for step details.
 
 ## Documentation
 
@@ -112,7 +112,3 @@ xdg-open docs/html/brownbear/index.html    # Linux
 ```
 
 Source modules with docstrings are in [brownbear/](brownbear/).
-
-## License
-
-MIT — see [LICENSE](LICENSE).
