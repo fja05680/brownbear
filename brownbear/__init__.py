@@ -43,6 +43,8 @@ from .trade import (
     get_quote,
     calculate_target_portfolio,
     rebalance_portfolio,
+    rebalance_orders_to_dataframe,
+    write_rebalance_orders_csv,
     calculate_free_cash,
     allocate_free_cash
 )

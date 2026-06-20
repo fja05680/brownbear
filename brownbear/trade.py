@@ -2,6 +2,7 @@
 Trade functions.
 """
 
+import datetime
 from pathlib import Path
 
 import pandas as pd
@@ -212,3 +213,78 @@ def rebalance_portfolio(current_portfolio=None, target_portfolio=None):
     }
     
     return rebalance_orders
+
+
+def rebalance_orders_to_dataframe(
+    rebalance_orders,
+    account=None,
+    as_of_date=None,
+    quote_per_investment=None,
+):
+    """
+    Convert rebalance_orders to a flat DataFrame for trade execution.
+
+    Parameters
+    ----------
+    rebalance_orders : dict
+        Output of rebalance_portfolio with ``sell`` and ``buy`` keys.
+    account : str, optional
+        Broker account identifier.
+    as_of_date : str or date, optional
+        Trade date in ISO format (default is today).
+    quote_per_investment : dict, optional
+        Symbol to price mapping; adds ``price`` and ``estimated_value`` columns.
+
+    Returns
+    -------
+    DataFrame
+        One row per order with columns ``account``, ``side``, ``symbol``,
+        ``quantity``, and ``as_of_date``.
+    """
+    if as_of_date is None:
+        as_of_date = datetime.date.today().isoformat()
+    else:
+        as_of_date = str(as_of_date)
+
+    rows = []
+    for side in ('sell', 'buy'):
+        for symbol, quantity in rebalance_orders.get(side, {}).items():
+            row = {
+                'account': account,
+                'side': side.upper(),
+                'symbol': symbol,
+                'quantity': quantity,
+                'as_of_date': as_of_date,
+            }
+            if quote_per_investment and symbol in quote_per_investment:
+                price = quote_per_investment[symbol]
+                if price not in (None, 'N/A', 'None', '', 0):
+                    row['price'] = float(price)
+                    row['estimated_value'] = round(float(price) * quantity, 2)
+            rows.append(row)
+
+    return pd.DataFrame(rows)
+
+
+def write_rebalance_orders_csv(rebalance_orders, filepath, **kwargs):
+    """
+    Write rebalance orders to a CSV file.
+
+    Parameters
+    ----------
+    rebalance_orders : dict
+        Output of rebalance_portfolio.
+    filepath : str or Path
+        Output CSV path.
+    **kwargs
+        Passed to rebalance_orders_to_dataframe.
+
+    Returns
+    -------
+    DataFrame
+        The orders written to ``filepath``.
+    """
+    filepath = Path(filepath)
+    df = rebalance_orders_to_dataframe(rebalance_orders, **kwargs)
+    df.to_csv(filepath, index=False)
+    return df
