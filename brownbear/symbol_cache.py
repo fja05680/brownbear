@@ -18,9 +18,20 @@ import brownbear as bb
 
 def _get_cutoff_date(reference_date=None):
     """
-    Returns a cutoff date based on the following rules:
+    Return the default end date for symbol-cache downloads.
+
     - If today is before the 25th: return last day of two months ago
     - If today is on or after the 25th: return last day of previous month
+
+    Parameters
+    ----------
+    reference_date : date, optional
+        Date used for the cutoff rule (default is today).
+
+    Returns
+    -------
+    date
+        Last day of the selected month.
     """
     if reference_date is None:
         reference_date = datetime.date.today()
@@ -115,7 +126,7 @@ def fetch_timeseries(symbols, start=None, end=None, refresh=False, throttle_limi
     print()
 
 
-def compile_timeseries(symbols):
+def compile_timeseries(symbols, output_path='symbols-timeseries.csv'):
     """
     Compile one or more symbols' timeseries into a single dataframe.
 
@@ -125,17 +136,21 @@ def compile_timeseries(symbols):
 
     The compiled timeseries has a column for each symbol.  Each row
     contains the daily closing prices for the symbols.  This timeseries
-    is written to 'symbols-timeseries.csv' in the current directory.
+    is written to ``output_path`` (default ``symbols-timeseries.csv`` in
+    the current directory).
 
     Parameters
     ----------
     symbols : list of str
         The list of symbols for securities.
+    output_path : str or Path, optional
+        Output CSV path for the compiled timeseries.
 
     Returns
     -------
     None
     """
+    output_path = Path(output_path)
     compiled_df = pd.DataFrame()
 
     for symbol in symbols:
@@ -150,7 +165,7 @@ def compile_timeseries(symbols):
             compiled_df = df
         else:
             compiled_df = compiled_df.join(df, how='outer')
-    compiled_df.to_csv('symbols-timeseries.csv', encoding='utf-8')
+    compiled_df.to_csv(output_path, encoding='utf-8')
 
 
 def remove_cache_symbols(symbols=None):
@@ -249,7 +264,21 @@ def get_symbol_metadata(symbols=None):
     pd.DataFrame
     """
     def _difference_in_years(start, end):
-        """ Calculate the number of years between two dates. """
+        """
+        Calculate the number of years between two dates.
+
+        Parameters
+        ----------
+        start : datetime
+            Start datetime.
+        end : datetime
+            End datetime.
+
+        Returns
+        -------
+        float
+            Elapsed time in years.
+        """
         diff = end - start
         diff_in_years = (diff.days + diff.seconds / 86400) / 365.2425
         return diff_in_years
@@ -287,10 +316,26 @@ def get_symbol_metadata(symbols=None):
 
 
 def _fundamentals_dir():
+    """
+    Return the directory used for fundamentals cache files.
+
+    Returns
+    -------
+    Path
+        ``tools/symbol-cache`` under the project root.
+    """
     return bb.ROOT / 'tools' / 'symbol-cache'
 
 
 def _fundamentals_cache_path():
+    """
+    Return the path to the fundamentals JSON cache file.
+
+    Returns
+    -------
+    Path
+        ``fundamentals_cache.json`` under :func:`_fundamentals_dir`.
+    """
     return _fundamentals_dir() / 'fundamentals_cache.json'
 
 

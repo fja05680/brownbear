@@ -12,6 +12,16 @@ from .fetch import (
     rank
 )
 
+from .investment_options import (
+    update_investment_options,
+    compute_investment_metrics,
+    load_dow30_universe,
+    load_sp400_universe,
+    load_sp500_universe,
+    load_sp600_universe,
+    load_nasdaq100_universe,
+)
+
 from .analyze import (
     analyze,
     summary,
@@ -43,6 +53,10 @@ from .trade import (
     get_quote,
     calculate_target_portfolio,
     rebalance_portfolio,
+    compare_portfolios,
+    fetch_schwab_portfolio,
+    verify_portfolio,
+    apply_sell_only_below_ma_filter,
     rebalance_orders_to_dataframe,
     write_rebalance_orders_csv,
     calculate_free_cash,
@@ -52,20 +66,45 @@ from .trade import (
 from .utility import (
     ROOT,
     SYMBOL_CACHE,
+    notebook_display_options,
     print_full
 )
 
 def _whoami():
-    ''' Returns the name of the calling function '''
+    """
+    Return the name of the calling function.
+
+    Returns
+    -------
+    str
+    """
     import inspect
     return inspect.stack()[1][3]
 
 def _whosdaddy():
-    ''' Returns the name of the calling function's parent '''
+    """
+    Return the name of the calling function's parent.
+
+    Returns
+    -------
+    str
+    """
     import inspect
     return inspect.stack()[2][3]
 
 DEBUG = False
 def DBG(*s):
+    """
+    Print debug output when ``DEBUG`` is True.
+
+    Parameters
+    ----------
+    *s
+        Values to print, prefixed with the caller's function name.
+
+    Returns
+    -------
+    None
+    """
     if DEBUG: print('{}() {}\n'.format(_whosdaddy(), s))
     else:     pass

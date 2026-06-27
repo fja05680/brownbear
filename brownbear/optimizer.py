@@ -22,9 +22,28 @@ from brownbear.portfolio import (
 
 def _sim(ml, min_annual_return, max_worst_typical_down_year, max_black_swan):
     """
-    Calculation is done via a Monte Carlo Simulation by trying random
-    combinations of weights and checking which combination has the best
-    sharpe_ratio.
+    Monte Carlo search for portfolio weights that maximize Sharpe ratio.
+
+    Tries random weight combinations and keeps the best sharpe_ratio that
+    satisfies the given constraints.
+
+    Parameters
+    ----------
+    ml : dotdict
+        Metric lists from :func:`get_metric_lists`.
+    min_annual_return : float
+        Minimum acceptable annualized return.
+    max_worst_typical_down_year : float
+        Minimum acceptable worst typical down year (annual return - 2*std dev).
+    max_black_swan : float
+        Minimum acceptable black swan return (annual return - 3*std dev).
+
+    Returns
+    -------
+    success : bool
+        True if a valid weight combination was found.
+    o_weights : list of float
+        Optimal weights, or an empty list when ``success`` is False.
     """
 
     o_sharpe_ratio = 0

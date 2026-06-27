@@ -18,6 +18,15 @@ _configured = False
 
 
 def _process_cache_dir():
+    """
+    Return a per-process yfinance cache directory path.
+
+    Returns
+    -------
+    Path
+        Cache directory for the current process.  Honors
+        ``BROWNBEAR_YFINANCE_CACHE`` when set.
+    """
     if override := os.environ.get('BROWNBEAR_YFINANCE_CACHE'):
         base = Path(override)
     else:
@@ -26,6 +35,13 @@ def _process_cache_dir():
 
 
 def _close_yfinance_dbs():
+    """
+    Close yfinance SQLite cache connections.
+
+    Returns
+    -------
+    None
+    """
     from yfinance.cache import _CookieDBManager, _ISINDBManager, _TzDBManager
 
     for manager in (_TzDBManager, _CookieDBManager, _ISINDBManager):
@@ -36,11 +52,32 @@ def _close_yfinance_dbs():
 
 
 def _cleanup(cache_dir):
+    """
+    Close yfinance databases and remove the per-process cache directory.
+
+    Parameters
+    ----------
+    cache_dir : str or Path
+        Per-process cache directory to delete.
+
+    Returns
+    -------
+    None
+    """
     _close_yfinance_dbs()
     shutil.rmtree(cache_dir, ignore_errors=True)
 
 
 def configure():
+    """
+    Configure yfinance to use a per-process cache directory.
+
+    Called automatically on import.  Safe to call repeatedly.
+
+    Returns
+    -------
+    None
+    """
     global _configured
     if _configured:
         return

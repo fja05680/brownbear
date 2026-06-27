@@ -80,4 +80,7 @@ tools/.update-universe.state
 
 # private algos
 algos/
-strategies/
+
+# private per-account strategy notebooks (see strategies/README.md)
+strategies/*
+!strategies/README.md

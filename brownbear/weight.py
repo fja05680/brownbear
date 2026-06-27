@@ -20,6 +20,21 @@ from brownbear.utility import (
 def _calc_weights(df, asset_dict, weight_by):
     """
     Calculate weights for assets in asset_dict using weight_by method.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with performance metrics.
+    asset_dict : dict
+        Investment options to weight, initialized with placeholder values.
+    weight_by : str
+        Weighting method: ``'Equal'``, ``'Sharpe Ratio'``, ``'Annual Returns'``,
+        ``'Std Dev'``, ``'Vola'``, or ``'DS Vola'``.
+
+    Returns
+    -------
+    None
+        Updates ``asset_dict`` in place with computed weights.
     """
     weight_by_choices = ('Equal', 'Sharpe Ratio', 'Annual Returns',
                          'Std Dev', 'Vola', 'DS Vola')
@@ -84,8 +99,23 @@ def _calc_weights(df, asset_dict, weight_by):
 
 def _get_cmpt_weights(df, d, user_weights, user_weight_by):
     """
-    Calculate the weights not specified by user.  We need to compute
-    them.
+    Calculate the weights not specified by user.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with performance metrics.
+    d : dict
+        Remaining investment options to compute weights for.
+    user_weights : dict
+        User-specified weights that are held fixed.
+    user_weight_by : str
+        Weighting method applied to the remaining options.
+
+    Returns
+    -------
+    dict
+        Combined user and computed weights that sum to 1.
     """
     w = user_weights.copy()
     d = {k : 0 for k in set(d) - set(user_weights)}
@@ -101,7 +131,23 @@ def _get_cmpt_weights(df, d, user_weights, user_weight_by):
 def _calc_portfolio_option_weights(portfolio_option, ml, cmpt, user):
     """
     Calculate portfolio option weights using asset class,
-    asset subclass, and inv_opt weights
+    asset subclass, and inv_opt weights.
+
+    Parameters
+    ----------
+    portfolio_option : dict
+        Portfolio weights to update in place.
+    ml : dotdict
+        Metric lists from :func:`get_metric_lists`.
+    cmpt : dotdict
+        Computed asset-class, subclass, and investment-option weights.
+    user : dotdict
+        User weighting preferences from :func:`assign_weights`.
+
+    Returns
+    -------
+    None
+        Updates ``portfolio_option`` in place.
     """
     for i, inv_opt in enumerate(ml.inv_opts):
         asset_class = ml.asset_classes[i].split(':')[0]
@@ -120,11 +166,22 @@ def check_allocation(weights, asset_class_name):
     """
     Make sure total adds to 100.
 
+    Parameters
+    ----------
     weights : dict
         Dictionary of investment options along with their weights.  The
         keys are the investment options and the values are the weights.
     asset_class_name : str
         Description of the asset class.
+
+    Returns
+    -------
+    None
+
+    Raises
+    ------
+    Exception
+        If the weights do not sum to 1.
     """
     s = sum(weights.values())
     if not math.isclose(s, 1, rel_tol=1e-09, abs_tol=0.0):

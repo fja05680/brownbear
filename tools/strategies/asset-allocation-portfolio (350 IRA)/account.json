@@ -1,0 +1,18 @@
+{
+  "account_suffix": "350",
+  "account_number": "87787350",
+  "hash_value": "1E62F94EB618E05BBC1E7253D13FA5C67EDE5F9967B83975AE397B9706CDC829",
+  "as_of": "2026-06-20",
+  "total_capital": 99324.9,
+  "cash_balance": 8734.8,
+  "current_portfolio": {
+    "BIL": 112,
+    "GLD": 20,
+    "IBIT": 139,
+    "IWM": 63,
+    "NUKZ": 75,
+    "QQQ": 25,
+    "QTUM": 43,
+    "SPY": 24
+  }
+}

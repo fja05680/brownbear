@@ -112,6 +112,25 @@ def annualized_returns(df, timeperiod='daily', years=5, offset=0):
         value is the annualized return.
     """
     def _cagr(column, n, f, offset):
+        """
+        Calculate CAGR for one symbol column over n years.
+
+        Parameters
+        ----------
+        column : pd.Series
+            Price timeseries for one symbol.
+        n : float
+            Number of years over which to annualize.
+        f : int
+            Observations per year for the given timeperiod.
+        offset : int
+            Number of most recent observations to exclude.
+
+        Returns
+        -------
+        float
+            Annualized return as a percentage.
+        """
         time_units = int(n * f)
         end = -1 - offset
         start = end - time_units
@@ -133,17 +152,16 @@ def annualized_returns(df, timeperiod='daily', years=5, offset=0):
 def annualized_standard_deviation(returns, timeperiod='monthly', years=3,
                                   downside=False):
     """
-    Calculate the annualized standard deviation of entire dataframe.
+    Calculate the annualized standard deviation of a returns dataframe.
 
     Parameters
     ----------
-    df : pd.DataFrame
-        Timeseries with a column for each symbol.  Each row contains
-        the daily closing prices for the symbols.
+    returns : pd.DataFrame
+        Timeseries of returns with a column for each symbol.
     timeperiod : str, optional {'daily', 'weekly', 'monthly',
         'quarterly'}
-        Specifies the sample rate of the timeseries 'df'
-        (default is 'daily').
+        Specifies the sample rate of the timeseries ``returns``
+        (default is 'monthly').
     years : float, optional
         Number of years over which to calculate standard deviation
         (default is 3).

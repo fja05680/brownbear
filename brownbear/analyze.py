@@ -142,6 +142,17 @@ def analyze(df, portfolio_option, weight_by=None, default_correlation=1):
 def _plot_returns(summary_results, columns):
     """
     Bar Plot of returns with 1, 2, and 3 standard deviations.
+
+    Parameters
+    ----------
+    summary_results : pd.DataFrame
+        Summary metrics indexed by metric name.
+    columns : list of str
+        Column labels for the x-axis.
+
+    Returns
+    -------
+    None
     """
     means = list(summary_results.loc['Annual Returns'])
     Xs = list(range(0, len(means)))
@@ -260,6 +271,20 @@ def print_portfolio(portfolio_option):
 def _show_pie_chart(df, chart):
     """
     Show a single investment pie chart.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Portfolio holdings with ``Investment Option``, ``Asset Class``,
+        and ``Weight`` columns.
+    chart : str
+        Chart grouping: ``'Investment Option'``, ``'Asset Class'``, or
+        ``'Asset Subclass'``.
+
+    Returns
+    -------
+    str
+        Text summary of label-to-weight allocations.
     """
     title = f'{PORT.portfolio_title} - by {chart}'
 
@@ -324,6 +349,21 @@ def show_pie_charts(df, portfolio_option, charts=None):
     """
 
     def _add_weight_column(row, portfolio_option):
+        """
+        Look up portfolio weight for one investment option row.
+
+        Parameters
+        ----------
+        row : pd.Series
+            One row from the investment-options dataframe.
+        portfolio_option : dict
+            Symbol to portfolio weight mapping.
+
+        Returns
+        -------
+        float
+            Portfolio weight for the row's investment option.
+        """
         inv_opt = row['Investment Option']
         return portfolio_option[inv_opt]
 

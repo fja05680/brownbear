@@ -59,6 +59,22 @@ def get_metric_lists(df, portfolio_option):
     """
     Creates lists for investment option, std_dev, asset_class, etc...
     for each investment option for the specified portfolio.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+        Dataframe of investment options with columns for asset class,
+        description, and performance metrics.
+    portfolio_option : dict
+        Dictionary of investment options along with their weights.  The
+        keys are the investment options and the values are the weights.
+
+    Returns
+    -------
+    ml : dotdict
+        Metric lists keyed by ``inv_opts``, ``weights``, ``asset_classes``,
+        ``volas``, ``ds_volas``, ``std_devs``, ``annual_returns``, and
+        ``sharpe_ratios``.
     """
 
     # Check for valid investment options.
@@ -101,6 +117,18 @@ def expected_return(annual_returns, weights):
     """
     Returns expected return given list of investment option returns and
     their corresponding weights.
+
+    Parameters
+    ----------
+    annual_returns : list of float
+        Annualized return for each investment option.
+    weights : list of float
+        Portfolio weight for each investment option.
+
+    Returns
+    -------
+    float
+        Weighted expected annual return.
     """
     return sum(numpy.multiply(annual_returns, weights))
 
@@ -110,6 +138,21 @@ def correlation(correlation_table, a, b):
     Return the correlation between asset a and b using the
     correlation table dict.  Assets are in the form
     a=asset_class:asset_subclass.
+
+    Parameters
+    ----------
+    correlation_table : dict
+        Asset-class pair to correlation coefficient mapping.
+    a : str
+        First asset class or subclass label.
+    b : str
+        Second asset class or subclass label.
+
+    Returns
+    -------
+    float
+        Correlation coefficient, or ``PORT.default_correlation`` when
+        the pair is not found.
     """
     corr = None
     a_asset_class = a.split(':')[0]
@@ -144,8 +187,23 @@ def correlation(correlation_table, a, b):
 
 def standard_deviation(weights, std_devs, asset_classes):
     """
-    Return std_dev given lists of weights, std_devs, and asset_classes
+    Return std_dev given lists of weights, std_devs, and asset_classes.
+
     Reference: https://en.wikipedia.org/wiki/Modern_portfolio_theory
+
+    Parameters
+    ----------
+    weights : list of float
+        Portfolio weight for each investment option.
+    std_devs : list of float
+        Standard deviation for each investment option.
+    asset_classes : list of str
+        Asset class or subclass label for each investment option.
+
+    Returns
+    -------
+    float
+        Portfolio standard deviation.
     """
     weights_sq  = [x*x for x in weights]
     std_devs_sq = [x*x for x in std_devs]
@@ -170,6 +228,20 @@ def sharpe_ratio(annual_ret, std_dev, risk_free_rate):
     This is the modified sharpe ratio formulated by Craig L. Israelsen.
     It's the same as the sharpe ratio when the excess return is
     positive.
+
+    Parameters
+    ----------
+    annual_ret : float
+        Annualized portfolio or investment return.
+    std_dev : float
+        Standard deviation.
+    risk_free_rate : float
+        Risk-free rate used in the excess-return calculation.
+
+    Returns
+    -------
+    float
+        Sharpe ratio, or 0 when ``std_dev`` is zero.
     """
     if math.isclose(std_dev, 0):
         return 0

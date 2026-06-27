@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Place Schwab equity orders from a trades CSV produced by brownbear."""
+"""Place Schwab equity limit orders from a trades CSV produced by brownbear."""
 
 import argparse
 import json
@@ -9,12 +9,27 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
-from schwab.orders import equities
+from schwab.orders.common import (
+    Duration,
+    EquityInstruction,
+    OrderStrategyType,
+    OrderType,
+    Session,
+)
+from schwab.orders.generic import OrderBuilder
 from schwab.utils import Utils
 
+from limit_pricing import (
+    PRICING_STRATEGIES,
+    compute_limit_price,
+    parse_equity_quote,
+)
 from schwab_lib import fetch_account_numbers, make_client, match_account
+from symbol_replacements import log_replacement, resolve_symbol
 
 ORDER_DELAY_SEC = 1.0
+DEFAULT_PRICING_STRATEGY = 'aggressive'
+DEFAULT_MAX_SPREAD_TOLERANCE = 0.01
 
 
 def load_trades(path):
@@ -35,13 +50,86 @@ def load_trades(path):
 
     df["quantity"] = df["quantity"].astype(int)
     df["_side_order"] = df["side"].map({"SELL": 0, "BUY": 1})
-    return df.sort_values(["_side_order", "symbol"]).drop(columns="_side_order")
+    df = df.sort_values(["_side_order", "symbol"]).drop(columns="_side_order")
+
+    resolved_symbols = []
+    for symbol in df['symbol']:
+        original = str(symbol).strip().upper()
+        trade_symbol = resolve_symbol(original)
+        if trade_symbol != original:
+            log_replacement(original, trade_symbol)
+        resolved_symbols.append(trade_symbol)
+    df['symbol'] = resolved_symbols
+    return df
 
 
-def build_order(side, symbol, quantity):
-    if side == "SELL":
-        return equities.equity_sell_market(symbol, quantity)
-    return equities.equity_buy_market(symbol, quantity)
+def fetch_quotes(client, symbols):
+    response = client.get_quotes(list(symbols))
+    if response.status_code != 200:
+        sys.exit(f'get_quotes failed: {response.status_code} {response.text}')
+    return response.json()
+
+
+def format_order_price(price):
+    """Format price for Schwab OrderBuilder (string, not float)."""
+    if price >= 1:
+        return f'{price:.2f}'
+    return f'{price:.4f}'
+
+
+def build_limit_order(side, symbol, quantity, price, non_marketable=False):
+    instruction = (
+        EquityInstruction.SELL if side == 'SELL' else EquityInstruction.BUY
+    )
+    if non_marketable:
+        order_type = OrderType.NON_MARKETABLE
+        builder = (
+            OrderBuilder()
+            .set_order_type(order_type)
+            .set_session(Session.NORMAL)
+            .set_duration(Duration.DAY)
+            .set_order_strategy_type(OrderStrategyType.SINGLE)
+            .add_equity_leg(instruction, symbol, quantity)
+        )
+        return builder
+
+    return (
+        OrderBuilder()
+        .set_order_type(OrderType.LIMIT)
+        .set_session(Session.NORMAL)
+        .set_duration(Duration.DAY)
+        .set_order_strategy_type(OrderStrategyType.SINGLE)
+        .set_price(format_order_price(price))
+        .add_equity_leg(instruction, symbol, quantity)
+    )
+
+
+def format_label(side, quantity, symbol, pricing):
+    order_type = 'NON_MARKETABLE' if pricing.non_marketable else 'LIMIT'
+    return (
+        f'{side} {quantity} {symbol} @ {pricing.price:.2f} '
+        f'({pricing.strategy}, {order_type}, '
+        f'spread={pricing.spread_pct * 100:.2f}%)'
+    )
+
+
+def result_row(side, symbol, quantity, pricing, status, order_id=None, **extra):
+    row = {
+        'side': side,
+        'symbol': symbol,
+        'quantity': quantity,
+        'limit_price': pricing.price,
+        'pricing_strategy': pricing.strategy,
+        'non_marketable': pricing.non_marketable,
+        'bid': pricing.bid,
+        'ask': pricing.ask,
+        'last': pricing.last,
+        'spread_pct': pricing.spread_pct,
+        'status': status,
+        'order_id': order_id,
+    }
+    row.update(extra)
+    return row
 
 
 def confirm_execute(count, account_suffix):
@@ -51,7 +139,7 @@ def confirm_execute(count, account_suffix):
         sys.exit("Aborted.")
 
 
-def _write_log(trades_path, mode, account_suffix, account_row, account_hash, results):
+def _write_log(trades_path, mode, account_suffix, account_row, account_hash, results, **meta):
     log_path = trades_path.with_name(
         trades_path.stem + f"-{mode}-{datetime.now().strftime('%H%M%S')}.json"
     )
@@ -60,6 +148,7 @@ def _write_log(trades_path, mode, account_suffix, account_row, account_hash, res
         "mode": mode,
         "account_suffix": account_suffix,
         "results": results,
+        **meta,
     }
     if account_row is not None:
         payload["account_number"] = account_row["accountNumber"]
@@ -69,7 +158,15 @@ def _write_log(trades_path, mode, account_suffix, account_row, account_hash, res
     print(f"Log: {log_path}")
 
 
-def execute_trades(trades_path, execute=False, preview=False, yes=False, delay=ORDER_DELAY_SEC):
+def execute_trades(
+    trades_path,
+    execute=False,
+    preview=False,
+    yes=False,
+    delay=ORDER_DELAY_SEC,
+    pricing_strategy=DEFAULT_PRICING_STRATEGY,
+    max_spread_tolerance=DEFAULT_MAX_SPREAD_TOLERANCE,
+):
     trades_path = Path(trades_path)
     if not trades_path.is_file():
         sys.exit(f"Trades file not found: {trades_path}")
@@ -78,8 +175,14 @@ def execute_trades(trades_path, execute=False, preview=False, yes=False, delay=O
     account_suffix = str(df["account"].iloc[0])
     mode = "execute" if execute else "preview" if preview else "dry-run"
     results = []
+    log_meta = {
+        'pricing_strategy': pricing_strategy,
+        'max_spread_tolerance': max_spread_tolerance,
+    }
 
     print(f"Mode: {mode}")
+    print(f"Pricing strategy: {pricing_strategy}")
+    print(f"Max spread tolerance: {max_spread_tolerance * 100:.2f}%")
     print(f"Account suffix: {account_suffix}")
     print(f"Trades file: {trades_path}")
     print(f"Orders: {len(df)}")
@@ -95,10 +198,13 @@ def execute_trades(trades_path, execute=False, preview=False, yes=False, delay=O
                 "quantity": int(row.quantity),
                 "status": "dry-run",
             })
-        _write_log(trades_path, mode, account_suffix, None, None, results)
+        _write_log(trades_path, mode, account_suffix, None, None, results, **log_meta)
         return
 
     client = make_client()
+    symbols = sorted(df['symbol'].unique())
+    quotes = fetch_quotes(client, symbols)
+
     accounts = fetch_account_numbers(client)
     account_row = match_account(accounts, account_suffix)
     account_hash = account_row["hashValue"]
@@ -114,9 +220,15 @@ def execute_trades(trades_path, execute=False, preview=False, yes=False, delay=O
         side = row.side
         symbol = row.symbol
         quantity = int(row.quantity)
-        label = f"{side} {quantity} {symbol}"
+        bid, ask, last = parse_equity_quote(symbol, quotes.get(symbol, {}))
+        pricing = compute_limit_price(
+            side, bid, ask, last, pricing_strategy, max_spread_tolerance,
+        )
+        label = format_label(side, quantity, symbol, pricing)
 
-        order = build_order(side, symbol, quantity)
+        order = build_limit_order(
+            side, symbol, quantity, pricing.price, pricing.non_marketable,
+        )
         if preview:
             response = client.preview_order(account_hash, order)
             action = "preview"
@@ -126,14 +238,11 @@ def execute_trades(trades_path, execute=False, preview=False, yes=False, delay=O
 
         if response.is_error:
             print(f"[error] {label}: {response.status_code} {response.text}")
-            results.append({
-                "side": side,
-                "symbol": symbol,
-                "quantity": quantity,
-                "status": "error",
-                "http_status": response.status_code,
-                "message": response.text,
-            })
+            results.append(result_row(
+                side, symbol, quantity, pricing, 'error',
+                http_status=response.status_code,
+                message=response.text,
+            ))
             sys.exit(1)
 
         order_id = None
@@ -144,18 +253,17 @@ def execute_trades(trades_path, execute=False, preview=False, yes=False, delay=O
                 print(f"[warning] {label}: could not parse order id: {exc}")
 
         print(f"[{action}] {label}" + (f" order_id={order_id}" if order_id else ""))
-        results.append({
-            "side": side,
-            "symbol": symbol,
-            "quantity": quantity,
-            "status": action,
-            "order_id": order_id,
-        })
+        results.append(result_row(
+            side, symbol, quantity, pricing, action, order_id=order_id,
+        ))
 
         if i < len(df) - 1 and delay:
             time.sleep(delay)
 
-    _write_log(trades_path, mode, account_suffix, account_row, account_hash, results)
+    _write_log(
+        trades_path, mode, account_suffix, account_row, account_hash, results,
+        **log_meta,
+    )
 
 
 def main():
@@ -170,7 +278,7 @@ def main():
     mode.add_argument(
         "--execute",
         action="store_true",
-        help="Place live market orders (default is dry-run)",
+        help="Place live limit orders (default is dry-run)",
     )
     mode.add_argument(
         "--preview",
@@ -188,6 +296,25 @@ def main():
         default=ORDER_DELAY_SEC,
         help=f"Seconds between orders (default {ORDER_DELAY_SEC})",
     )
+    parser.add_argument(
+        "--pricing-strategy",
+        choices=PRICING_STRATEGIES,
+        default=DEFAULT_PRICING_STRATEGY,
+        help=(
+            "Limit pricing when spread is within tolerance (default: aggressive): "
+            "aggressive (buy ask / sell bid), pennying (bid+0.01 / ask-0.01), "
+            "midpoint"
+        ),
+    )
+    parser.add_argument(
+        "--max-spread-tolerance",
+        type=float,
+        default=DEFAULT_MAX_SPREAD_TOLERANCE,
+        help=(
+            "Max bid-ask spread as fraction of ask before wide-spread fallback "
+            f"(default {DEFAULT_MAX_SPREAD_TOLERANCE} = 1%%)"
+        ),
+    )
     args = parser.parse_args()
 
     execute_trades(
@@ -196,6 +323,8 @@ def main():
         preview=args.preview,
         yes=args.yes,
         delay=args.delay,
+        pricing_strategy=args.pricing_strategy,
+        max_spread_tolerance=args.max_spread_tolerance,
     )
 
 

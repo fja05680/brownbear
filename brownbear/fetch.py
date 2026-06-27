@@ -20,6 +20,11 @@ from brownbear.utility import (
 def _correlation_table_to_dict():
     """
     Return a dictionary of the correlation_table.
+
+    Returns
+    -------
+    dict
+        ``(asset_a, asset_b)`` tuple to correlation coefficient.
     """
     df = PORT.correlation_table.set_index(['Asset Class A', 'Asset Class B'])
     # Make any na values perfectly correlated=1; convert to float.
@@ -32,8 +37,35 @@ def _correlation_table_to_dict():
 def _add_sharpe_ratio_column(inv_opts, risk_free_rate):
     """
     Add Sharpe Ratio column to the inv_opts dataframe.
+
+    Parameters
+    ----------
+    inv_opts : pd.DataFrame
+        Investment options with ``Annual Returns`` and ``Std Dev`` columns.
+    risk_free_rate : float
+        Risk-free rate passed to :func:`sharpe_ratio`.
+
+    Returns
+    -------
+    pd.DataFrame
+        ``inv_opts`` with a ``Sharpe Ratio`` column added.
     """
     def _sharpe(row, risk_free_rate):
+        """
+        Apply sharpe_ratio to one investment-options row.
+
+        Parameters
+        ----------
+        row : pd.Series
+            One row from ``inv_opts``.
+        risk_free_rate : float
+            Risk-free rate passed to :func:`sharpe_ratio`.
+
+        Returns
+        -------
+        float
+            Sharpe ratio for the row.
+        """
         annual_ret = row['Annual Returns']
         std_dev = row['Std Dev']
         return sharpe_ratio(annual_ret, std_dev, risk_free_rate)
@@ -63,7 +95,9 @@ def fetch(investment_universe, risk_free_rate=0,
     ----------
     investment_universe : list of str
         List of investment galaxies.  These are the dirs within
-        universe/, for example ['dow30-galaxy', 'alabama-galaxy'].
+        universe/, portfolios/, or strategies/, for example
+        ['dow30-galaxy', 'alabama-galaxy'] or
+        ['high_growth (336 IRA)'].
     risk_free_rate : float, optional
         Risk free rate (default is 0).
     annual_returns : str, optional
@@ -95,11 +129,11 @@ def fetch(investment_universe, risk_free_rate=0,
         investment_universe = [investment_universe]
 
     # Create the investment options csv file list, then read into
-    # a dataframe.  There are 2 places to look for
-    # investment-options.csv files: under universe/ and portfolios/.
+    # a dataframe.  Look for investment-options.csv under universe/,
+    # portfolios/, and strategies/.
     filepaths = []
     for galaxy in investment_universe:
-        for subdir in ['universe', 'portfolios']:
+        for subdir in ['universe', 'portfolios', 'strategies']:
             filepath = bb.ROOT / subdir / galaxy / 'investment-options.csv'
             if filepath.is_file():
                 filepaths.append(filepath)
@@ -241,6 +275,19 @@ def rank(inv_opts, rank_by, group_by=None, num_per_group=None, ascending=False):
     df['__asset_subclass__'] = df['Asset Class']
 
     def _add_asset_class(row):
+        """
+        Extract asset class from asset subclass (before the colon).
+
+        Parameters
+        ----------
+        row : pd.Series
+            Row with an ``__asset_subclass__`` column.
+
+        Returns
+        -------
+        str
+            Asset class portion of the subclass label.
+        """
         # Extract the class_name from '__asset_subclass__' column.
         class_name = row['__asset_subclass__']
         class_name = class_name.split(':')[0]

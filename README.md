@@ -28,10 +28,11 @@ Brownbear complements [pinkfish](https://github.com/fja05680/pinkfish): pinkfish
 | Path                                       | Purpose                                                                              |
 | ------------------------------------------ | ------------------------------------------------------------------------------------ |
 | [brownbear/](brownbear/)                   | Python package (fetch, analyze, optimize, metrics, symbol cache)                     |
-| [universe/](universe/)                     | Investment galaxies — index constituents, correlations, and `investment-options.csv` |
-| [portfolios/](portfolios/)                 | Ready-made portfolio notebooks (S&P 500, sectors, asset classes, etc.)               |
-| [symbol-cache/](symbol-cache/)             | Cached Yahoo Finance time series (one CSV per symbol)                                |
-| [tools/symbol-cache/](tools/symbol-cache/) | Notebooks to refresh cache, fundamentals, and metadata                               |
+| [universe/](universe/)                     | Investment galaxies — see [universe/README.md](universe/README.md)                  |
+| [portfolios/](portfolios/)                 | Portfolio example notebooks — see [portfolios/README.md](portfolios/README.md)      |
+| [strategies/](strategies/)                 | Per-account rebalance notebooks — see [strategies/README.md](strategies/README.md)   |
+| [symbol-cache/](symbol-cache/)             | Cached Yahoo timeseries (working data; see [tools/symbol-cache/](tools/symbol-cache/)) |
+| [tools/symbol-cache/](tools/symbol-cache/) | Cache maintenance — see [tools/symbol-cache/README.md](tools/symbol-cache/README.md) |
 | [images/](images/)                         | Project artwork                                                                      |
 
 
@@ -79,7 +80,7 @@ If you prefer `jupyter notebook` or JupyterLab, install the extra packages first
 5. Run all cells to fetch metrics, analyze the portfolio, and view pie charts.
 6. Optionally set `run_portfolio_optimizer = True` to run the optimizer.
 
-Each portfolio folder may also include `investment-options.ipynb` for refreshing that universe's data.
+Each portfolio folder may also include `investment-options.ipynb` for refreshing that universe's data. See [universe/README.md](universe/README.md) and [portfolios/README.md](portfolios/README.md).
 
 ## Updating market data
 

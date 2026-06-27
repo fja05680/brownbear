@@ -32,6 +32,8 @@ Stops stray Jupyter kernels and clears stale connection files. Run between heavy
 
 ### `symbol-cache/`
 
+See [symbol-cache/README.md](symbol-cache/README.md) for the cache layout and notebooks.
+
 Notebooks to refresh fundamentals, metadata, and timeseries cache:
 
 - `get-symbol-fundamentals.ipynb` — step 3 in UPDATE (also run by `update-universe.sh`)
@@ -72,14 +74,36 @@ Strategy notebooks read `account-YYYY-MM-DD.json` for `total_capital` and `curre
 
 ### `schwab-execute-trades.sh`
 
-Place market orders from a `trades-YYYY-MM-DD.csv` produced by a strategy notebook.
+Place day **limit** orders from a `trades-YYYY-MM-DD.csv` produced by a strategy
+notebook. Limit prices come from live Schwab quotes at execution time (not the
+CSV `price` column).
+
+**Pricing strategies** (`--pricing-strategy`):
+
+| Strategy | Buy limit | Sell limit |
+|----------|-----------|------------|
+| `aggressive` | Ask | Bid |
+| `pennying` | Bid + $0.01 | Ask − $0.01 |
+| `midpoint` | (Bid + Ask) / 2 | (Bid + Ask) / 2 |
+
+When bid-ask spread exceeds `--max-spread-tolerance` (default `0.01` = 1% of
+ask), the order falls back to a **limit at last price** instead of crossing the
+spread.
 
 ```bash
 # Local check only (no API)
 ./tools/schwab-execute-trades.sh path/to/trades-2026-06-20.csv
 
-# Schwab validates orders, does not execute (default in notebook when execute_live_trades=False)
+# Schwab preview with aggressive pricing (default in notebook)
 ./tools/schwab-execute-trades.sh path/to/trades-2026-06-20.csv --preview
+
+# Midpoint pricing, 1% max spread
+./tools/schwab-execute-trades.sh path/to/trades-2026-06-20.csv --preview \\
+    --pricing-strategy midpoint --max-spread-tolerance 0.01
+
+# Aggressive pricing, 1% max spread
+./tools/schwab-execute-trades.sh path/to/trades-2026-06-20.csv --preview \\
+    --pricing-strategy aggressive --max-spread-tolerance 0.01
 
 # Live orders (prompts for confirmation)
 ./tools/schwab-execute-trades.sh path/to/trades-2026-06-20.csv --execute
@@ -103,6 +127,18 @@ Writes a log file beside the CSV, e.g. `trades-2026-06-20-preview-133648.json`.
 | `schwab_lib.py` | Shared client, env, account matching |
 | `schwab_account_info.py` | `schwab-account-info.sh` |
 | `schwab_execute_trades.py` | `schwab-execute-trades.sh` |
+| `limit_pricing.py` | `schwab_execute_trades.py` |
+| `symbol_replacements.py` | `schwab_execute_trades.py`, `brownbear.trade` |
+
+### `symbol-replacements.csv`
+
+Maps retired tickers to their current trading symbols for the trade workflow
+(Yahoo quotes, trades CSV, Schwab orders). Add a row when a ticker changes:
+
+```csv
+old_symbol,new_symbol,note,effective_date
+SATS,ECHO,EchoStar ticker change,2026-06-01
+```
 
 ## Monthly strategy workflow (example: 350 IRA)
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Place Schwab orders from a trades-YYYY-MM-DD.csv file.
+# Place Schwab limit orders from a trades-YYYY-MM-DD.csv file.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"

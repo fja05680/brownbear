@@ -19,7 +19,17 @@ WIKIPEDIA_USER_AGENT = (
 
 def _get_project_top_level():
     """
-    Returns the outermost brownbear path.
+    Return the outermost brownbear project root directory.
+
+    Returns
+    -------
+    Path
+        Repository root directory named ``brownbear``.
+
+    Raises
+    ------
+    RuntimeError
+        If no parent directory named ``brownbear`` is found.
     """
     current_path = Path(__file__).resolve()
     brownbear_path = None
@@ -44,7 +54,19 @@ str : Full path to symbol-cache dir.
 # FUNCTIONS
 
 def _wikipedia_slug(title):
-    """Build a Wikipedia article path from a page title."""
+    """
+    Build a Wikipedia article path from a page title.
+
+    Parameters
+    ----------
+    title : str
+        Wikipedia page title.
+
+    Returns
+    -------
+    str
+        URL-encoded article slug.
+    """
     return quote(title.replace(' ', '_'), safe='_')
 
 
@@ -133,7 +155,37 @@ class dotdict(dict):
 def print_full(x):
     """
     Print every row of list-like object.
+
+    Parameters
+    ----------
+    x
+        Pandas object or other value passed to ``print``.
+
+    Returns
+    -------
+    None
     """
     pd.set_option('display.max_rows', len(x))
     print(x)
     pd.reset_option('display.max_rows')
+
+
+def notebook_display_options(float_format='{:0.2f}'):
+    """
+    Configure pandas display for notebooks with large dataframes.
+
+    Pair with the standard Jupyter javascript cell that disables output
+    scrolling when reviewing long tables.
+
+    Parameters
+    ----------
+    float_format : str, optional
+        Format string for floating-point columns (default is ``'{:0.2f}'``).
+
+    Returns
+    -------
+    None
+    """
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_colwidth', None)
+    pd.options.display.float_format = float_format.format
