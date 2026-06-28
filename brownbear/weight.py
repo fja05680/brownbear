@@ -16,6 +16,10 @@ from brownbear.utility import (
     dotdict
 )
 
+# Minimum volatility for inverse-vol weighting (percentage points, as in
+# investment-options.csv). Prevents near-zero DS Vola from dominating weights.
+VOLATILITY_METRIC_FLOOR = 10.0
+
 
 def _calc_weights(df, asset_dict, weight_by):
     """
@@ -87,8 +91,8 @@ def _calc_weights(df, asset_dict, weight_by):
         if weight_by == 'Std Dev':  metric = ml.std_devs
         elif weight_by == 'Vola':   metric = ml.volas
         else:                       metric = ml.ds_volas
-        inverse_metric = [1/0.001 if math.isclose(m, 0) else 1/m \
-                          for m in metric]
+        floored = [max(m, VOLATILITY_METRIC_FLOOR) for m in metric]
+        inverse_metric = [1 / m for m in floored]
         inverse_metric_sum = sum(inverse_metric)
         weights = [m/inverse_metric_sum for m in inverse_metric]
         asset_dict.update(zip(asset_dict, weights))
