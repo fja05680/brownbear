@@ -30,14 +30,26 @@ from symbol_replacements import log_replacement, resolve_symbol
 ORDER_DELAY_SEC = 1.0
 DEFAULT_PRICING_STRATEGY = 'aggressive'
 DEFAULT_MAX_SPREAD_TOLERANCE = 0.01
+TRADE_COLUMNS = ("account", "side", "symbol", "quantity")
 
 
 def load_trades(path):
-    df = pd.read_csv(path)
-    required = {"account", "side", "symbol", "quantity"}
+    path = Path(path)
+    required = set(TRADE_COLUMNS)
+    if path.stat().st_size == 0:
+        return pd.DataFrame(columns=TRADE_COLUMNS)
+
+    try:
+        df = pd.read_csv(path)
+    except pd.errors.EmptyDataError:
+        return pd.DataFrame(columns=TRADE_COLUMNS)
+
     missing = required - set(df.columns)
     if missing:
         sys.exit(f"Missing columns in {path}: {', '.join(sorted(missing))}")
+
+    if df.empty:
+        return df
 
     df["side"] = df["side"].str.upper()
     invalid = set(df["side"]) - {"BUY", "SELL"}
@@ -61,6 +73,26 @@ def load_trades(path):
         resolved_symbols.append(trade_symbol)
     df['symbol'] = resolved_symbols
     return df
+
+
+def infer_account_suffix(trades_path):
+    """Read account suffix from a sibling account-YYYY-MM-DD.json, if present."""
+    trades_path = Path(trades_path)
+    stem = trades_path.stem
+    if not stem.startswith('trades-'):
+        return None
+
+    account_path = trades_path.with_name(f"account-{stem[len('trades-'):]}.json")
+    if not account_path.is_file():
+        return None
+
+    try:
+        payload = json.loads(account_path.read_text())
+    except (OSError, json.JSONDecodeError):
+        return None
+
+    suffix = payload.get('account_suffix')
+    return str(suffix) if suffix else None
 
 
 def fetch_quotes(client, symbols):
@@ -172,7 +204,6 @@ def execute_trades(
         sys.exit(f"Trades file not found: {trades_path}")
 
     df = load_trades(trades_path)
-    account_suffix = str(df["account"].iloc[0])
     mode = "execute" if execute else "preview" if preview else "dry-run"
     results = []
     log_meta = {
@@ -180,6 +211,22 @@ def execute_trades(
         'max_spread_tolerance': max_spread_tolerance,
     }
 
+    if df.empty:
+        account_suffix = infer_account_suffix(trades_path) or 'unknown'
+        print(f"Mode: {mode}")
+        print(f"Pricing strategy: {pricing_strategy}")
+        print(f"Max spread tolerance: {max_spread_tolerance * 100:.2f}%")
+        print(f"Account suffix: {account_suffix}")
+        print(f"Trades file: {trades_path}")
+        print(f"Orders: 0")
+        print()
+        print("No orders to place.")
+        _write_log(
+            trades_path, mode, account_suffix, None, None, results, **log_meta,
+        )
+        return
+
+    account_suffix = str(df["account"].iloc[0])
     print(f"Mode: {mode}")
     print(f"Pricing strategy: {pricing_strategy}")
     print(f"Max spread tolerance: {max_spread_tolerance * 100:.2f}%")

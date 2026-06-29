@@ -126,7 +126,13 @@ def _get_cmpt_weights(df, d, user_weights, user_weight_by):
     if (d):
         _calc_weights(df, d, user_weight_by)
         multi = 1 - sum(user_weights.values())
-        if multi < 0: multi = 0
+        if multi < 0:
+            print(
+                'FixedWeightWarning: User-specified weights sum to '
+                f'{sum(user_weights.values()):.4f} (> 1.0). '
+                'Computed weights for remaining options set to 0.'
+            )
+            multi = 0
         for key in d: d[key] *= multi
         w.update(d)
     return w

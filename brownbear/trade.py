@@ -506,6 +506,10 @@ def rebalance_orders_to_dataframe(
                 row['estimated_value'] = round(price * quantity, 2)
             rows.append(row)
 
+    if not rows:
+        return pd.DataFrame(
+            columns=['account', 'side', 'symbol', 'quantity', 'as_of_date'],
+        )
     return pd.DataFrame(rows)
 
 
